@@ -78,6 +78,9 @@
     "2DD9URD4X:shared_process": [],
     "2DCPQA6H1:shared_process": []
   },
-  "config": {},
+  "config": {
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
   "info": {}
 }
