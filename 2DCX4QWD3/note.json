@@ -1,0 +1,43 @@
+{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1524260545485_-2073298505",
+      "id": "20180420-144225_500718120",
+      "dateCreated": "Apr 20, 2018 2:42:25 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Projects/Apache-Hive/Chicago-Crime-Data-Analysis",
+  "id": "2DCX4QWD3",
+  "angularObjects": {
+    "2DDC41UQ3:shared_process": [],
+    "2DDYF2FPN:shared_process": [],
+    "2DBE6W83X:shared_process": [],
+    "2DC52CVU8:shared_process": [],
+    "2DB29PQQE:shared_process": [],
+    "2DDSF8G68:shared_process": [],
+    "2DDST3AYB:shared_process": [],
+    "2DD8QNCJW:shared_process": [],
+    "2DCRUVZX5:shared_process": [],
+    "2DCEDYS94:shared_process": [],
+    "2DCGXA2RP:shared_process": [],
+    "2DCPW2X8C:shared_process": [],
+    "2DAV56W8A:shared_process": [],
+    "2DCJBCAFH:shared_process": [],
+    "2DBS1BFTG:shared_process": [],
+    "2DDR31AWW:shared_process": [],
+    "2DD2ABVKW:shared_process": [],
+    "2DD9URD4X:shared_process": [],
+    "2DCPQA6H1:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
