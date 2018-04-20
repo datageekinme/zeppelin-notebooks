@@ -1,12 +1,12 @@
 {
   "paragraphs": [
     {
-      "text": "%md \n\n# Chicago Crime Data Analysis\n\n### Analysis of crime incidents in Chicago city area\n\nThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of **Chicago**\n\nThe dataset has been obtained from the following source: [Chicago](https://data.cityofchicago.org)\n\n#### The Objective\n\nThe objective of this dataset to analyze the following:\n   * Overview\n   * Homicide Arrest Analysis\n   * Theft Analysis",
+      "text": "%md \n\n# Chicago Crime Data Analysis\n\n[logo]:https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\n\n![logo]\n\n### Analysis of crime incidents in Chicago city area\n\nThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of **Chicago**\n\nThe dataset has been obtained from the following source: [Chicago](https://data.cityofchicago.org)\n\n#### The Objective\n\nThe objective of this dataset to analyze the following:\n   * Overview\n   * Homicide Arrest Analysis\n   * Theft Analysis",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:07:25 PM",
+      "dateUpdated": "Apr 20, 2018 11:00:28 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "markdown",
@@ -25,7 +25,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eChicago Crime Data Analysis\u003c/h1\u003e\n\u003ch3\u003eAnalysis of crime incidents in Chicago city area\u003c/h3\u003e\n\u003cp\u003eThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of \u003cstrong\u003eChicago\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eThe dataset has been obtained from the following source: \u003ca href\u003d\"https://data.cityofchicago.org\"\u003eChicago\u003c/a\u003e\u003c/p\u003e\n\u003ch4\u003eThe Objective\u003c/h4\u003e\n\u003cp\u003eThe objective of this dataset to analyze the following:\u003cbr/\u003e * Overview\u003cbr/\u003e * Homicide Arrest Analysis\u003cbr/\u003e * Theft Analysis\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eChicago Crime Data Analysis\u003c/h1\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\" alt\u003d\"logo\" /\u003e\u003c/p\u003e\n\u003ch3\u003eAnalysis of crime incidents in Chicago city area\u003c/h3\u003e\n\u003cp\u003eThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of \u003cstrong\u003eChicago\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eThe dataset has been obtained from the following source: \u003ca href\u003d\"https://data.cityofchicago.org\"\u003eChicago\u003c/a\u003e\u003c/p\u003e\n\u003ch4\u003eThe Objective\u003c/h4\u003e\n\u003cp\u003eThe objective of this dataset to analyze the following:\u003cbr/\u003e * Overview\u003cbr/\u003e * Homicide Arrest Analysis\u003cbr/\u003e * Theft Analysis\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -33,8 +33,8 @@
       "jobName": "paragraph_1524178520331_-862272681",
       "id": "20180419-155520_1028363729",
       "dateCreated": "Apr 19, 2018 3:55:20 PM",
-      "dateStarted": "Apr 19, 2018 11:07:25 PM",
-      "dateFinished": "Apr 19, 2018 11:07:25 PM",
+      "dateStarted": "Apr 20, 2018 9:29:57 AM",
+      "dateFinished": "Apr 20, 2018 9:29:57 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -124,10 +124,10 @@
     {
       "text": "%md\n\n### Preparing the dataset for analysis:\n---------------------------------------\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:03:19 PM",
+      "dateUpdated": "Apr 20, 2018 11:00:22 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "markdown",
@@ -162,7 +162,7 @@
     {
       "text": "%sh\n\n# download the piggybank jar from maven repository\ncd ~/data-downloads/\nwget http://central.maven.org/maven2/org/apache/pig/piggybank/0.17.0/piggybank-0.17.0.jar\n\n# upload the piggybank jar to the HDFS jars directory\nhdfs dfs -put -f ~/data-downloads/piggybank-0.17.0.jar /user/cloudera/jars/\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:17:54 PM",
+      "dateUpdated": "Apr 19, 2018 11:20:03 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -173,7 +173,7 @@
         },
         "editorMode": "ace/mode/sh",
         "tableHide": true,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -200,10 +200,10 @@
     {
       "text": "%sh\n\n# delete staging area\nhdfs dfs -rm -r -skipTrash /user/cloudera/data/staging/crime/chicago",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:17:53 PM",
+      "dateUpdated": "Apr 20, 2018 11:00:15 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "sh",
@@ -229,18 +229,18 @@
       "jobName": "paragraph_1524187999116_-1823058110",
       "id": "20180419-183319_550752075",
       "dateCreated": "Apr 19, 2018 6:33:19 PM",
-      "dateStarted": "Apr 19, 2018 6:34:41 PM",
-      "dateFinished": "Apr 19, 2018 6:34:44 PM",
+      "dateStarted": "Apr 20, 2018 9:21:02 AM",
+      "dateFinished": "Apr 20, 2018 9:21:09 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pig\n\n--register the piggybank jar\nregister hdfs://quickstart.cloudera:8020/user/cloudera/jars/piggybank-0.17.0.jar\n\n--read contents from the chicago dataset on HDFS\nraw_data_chicago \u003d LOAD \u0027/user/cloudera/data/raw/crime/chicago\u0027 USING org.apache.pig.piggybank.storage.CSVLoader() AS (id: chararray, case_no: chararray, date: chararray, block: chararray, iucr: chararray, primary_type: chararray, description: chararray, location_description: chararray, arrest: chararray, domestic: chararray, beat: chararray, district: chararray, ward: chararray, community_area: chararray, fbi_code: chararray, coordinate_x: chararray, coordinate_y: chararray, year: chararray, updated_on: chararray, latitude: chararray, longitude: chararray, location: chararray);\n\n--remove the header record from the dataset\nraw_data_chicago_headless \u003d FILTER raw_data_chicago BY id !\u003d \u0027ID\u0027;\n\n-- select only the required columns\ndata_chicago \u003d FOREACH raw_data_chicago_headless GENERATE date, block, primary_type, description, location_description, arrest, domestic, district, year, latitude, longitude;\n\n-- store the final data into another file\nSTORE data_chicago INTO \u0027/user/cloudera/data/staging/crime/chicago\u0027 USING PigStorage(\u0027;\u0027);\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 6:34:48 PM",
+      "dateUpdated": "Apr 20, 2018 11:00:09 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "pig",
@@ -260,18 +260,18 @@
       "jobName": "paragraph_1524181087230_-1552863617",
       "id": "20180419-163807_39868158",
       "dateCreated": "Apr 19, 2018 4:38:07 PM",
-      "dateStarted": "Apr 19, 2018 6:34:48 PM",
-      "dateFinished": "Apr 19, 2018 6:37:25 PM",
+      "dateStarted": "Apr 20, 2018 9:21:12 AM",
+      "dateFinished": "Apr 20, 2018 9:24:19 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### Analysis #1: Overview",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:09:10 PM",
+      "dateUpdated": "Apr 20, 2018 11:00:03 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "markdown",
@@ -298,18 +298,145 @@
       "jobName": "paragraph_1524187016073_1773931998",
       "id": "20180419-181656_905100727",
       "dateCreated": "Apr 19, 2018 6:16:56 PM",
-      "dateStarted": "Apr 19, 2018 11:09:10 PM",
-      "dateFinished": "Apr 19, 2018 11:09:11 PM",
+      "dateStarted": "Apr 20, 2018 10:55:06 AM",
+      "dateFinished": "Apr 20, 2018 10:55:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Number of Incidents across the years",
+      "text": "%pig.query\n\ndata_chicago_group2 \u003d GROUP data_chicago BY (year);\nFOREACH data_chicago_group2 GENERATE group, COUNT(data_chicago) AS total_count;",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 10:59:57 AM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "lineChart": {
+                  "forceY": false,
+                  "lineWithFocus": false
+                },
+                "pieChart": {}
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "group",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "total_count",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "pig",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/pig",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "group\ttotal_count\n2001\t485740\n2003\t475927\n2005\t453693\n2007\t436979\n2009\t392626\n2010\t370260\n2012\t335849\n2014\t274984\n2016\t268483\n2018\t64101\n2002\t486748\n2004\t469370\n2006\t448083\n2008\t427013\n2011\t351702\n2013\t306911\n2015\t263677\n2017\t266882\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524241008152_60814088",
+      "id": "20180420-091648_1240329920",
+      "dateCreated": "Apr 20, 2018 9:16:48 AM",
+      "dateStarted": "Apr 20, 2018 10:54:05 AM",
+      "dateFinished": "Apr 20, 2018 10:58:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Top N Primary Cause of Incidents ",
+      "text": "%pig.query\n\ndata_chicago_group3 \u003d GROUP data_chicago BY (primary_type);\ngrouped_data_primry_type \u003d FOREACH data_chicago_group3 GENERATE group AS primary_type, COUNT(data_chicago) AS total_count;\nsorted_data_primry_type \u003d ORDER grouped_data_primry_type BY total_count DESC;\nLIMIT sorted_data_primry_type ${top_n\u003d5};\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 10:59:54 AM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 224.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "pig",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/pig",
+        "title": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {
+          "top_n": "5"
+        },
+        "forms": {
+          "top_n": {
+            "name": "top_n",
+            "defaultValue": "5",
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "primary_type\ttotal_count\nTHEFT\t1376721\nBATTERY\t1200595\nCRIMINAL DAMAGE\t753842\nNARCOTICS\t702985\nOTHER OFFENSE\t408026\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524243431364_456567988",
+      "id": "20180420-095711_244915597",
+      "dateCreated": "Apr 20, 2018 9:57:11 AM",
+      "dateStarted": "Apr 20, 2018 10:31:03 AM",
+      "dateFinished": "Apr 20, 2018 10:36:33 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Comparison of Arrest to Non-Arrest Incidents",
       "text": "%pig.query\n\ndata_chicago_group \u003d GROUP data_chicago BY (year, primary_type, arrest);\nFOREACH data_chicago_group GENERATE group.year, group.primary_type, group.arrest, COUNT(data_chicago) AS total_count;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:19:18 PM",
+      "dateUpdated": "Apr 20, 2018 10:59:49 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -338,7 +465,7 @@
               ],
               "values": [
                 {
-                  "name": "col_3",
+                  "name": "total_count",
                   "index": 3.0,
                   "aggr": "sum"
                 }
@@ -351,7 +478,9 @@
           "language": "pig",
           "editOnDblClick": false
         },
-        "editorMode": "ace/mode/pig"
+        "editorMode": "ace/mode/pig",
+        "editorHide": true,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -362,7 +491,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "year\tprimary_type\tarrest\tcol_3\n2001\tARSON\tfalse\t829\n2001\tTHEFT\tfalse\t83721\n2001\tASSAULT\tfalse\t24234\n2001\tBATTERY\tfalse\t72984\n2001\tROBBERY\tfalse\t16601\n2001\tBURGLARY\ttrue\t1693\n2001\tGAMBLING\tfalse\t3\n2001\tHOMICIDE\ttrue\t423\n2001\tSTALKING\tfalse\t152\n2001\tNARCOTICS\ttrue\t50559\n2001\tOBSCENITY\ttrue\t19\n2001\tRITUALISM\ttrue\t1\n2001\tKIDNAPPING\tfalse\t795\n2001\tSEX OFFENSE\ttrue\t840\n2001\tINTIMIDATION\tfalse\t204\n2001\tPROSTITUTION\ttrue\t6023\n2001\tOTHER OFFENSE\ttrue\t5299\n2001\tCRIMINAL DAMAGE\ttrue\t4548\n2001\tCRIMINAL TRESPASS\ttrue\t10262\n2001\tWEAPONS VIOLATION\ttrue\t3537\n2001\tDECEPTIVE PRACTICE\ttrue\t4789\n2001\tCRIM SEXUAL ASSAULT\ttrue\t414\n2001\tMOTOR VEHICLE THEFT\ttrue\t3417\n2001\tLIQUOR LAW VIOLATION\tfalse\t1\n2001\tPUBLIC PEACE VIOLATION\ttrue\t923\n2001\tOTHER NARCOTIC VIOLATION\ttrue\t6\n2001\tOFFENSE INVOLVING CHILDREN\tfalse\t1437\n2001\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t78\n2002\tARSON\ttrue\t156\n2002\tTHEFT\ttrue\t13697\n2002\tASSAULT\ttrue\t7342\n2002\tBATTERY\ttrue\t21330\n2002\tROBBERY\ttrue\t1757\n2002\tBURGLARY\tfalse\t23958\n2002\tGAMBLING\ttrue\t969\n2002\tHOMICIDE\tfalse\t242\n2002\tSTALKING\ttrue\t44\n2002\tNARCOTICS\tfalse\t8\n2002\tOBSCENITY\tfalse\t2\n2002\tRITUALISM\tfalse\t1\n2002\tKIDNAPPING\ttrue\t83\n2002\tSEX OFFENSE\tfalse\t1392\n2002\tINTIMIDATION\ttrue\t59\n2002\tOTHER OFFENSE\tfalse\t26898\n2002\tCRIMINAL DAMAGE\tfalse\t51537\n2002\tPUBLIC INDECENCY\ttrue\t8\n2002\tCRIMINAL TRESPASS\tfalse\t3248\n2002\tWEAPONS VIOLATION\tfalse\t743\n2002\tDECEPTIVE PRACTICE\tfalse\t9911\n2002\tCRIM SEXUAL ASSAULT\tfalse\t1427\n2002\tMOTOR VEHICLE THEFT\tfalse\t21958\n2002\tLIQUOR LAW VIOLATION\ttrue\t1413\n2002\tPUBLIC PEACE VIOLATION\tfalse\t1528\n2002\tOFFENSE INVOLVING CHILDREN\ttrue\t769\n2002\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t269\n2003\tARSON\tfalse\t815\n2003\tTHEFT\tfalse\t85986\n2003\tASSAULT\tfalse\t22567\n2003\tBATTERY\tfalse\t67918\n2003\tROBBERY\tfalse\t15740\n2003\tBURGLARY\ttrue\t1611\n2003\tHOMICIDE\ttrue\t371\n2003\tSTALKING\tfalse\t203\n2003\tNARCOTICS\ttrue\t54283\n2003\tOBSCENITY\ttrue\t15\n2003\tKIDNAPPING\tfalse\t636\n2003\tSEX OFFENSE\ttrue\t683\n2003\tINTIMIDATION\tfalse\t317\n2003\tNON-CRIMINAL\tfalse\t1\n2003\tPROSTITUTION\ttrue\t6214\n2003\tOTHER OFFENSE\ttrue\t5856\n2003\tCRIMINAL DAMAGE\ttrue\t4060\n2003\tCRIMINAL TRESPASS\ttrue\t11618\n2003\tWEAPONS VIOLATION\ttrue\t3447\n2003\tDECEPTIVE PRACTICE\ttrue\t3549\n2003\tCRIM SEXUAL ASSAULT\ttrue\t313\n2003\tMOTOR VEHICLE THEFT\ttrue\t2740\n2003\tLIQUOR LAW VIOLATION\tfalse\t1\n2003\tPUBLIC PEACE VIOLATION\ttrue\t1049\n2003\tOTHER NARCOTIC VIOLATION\ttrue\t2\n2003\tOFFENSE INVOLVING CHILDREN\tfalse\t2175\n2003\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t62\n2004\tARSON\ttrue\t109\n2004\tTHEFT\ttrue\t12068\n2004\tASSAULT\ttrue\t7005\n2004\tBATTERY\ttrue\t20717\n2004\tROBBERY\ttrue\t1478\n2004\tBURGLARY\tfalse\t23187\n2004\tGAMBLING\ttrue\t1120\n2004\tHOMICIDE\tfalse\t168\n2004\tSTALKING\ttrue\t36\n2004\tNARCOTICS\tfalse\t26\n2004\tOBSCENITY\tfalse\t1\n2004\tRITUALISM\tfalse\t1\n2004\tKIDNAPPING\ttrue\t58\n2004\tSEX OFFENSE\tfalse\t1153\n2004\tINTIMIDATION\ttrue\t69\n2004\tPROSTITUTION\tfalse\t2\n2004\tOTHER OFFENSE\tfalse\t24146\n2004\tCRIMINAL DAMAGE\tfalse\t49199\n2004\tPUBLIC INDECENCY\ttrue\t9\n2004\tCRIMINAL TRESPASS\tfalse\t3068\n2004\tWEAPONS VIOLATION\tfalse\t892\n2004\tDECEPTIVE PRACTICE\tfalse\t9950\n2004\tCRIM SEXUAL ASSAULT\tfalse\t1251\n2004\tMOTOR VEHICLE THEFT\tfalse\t20291\n2004\tLIQUOR LAW VIOLATION\ttrue\t982\n2004\tPUBLIC PEACE VIOLATION\tfalse\t1188\n2004\tOFFENSE INVOLVING CHILDREN\ttrue\t691\n2004\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t465\n2005\tARSON\tfalse\t571\n2005\tTHEFT\tfalse\t74347\n2005\tASSAULT\tfalse\t20435\n2005\tBATTERY\tfalse\t63971\n2005\tROBBERY\tfalse\t14406\n2005\tBURGLARY\ttrue\t1413\n2005\tGAMBLING\tfalse\t1\n2005\tHOMICIDE\ttrue\t270\n2005\tSTALKING\tfalse\t169\n2005\tNARCOTICS\ttrue\t56121\n2005\tOBSCENITY\ttrue\t17\n2005\tKIDNAPPING\tfalse\t334\n2005\tSEX OFFENSE\ttrue\t596\n2005\tINTIMIDATION\tfalse\t215\n2005\tPROSTITUTION\ttrue\t6116\n2005\tOTHER OFFENSE\ttrue\t4726\n2005\tCRIMINAL DAMAGE\ttrue\t4083\n2005\tCRIMINAL TRESPASS\ttrue\t13710\n2005\tWEAPONS VIOLATION\ttrue\t3291\n2005\tDECEPTIVE PRACTICE\ttrue\t3203\n2005\tCRIM SEXUAL ASSAULT\ttrue\t280\n2005\tMOTOR VEHICLE THEFT\ttrue\t2343\n2005\tLIQUOR LAW VIOLATION\tfalse\t4\n2005\tPUBLIC PEACE VIOLATION\ttrue\t1583\n2005\tOTHER NARCOTIC VIOLATION\ttrue\t6\n2005\tOFFENSE INVOLVING CHILDREN\tfalse\t2224\n2005\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t63\n2006\tARSON\ttrue\t117\n2006\tTHEFT\ttrue\t10108\n2006\tASSAULT\ttrue\t6288\n2006\tBATTERY\ttrue\t18892\n2006\tROBBERY\ttrue\t1735\n2006\tBURGLARY\tfalse\t22764\n2006\tGAMBLING\ttrue\t1355\n2006\tHOMICIDE\tfalse\t219\n2006\tSTALKING\ttrue\t25\n2006\tNARCOTICS\tfalse\t577\n2006\tOBSCENITY\tfalse\t3\n2006\tRITUALISM\tfalse\t6\n2006\tKIDNAPPING\ttrue\t55\n2006\tSEX OFFENSE\tfalse\t1017\n2006\tINTIMIDATION\ttrue\t42\n2006\tPROSTITUTION\tfalse\t51\n2006\tOTHER OFFENSE\tfalse\t23090\n2006\tCRIMINAL DAMAGE\tfalse\t52989\n2006\tPUBLIC INDECENCY\ttrue\t4\n2006\tCRIMINAL TRESPASS\tfalse\t3022\n2006\tWEAPONS VIOLATION\tfalse\t821\n2006\tDECEPTIVE PRACTICE\tfalse\t10720\n2006\tCRIM SEXUAL ASSAULT\tfalse\t1222\n2006\tMOTOR VEHICLE THEFT\tfalse\t19830\n2006\tLIQUOR LAW VIOLATION\ttrue\t1116\n2006\tPUBLIC PEACE VIOLATION\tfalse\t1078\n2006\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2006\tOFFENSE INVOLVING CHILDREN\ttrue\t655\n2006\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t679\n2007\tARSON\tfalse\t619\n2007\tTHEFT\tfalse\t75373\n2007\tASSAULT\tfalse\t19763\n2007\tBATTERY\tfalse\t60205\n2007\tROBBERY\tfalse\t13835\n2007\tBURGLARY\ttrue\t1554\n2007\tGAMBLING\tfalse\t29\n2007\tHOMICIDE\ttrue\t245\n2007\tSTALKING\tfalse\t179\n2007\tNARCOTICS\ttrue\t53251\n2007\tOBSCENITY\ttrue\t9\n2007\tKIDNAPPING\tfalse\t297\n2007\tSEX OFFENSE\ttrue\t546\n2007\tINTIMIDATION\tfalse\t204\n2007\tPROSTITUTION\ttrue\t6001\n2007\tOTHER OFFENSE\ttrue\t4230\n2007\tCRIMINAL DAMAGE\ttrue\t3994\n2007\tCRIMINAL TRESPASS\ttrue\t10606\n2007\tWEAPONS VIOLATION\ttrue\t2884\n2007\tDECEPTIVE PRACTICE\ttrue\t2853\n2007\tCRIM SEXUAL ASSAULT\ttrue\t222\n2007\tMOTOR VEHICLE THEFT\ttrue\t1779\n2007\tLIQUOR LAW VIOLATION\tfalse\t16\n2007\tPUBLIC PEACE VIOLATION\ttrue\t2269\n2007\tOTHER NARCOTIC VIOLATION\ttrue\t4\n2007\tOFFENSE INVOLVING CHILDREN\tfalse\t2194\n2007\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t48\n2008\tARSON\ttrue\t59\n2008\tTHEFT\ttrue\t9291\n2008\tASSAULT\ttrue\t5316\n2008\tBATTERY\ttrue\t15520\n2008\tROBBERY\ttrue\t1686\n2008\tBURGLARY\tfalse\t24663\n2008\tGAMBLING\ttrue\t1157\n2008\tHOMICIDE\tfalse\t244\n2008\tSTALKING\ttrue\t24\n2008\tNARCOTICS\tfalse\t1048\n2008\tKIDNAPPING\ttrue\t38\n2008\tSEX OFFENSE\tfalse\t1071\n2008\tINTIMIDATION\ttrue\t56\n2008\tPROSTITUTION\tfalse\t58\n2008\tOTHER OFFENSE\tfalse\t23037\n2008\tCRIMINAL DAMAGE\tfalse\t49438\n2008\tPUBLIC INDECENCY\ttrue\t3\n2008\tCRIMINAL TRESPASS\tfalse\t5769\n2008\tWEAPONS VIOLATION\tfalse\t954\n2008\tDECEPTIVE PRACTICE\tfalse\t12703\n2008\tCRIM SEXUAL ASSAULT\tfalse\t1254\n2008\tMOTOR VEHICLE THEFT\tfalse\t17355\n2008\tLIQUOR LAW VIOLATION\ttrue\t886\n2008\tPUBLIC PEACE VIOLATION\tfalse\t1237\n2008\tOTHER NARCOTIC VIOLATION\tfalse\t1\n2008\tOFFENSE INVOLVING CHILDREN\ttrue\t538\n2008\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t460\n2009\tARSON\tfalse\t547\n2009\tTHEFT\tfalse\t71072\n2009\tASSAULT\tfalse\t17161\n2009\tBATTERY\tfalse\t52136\n2009\tROBBERY\tfalse\t14417\n2009\tBURGLARY\ttrue\t1412\n2009\tGAMBLING\tfalse\t5\n2009\tHOMICIDE\ttrue\t224\n2009\tSTALKING\tfalse\t144\n2009\tNARCOTICS\ttrue\t43193\n2009\tOBSCENITY\ttrue\t16\n2009\tKIDNAPPING\tfalse\t264\n2009\tSEX OFFENSE\ttrue\t411\n2009\tINTIMIDATION\tfalse\t192\n2009\tNON-CRIMINAL\tfalse\t1\n2009\tPROSTITUTION\ttrue\t3925\n2009\tOTHER OFFENSE\ttrue\t4204\n2009\tCRIMINAL DAMAGE\ttrue\t3270\n2009\tCRIMINAL TRESPASS\ttrue\t7933\n2009\tWEAPONS VIOLATION\ttrue\t3473\n2009\tDECEPTIVE PRACTICE\ttrue\t2457\n2009\tCRIM SEXUAL ASSAULT\ttrue\t226\n2009\tMOTOR VEHICLE THEFT\ttrue\t1300\n2009\tLIQUOR LAW VIOLATION\tfalse\t8\n2009\tPUBLIC PEACE VIOLATION\ttrue\t2289\n2009\tOTHER NARCOTIC VIOLATION\ttrue\t5\n2009\tOFFENSE INVOLVING CHILDREN\tfalse\t2061\n2009\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t45\n2010\tARSON\tfalse\t456\n2010\tTHEFT\tfalse\t68938\n2010\tASSAULT\tfalse\t16485\n2010\tBATTERY\tfalse\t51129\n2010\tROBBERY\tfalse\t12918\n2010\tBURGLARY\ttrue\t1380\n2010\tHOMICIDE\ttrue\t195\n2010\tSTALKING\tfalse\t163\n2010\tNARCOTICS\ttrue\t43294\n2010\tOBSCENITY\ttrue\t27\n2010\tKIDNAPPING\tfalse\t286\n2010\tSEX OFFENSE\ttrue\t331\n2010\tINTIMIDATION\tfalse\t174\n2010\tNON-CRIMINAL\tfalse\t1\n2010\tPROSTITUTION\ttrue\t2480\n2010\tOTHER OFFENSE\ttrue\t3269\n2010\tCRIMINAL DAMAGE\ttrue\t2640\n2010\tCRIMINAL TRESPASS\ttrue\t6502\n2010\tWEAPONS VIOLATION\ttrue\t2911\n2010\tDECEPTIVE PRACTICE\ttrue\t2078\n2010\tCRIM SEXUAL ASSAULT\ttrue\t237\n2010\tMOTOR VEHICLE THEFT\ttrue\t1047\n2010\tLIQUOR LAW VIOLATION\tfalse\t1\n2010\tPUBLIC PEACE VIOLATION\ttrue\t2525\n2010\tOTHER NARCOTIC VIOLATION\ttrue\t2\n2010\tOFFENSE INVOLVING CHILDREN\tfalse\t2036\n2010\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t99\n2011\tARSON\ttrue\t48\n2011\tTHEFT\ttrue\t8453\n2011\tASSAULT\ttrue\t5185\n2011\tBATTERY\ttrue\t14139\n2011\tROBBERY\ttrue\t1320\n2011\tBURGLARY\tfalse\t25353\n2011\tGAMBLING\ttrue\t736\n2011\tHOMICIDE\tfalse\t255\n2011\tSTALKING\ttrue\t30\n2011\tNARCOTICS\tfalse\t61\n2011\tOBSCENITY\tfalse\t9\n2011\tKIDNAPPING\ttrue\t31\n2011\tSEX OFFENSE\tfalse\t722\n2011\tINTIMIDATION\ttrue\t42\n2011\tPROSTITUTION\tfalse\t5\n2011\tOTHER OFFENSE\tfalse\t17020\n2011\tCRIMINAL DAMAGE\tfalse\t34749\n2011\tPUBLIC INDECENCY\ttrue\t13\n2011\tCRIMINAL TRESPASS\tfalse\t2242\n2011\tWEAPONS VIOLATION\tfalse\t734\n2011\tDECEPTIVE PRACTICE\tfalse\t10132\n2011\tCRIM SEXUAL ASSAULT\tfalse\t1256\n2011\tMOTOR VEHICLE THEFT\tfalse\t18442\n2011\tLIQUOR LAW VIOLATION\ttrue\t615\n2011\tPUBLIC PEACE VIOLATION\tfalse\t696\n2011\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2011\tOFFENSE INVOLVING CHILDREN\ttrue\t449\n2011\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t982\n2012\tARSON\tfalse\t423\n2012\tTHEFT\tfalse\t67212\n2012\tASSAULT\tfalse\t15106\n2012\tBATTERY\tfalse\t46073\n2012\tROBBERY\tfalse\t12101\n2012\tBURGLARY\ttrue\t1282\n2012\tGAMBLING\tfalse\t1\n2012\tHOMICIDE\ttrue\t213\n2012\tSTALKING\tfalse\t169\n2012\tNARCOTICS\ttrue\t35226\n2012\tOBSCENITY\ttrue\t23\n2012\tKIDNAPPING\tfalse\t214\n2012\tSEX OFFENSE\ttrue\t290\n2012\tINTIMIDATION\tfalse\t122\n2012\tNON-CRIMINAL\tfalse\t5\n2012\tPROSTITUTION\ttrue\t2189\n2012\tOTHER OFFENSE\ttrue\t2755\n2012\tCRIMINAL DAMAGE\ttrue\t2462\n2012\tCRIMINAL TRESPASS\ttrue\t6055\n2012\tWEAPONS VIOLATION\ttrue\t3264\n2012\tDECEPTIVE PRACTICE\ttrue\t2973\n2012\tCRIM SEXUAL ASSAULT\ttrue\t204\n2012\tMOTOR VEHICLE THEFT\ttrue\t868\n2012\tLIQUOR LAW VIOLATION\tfalse\t11\n2012\tPUBLIC PEACE VIOLATION\ttrue\t2251\n2012\tOTHER NARCOTIC VIOLATION\ttrue\t4\n2012\tOFFENSE INVOLVING CHILDREN\tfalse\t1806\n2012\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t66\n2012\tNON-CRIMINAL (SUBJECT SPECIFIED)\ttrue\t1\n2013\tARSON\ttrue\t46\n2013\tTHEFT\ttrue\t7727\n2013\tASSAULT\ttrue\t4465\n2013\tBATTERY\ttrue\t12928\n2013\tROBBERY\ttrue\t1331\n2013\tBURGLARY\tfalse\t16792\n2013\tGAMBLING\ttrue\t591\n2013\tHOMICIDE\tfalse\t241\n2013\tSTALKING\ttrue\t32\n2013\tNARCOTICS\tfalse\t308\n2013\tOBSCENITY\tfalse\t5\n2013\tKIDNAPPING\ttrue\t34\n2013\tSEX OFFENSE\tfalse\t734\n2013\tINTIMIDATION\ttrue\t20\n2013\tNON-CRIMINAL\ttrue\t1\n2013\tPROSTITUTION\tfalse\t4\n2013\tOTHER OFFENSE\tfalse\t14591\n2013\tCRIMINAL DAMAGE\tfalse\t28747\n2013\tPUBLIC INDECENCY\ttrue\t10\n2013\tCRIMINAL TRESPASS\tfalse\t2060\n2013\tHUMAN TRAFFICKING\ttrue\t1\n2013\tWEAPONS VIOLATION\tfalse\t581\n2013\tDECEPTIVE PRACTICE\tfalse\t11110\n2013\tCRIM SEXUAL ASSAULT\tfalse\t1057\n2013\tMOTOR VEHICLE THEFT\tfalse\t11749\n2013\tLIQUOR LAW VIOLATION\ttrue\t448\n2013\tPUBLIC PEACE VIOLATION\tfalse\t805\n2013\tOTHER NARCOTIC VIOLATION\tfalse\t1\n2013\tOFFENSE INVOLVING CHILDREN\ttrue\t393\n2013\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1203\n2014\tARSON\tfalse\t363\n2014\tTHEFT\tfalse\t54167\n2014\tASSAULT\tfalse\t12398\n2014\tBATTERY\tfalse\t36929\n2014\tROBBERY\tfalse\t8750\n2014\tBURGLARY\ttrue\t897\n2014\tGAMBLING\tfalse\t1\n2014\tHOMICIDE\ttrue\t177\n2014\tSTALKING\tfalse\t112\n2014\tNARCOTICS\ttrue\t28899\n2014\tOBSCENITY\ttrue\t29\n2014\tKIDNAPPING\tfalse\t202\n2014\tSEX OFFENSE\ttrue\t239\n2014\tINTIMIDATION\tfalse\t89\n2014\tNON-CRIMINAL\tfalse\t17\n2014\tPROSTITUTION\ttrue\t1613\n2014\tOTHER OFFENSE\ttrue\t4159\n2014\tNON - CRIMINAL\tfalse\t10\n2014\tCRIMINAL DAMAGE\ttrue\t2095\n2014\tCRIMINAL TRESPASS\ttrue\t5489\n2014\tHUMAN TRAFFICKING\tfalse\t2\n2014\tWEAPONS VIOLATION\ttrue\t2580\n2014\tDECEPTIVE PRACTICE\ttrue\t1765\n2014\tCRIM SEXUAL ASSAULT\ttrue\t178\n2014\tMOTOR VEHICLE THEFT\ttrue\t763\n2014\tLIQUOR LAW VIOLATION\tfalse\t11\n2014\tPUBLIC PEACE VIOLATION\ttrue\t2349\n2014\tOTHER NARCOTIC VIOLATION\ttrue\t8\n2014\tOFFENSE INVOLVING CHILDREN\tfalse\t1938\n2014\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t74\n2014\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t9\n2015\tARSON\ttrue\t51\n2015\tTHEFT\ttrue\t6754\n2015\tASSAULT\ttrue\t4058\n2015\tBATTERY\ttrue\t11555\n2015\tROBBERY\ttrue\t919\n2015\tBURGLARY\tfalse\t12472\n2015\tGAMBLING\ttrue\t310\n2015\tHOMICIDE\tfalse\t323\n2015\tSTALKING\ttrue\t31\n2015\tNARCOTICS\tfalse\t9\n2015\tOBSCENITY\tfalse\t11\n2015\tKIDNAPPING\ttrue\t15\n2015\tSEX OFFENSE\tfalse\t757\n2015\tINTIMIDATION\ttrue\t21\n2015\tNON-CRIMINAL\ttrue\t3\n2015\tPROSTITUTION\tfalse\t2\n2015\tOTHER OFFENSE\tfalse\t12752\n2015\tNON - CRIMINAL\ttrue\t4\n2015\tCRIMINAL DAMAGE\tfalse\t26839\n2015\tPUBLIC INDECENCY\ttrue\t14\n2015\tCRIMINAL TRESPASS\tfalse\t2005\n2015\tHUMAN TRAFFICKING\ttrue\t2\n2015\tWEAPONS VIOLATION\tfalse\t684\n2015\tDECEPTIVE PRACTICE\tfalse\t14808\n2015\tCRIM SEXUAL ASSAULT\tfalse\t1226\n2015\tMOTOR VEHICLE THEFT\tfalse\t9073\n2015\tLIQUOR LAW VIOLATION\ttrue\t291\n2015\tPUBLIC PEACE VIOLATION\tfalse\t541\n2015\tOTHER NARCOTIC VIOLATION\tfalse\t3\n2015\tOFFENSE INVOLVING CHILDREN\ttrue\t381\n2015\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1253\n2015\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t33\n2016\tARSON\tfalse\t463\n2016\tTHEFT\tfalse\t55070\n2016\tASSAULT\tfalse\t15243\n2016\tBATTERY\tfalse\t39962\n2016\tROBBERY\tfalse\t10985\n2016\tBURGLARY\ttrue\t660\n2016\tHOMICIDE\ttrue\t232\n2016\tSTALKING\tfalse\t157\n2016\tNARCOTICS\ttrue\t13267\n2016\tOBSCENITY\ttrue\t40\n2016\tKIDNAPPING\tfalse\t189\n2016\tSEX OFFENSE\ttrue\t168\n2016\tINTIMIDATION\tfalse\t110\n2016\tNON-CRIMINAL\tfalse\t47\n2016\tPROSTITUTION\ttrue\t800\n2016\tOTHER OFFENSE\ttrue\t3406\n2016\tNON - CRIMINAL\tfalse\t3\n2016\tCRIMINAL DAMAGE\ttrue\t1667\n2016\tCRIMINAL TRESPASS\ttrue\t3724\n2016\tHUMAN TRAFFICKING\tfalse\t10\n2016\tWEAPONS VIOLATION\ttrue\t2506\n2016\tDECEPTIVE PRACTICE\ttrue\t798\n2016\tCRIM SEXUAL ASSAULT\ttrue\t124\n2016\tMOTOR VEHICLE THEFT\ttrue\t1088\n2016\tLIQUOR LAW VIOLATION\tfalse\t1\n2016\tPUBLIC PEACE VIOLATION\ttrue\t1114\n2016\tOTHER NARCOTIC VIOLATION\ttrue\t3\n2016\tOFFENSE INVOLVING CHILDREN\tfalse\t2000\n2016\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t49\n2016\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t2\n2017\tARSON\ttrue\t37\n2017\tTHEFT\ttrue\t6407\n2017\tASSAULT\ttrue\t3447\n2017\tBATTERY\ttrue\t9999\n2017\tROBBERY\ttrue\t886\n2017\tBURGLARY\tfalse\t12405\n2017\tGAMBLING\ttrue\t191\n2017\tHOMICIDE\tfalse\t534\n2017\tSTALKING\ttrue\t22\n2017\tNARCOTICS\tfalse\t6\n2017\tOBSCENITY\tfalse\t15\n2017\tKIDNAPPING\ttrue\t16\n2017\tSEX OFFENSE\tfalse\t810\n2017\tINTIMIDATION\ttrue\t11\n2017\tNON-CRIMINAL\ttrue\t1\n2017\tOTHER OFFENSE\tfalse\t13408\n2017\tCRIMINAL DAMAGE\tfalse\t27294\n2017\tPUBLIC INDECENCY\ttrue\t10\n2017\tCRIMINAL TRESPASS\tfalse\t2798\n2017\tHUMAN TRAFFICKING\ttrue\t1\n2017\tWEAPONS VIOLATION\tfalse\t1015\n2017\tDECEPTIVE PRACTICE\tfalse\t17589\n2017\tCRIM SEXUAL ASSAULT\tfalse\t1505\n2017\tMOTOR VEHICLE THEFT\tfalse\t10535\n2017\tLIQUOR LAW VIOLATION\ttrue\t191\n2017\tPUBLIC PEACE VIOLATION\tfalse\t476\n2017\tOTHER NARCOTIC VIOLATION\tfalse\t4\n2017\tOFFENSE INVOLVING CHILDREN\ttrue\t296\n2017\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1027\n2017\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2017\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t66\n2018\tARSON\tfalse\t72\n2018\tTHEFT\tfalse\t13160\n2018\tASSAULT\tfalse\t4113\n2018\tBATTERY\tfalse\t9523\n2018\tROBBERY\tfalse\t2357\n2018\tBURGLARY\ttrue\t95\n2018\tHOMICIDE\ttrue\t18\n2018\tSTALKING\tfalse\t37\n2018\tNARCOTICS\ttrue\t3386\n2018\tOBSCENITY\ttrue\t27\n2018\tKIDNAPPING\tfalse\t50\n2018\tSEX OFFENSE\ttrue\t27\n2018\tINTIMIDATION\tfalse\t27\n2018\tNON-CRIMINAL\tfalse\t11\n2018\tPROSTITUTION\ttrue\t110\n2018\tOTHER OFFENSE\ttrue\t795\n2018\tCRIMINAL DAMAGE\ttrue\t395\n2018\tCRIMINAL TRESPASS\ttrue\t1205\n2018\tHUMAN TRAFFICKING\tfalse\t3\n2018\tWEAPONS VIOLATION\ttrue\t909\n2018\tDECEPTIVE PRACTICE\ttrue\t162\n2018\tCRIM SEXUAL ASSAULT\ttrue\t12\n2018\tMOTOR VEHICLE THEFT\ttrue\t146\n2018\tPUBLIC PEACE VIOLATION\ttrue\t195\n2018\tOFFENSE INVOLVING CHILDREN\tfalse\t553\n2018\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t24\n2018\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t1\n2001\tARSON\ttrue\t181\n2001\tTHEFT\ttrue\t15543\n2001\tASSAULT\ttrue\t7150\n2001\tBATTERY\ttrue\t20463\n2001\tROBBERY\ttrue\t1840\n2001\tBURGLARY\tfalse\t24318\n2001\tGAMBLING\ttrue\t931\n2001\tHOMICIDE\tfalse\t244\n2001\tSTALKING\ttrue\t51\n2001\tNARCOTICS\tfalse\t8\n2001\tRITUALISM\tfalse\t7\n2001\tKIDNAPPING\ttrue\t138\n2001\tSEX OFFENSE\tfalse\t1391\n2001\tINTIMIDATION\ttrue\t75\n2001\tPROSTITUTION\tfalse\t3\n2001\tOTHER OFFENSE\tfalse\t24358\n2001\tCRIMINAL DAMAGE\tfalse\t51303\n2001\tPUBLIC INDECENCY\ttrue\t9\n2001\tCRIMINAL TRESPASS\tfalse\t2978\n2001\tDOMESTIC VIOLENCE\ttrue\t1\n2001\tWEAPONS VIOLATION\tfalse\t737\n2001\tDECEPTIVE PRACTICE\tfalse\t10112\n2001\tCRIM SEXUAL ASSAULT\tfalse\t1382\n2001\tMOTOR VEHICLE THEFT\tfalse\t24132\n2001\tLIQUOR LAW VIOLATION\ttrue\t1636\n2001\tPUBLIC PEACE VIOLATION\tfalse\t1827\n2001\tOFFENSE INVOLVING CHILDREN\ttrue\t802\n2001\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t328\n2002\tARSON\tfalse\t876\n2002\tTHEFT\tfalse\t84630\n2002\tASSAULT\tfalse\t24179\n2002\tBATTERY\tfalse\t72822\n2002\tROBBERY\tfalse\t16765\n2002\tBURGLARY\ttrue\t1665\n2002\tGAMBLING\tfalse\t2\n2002\tHOMICIDE\ttrue\t415\n2002\tSTALKING\tfalse\t156\n2002\tNARCOTICS\ttrue\t51781\n2002\tOBSCENITY\ttrue\t24\n2002\tRITUALISM\ttrue\t1\n2002\tKIDNAPPING\tfalse\t746\n2002\tSEX OFFENSE\ttrue\t775\n2002\tINTIMIDATION\tfalse\t278\n2002\tPROSTITUTION\ttrue\t6408\n2002\tOTHER OFFENSE\ttrue\t5701\n2002\tCRIMINAL DAMAGE\ttrue\t4403\n2002\tCRIMINAL TRESPASS\ttrue\t10632\n2002\tWEAPONS VIOLATION\ttrue\t3538\n2002\tDECEPTIVE PRACTICE\ttrue\t3804\n2002\tCRIM SEXUAL ASSAULT\ttrue\t403\n2002\tMOTOR VEHICLE THEFT\ttrue\t3163\n2002\tLIQUOR LAW VIOLATION\tfalse\t1\n2002\tPUBLIC PEACE VIOLATION\ttrue\t929\n2002\tOTHER NARCOTIC VIOLATION\ttrue\t5\n2002\tOFFENSE INVOLVING CHILDREN\tfalse\t1805\n2002\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t92\n2003\tARSON\ttrue\t140\n2003\tTHEFT\ttrue\t12889\n2003\tASSAULT\ttrue\t6910\n2003\tBATTERY\ttrue\t20459\n2003\tROBBERY\ttrue\t1592\n2003\tBURGLARY\tfalse\t23545\n2003\tGAMBLING\ttrue\t1088\n2003\tHOMICIDE\tfalse\t233\n2003\tSTALKING\ttrue\t44\n2003\tNARCOTICS\tfalse\t5\n2003\tOBSCENITY\tfalse\t1\n2003\tRITUALISM\tfalse\t2\n2003\tKIDNAPPING\ttrue\t69\n2003\tSEX OFFENSE\tfalse\t1388\n2003\tINTIMIDATION\ttrue\t47\n2003\tOTHER OFFENSE\tfalse\t25291\n2003\tCRIMINAL DAMAGE\tfalse\t50951\n2003\tPUBLIC INDECENCY\ttrue\t6\n2003\tCRIMINAL TRESPASS\tfalse\t3189\n2003\tWEAPONS VIOLATION\tfalse\t764\n2003\tDECEPTIVE PRACTICE\tfalse\t9902\n2003\tCRIM SEXUAL ASSAULT\tfalse\t1277\n2003\tMOTOR VEHICLE THEFT\tfalse\t20008\n2003\tLIQUOR LAW VIOLATION\ttrue\t1310\n2003\tPUBLIC PEACE VIOLATION\tfalse\t1381\n2003\tOFFENSE INVOLVING CHILDREN\ttrue\t858\n2003\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t346\n2004\tARSON\tfalse\t669\n2004\tTHEFT\tfalse\t83395\n2004\tASSAULT\tfalse\t21845\n2004\tBATTERY\tfalse\t66418\n2004\tROBBERY\tfalse\t14500\n2004\tBURGLARY\ttrue\t1377\n2004\tGAMBLING\tfalse\t2\n2004\tHOMICIDE\ttrue\t286\n2004\tSTALKING\tfalse\t179\n2004\tNARCOTICS\ttrue\t57034\n2004\tOBSCENITY\ttrue\t12\n2004\tKIDNAPPING\tfalse\t423\n2004\tSEX OFFENSE\ttrue\t650\n2004\tINTIMIDATION\tfalse\t280\n2004\tPROSTITUTION\ttrue\t7474\n2004\tOTHER OFFENSE\ttrue\t5386\n2004\tCRIMINAL DAMAGE\ttrue\t3965\n2004\tCRIMINAL TRESPASS\ttrue\t12845\n2004\tWEAPONS VIOLATION\ttrue\t3405\n2004\tDECEPTIVE PRACTICE\ttrue\t3292\n2004\tCRIM SEXUAL ASSAULT\ttrue\t318\n2004\tMOTOR VEHICLE THEFT\ttrue\t2514\n2004\tLIQUOR LAW VIOLATION\tfalse\t3\n2004\tPUBLIC PEACE VIOLATION\ttrue\t1307\n2004\tOTHER NARCOTIC VIOLATION\ttrue\t9\n2004\tOFFENSE INVOLVING CHILDREN\tfalse\t2386\n2004\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t66\n2005\tARSON\ttrue\t120\n2005\tTHEFT\ttrue\t11338\n2005\tASSAULT\ttrue\t6631\n2005\tBATTERY\ttrue\t19994\n2005\tROBBERY\ttrue\t1641\n2005\tBURGLARY\tfalse\t24091\n2005\tGAMBLING\ttrue\t1077\n2005\tHOMICIDE\tfalse\t183\n2005\tSTALKING\ttrue\t23\n2005\tNARCOTICS\tfalse\t113\n2005\tOBSCENITY\tfalse\t2\n2005\tRITUALISM\tfalse\t2\n2005\tKIDNAPPING\ttrue\t55\n2005\tSEX OFFENSE\tfalse\t1208\n2005\tINTIMIDATION\ttrue\t43\n2005\tPROSTITUTION\tfalse\t8\n2005\tOTHER OFFENSE\tfalse\t23302\n2005\tCRIMINAL DAMAGE\tfalse\t50465\n2005\tPUBLIC INDECENCY\ttrue\t4\n2005\tCRIMINAL TRESPASS\tfalse\t2945\n2005\tWEAPONS VIOLATION\tfalse\t815\n2005\tDECEPTIVE PRACTICE\tfalse\t10357\n2005\tCRIM SEXUAL ASSAULT\tfalse\t1265\n2005\tMOTOR VEHICLE THEFT\tfalse\t20154\n2005\tLIQUOR LAW VIOLATION\ttrue\t1001\n2005\tPUBLIC PEACE VIOLATION\tfalse\t1147\n2005\tOTHER NARCOTIC VIOLATION\tfalse\t3\n2005\tOFFENSE INVOLVING CHILDREN\ttrue\t656\n2005\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t552\n2006\tARSON\tfalse\t609\n2006\tTHEFT\tfalse\t76132\n2006\tASSAULT\tfalse\t19657\n2006\tBATTERY\tfalse\t61774\n2006\tROBBERY\tfalse\t14233\n2006\tBURGLARY\ttrue\t1560\n2006\tGAMBLING\tfalse\t13\n2006\tHOMICIDE\ttrue\t258\n2006\tSTALKING\tfalse\t161\n2006\tNARCOTICS\ttrue\t55236\n2006\tOBSCENITY\ttrue\t14\n2006\tRITUALISM\ttrue\t1\n2006\tKIDNAPPING\tfalse\t284\n2006\tSEX OFFENSE\ttrue\t547\n2006\tINTIMIDATION\tfalse\t234\n2006\tNON-CRIMINAL\tfalse\t1\n2006\tPROSTITUTION\ttrue\t6983\n2006\tOTHER OFFENSE\ttrue\t4010\n2006\tCRIMINAL DAMAGE\ttrue\t4135\n2006\tCRIMINAL TRESPASS\ttrue\t11483\n2006\tWEAPONS VIOLATION\ttrue\t3000\n2006\tDECEPTIVE PRACTICE\ttrue\t2854\n2006\tCRIM SEXUAL ASSAULT\ttrue\t242\n2006\tMOTOR VEHICLE THEFT\ttrue\t1988\n2006\tLIQUOR LAW VIOLATION\tfalse\t19\n2006\tPUBLIC PEACE VIOLATION\ttrue\t1990\n2006\tOTHER NARCOTIC VIOLATION\ttrue\t7\n2006\tOFFENSE INVOLVING CHILDREN\tfalse\t2097\n2006\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t79\n2007\tARSON\ttrue\t93\n2007\tTHEFT\ttrue\t9783\n2007\tASSAULT\ttrue\t6551\n2007\tBATTERY\ttrue\t19386\n2007\tROBBERY\ttrue\t1615\n2007\tBURGLARY\tfalse\t23304\n2007\tGAMBLING\ttrue\t1380\n2007\tHOMICIDE\tfalse\t202\n2007\tSTALKING\ttrue\t34\n2007\tNARCOTICS\tfalse\t1203\n2007\tOBSCENITY\tfalse\t2\n2007\tRITUALISM\tfalse\t1\n2007\tKIDNAPPING\ttrue\t33\n2007\tSEX OFFENSE\tfalse\t979\n2007\tINTIMIDATION\ttrue\t51\n2007\tPROSTITUTION\tfalse\t86\n2007\tOTHER OFFENSE\tfalse\t22633\n2007\tCRIMINAL DAMAGE\tfalse\t49755\n2007\tPUBLIC INDECENCY\ttrue\t5\n2007\tCRIMINAL TRESPASS\tfalse\t3093\n2007\tWEAPONS VIOLATION\tfalse\t670\n2007\tDECEPTIVE PRACTICE\tfalse\t11283\n2007\tCRIM SEXUAL ASSAULT\tfalse\t1316\n2007\tMOTOR VEHICLE THEFT\tfalse\t16794\n2007\tLIQUOR LAW VIOLATION\ttrue\t1154\n2007\tPUBLIC PEACE VIOLATION\tfalse\t1046\n2007\tOTHER NARCOTIC VIOLATION\tfalse\t8\n2007\tOFFENSE INVOLVING CHILDREN\ttrue\t681\n2007\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t629\n2008\tARSON\tfalse\t585\n2008\tTHEFT\tfalse\t79140\n2008\tASSAULT\tfalse\t20131\n2008\tBATTERY\tfalse\t60402\n2008\tROBBERY\tfalse\t15017\n2008\tBURGLARY\ttrue\t1555\n2008\tGAMBLING\tfalse\t42\n2008\tHOMICIDE\ttrue\t269\n2008\tSTALKING\tfalse\t166\n2008\tNARCOTICS\ttrue\t45459\n2008\tOBSCENITY\ttrue\t13\n2008\tKIDNAPPING\tfalse\t321\n2008\tSEX OFFENSE\ttrue\t418\n2008\tINTIMIDATION\tfalse\t205\n2008\tPROSTITUTION\ttrue\t5083\n2008\tOTHER OFFENSE\ttrue\t3496\n2008\tCRIMINAL DAMAGE\ttrue\t3403\n2008\tPUBLIC INDECENCY\tfalse\t1\n2008\tCRIMINAL TRESPASS\ttrue\t6541\n2008\tWEAPONS VIOLATION\ttrue\t2923\n2008\tDECEPTIVE PRACTICE\ttrue\t2172\n2008\tCRIM SEXUAL ASSAULT\ttrue\t269\n2008\tMOTOR VEHICLE THEFT\ttrue\t1526\n2008\tLIQUOR LAW VIOLATION\tfalse\t26\n2008\tPUBLIC PEACE VIOLATION\ttrue\t1776\n2008\tOTHER NARCOTIC VIOLATION\ttrue\t11\n2008\tOFFENSE INVOLVING CHILDREN\tfalse\t2077\n2008\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t120\n2009\tARSON\ttrue\t69\n2009\tTHEFT\ttrue\t9900\n2009\tASSAULT\ttrue\t5700\n2009\tBATTERY\ttrue\t16326\n2009\tROBBERY\ttrue\t1563\n2009\tBURGLARY\tfalse\t25354\n2009\tGAMBLING\ttrue\t986\n2009\tHOMICIDE\tfalse\t236\n2009\tSTALKING\ttrue\t23\n2009\tNARCOTICS\tfalse\t350\n2009\tOBSCENITY\tfalse\t5\n2009\tKIDNAPPING\ttrue\t29\n2009\tSEX OFFENSE\tfalse\t838\n2009\tINTIMIDATION\ttrue\t39\n2009\tPROSTITUTION\tfalse\t15\n2009\tOTHER OFFENSE\tfalse\t21397\n2009\tCRIMINAL DAMAGE\tfalse\t44454\n2009\tPUBLIC INDECENCY\ttrue\t10\n2009\tCRIMINAL TRESPASS\tfalse\t2918\n2009\tWEAPONS VIOLATION\tfalse\t685\n2009\tDECEPTIVE PRACTICE\tfalse\t11339\n2009\tCRIM SEXUAL ASSAULT\tfalse\t1185\n2009\tMOTOR VEHICLE THEFT\tfalse\t14182\n2009\tLIQUOR LAW VIOLATION\ttrue\t738\n2009\tPUBLIC PEACE VIOLATION\tfalse\t858\n2009\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2009\tOFFENSE INVOLVING CHILDREN\ttrue\t506\n2009\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t528\n2010\tARSON\ttrue\t66\n2010\tTHEFT\ttrue\t7814\n2010\tASSAULT\ttrue\t5051\n2010\tBATTERY\ttrue\t14275\n2010\tROBBERY\ttrue\t1356\n2010\tBURGLARY\tfalse\t25042\n2010\tGAMBLING\ttrue\t927\n2010\tHOMICIDE\tfalse\t243\n2010\tSTALKING\ttrue\t26\n2010\tNARCOTICS\tfalse\t99\n2010\tOBSCENITY\tfalse\t6\n2010\tKIDNAPPING\ttrue\t27\n2010\tSEX OFFENSE\tfalse\t784\n2010\tINTIMIDATION\ttrue\t23\n2010\tPROSTITUTION\tfalse\t5\n2010\tOTHER OFFENSE\tfalse\t18744\n2010\tCRIMINAL DAMAGE\tfalse\t38013\n2010\tPUBLIC INDECENCY\ttrue\t7\n2010\tCRIMINAL TRESPASS\tfalse\t2899\n2010\tWEAPONS VIOLATION\tfalse\t793\n2010\tDECEPTIVE PRACTICE\tfalse\t10405\n2010\tCRIM SEXUAL ASSAULT\tfalse\t1113\n2010\tMOTOR VEHICLE THEFT\tfalse\t17982\n2010\tLIQUOR LAW VIOLATION\ttrue\t735\n2010\tPUBLIC PEACE VIOLATION\tfalse\t1013\n2010\tOTHER NARCOTIC VIOLATION\tfalse\t4\n2010\tOFFENSE INVOLVING CHILDREN\ttrue\t506\n2010\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t698\n2011\tARSON\tfalse\t456\n2011\tTHEFT\tfalse\t66695\n2011\tASSAULT\tfalse\t15226\n2011\tBATTERY\tfalse\t46319\n2011\tROBBERY\tfalse\t12663\n2011\tBURGLARY\ttrue\t1266\n2011\tHOMICIDE\ttrue\t182\n2011\tSTALKING\tfalse\t151\n2011\tNARCOTICS\ttrue\t38544\n2011\tOBSCENITY\ttrue\t31\n2011\tKIDNAPPING\tfalse\t235\n2011\tSEX OFFENSE\ttrue\t351\n2011\tINTIMIDATION\tfalse\t129\n2011\tPROSTITUTION\ttrue\t2419\n2011\tOTHER OFFENSE\ttrue\t3171\n2011\tCRIMINAL DAMAGE\ttrue\t2583\n2011\tCRIMINAL TRESPASS\ttrue\t6417\n2011\tWEAPONS VIOLATION\ttrue\t3146\n2011\tDECEPTIVE PRACTICE\ttrue\t2468\n2011\tCRIM SEXUAL ASSAULT\ttrue\t220\n2011\tMOTOR VEHICLE THEFT\ttrue\t946\n2011\tLIQUOR LAW VIOLATION\tfalse\t4\n2011\tPUBLIC PEACE VIOLATION\ttrue\t2399\n2011\tOTHER NARCOTIC VIOLATION\ttrue\t3\n2011\tOFFENSE INVOLVING CHILDREN\tfalse\t1891\n2011\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t66\n2012\tARSON\ttrue\t46\n2012\tTHEFT\ttrue\t8247\n2012\tASSAULT\ttrue\t4792\n2012\tBATTERY\ttrue\t13062\n2012\tROBBERY\ttrue\t1384\n2012\tBURGLARY\tfalse\t21561\n2012\tGAMBLING\ttrue\t723\n2012\tHOMICIDE\tfalse\t292\n2012\tSTALKING\ttrue\t38\n2012\tNARCOTICS\tfalse\t262\n2012\tOBSCENITY\tfalse\t3\n2012\tKIDNAPPING\ttrue\t21\n2012\tSEX OFFENSE\tfalse\t768\n2012\tINTIMIDATION\ttrue\t34\n2012\tNON-CRIMINAL\ttrue\t1\n2012\tPROSTITUTION\tfalse\t15\n2012\tOTHER OFFENSE\tfalse\t14724\n2012\tCRIMINAL DAMAGE\tfalse\t33392\n2012\tPUBLIC INDECENCY\ttrue\t17\n2012\tCRIMINAL TRESPASS\tfalse\t2160\n2012\tWEAPONS VIOLATION\tfalse\t643\n2012\tDECEPTIVE PRACTICE\tfalse\t10574\n2012\tCRIM SEXUAL ASSAULT\tfalse\t1211\n2012\tMOTOR VEHICLE THEFT\tfalse\t15624\n2012\tLIQUOR LAW VIOLATION\ttrue\t562\n2012\tPUBLIC PEACE VIOLATION\tfalse\t756\n2012\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2012\tOFFENSE INVOLVING CHILDREN\ttrue\t403\n2012\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1162\n2012\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2013\tARSON\tfalse\t318\n2013\tTHEFT\tfalse\t63799\n2013\tASSAULT\tfalse\t13506\n2013\tBATTERY\tfalse\t41075\n2013\tROBBERY\tfalse\t10489\n2013\tBURGLARY\ttrue\t1102\n2013\tGAMBLING\tfalse\t5\n2013\tHOMICIDE\ttrue\t181\n2013\tSTALKING\tfalse\t121\n2013\tNARCOTICS\ttrue\t33819\n2013\tOBSCENITY\ttrue\t19\n2013\tKIDNAPPING\tfalse\t208\n2013\tSEX OFFENSE\ttrue\t287\n2013\tINTIMIDATION\tfalse\t114\n2013\tNON-CRIMINAL\tfalse\t3\n2013\tPROSTITUTION\ttrue\t1648\n2013\tOTHER OFFENSE\ttrue\t3399\n2013\tNON - CRIMINAL\tfalse\t3\n2013\tCRIMINAL DAMAGE\ttrue\t2106\n2013\tCRIMINAL TRESPASS\ttrue\t6075\n2013\tHUMAN TRAFFICKING\tfalse\t1\n2013\tWEAPONS VIOLATION\ttrue\t2665\n2013\tDECEPTIVE PRACTICE\ttrue\t2519\n2013\tCRIM SEXUAL ASSAULT\ttrue\t226\n2013\tMOTOR VEHICLE THEFT\ttrue\t833\n2013\tLIQUOR LAW VIOLATION\tfalse\t17\n2013\tPUBLIC PEACE VIOLATION\ttrue\t2330\n2013\tOTHER NARCOTIC VIOLATION\ttrue\t4\n2013\tOFFENSE INVOLVING CHILDREN\tfalse\t1946\n2013\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t78\n2014\tARSON\ttrue\t34\n2014\tTHEFT\ttrue\t7387\n2014\tASSAULT\ttrue\t4502\n2014\tBATTERY\ttrue\t12517\n2014\tROBBERY\ttrue\t1049\n2014\tBURGLARY\tfalse\t13673\n2014\tGAMBLING\ttrue\t392\n2014\tHOMICIDE\tfalse\t249\n2014\tSTALKING\ttrue\t28\n2014\tNARCOTICS\tfalse\t133\n2014\tOBSCENITY\tfalse\t9\n2014\tKIDNAPPING\ttrue\t18\n2014\tSEX OFFENSE\tfalse\t728\n2014\tINTIMIDATION\ttrue\t27\n2014\tPROSTITUTION\tfalse\t13\n2014\tOTHER OFFENSE\tfalse\t12816\n2014\tCRIMINAL DAMAGE\tfalse\t25703\n2014\tPUBLIC INDECENCY\ttrue\t10\n2014\tCRIMINAL TRESPASS\tfalse\t2050\n2014\tWEAPONS VIOLATION\tfalse\t534\n2014\tDECEPTIVE PRACTICE\tfalse\t13797\n2014\tCRIM SEXUAL ASSAULT\tfalse\t1151\n2014\tMOTOR VEHICLE THEFT\tfalse\t9149\n2014\tLIQUOR LAW VIOLATION\ttrue\t386\n2014\tPUBLIC PEACE VIOLATION\tfalse\t554\n2014\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2014\tOFFENSE INVOLVING CHILDREN\ttrue\t430\n2014\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1324\n2014\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2014\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t6\n2015\tARSON\tfalse\t402\n2015\tTHEFT\tfalse\t50573\n2015\tASSAULT\tfalse\t12984\n2015\tBATTERY\tfalse\t37361\n2015\tROBBERY\tfalse\t8719\n2015\tBURGLARY\ttrue\t712\n2015\tHOMICIDE\ttrue\t176\n2015\tSTALKING\tfalse\t123\n2015\tNARCOTICS\ttrue\t23841\n2015\tOBSCENITY\ttrue\t35\n2015\tKIDNAPPING\tfalse\t175\n2015\tSEX OFFENSE\ttrue\t224\n2015\tINTIMIDATION\tfalse\t101\n2015\tNON-CRIMINAL\tfalse\t12\n2015\tPROSTITUTION\ttrue\t1320\n2015\tOTHER OFFENSE\ttrue\t4794\n2015\tNON - CRIMINAL\tfalse\t16\n2015\tCRIMINAL DAMAGE\ttrue\t1835\n2015\tCRIMINAL TRESPASS\ttrue\t4396\n2015\tHUMAN TRAFFICKING\tfalse\t11\n2015\tWEAPONS VIOLATION\ttrue\t2678\n2015\tDECEPTIVE PRACTICE\ttrue\t1001\n2015\tCRIM SEXUAL ASSAULT\ttrue\t148\n2015\tMOTOR VEHICLE THEFT\ttrue\t997\n2015\tLIQUOR LAW VIOLATION\tfalse\t1\n2015\tPUBLIC PEACE VIOLATION\ttrue\t1881\n2015\tOTHER NARCOTIC VIOLATION\ttrue\t2\n2015\tOFFENSE INVOLVING CHILDREN\tfalse\t1903\n2015\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t55\n2015\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t1\n2016\tARSON\ttrue\t53\n2016\tTHEFT\ttrue\t6501\n2016\tASSAULT\ttrue\t3489\n2016\tBATTERY\ttrue\t10320\n2016\tROBBERY\ttrue\t975\n2016\tBURGLARY\tfalse\t13627\n2016\tGAMBLING\ttrue\t189\n2016\tHOMICIDE\tfalse\t548\n2016\tSTALKING\ttrue\t16\n2016\tNARCOTICS\tfalse\t9\n2016\tOBSCENITY\tfalse\t13\n2016\tKIDNAPPING\ttrue\t13\n2016\tSEX OFFENSE\tfalse\t798\n2016\tINTIMIDATION\ttrue\t25\n2016\tNON-CRIMINAL\ttrue\t2\n2016\tOTHER OFFENSE\tfalse\t13849\n2016\tNON - CRIMINAL\ttrue\t2\n2016\tCRIMINAL DAMAGE\tfalse\t29351\n2016\tPUBLIC INDECENCY\ttrue\t10\n2016\tCRIMINAL TRESPASS\tfalse\t2584\n2016\tHUMAN TRAFFICKING\ttrue\t1\n2016\tWEAPONS VIOLATION\tfalse\t943\n2016\tDECEPTIVE PRACTICE\tfalse\t17736\n2016\tCRIM SEXUAL ASSAULT\tfalse\t1399\n2016\tMOTOR VEHICLE THEFT\tfalse\t10206\n2016\tLIQUOR LAW VIOLATION\ttrue\t226\n2016\tPUBLIC PEACE VIOLATION\tfalse\t492\n2016\tOTHER NARCOTIC VIOLATION\tfalse\t1\n2016\tOFFENSE INVOLVING CHILDREN\ttrue\t295\n2016\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t887\n2016\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2016\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t34\n2017\tARSON\tfalse\t408\n2017\tTHEFT\tfalse\t57791\n2017\tASSAULT\tfalse\t15840\n2017\tBATTERY\tfalse\t39199\n2017\tROBBERY\tfalse\t10995\n2017\tBURGLARY\ttrue\t575\n2017\tHOMICIDE\ttrue\t137\n2017\tSTALKING\tfalse\t162\n2017\tNARCOTICS\ttrue\t11563\n2017\tOBSCENITY\ttrue\t71\n2017\tKIDNAPPING\tfalse\t175\n2017\tSEX OFFENSE\ttrue\t170\n2017\tINTIMIDATION\tfalse\t140\n2017\tNON-CRIMINAL\tfalse\t36\n2017\tPROSTITUTION\ttrue\t734\n2017\tOTHER OFFENSE\ttrue\t3711\n2017\tCRIMINAL DAMAGE\ttrue\t1732\n2017\tCRIMINAL TRESPASS\ttrue\t4014\n2017\tHUMAN TRAFFICKING\tfalse\t7\n2017\tWEAPONS VIOLATION\ttrue\t3668\n2017\tDECEPTIVE PRACTICE\ttrue\t759\n2017\tCRIM SEXUAL ASSAULT\ttrue\t83\n2017\tMOTOR VEHICLE THEFT\ttrue\t887\n2017\tPUBLIC PEACE VIOLATION\ttrue\t1021\n2017\tOTHER NARCOTIC VIOLATION\ttrue\t7\n2017\tOFFENSE INVOLVING CHILDREN\tfalse\t1933\n2017\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t57\n2017\tNON-CRIMINAL (SUBJECT SPECIFIED)\ttrue\t1\n2017\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t3\n\u003cfont color\u003dred\u003eResults are limited by 1000.\u003c/font\u003e"
+            "data": "year\tprimary_type\tarrest\ttotal_count\n2001\tARSON\tfalse\t829\n2001\tTHEFT\tfalse\t83721\n2001\tASSAULT\tfalse\t24234\n2001\tBATTERY\tfalse\t72984\n2001\tROBBERY\tfalse\t16601\n2001\tBURGLARY\ttrue\t1693\n2001\tGAMBLING\tfalse\t3\n2001\tHOMICIDE\ttrue\t423\n2001\tSTALKING\tfalse\t152\n2001\tNARCOTICS\ttrue\t50559\n2001\tOBSCENITY\ttrue\t19\n2001\tRITUALISM\ttrue\t1\n2001\tKIDNAPPING\tfalse\t795\n2001\tSEX OFFENSE\ttrue\t840\n2001\tINTIMIDATION\tfalse\t204\n2001\tPROSTITUTION\ttrue\t6023\n2001\tOTHER OFFENSE\ttrue\t5299\n2001\tCRIMINAL DAMAGE\ttrue\t4548\n2001\tCRIMINAL TRESPASS\ttrue\t10262\n2001\tWEAPONS VIOLATION\ttrue\t3537\n2001\tDECEPTIVE PRACTICE\ttrue\t4789\n2001\tCRIM SEXUAL ASSAULT\ttrue\t414\n2001\tMOTOR VEHICLE THEFT\ttrue\t3417\n2001\tLIQUOR LAW VIOLATION\tfalse\t1\n2001\tPUBLIC PEACE VIOLATION\ttrue\t923\n2001\tOTHER NARCOTIC VIOLATION\ttrue\t6\n2001\tOFFENSE INVOLVING CHILDREN\tfalse\t1437\n2001\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t78\n2002\tARSON\ttrue\t156\n2002\tTHEFT\ttrue\t13697\n2002\tASSAULT\ttrue\t7342\n2002\tBATTERY\ttrue\t21330\n2002\tROBBERY\ttrue\t1757\n2002\tBURGLARY\tfalse\t23958\n2002\tGAMBLING\ttrue\t969\n2002\tHOMICIDE\tfalse\t242\n2002\tSTALKING\ttrue\t44\n2002\tNARCOTICS\tfalse\t8\n2002\tOBSCENITY\tfalse\t2\n2002\tRITUALISM\tfalse\t1\n2002\tKIDNAPPING\ttrue\t83\n2002\tSEX OFFENSE\tfalse\t1392\n2002\tINTIMIDATION\ttrue\t59\n2002\tOTHER OFFENSE\tfalse\t26898\n2002\tCRIMINAL DAMAGE\tfalse\t51537\n2002\tPUBLIC INDECENCY\ttrue\t8\n2002\tCRIMINAL TRESPASS\tfalse\t3248\n2002\tWEAPONS VIOLATION\tfalse\t743\n2002\tDECEPTIVE PRACTICE\tfalse\t9911\n2002\tCRIM SEXUAL ASSAULT\tfalse\t1427\n2002\tMOTOR VEHICLE THEFT\tfalse\t21958\n2002\tLIQUOR LAW VIOLATION\ttrue\t1413\n2002\tPUBLIC PEACE VIOLATION\tfalse\t1528\n2002\tOFFENSE INVOLVING CHILDREN\ttrue\t769\n2002\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t269\n2003\tARSON\tfalse\t815\n2003\tTHEFT\tfalse\t85986\n2003\tASSAULT\tfalse\t22567\n2003\tBATTERY\tfalse\t67918\n2003\tROBBERY\tfalse\t15740\n2003\tBURGLARY\ttrue\t1611\n2003\tHOMICIDE\ttrue\t371\n2003\tSTALKING\tfalse\t203\n2003\tNARCOTICS\ttrue\t54283\n2003\tOBSCENITY\ttrue\t15\n2003\tKIDNAPPING\tfalse\t636\n2003\tSEX OFFENSE\ttrue\t683\n2003\tINTIMIDATION\tfalse\t317\n2003\tNON-CRIMINAL\tfalse\t1\n2003\tPROSTITUTION\ttrue\t6214\n2003\tOTHER OFFENSE\ttrue\t5856\n2003\tCRIMINAL DAMAGE\ttrue\t4060\n2003\tCRIMINAL TRESPASS\ttrue\t11618\n2003\tWEAPONS VIOLATION\ttrue\t3447\n2003\tDECEPTIVE PRACTICE\ttrue\t3549\n2003\tCRIM SEXUAL ASSAULT\ttrue\t313\n2003\tMOTOR VEHICLE THEFT\ttrue\t2740\n2003\tLIQUOR LAW VIOLATION\tfalse\t1\n2003\tPUBLIC PEACE VIOLATION\ttrue\t1049\n2003\tOTHER NARCOTIC VIOLATION\ttrue\t2\n2003\tOFFENSE INVOLVING CHILDREN\tfalse\t2175\n2003\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t62\n2004\tARSON\ttrue\t109\n2004\tTHEFT\ttrue\t12068\n2004\tASSAULT\ttrue\t7005\n2004\tBATTERY\ttrue\t20717\n2004\tROBBERY\ttrue\t1478\n2004\tBURGLARY\tfalse\t23187\n2004\tGAMBLING\ttrue\t1120\n2004\tHOMICIDE\tfalse\t168\n2004\tSTALKING\ttrue\t36\n2004\tNARCOTICS\tfalse\t26\n2004\tOBSCENITY\tfalse\t1\n2004\tRITUALISM\tfalse\t1\n2004\tKIDNAPPING\ttrue\t58\n2004\tSEX OFFENSE\tfalse\t1153\n2004\tINTIMIDATION\ttrue\t69\n2004\tPROSTITUTION\tfalse\t2\n2004\tOTHER OFFENSE\tfalse\t24146\n2004\tCRIMINAL DAMAGE\tfalse\t49199\n2004\tPUBLIC INDECENCY\ttrue\t9\n2004\tCRIMINAL TRESPASS\tfalse\t3068\n2004\tWEAPONS VIOLATION\tfalse\t892\n2004\tDECEPTIVE PRACTICE\tfalse\t9950\n2004\tCRIM SEXUAL ASSAULT\tfalse\t1251\n2004\tMOTOR VEHICLE THEFT\tfalse\t20291\n2004\tLIQUOR LAW VIOLATION\ttrue\t982\n2004\tPUBLIC PEACE VIOLATION\tfalse\t1188\n2004\tOFFENSE INVOLVING CHILDREN\ttrue\t691\n2004\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t465\n2005\tARSON\tfalse\t571\n2005\tTHEFT\tfalse\t74347\n2005\tASSAULT\tfalse\t20435\n2005\tBATTERY\tfalse\t63971\n2005\tROBBERY\tfalse\t14406\n2005\tBURGLARY\ttrue\t1413\n2005\tGAMBLING\tfalse\t1\n2005\tHOMICIDE\ttrue\t270\n2005\tSTALKING\tfalse\t169\n2005\tNARCOTICS\ttrue\t56121\n2005\tOBSCENITY\ttrue\t17\n2005\tKIDNAPPING\tfalse\t334\n2005\tSEX OFFENSE\ttrue\t596\n2005\tINTIMIDATION\tfalse\t215\n2005\tPROSTITUTION\ttrue\t6116\n2005\tOTHER OFFENSE\ttrue\t4726\n2005\tCRIMINAL DAMAGE\ttrue\t4083\n2005\tCRIMINAL TRESPASS\ttrue\t13710\n2005\tWEAPONS VIOLATION\ttrue\t3291\n2005\tDECEPTIVE PRACTICE\ttrue\t3203\n2005\tCRIM SEXUAL ASSAULT\ttrue\t280\n2005\tMOTOR VEHICLE THEFT\ttrue\t2343\n2005\tLIQUOR LAW VIOLATION\tfalse\t4\n2005\tPUBLIC PEACE VIOLATION\ttrue\t1583\n2005\tOTHER NARCOTIC VIOLATION\ttrue\t6\n2005\tOFFENSE INVOLVING CHILDREN\tfalse\t2224\n2005\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t63\n2006\tARSON\ttrue\t117\n2006\tTHEFT\ttrue\t10108\n2006\tASSAULT\ttrue\t6288\n2006\tBATTERY\ttrue\t18892\n2006\tROBBERY\ttrue\t1735\n2006\tBURGLARY\tfalse\t22764\n2006\tGAMBLING\ttrue\t1355\n2006\tHOMICIDE\tfalse\t219\n2006\tSTALKING\ttrue\t25\n2006\tNARCOTICS\tfalse\t577\n2006\tOBSCENITY\tfalse\t3\n2006\tRITUALISM\tfalse\t6\n2006\tKIDNAPPING\ttrue\t55\n2006\tSEX OFFENSE\tfalse\t1017\n2006\tINTIMIDATION\ttrue\t42\n2006\tPROSTITUTION\tfalse\t51\n2006\tOTHER OFFENSE\tfalse\t23090\n2006\tCRIMINAL DAMAGE\tfalse\t52989\n2006\tPUBLIC INDECENCY\ttrue\t4\n2006\tCRIMINAL TRESPASS\tfalse\t3022\n2006\tWEAPONS VIOLATION\tfalse\t821\n2006\tDECEPTIVE PRACTICE\tfalse\t10720\n2006\tCRIM SEXUAL ASSAULT\tfalse\t1222\n2006\tMOTOR VEHICLE THEFT\tfalse\t19830\n2006\tLIQUOR LAW VIOLATION\ttrue\t1116\n2006\tPUBLIC PEACE VIOLATION\tfalse\t1078\n2006\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2006\tOFFENSE INVOLVING CHILDREN\ttrue\t655\n2006\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t679\n2007\tARSON\tfalse\t619\n2007\tTHEFT\tfalse\t75373\n2007\tASSAULT\tfalse\t19763\n2007\tBATTERY\tfalse\t60205\n2007\tROBBERY\tfalse\t13835\n2007\tBURGLARY\ttrue\t1554\n2007\tGAMBLING\tfalse\t29\n2007\tHOMICIDE\ttrue\t245\n2007\tSTALKING\tfalse\t179\n2007\tNARCOTICS\ttrue\t53251\n2007\tOBSCENITY\ttrue\t9\n2007\tKIDNAPPING\tfalse\t297\n2007\tSEX OFFENSE\ttrue\t546\n2007\tINTIMIDATION\tfalse\t204\n2007\tPROSTITUTION\ttrue\t6001\n2007\tOTHER OFFENSE\ttrue\t4230\n2007\tCRIMINAL DAMAGE\ttrue\t3994\n2007\tCRIMINAL TRESPASS\ttrue\t10606\n2007\tWEAPONS VIOLATION\ttrue\t2884\n2007\tDECEPTIVE PRACTICE\ttrue\t2853\n2007\tCRIM SEXUAL ASSAULT\ttrue\t222\n2007\tMOTOR VEHICLE THEFT\ttrue\t1779\n2007\tLIQUOR LAW VIOLATION\tfalse\t16\n2007\tPUBLIC PEACE VIOLATION\ttrue\t2269\n2007\tOTHER NARCOTIC VIOLATION\ttrue\t4\n2007\tOFFENSE INVOLVING CHILDREN\tfalse\t2194\n2007\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t48\n2008\tARSON\ttrue\t59\n2008\tTHEFT\ttrue\t9291\n2008\tASSAULT\ttrue\t5316\n2008\tBATTERY\ttrue\t15520\n2008\tROBBERY\ttrue\t1686\n2008\tBURGLARY\tfalse\t24663\n2008\tGAMBLING\ttrue\t1157\n2008\tHOMICIDE\tfalse\t244\n2008\tSTALKING\ttrue\t24\n2008\tNARCOTICS\tfalse\t1048\n2008\tKIDNAPPING\ttrue\t38\n2008\tSEX OFFENSE\tfalse\t1071\n2008\tINTIMIDATION\ttrue\t56\n2008\tPROSTITUTION\tfalse\t58\n2008\tOTHER OFFENSE\tfalse\t23037\n2008\tCRIMINAL DAMAGE\tfalse\t49438\n2008\tPUBLIC INDECENCY\ttrue\t3\n2008\tCRIMINAL TRESPASS\tfalse\t5769\n2008\tWEAPONS VIOLATION\tfalse\t954\n2008\tDECEPTIVE PRACTICE\tfalse\t12703\n2008\tCRIM SEXUAL ASSAULT\tfalse\t1254\n2008\tMOTOR VEHICLE THEFT\tfalse\t17355\n2008\tLIQUOR LAW VIOLATION\ttrue\t886\n2008\tPUBLIC PEACE VIOLATION\tfalse\t1237\n2008\tOTHER NARCOTIC VIOLATION\tfalse\t1\n2008\tOFFENSE INVOLVING CHILDREN\ttrue\t538\n2008\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t460\n2009\tARSON\tfalse\t547\n2009\tTHEFT\tfalse\t71072\n2009\tASSAULT\tfalse\t17161\n2009\tBATTERY\tfalse\t52136\n2009\tROBBERY\tfalse\t14417\n2009\tBURGLARY\ttrue\t1412\n2009\tGAMBLING\tfalse\t5\n2009\tHOMICIDE\ttrue\t224\n2009\tSTALKING\tfalse\t144\n2009\tNARCOTICS\ttrue\t43193\n2009\tOBSCENITY\ttrue\t16\n2009\tKIDNAPPING\tfalse\t264\n2009\tSEX OFFENSE\ttrue\t411\n2009\tINTIMIDATION\tfalse\t192\n2009\tNON-CRIMINAL\tfalse\t1\n2009\tPROSTITUTION\ttrue\t3925\n2009\tOTHER OFFENSE\ttrue\t4204\n2009\tCRIMINAL DAMAGE\ttrue\t3270\n2009\tCRIMINAL TRESPASS\ttrue\t7933\n2009\tWEAPONS VIOLATION\ttrue\t3473\n2009\tDECEPTIVE PRACTICE\ttrue\t2457\n2009\tCRIM SEXUAL ASSAULT\ttrue\t226\n2009\tMOTOR VEHICLE THEFT\ttrue\t1300\n2009\tLIQUOR LAW VIOLATION\tfalse\t8\n2009\tPUBLIC PEACE VIOLATION\ttrue\t2289\n2009\tOTHER NARCOTIC VIOLATION\ttrue\t5\n2009\tOFFENSE INVOLVING CHILDREN\tfalse\t2061\n2009\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t45\n2010\tARSON\tfalse\t456\n2010\tTHEFT\tfalse\t68938\n2010\tASSAULT\tfalse\t16485\n2010\tBATTERY\tfalse\t51129\n2010\tROBBERY\tfalse\t12918\n2010\tBURGLARY\ttrue\t1380\n2010\tHOMICIDE\ttrue\t195\n2010\tSTALKING\tfalse\t163\n2010\tNARCOTICS\ttrue\t43294\n2010\tOBSCENITY\ttrue\t27\n2010\tKIDNAPPING\tfalse\t286\n2010\tSEX OFFENSE\ttrue\t331\n2010\tINTIMIDATION\tfalse\t174\n2010\tNON-CRIMINAL\tfalse\t1\n2010\tPROSTITUTION\ttrue\t2480\n2010\tOTHER OFFENSE\ttrue\t3269\n2010\tCRIMINAL DAMAGE\ttrue\t2640\n2010\tCRIMINAL TRESPASS\ttrue\t6502\n2010\tWEAPONS VIOLATION\ttrue\t2911\n2010\tDECEPTIVE PRACTICE\ttrue\t2078\n2010\tCRIM SEXUAL ASSAULT\ttrue\t237\n2010\tMOTOR VEHICLE THEFT\ttrue\t1047\n2010\tLIQUOR LAW VIOLATION\tfalse\t1\n2010\tPUBLIC PEACE VIOLATION\ttrue\t2525\n2010\tOTHER NARCOTIC VIOLATION\ttrue\t2\n2010\tOFFENSE INVOLVING CHILDREN\tfalse\t2036\n2010\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t99\n2011\tARSON\ttrue\t48\n2011\tTHEFT\ttrue\t8453\n2011\tASSAULT\ttrue\t5185\n2011\tBATTERY\ttrue\t14139\n2011\tROBBERY\ttrue\t1320\n2011\tBURGLARY\tfalse\t25353\n2011\tGAMBLING\ttrue\t736\n2011\tHOMICIDE\tfalse\t255\n2011\tSTALKING\ttrue\t30\n2011\tNARCOTICS\tfalse\t61\n2011\tOBSCENITY\tfalse\t9\n2011\tKIDNAPPING\ttrue\t31\n2011\tSEX OFFENSE\tfalse\t722\n2011\tINTIMIDATION\ttrue\t42\n2011\tPROSTITUTION\tfalse\t5\n2011\tOTHER OFFENSE\tfalse\t17020\n2011\tCRIMINAL DAMAGE\tfalse\t34749\n2011\tPUBLIC INDECENCY\ttrue\t13\n2011\tCRIMINAL TRESPASS\tfalse\t2242\n2011\tWEAPONS VIOLATION\tfalse\t734\n2011\tDECEPTIVE PRACTICE\tfalse\t10132\n2011\tCRIM SEXUAL ASSAULT\tfalse\t1256\n2011\tMOTOR VEHICLE THEFT\tfalse\t18442\n2011\tLIQUOR LAW VIOLATION\ttrue\t615\n2011\tPUBLIC PEACE VIOLATION\tfalse\t696\n2011\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2011\tOFFENSE INVOLVING CHILDREN\ttrue\t449\n2011\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t982\n2012\tARSON\tfalse\t423\n2012\tTHEFT\tfalse\t67212\n2012\tASSAULT\tfalse\t15106\n2012\tBATTERY\tfalse\t46073\n2012\tROBBERY\tfalse\t12101\n2012\tBURGLARY\ttrue\t1282\n2012\tGAMBLING\tfalse\t1\n2012\tHOMICIDE\ttrue\t213\n2012\tSTALKING\tfalse\t169\n2012\tNARCOTICS\ttrue\t35226\n2012\tOBSCENITY\ttrue\t23\n2012\tKIDNAPPING\tfalse\t214\n2012\tSEX OFFENSE\ttrue\t290\n2012\tINTIMIDATION\tfalse\t122\n2012\tNON-CRIMINAL\tfalse\t5\n2012\tPROSTITUTION\ttrue\t2189\n2012\tOTHER OFFENSE\ttrue\t2755\n2012\tCRIMINAL DAMAGE\ttrue\t2462\n2012\tCRIMINAL TRESPASS\ttrue\t6055\n2012\tWEAPONS VIOLATION\ttrue\t3264\n2012\tDECEPTIVE PRACTICE\ttrue\t2973\n2012\tCRIM SEXUAL ASSAULT\ttrue\t204\n2012\tMOTOR VEHICLE THEFT\ttrue\t868\n2012\tLIQUOR LAW VIOLATION\tfalse\t11\n2012\tPUBLIC PEACE VIOLATION\ttrue\t2251\n2012\tOTHER NARCOTIC VIOLATION\ttrue\t4\n2012\tOFFENSE INVOLVING CHILDREN\tfalse\t1806\n2012\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t66\n2012\tNON-CRIMINAL (SUBJECT SPECIFIED)\ttrue\t1\n2013\tARSON\ttrue\t46\n2013\tTHEFT\ttrue\t7727\n2013\tASSAULT\ttrue\t4465\n2013\tBATTERY\ttrue\t12928\n2013\tROBBERY\ttrue\t1331\n2013\tBURGLARY\tfalse\t16792\n2013\tGAMBLING\ttrue\t591\n2013\tHOMICIDE\tfalse\t241\n2013\tSTALKING\ttrue\t32\n2013\tNARCOTICS\tfalse\t308\n2013\tOBSCENITY\tfalse\t5\n2013\tKIDNAPPING\ttrue\t34\n2013\tSEX OFFENSE\tfalse\t734\n2013\tINTIMIDATION\ttrue\t20\n2013\tNON-CRIMINAL\ttrue\t1\n2013\tPROSTITUTION\tfalse\t4\n2013\tOTHER OFFENSE\tfalse\t14591\n2013\tCRIMINAL DAMAGE\tfalse\t28747\n2013\tPUBLIC INDECENCY\ttrue\t10\n2013\tCRIMINAL TRESPASS\tfalse\t2060\n2013\tHUMAN TRAFFICKING\ttrue\t1\n2013\tWEAPONS VIOLATION\tfalse\t581\n2013\tDECEPTIVE PRACTICE\tfalse\t11110\n2013\tCRIM SEXUAL ASSAULT\tfalse\t1057\n2013\tMOTOR VEHICLE THEFT\tfalse\t11749\n2013\tLIQUOR LAW VIOLATION\ttrue\t448\n2013\tPUBLIC PEACE VIOLATION\tfalse\t805\n2013\tOTHER NARCOTIC VIOLATION\tfalse\t1\n2013\tOFFENSE INVOLVING CHILDREN\ttrue\t393\n2013\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1203\n2014\tARSON\tfalse\t363\n2014\tTHEFT\tfalse\t54167\n2014\tASSAULT\tfalse\t12398\n2014\tBATTERY\tfalse\t36929\n2014\tROBBERY\tfalse\t8750\n2014\tBURGLARY\ttrue\t897\n2014\tGAMBLING\tfalse\t1\n2014\tHOMICIDE\ttrue\t177\n2014\tSTALKING\tfalse\t112\n2014\tNARCOTICS\ttrue\t28899\n2014\tOBSCENITY\ttrue\t29\n2014\tKIDNAPPING\tfalse\t202\n2014\tSEX OFFENSE\ttrue\t239\n2014\tINTIMIDATION\tfalse\t89\n2014\tNON-CRIMINAL\tfalse\t17\n2014\tPROSTITUTION\ttrue\t1613\n2014\tOTHER OFFENSE\ttrue\t4159\n2014\tNON - CRIMINAL\tfalse\t10\n2014\tCRIMINAL DAMAGE\ttrue\t2095\n2014\tCRIMINAL TRESPASS\ttrue\t5489\n2014\tHUMAN TRAFFICKING\tfalse\t2\n2014\tWEAPONS VIOLATION\ttrue\t2580\n2014\tDECEPTIVE PRACTICE\ttrue\t1765\n2014\tCRIM SEXUAL ASSAULT\ttrue\t178\n2014\tMOTOR VEHICLE THEFT\ttrue\t763\n2014\tLIQUOR LAW VIOLATION\tfalse\t11\n2014\tPUBLIC PEACE VIOLATION\ttrue\t2349\n2014\tOTHER NARCOTIC VIOLATION\ttrue\t8\n2014\tOFFENSE INVOLVING CHILDREN\tfalse\t1938\n2014\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t74\n2014\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t9\n2015\tARSON\ttrue\t51\n2015\tTHEFT\ttrue\t6754\n2015\tASSAULT\ttrue\t4058\n2015\tBATTERY\ttrue\t11555\n2015\tROBBERY\ttrue\t919\n2015\tBURGLARY\tfalse\t12472\n2015\tGAMBLING\ttrue\t310\n2015\tHOMICIDE\tfalse\t323\n2015\tSTALKING\ttrue\t31\n2015\tNARCOTICS\tfalse\t9\n2015\tOBSCENITY\tfalse\t11\n2015\tKIDNAPPING\ttrue\t15\n2015\tSEX OFFENSE\tfalse\t757\n2015\tINTIMIDATION\ttrue\t21\n2015\tNON-CRIMINAL\ttrue\t3\n2015\tPROSTITUTION\tfalse\t2\n2015\tOTHER OFFENSE\tfalse\t12752\n2015\tNON - CRIMINAL\ttrue\t4\n2015\tCRIMINAL DAMAGE\tfalse\t26839\n2015\tPUBLIC INDECENCY\ttrue\t14\n2015\tCRIMINAL TRESPASS\tfalse\t2005\n2015\tHUMAN TRAFFICKING\ttrue\t2\n2015\tWEAPONS VIOLATION\tfalse\t684\n2015\tDECEPTIVE PRACTICE\tfalse\t14808\n2015\tCRIM SEXUAL ASSAULT\tfalse\t1226\n2015\tMOTOR VEHICLE THEFT\tfalse\t9073\n2015\tLIQUOR LAW VIOLATION\ttrue\t291\n2015\tPUBLIC PEACE VIOLATION\tfalse\t541\n2015\tOTHER NARCOTIC VIOLATION\tfalse\t3\n2015\tOFFENSE INVOLVING CHILDREN\ttrue\t381\n2015\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1253\n2015\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t33\n2016\tARSON\tfalse\t463\n2016\tTHEFT\tfalse\t55070\n2016\tASSAULT\tfalse\t15243\n2016\tBATTERY\tfalse\t39962\n2016\tROBBERY\tfalse\t10985\n2016\tBURGLARY\ttrue\t660\n2016\tHOMICIDE\ttrue\t232\n2016\tSTALKING\tfalse\t157\n2016\tNARCOTICS\ttrue\t13267\n2016\tOBSCENITY\ttrue\t40\n2016\tKIDNAPPING\tfalse\t189\n2016\tSEX OFFENSE\ttrue\t168\n2016\tINTIMIDATION\tfalse\t110\n2016\tNON-CRIMINAL\tfalse\t47\n2016\tPROSTITUTION\ttrue\t800\n2016\tOTHER OFFENSE\ttrue\t3406\n2016\tNON - CRIMINAL\tfalse\t3\n2016\tCRIMINAL DAMAGE\ttrue\t1667\n2016\tCRIMINAL TRESPASS\ttrue\t3724\n2016\tHUMAN TRAFFICKING\tfalse\t10\n2016\tWEAPONS VIOLATION\ttrue\t2506\n2016\tDECEPTIVE PRACTICE\ttrue\t798\n2016\tCRIM SEXUAL ASSAULT\ttrue\t124\n2016\tMOTOR VEHICLE THEFT\ttrue\t1088\n2016\tLIQUOR LAW VIOLATION\tfalse\t1\n2016\tPUBLIC PEACE VIOLATION\ttrue\t1114\n2016\tOTHER NARCOTIC VIOLATION\ttrue\t3\n2016\tOFFENSE INVOLVING CHILDREN\tfalse\t2000\n2016\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t49\n2016\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t2\n2017\tARSON\ttrue\t37\n2017\tTHEFT\ttrue\t6407\n2017\tASSAULT\ttrue\t3447\n2017\tBATTERY\ttrue\t9999\n2017\tROBBERY\ttrue\t886\n2017\tBURGLARY\tfalse\t12405\n2017\tGAMBLING\ttrue\t191\n2017\tHOMICIDE\tfalse\t534\n2017\tSTALKING\ttrue\t22\n2017\tNARCOTICS\tfalse\t6\n2017\tOBSCENITY\tfalse\t15\n2017\tKIDNAPPING\ttrue\t16\n2017\tSEX OFFENSE\tfalse\t810\n2017\tINTIMIDATION\ttrue\t11\n2017\tNON-CRIMINAL\ttrue\t1\n2017\tOTHER OFFENSE\tfalse\t13408\n2017\tCRIMINAL DAMAGE\tfalse\t27294\n2017\tPUBLIC INDECENCY\ttrue\t10\n2017\tCRIMINAL TRESPASS\tfalse\t2798\n2017\tHUMAN TRAFFICKING\ttrue\t1\n2017\tWEAPONS VIOLATION\tfalse\t1015\n2017\tDECEPTIVE PRACTICE\tfalse\t17589\n2017\tCRIM SEXUAL ASSAULT\tfalse\t1505\n2017\tMOTOR VEHICLE THEFT\tfalse\t10535\n2017\tLIQUOR LAW VIOLATION\ttrue\t191\n2017\tPUBLIC PEACE VIOLATION\tfalse\t476\n2017\tOTHER NARCOTIC VIOLATION\tfalse\t4\n2017\tOFFENSE INVOLVING CHILDREN\ttrue\t296\n2017\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1027\n2017\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2017\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t66\n2018\tARSON\tfalse\t72\n2018\tTHEFT\tfalse\t13160\n2018\tASSAULT\tfalse\t4113\n2018\tBATTERY\tfalse\t9523\n2018\tROBBERY\tfalse\t2357\n2018\tBURGLARY\ttrue\t95\n2018\tHOMICIDE\ttrue\t18\n2018\tSTALKING\tfalse\t37\n2018\tNARCOTICS\ttrue\t3386\n2018\tOBSCENITY\ttrue\t27\n2018\tKIDNAPPING\tfalse\t50\n2018\tSEX OFFENSE\ttrue\t27\n2018\tINTIMIDATION\tfalse\t27\n2018\tNON-CRIMINAL\tfalse\t11\n2018\tPROSTITUTION\ttrue\t110\n2018\tOTHER OFFENSE\ttrue\t795\n2018\tCRIMINAL DAMAGE\ttrue\t395\n2018\tCRIMINAL TRESPASS\ttrue\t1205\n2018\tHUMAN TRAFFICKING\tfalse\t3\n2018\tWEAPONS VIOLATION\ttrue\t909\n2018\tDECEPTIVE PRACTICE\ttrue\t162\n2018\tCRIM SEXUAL ASSAULT\ttrue\t12\n2018\tMOTOR VEHICLE THEFT\ttrue\t146\n2018\tPUBLIC PEACE VIOLATION\ttrue\t195\n2018\tOFFENSE INVOLVING CHILDREN\tfalse\t553\n2018\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t24\n2018\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t1\n2001\tARSON\ttrue\t181\n2001\tTHEFT\ttrue\t15543\n2001\tASSAULT\ttrue\t7150\n2001\tBATTERY\ttrue\t20463\n2001\tROBBERY\ttrue\t1840\n2001\tBURGLARY\tfalse\t24318\n2001\tGAMBLING\ttrue\t931\n2001\tHOMICIDE\tfalse\t244\n2001\tSTALKING\ttrue\t51\n2001\tNARCOTICS\tfalse\t8\n2001\tRITUALISM\tfalse\t7\n2001\tKIDNAPPING\ttrue\t138\n2001\tSEX OFFENSE\tfalse\t1391\n2001\tINTIMIDATION\ttrue\t75\n2001\tPROSTITUTION\tfalse\t3\n2001\tOTHER OFFENSE\tfalse\t24358\n2001\tCRIMINAL DAMAGE\tfalse\t51303\n2001\tPUBLIC INDECENCY\ttrue\t9\n2001\tCRIMINAL TRESPASS\tfalse\t2978\n2001\tDOMESTIC VIOLENCE\ttrue\t1\n2001\tWEAPONS VIOLATION\tfalse\t737\n2001\tDECEPTIVE PRACTICE\tfalse\t10112\n2001\tCRIM SEXUAL ASSAULT\tfalse\t1382\n2001\tMOTOR VEHICLE THEFT\tfalse\t24132\n2001\tLIQUOR LAW VIOLATION\ttrue\t1636\n2001\tPUBLIC PEACE VIOLATION\tfalse\t1827\n2001\tOFFENSE INVOLVING CHILDREN\ttrue\t802\n2001\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t328\n2002\tARSON\tfalse\t876\n2002\tTHEFT\tfalse\t84630\n2002\tASSAULT\tfalse\t24179\n2002\tBATTERY\tfalse\t72822\n2002\tROBBERY\tfalse\t16765\n2002\tBURGLARY\ttrue\t1665\n2002\tGAMBLING\tfalse\t2\n2002\tHOMICIDE\ttrue\t415\n2002\tSTALKING\tfalse\t156\n2002\tNARCOTICS\ttrue\t51781\n2002\tOBSCENITY\ttrue\t24\n2002\tRITUALISM\ttrue\t1\n2002\tKIDNAPPING\tfalse\t746\n2002\tSEX OFFENSE\ttrue\t775\n2002\tINTIMIDATION\tfalse\t278\n2002\tPROSTITUTION\ttrue\t6408\n2002\tOTHER OFFENSE\ttrue\t5701\n2002\tCRIMINAL DAMAGE\ttrue\t4403\n2002\tCRIMINAL TRESPASS\ttrue\t10632\n2002\tWEAPONS VIOLATION\ttrue\t3538\n2002\tDECEPTIVE PRACTICE\ttrue\t3804\n2002\tCRIM SEXUAL ASSAULT\ttrue\t403\n2002\tMOTOR VEHICLE THEFT\ttrue\t3163\n2002\tLIQUOR LAW VIOLATION\tfalse\t1\n2002\tPUBLIC PEACE VIOLATION\ttrue\t929\n2002\tOTHER NARCOTIC VIOLATION\ttrue\t5\n2002\tOFFENSE INVOLVING CHILDREN\tfalse\t1805\n2002\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t92\n2003\tARSON\ttrue\t140\n2003\tTHEFT\ttrue\t12889\n2003\tASSAULT\ttrue\t6910\n2003\tBATTERY\ttrue\t20459\n2003\tROBBERY\ttrue\t1592\n2003\tBURGLARY\tfalse\t23545\n2003\tGAMBLING\ttrue\t1088\n2003\tHOMICIDE\tfalse\t233\n2003\tSTALKING\ttrue\t44\n2003\tNARCOTICS\tfalse\t5\n2003\tOBSCENITY\tfalse\t1\n2003\tRITUALISM\tfalse\t2\n2003\tKIDNAPPING\ttrue\t69\n2003\tSEX OFFENSE\tfalse\t1388\n2003\tINTIMIDATION\ttrue\t47\n2003\tOTHER OFFENSE\tfalse\t25291\n2003\tCRIMINAL DAMAGE\tfalse\t50951\n2003\tPUBLIC INDECENCY\ttrue\t6\n2003\tCRIMINAL TRESPASS\tfalse\t3189\n2003\tWEAPONS VIOLATION\tfalse\t764\n2003\tDECEPTIVE PRACTICE\tfalse\t9902\n2003\tCRIM SEXUAL ASSAULT\tfalse\t1277\n2003\tMOTOR VEHICLE THEFT\tfalse\t20008\n2003\tLIQUOR LAW VIOLATION\ttrue\t1310\n2003\tPUBLIC PEACE VIOLATION\tfalse\t1381\n2003\tOFFENSE INVOLVING CHILDREN\ttrue\t858\n2003\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t346\n2004\tARSON\tfalse\t669\n2004\tTHEFT\tfalse\t83395\n2004\tASSAULT\tfalse\t21845\n2004\tBATTERY\tfalse\t66418\n2004\tROBBERY\tfalse\t14500\n2004\tBURGLARY\ttrue\t1377\n2004\tGAMBLING\tfalse\t2\n2004\tHOMICIDE\ttrue\t286\n2004\tSTALKING\tfalse\t179\n2004\tNARCOTICS\ttrue\t57034\n2004\tOBSCENITY\ttrue\t12\n2004\tKIDNAPPING\tfalse\t423\n2004\tSEX OFFENSE\ttrue\t650\n2004\tINTIMIDATION\tfalse\t280\n2004\tPROSTITUTION\ttrue\t7474\n2004\tOTHER OFFENSE\ttrue\t5386\n2004\tCRIMINAL DAMAGE\ttrue\t3965\n2004\tCRIMINAL TRESPASS\ttrue\t12845\n2004\tWEAPONS VIOLATION\ttrue\t3405\n2004\tDECEPTIVE PRACTICE\ttrue\t3292\n2004\tCRIM SEXUAL ASSAULT\ttrue\t318\n2004\tMOTOR VEHICLE THEFT\ttrue\t2514\n2004\tLIQUOR LAW VIOLATION\tfalse\t3\n2004\tPUBLIC PEACE VIOLATION\ttrue\t1307\n2004\tOTHER NARCOTIC VIOLATION\ttrue\t9\n2004\tOFFENSE INVOLVING CHILDREN\tfalse\t2386\n2004\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t66\n2005\tARSON\ttrue\t120\n2005\tTHEFT\ttrue\t11338\n2005\tASSAULT\ttrue\t6631\n2005\tBATTERY\ttrue\t19994\n2005\tROBBERY\ttrue\t1641\n2005\tBURGLARY\tfalse\t24091\n2005\tGAMBLING\ttrue\t1077\n2005\tHOMICIDE\tfalse\t183\n2005\tSTALKING\ttrue\t23\n2005\tNARCOTICS\tfalse\t113\n2005\tOBSCENITY\tfalse\t2\n2005\tRITUALISM\tfalse\t2\n2005\tKIDNAPPING\ttrue\t55\n2005\tSEX OFFENSE\tfalse\t1208\n2005\tINTIMIDATION\ttrue\t43\n2005\tPROSTITUTION\tfalse\t8\n2005\tOTHER OFFENSE\tfalse\t23302\n2005\tCRIMINAL DAMAGE\tfalse\t50465\n2005\tPUBLIC INDECENCY\ttrue\t4\n2005\tCRIMINAL TRESPASS\tfalse\t2945\n2005\tWEAPONS VIOLATION\tfalse\t815\n2005\tDECEPTIVE PRACTICE\tfalse\t10357\n2005\tCRIM SEXUAL ASSAULT\tfalse\t1265\n2005\tMOTOR VEHICLE THEFT\tfalse\t20154\n2005\tLIQUOR LAW VIOLATION\ttrue\t1001\n2005\tPUBLIC PEACE VIOLATION\tfalse\t1147\n2005\tOTHER NARCOTIC VIOLATION\tfalse\t3\n2005\tOFFENSE INVOLVING CHILDREN\ttrue\t656\n2005\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t552\n2006\tARSON\tfalse\t609\n2006\tTHEFT\tfalse\t76132\n2006\tASSAULT\tfalse\t19657\n2006\tBATTERY\tfalse\t61774\n2006\tROBBERY\tfalse\t14233\n2006\tBURGLARY\ttrue\t1560\n2006\tGAMBLING\tfalse\t13\n2006\tHOMICIDE\ttrue\t258\n2006\tSTALKING\tfalse\t161\n2006\tNARCOTICS\ttrue\t55236\n2006\tOBSCENITY\ttrue\t14\n2006\tRITUALISM\ttrue\t1\n2006\tKIDNAPPING\tfalse\t284\n2006\tSEX OFFENSE\ttrue\t547\n2006\tINTIMIDATION\tfalse\t234\n2006\tNON-CRIMINAL\tfalse\t1\n2006\tPROSTITUTION\ttrue\t6983\n2006\tOTHER OFFENSE\ttrue\t4010\n2006\tCRIMINAL DAMAGE\ttrue\t4135\n2006\tCRIMINAL TRESPASS\ttrue\t11483\n2006\tWEAPONS VIOLATION\ttrue\t3000\n2006\tDECEPTIVE PRACTICE\ttrue\t2854\n2006\tCRIM SEXUAL ASSAULT\ttrue\t242\n2006\tMOTOR VEHICLE THEFT\ttrue\t1988\n2006\tLIQUOR LAW VIOLATION\tfalse\t19\n2006\tPUBLIC PEACE VIOLATION\ttrue\t1990\n2006\tOTHER NARCOTIC VIOLATION\ttrue\t7\n2006\tOFFENSE INVOLVING CHILDREN\tfalse\t2097\n2006\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t79\n2007\tARSON\ttrue\t93\n2007\tTHEFT\ttrue\t9783\n2007\tASSAULT\ttrue\t6551\n2007\tBATTERY\ttrue\t19386\n2007\tROBBERY\ttrue\t1615\n2007\tBURGLARY\tfalse\t23304\n2007\tGAMBLING\ttrue\t1380\n2007\tHOMICIDE\tfalse\t202\n2007\tSTALKING\ttrue\t34\n2007\tNARCOTICS\tfalse\t1203\n2007\tOBSCENITY\tfalse\t2\n2007\tRITUALISM\tfalse\t1\n2007\tKIDNAPPING\ttrue\t33\n2007\tSEX OFFENSE\tfalse\t979\n2007\tINTIMIDATION\ttrue\t51\n2007\tPROSTITUTION\tfalse\t86\n2007\tOTHER OFFENSE\tfalse\t22633\n2007\tCRIMINAL DAMAGE\tfalse\t49755\n2007\tPUBLIC INDECENCY\ttrue\t5\n2007\tCRIMINAL TRESPASS\tfalse\t3093\n2007\tWEAPONS VIOLATION\tfalse\t670\n2007\tDECEPTIVE PRACTICE\tfalse\t11283\n2007\tCRIM SEXUAL ASSAULT\tfalse\t1316\n2007\tMOTOR VEHICLE THEFT\tfalse\t16794\n2007\tLIQUOR LAW VIOLATION\ttrue\t1154\n2007\tPUBLIC PEACE VIOLATION\tfalse\t1046\n2007\tOTHER NARCOTIC VIOLATION\tfalse\t8\n2007\tOFFENSE INVOLVING CHILDREN\ttrue\t681\n2007\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t629\n2008\tARSON\tfalse\t585\n2008\tTHEFT\tfalse\t79140\n2008\tASSAULT\tfalse\t20131\n2008\tBATTERY\tfalse\t60402\n2008\tROBBERY\tfalse\t15017\n2008\tBURGLARY\ttrue\t1555\n2008\tGAMBLING\tfalse\t42\n2008\tHOMICIDE\ttrue\t269\n2008\tSTALKING\tfalse\t166\n2008\tNARCOTICS\ttrue\t45459\n2008\tOBSCENITY\ttrue\t13\n2008\tKIDNAPPING\tfalse\t321\n2008\tSEX OFFENSE\ttrue\t418\n2008\tINTIMIDATION\tfalse\t205\n2008\tPROSTITUTION\ttrue\t5083\n2008\tOTHER OFFENSE\ttrue\t3496\n2008\tCRIMINAL DAMAGE\ttrue\t3403\n2008\tPUBLIC INDECENCY\tfalse\t1\n2008\tCRIMINAL TRESPASS\ttrue\t6541\n2008\tWEAPONS VIOLATION\ttrue\t2923\n2008\tDECEPTIVE PRACTICE\ttrue\t2172\n2008\tCRIM SEXUAL ASSAULT\ttrue\t269\n2008\tMOTOR VEHICLE THEFT\ttrue\t1526\n2008\tLIQUOR LAW VIOLATION\tfalse\t26\n2008\tPUBLIC PEACE VIOLATION\ttrue\t1776\n2008\tOTHER NARCOTIC VIOLATION\ttrue\t11\n2008\tOFFENSE INVOLVING CHILDREN\tfalse\t2077\n2008\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t120\n2009\tARSON\ttrue\t69\n2009\tTHEFT\ttrue\t9900\n2009\tASSAULT\ttrue\t5700\n2009\tBATTERY\ttrue\t16326\n2009\tROBBERY\ttrue\t1563\n2009\tBURGLARY\tfalse\t25354\n2009\tGAMBLING\ttrue\t986\n2009\tHOMICIDE\tfalse\t236\n2009\tSTALKING\ttrue\t23\n2009\tNARCOTICS\tfalse\t350\n2009\tOBSCENITY\tfalse\t5\n2009\tKIDNAPPING\ttrue\t29\n2009\tSEX OFFENSE\tfalse\t838\n2009\tINTIMIDATION\ttrue\t39\n2009\tPROSTITUTION\tfalse\t15\n2009\tOTHER OFFENSE\tfalse\t21397\n2009\tCRIMINAL DAMAGE\tfalse\t44454\n2009\tPUBLIC INDECENCY\ttrue\t10\n2009\tCRIMINAL TRESPASS\tfalse\t2918\n2009\tWEAPONS VIOLATION\tfalse\t685\n2009\tDECEPTIVE PRACTICE\tfalse\t11339\n2009\tCRIM SEXUAL ASSAULT\tfalse\t1185\n2009\tMOTOR VEHICLE THEFT\tfalse\t14182\n2009\tLIQUOR LAW VIOLATION\ttrue\t738\n2009\tPUBLIC PEACE VIOLATION\tfalse\t858\n2009\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2009\tOFFENSE INVOLVING CHILDREN\ttrue\t506\n2009\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t528\n2010\tARSON\ttrue\t66\n2010\tTHEFT\ttrue\t7814\n2010\tASSAULT\ttrue\t5051\n2010\tBATTERY\ttrue\t14275\n2010\tROBBERY\ttrue\t1356\n2010\tBURGLARY\tfalse\t25042\n2010\tGAMBLING\ttrue\t927\n2010\tHOMICIDE\tfalse\t243\n2010\tSTALKING\ttrue\t26\n2010\tNARCOTICS\tfalse\t99\n2010\tOBSCENITY\tfalse\t6\n2010\tKIDNAPPING\ttrue\t27\n2010\tSEX OFFENSE\tfalse\t784\n2010\tINTIMIDATION\ttrue\t23\n2010\tPROSTITUTION\tfalse\t5\n2010\tOTHER OFFENSE\tfalse\t18744\n2010\tCRIMINAL DAMAGE\tfalse\t38013\n2010\tPUBLIC INDECENCY\ttrue\t7\n2010\tCRIMINAL TRESPASS\tfalse\t2899\n2010\tWEAPONS VIOLATION\tfalse\t793\n2010\tDECEPTIVE PRACTICE\tfalse\t10405\n2010\tCRIM SEXUAL ASSAULT\tfalse\t1113\n2010\tMOTOR VEHICLE THEFT\tfalse\t17982\n2010\tLIQUOR LAW VIOLATION\ttrue\t735\n2010\tPUBLIC PEACE VIOLATION\tfalse\t1013\n2010\tOTHER NARCOTIC VIOLATION\tfalse\t4\n2010\tOFFENSE INVOLVING CHILDREN\ttrue\t506\n2010\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t698\n2011\tARSON\tfalse\t456\n2011\tTHEFT\tfalse\t66695\n2011\tASSAULT\tfalse\t15226\n2011\tBATTERY\tfalse\t46319\n2011\tROBBERY\tfalse\t12663\n2011\tBURGLARY\ttrue\t1266\n2011\tHOMICIDE\ttrue\t182\n2011\tSTALKING\tfalse\t151\n2011\tNARCOTICS\ttrue\t38544\n2011\tOBSCENITY\ttrue\t31\n2011\tKIDNAPPING\tfalse\t235\n2011\tSEX OFFENSE\ttrue\t351\n2011\tINTIMIDATION\tfalse\t129\n2011\tPROSTITUTION\ttrue\t2419\n2011\tOTHER OFFENSE\ttrue\t3171\n2011\tCRIMINAL DAMAGE\ttrue\t2583\n2011\tCRIMINAL TRESPASS\ttrue\t6417\n2011\tWEAPONS VIOLATION\ttrue\t3146\n2011\tDECEPTIVE PRACTICE\ttrue\t2468\n2011\tCRIM SEXUAL ASSAULT\ttrue\t220\n2011\tMOTOR VEHICLE THEFT\ttrue\t946\n2011\tLIQUOR LAW VIOLATION\tfalse\t4\n2011\tPUBLIC PEACE VIOLATION\ttrue\t2399\n2011\tOTHER NARCOTIC VIOLATION\ttrue\t3\n2011\tOFFENSE INVOLVING CHILDREN\tfalse\t1891\n2011\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t66\n2012\tARSON\ttrue\t46\n2012\tTHEFT\ttrue\t8247\n2012\tASSAULT\ttrue\t4792\n2012\tBATTERY\ttrue\t13062\n2012\tROBBERY\ttrue\t1384\n2012\tBURGLARY\tfalse\t21561\n2012\tGAMBLING\ttrue\t723\n2012\tHOMICIDE\tfalse\t292\n2012\tSTALKING\ttrue\t38\n2012\tNARCOTICS\tfalse\t262\n2012\tOBSCENITY\tfalse\t3\n2012\tKIDNAPPING\ttrue\t21\n2012\tSEX OFFENSE\tfalse\t768\n2012\tINTIMIDATION\ttrue\t34\n2012\tNON-CRIMINAL\ttrue\t1\n2012\tPROSTITUTION\tfalse\t15\n2012\tOTHER OFFENSE\tfalse\t14724\n2012\tCRIMINAL DAMAGE\tfalse\t33392\n2012\tPUBLIC INDECENCY\ttrue\t17\n2012\tCRIMINAL TRESPASS\tfalse\t2160\n2012\tWEAPONS VIOLATION\tfalse\t643\n2012\tDECEPTIVE PRACTICE\tfalse\t10574\n2012\tCRIM SEXUAL ASSAULT\tfalse\t1211\n2012\tMOTOR VEHICLE THEFT\tfalse\t15624\n2012\tLIQUOR LAW VIOLATION\ttrue\t562\n2012\tPUBLIC PEACE VIOLATION\tfalse\t756\n2012\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2012\tOFFENSE INVOLVING CHILDREN\ttrue\t403\n2012\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1162\n2012\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2013\tARSON\tfalse\t318\n2013\tTHEFT\tfalse\t63799\n2013\tASSAULT\tfalse\t13506\n2013\tBATTERY\tfalse\t41075\n2013\tROBBERY\tfalse\t10489\n2013\tBURGLARY\ttrue\t1102\n2013\tGAMBLING\tfalse\t5\n2013\tHOMICIDE\ttrue\t181\n2013\tSTALKING\tfalse\t121\n2013\tNARCOTICS\ttrue\t33819\n2013\tOBSCENITY\ttrue\t19\n2013\tKIDNAPPING\tfalse\t208\n2013\tSEX OFFENSE\ttrue\t287\n2013\tINTIMIDATION\tfalse\t114\n2013\tNON-CRIMINAL\tfalse\t3\n2013\tPROSTITUTION\ttrue\t1648\n2013\tOTHER OFFENSE\ttrue\t3399\n2013\tNON - CRIMINAL\tfalse\t3\n2013\tCRIMINAL DAMAGE\ttrue\t2106\n2013\tCRIMINAL TRESPASS\ttrue\t6075\n2013\tHUMAN TRAFFICKING\tfalse\t1\n2013\tWEAPONS VIOLATION\ttrue\t2665\n2013\tDECEPTIVE PRACTICE\ttrue\t2519\n2013\tCRIM SEXUAL ASSAULT\ttrue\t226\n2013\tMOTOR VEHICLE THEFT\ttrue\t833\n2013\tLIQUOR LAW VIOLATION\tfalse\t17\n2013\tPUBLIC PEACE VIOLATION\ttrue\t2330\n2013\tOTHER NARCOTIC VIOLATION\ttrue\t4\n2013\tOFFENSE INVOLVING CHILDREN\tfalse\t1946\n2013\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t78\n2014\tARSON\ttrue\t34\n2014\tTHEFT\ttrue\t7387\n2014\tASSAULT\ttrue\t4502\n2014\tBATTERY\ttrue\t12517\n2014\tROBBERY\ttrue\t1049\n2014\tBURGLARY\tfalse\t13673\n2014\tGAMBLING\ttrue\t392\n2014\tHOMICIDE\tfalse\t249\n2014\tSTALKING\ttrue\t28\n2014\tNARCOTICS\tfalse\t133\n2014\tOBSCENITY\tfalse\t9\n2014\tKIDNAPPING\ttrue\t18\n2014\tSEX OFFENSE\tfalse\t728\n2014\tINTIMIDATION\ttrue\t27\n2014\tPROSTITUTION\tfalse\t13\n2014\tOTHER OFFENSE\tfalse\t12816\n2014\tCRIMINAL DAMAGE\tfalse\t25703\n2014\tPUBLIC INDECENCY\ttrue\t10\n2014\tCRIMINAL TRESPASS\tfalse\t2050\n2014\tWEAPONS VIOLATION\tfalse\t534\n2014\tDECEPTIVE PRACTICE\tfalse\t13797\n2014\tCRIM SEXUAL ASSAULT\tfalse\t1151\n2014\tMOTOR VEHICLE THEFT\tfalse\t9149\n2014\tLIQUOR LAW VIOLATION\ttrue\t386\n2014\tPUBLIC PEACE VIOLATION\tfalse\t554\n2014\tOTHER NARCOTIC VIOLATION\tfalse\t2\n2014\tOFFENSE INVOLVING CHILDREN\ttrue\t430\n2014\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t1324\n2014\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2014\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t6\n2015\tARSON\tfalse\t402\n2015\tTHEFT\tfalse\t50573\n2015\tASSAULT\tfalse\t12984\n2015\tBATTERY\tfalse\t37361\n2015\tROBBERY\tfalse\t8719\n2015\tBURGLARY\ttrue\t712\n2015\tHOMICIDE\ttrue\t176\n2015\tSTALKING\tfalse\t123\n2015\tNARCOTICS\ttrue\t23841\n2015\tOBSCENITY\ttrue\t35\n2015\tKIDNAPPING\tfalse\t175\n2015\tSEX OFFENSE\ttrue\t224\n2015\tINTIMIDATION\tfalse\t101\n2015\tNON-CRIMINAL\tfalse\t12\n2015\tPROSTITUTION\ttrue\t1320\n2015\tOTHER OFFENSE\ttrue\t4794\n2015\tNON - CRIMINAL\tfalse\t16\n2015\tCRIMINAL DAMAGE\ttrue\t1835\n2015\tCRIMINAL TRESPASS\ttrue\t4396\n2015\tHUMAN TRAFFICKING\tfalse\t11\n2015\tWEAPONS VIOLATION\ttrue\t2678\n2015\tDECEPTIVE PRACTICE\ttrue\t1001\n2015\tCRIM SEXUAL ASSAULT\ttrue\t148\n2015\tMOTOR VEHICLE THEFT\ttrue\t997\n2015\tLIQUOR LAW VIOLATION\tfalse\t1\n2015\tPUBLIC PEACE VIOLATION\ttrue\t1881\n2015\tOTHER NARCOTIC VIOLATION\ttrue\t2\n2015\tOFFENSE INVOLVING CHILDREN\tfalse\t1903\n2015\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t55\n2015\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t1\n2016\tARSON\ttrue\t53\n2016\tTHEFT\ttrue\t6501\n2016\tASSAULT\ttrue\t3489\n2016\tBATTERY\ttrue\t10320\n2016\tROBBERY\ttrue\t975\n2016\tBURGLARY\tfalse\t13627\n2016\tGAMBLING\ttrue\t189\n2016\tHOMICIDE\tfalse\t548\n2016\tSTALKING\ttrue\t16\n2016\tNARCOTICS\tfalse\t9\n2016\tOBSCENITY\tfalse\t13\n2016\tKIDNAPPING\ttrue\t13\n2016\tSEX OFFENSE\tfalse\t798\n2016\tINTIMIDATION\ttrue\t25\n2016\tNON-CRIMINAL\ttrue\t2\n2016\tOTHER OFFENSE\tfalse\t13849\n2016\tNON - CRIMINAL\ttrue\t2\n2016\tCRIMINAL DAMAGE\tfalse\t29351\n2016\tPUBLIC INDECENCY\ttrue\t10\n2016\tCRIMINAL TRESPASS\tfalse\t2584\n2016\tHUMAN TRAFFICKING\ttrue\t1\n2016\tWEAPONS VIOLATION\tfalse\t943\n2016\tDECEPTIVE PRACTICE\tfalse\t17736\n2016\tCRIM SEXUAL ASSAULT\tfalse\t1399\n2016\tMOTOR VEHICLE THEFT\tfalse\t10206\n2016\tLIQUOR LAW VIOLATION\ttrue\t226\n2016\tPUBLIC PEACE VIOLATION\tfalse\t492\n2016\tOTHER NARCOTIC VIOLATION\tfalse\t1\n2016\tOFFENSE INVOLVING CHILDREN\ttrue\t295\n2016\tINTERFERENCE WITH PUBLIC OFFICER\ttrue\t887\n2016\tNON-CRIMINAL (SUBJECT SPECIFIED)\tfalse\t1\n2016\tCONCEALED CARRY LICENSE VIOLATION\ttrue\t34\n2017\tARSON\tfalse\t408\n2017\tTHEFT\tfalse\t57791\n2017\tASSAULT\tfalse\t15840\n2017\tBATTERY\tfalse\t39199\n2017\tROBBERY\tfalse\t10995\n2017\tBURGLARY\ttrue\t575\n2017\tHOMICIDE\ttrue\t137\n2017\tSTALKING\tfalse\t162\n2017\tNARCOTICS\ttrue\t11563\n2017\tOBSCENITY\ttrue\t71\n2017\tKIDNAPPING\tfalse\t175\n2017\tSEX OFFENSE\ttrue\t170\n2017\tINTIMIDATION\tfalse\t140\n2017\tNON-CRIMINAL\tfalse\t36\n2017\tPROSTITUTION\ttrue\t734\n2017\tOTHER OFFENSE\ttrue\t3711\n2017\tCRIMINAL DAMAGE\ttrue\t1732\n2017\tCRIMINAL TRESPASS\ttrue\t4014\n2017\tHUMAN TRAFFICKING\tfalse\t7\n2017\tWEAPONS VIOLATION\ttrue\t3668\n2017\tDECEPTIVE PRACTICE\ttrue\t759\n2017\tCRIM SEXUAL ASSAULT\ttrue\t83\n2017\tMOTOR VEHICLE THEFT\ttrue\t887\n2017\tPUBLIC PEACE VIOLATION\ttrue\t1021\n2017\tOTHER NARCOTIC VIOLATION\ttrue\t7\n2017\tOFFENSE INVOLVING CHILDREN\tfalse\t1933\n2017\tINTERFERENCE WITH PUBLIC OFFICER\tfalse\t57\n2017\tNON-CRIMINAL (SUBJECT SPECIFIED)\ttrue\t1\n2017\tCONCEALED CARRY LICENSE VIOLATION\tfalse\t3\n\u003cfont color\u003dred\u003eResults are limited by 1000.\u003c/font\u003e"
           }
         ]
       },
@@ -370,18 +499,18 @@
       "jobName": "paragraph_1524204557557_1816812773",
       "id": "20180419-230917_912028915",
       "dateCreated": "Apr 19, 2018 11:09:17 PM",
-      "dateStarted": "Apr 19, 2018 11:14:07 PM",
-      "dateFinished": "Apr 19, 2018 11:17:18 PM",
+      "dateStarted": "Apr 20, 2018 9:24:26 AM",
+      "dateFinished": "Apr 20, 2018 9:28:19 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### Analysis #2: Homicide Arrest Analysis",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:09:00 PM",
+      "dateUpdated": "Apr 20, 2018 10:58:58 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "markdown",
@@ -416,14 +545,14 @@
     {
       "text": "%pig.query\n\n--filter out homicide data and calculate the number of homicides by year and district\nhomicide_group_chicago \u003d FILTER data_chicago BY primary_type \u003d\u003d \u0027HOMICIDE\u0027;\nhomicide_grouping_chicago \u003d GROUP homicide_group_chicago BY (year, district);\nhomicide_year_dist_count_chicago \u003d FOREACH homicide_grouping_chicago GENERATE group.year, group.district, CONCAT(group.year, group.district) AS key, COUNT(homicide_group_chicago) as total_count;\n\n--filter out homicide data that led to an arrest and calculate the number of homicides that led to an arrest by year and district\nhomicide_arrest_group_chicago \u003d FILTER homicide_group_chicago BY arrest \u003d\u003d \u0027true\u0027;\nhomicide_arrest_grouping_chicago \u003d GROUP homicide_arrest_group_chicago BY (year, district);\nhomicide_arrest_year_dist_count_chicago \u003d FOREACH homicide_arrest_grouping_chicago GENERATE group.year, group.district, CONCAT(group.year, group.district) AS key, COUNT(homicide_arrest_group_chicago) as total_arrest_count;\n\n--join the 2 datasets\njoin_records_chicago \u003d JOIN homicide_year_dist_count_chicago BY key, homicide_arrest_year_dist_count_chicago BY key;\n\n--calculate the percentage\naggregation_chicago \u003d FOREACH join_records_chicago GENERATE homicide_year_dist_count_chicago::year AS year, homicide_year_dist_count_chicago::district AS district, (int)(((double)homicide_arrest_year_dist_count_chicago::total_arrest_count / (double)homicide_year_dist_count_chicago::total_count) * 100) AS percent;\n\n--sort the aggregated data by district\nsorted_aggregation_chicago \u003d ORDER aggregation_chicago BY district;\n\n--display the results\nFOREACH sorted_aggregation_chicago GENERATE year, district, percent;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:16:49 PM",
+      "dateUpdated": "Apr 20, 2018 10:59:12 AM",
       "config": {
         "colWidth": 6.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
-              "mode": "stackedAreaChart",
+              "mode": "lineChart",
               "height": 440.0,
               "optionOpen": false,
               "setting": {
@@ -486,10 +615,10 @@
     {
       "text": "%md\n\nIn the first chart, we look at the average percentage of arrests with respect to homicide cases over time and it looks like the percentage of arrests have decreased with respect to homicide cases over the years.\n\nNow let\u0027s look at the number of incidents to understand the trend over years and see if we can derive any insights out of that.",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:16:34 PM",
+      "dateUpdated": "Apr 20, 2018 10:59:03 AM",
       "config": {
         "colWidth": 6.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -532,15 +661,15 @@
     {
       "text": "%pig.query\n\nFOREACH join_records_chicago GENERATE homicide_year_dist_count_chicago::year AS year, homicide_year_dist_count_chicago::district AS district, (double)homicide_arrest_year_dist_count_chicago::total_arrest_count AS total_homicide_arrest_count,  (double)homicide_year_dist_count_chicago::total_count AS total_homicide_count;\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:16:50 PM",
+      "dateUpdated": "Apr 20, 2018 10:59:15 AM",
       "config": {
         "colWidth": 6.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
               "mode": "multiBarChart",
-              "height": 638.0,
+              "height": 300.0,
               "optionOpen": false,
               "setting": {
                 "multiBarChart": {}
@@ -581,23 +710,31 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "year\tdistrict\ttotal_homicide_arrest_count\ttotal_homicide_count\n2001\t001\t8.0\t11.0\n2001\t002\t20.0\t40.0\n2001\t003\t24.0\t36.0\n2001\t004\t37.0\t45.0\n2001\t005\t21.0\t36.0\n2001\t006\t29.0\t48.0\n2001\t007\t26.0\t45.0\n2001\t008\t13.0\t25.0\n2001\t009\t24.0\t48.0\n2001\t010\t33.0\t48.0\n2001\t011\t48.0\t72.0\n2001\t012\t23.0\t31.0\n2001\t014\t18.0\t31.0\n2001\t015\t21.0\t38.0\n2001\t016\t4.0\t5.0\n2001\t017\t4.0\t10.0\n2001\t018\t7.0\t9.0\n2001\t019\t13.0\t15.0\n2001\t020\t5.0\t7.0\n2001\t022\t11.0\t18.0\n2001\t024\t9.0\t11.0\n2001\t025\t25.0\t38.0\n2002\t001\t9.0\t12.0\n2002\t002\t13.0\t25.0\n2002\t003\t24.0\t37.0\n2002\t004\t29.0\t44.0\n2002\t005\t19.0\t32.0\n2002\t006\t27.0\t39.0\n2002\t007\t30.0\t63.0\n2002\t008\t19.0\t37.0\n2002\t009\t20.0\t40.0\n2002\t010\t26.0\t40.0\n2002\t011\t47.0\t70.0\n2002\t012\t24.0\t32.0\n2002\t014\t10.0\t21.0\n2002\t015\t31.0\t45.0\n2002\t016\t7.0\t7.0\n2002\t017\t7.0\t12.0\n2002\t018\t12.0\t13.0\n2002\t019\t14.0\t17.0\n2002\t020\t4.0\t6.0\n2002\t022\t7.0\t15.0\n2002\t024\t5.0\t10.0\n2002\t025\t31.0\t40.0\n2003\t001\t5.0\t7.0\n2003\t002\t9.0\t19.0\n2003\t003\t21.0\t33.0\n2003\t004\t24.0\t44.0\n2003\t005\t22.0\t45.0\n2003\t006\t15.0\t29.0\n2003\t007\t33.0\t51.0\n2003\t008\t20.0\t27.0\n2003\t009\t28.0\t46.0\n2003\t010\t23.0\t50.0\n2003\t011\t37.0\t57.0\n2003\t012\t22.0\t31.0\n2003\t014\t20.0\t31.0\n2003\t015\t19.0\t31.0\n2003\t016\t1.0\t1.0\n2003\t017\t10.0\t12.0\n2003\t018\t9.0\t12.0\n2003\t019\t9.0\t12.0\n2003\t020\t7.0\t8.0\n2003\t022\t15.0\t21.0\n2003\t024\t5.0\t8.0\n2003\t025\t17.0\t29.0\n2004\t001\t6.0\t6.0\n2004\t002\t23.0\t30.0\n2004\t003\t20.0\t31.0\n2004\t004\t15.0\t28.0\n2004\t005\t14.0\t22.0\n2004\t006\t22.0\t32.0\n2004\t007\t27.0\t46.0\n2004\t008\t15.0\t27.0\n2004\t009\t14.0\t24.0\n2004\t010\t16.0\t41.0\n2004\t011\t17.0\t27.0\n2004\t012\t13.0\t21.0\n2004\t014\t10.0\t17.0\n2004\t015\t12.0\t21.0\n2004\t016\t4.0\t4.0\n2004\t017\t8.0\t10.0\n2004\t018\t7.0\t8.0\n2004\t019\t5.0\t6.0\n2004\t020\t2.0\t2.0\n2004\t022\t11.0\t13.0\n2004\t024\t7.0\t9.0\n2004\t025\t18.0\t29.0\n2005\t001\t3.0\t5.0\n2005\t002\t13.0\t24.0\n2005\t003\t19.0\t35.0\n2005\t004\t13.0\t23.0\n2005\t005\t18.0\t32.0\n2005\t006\t16.0\t33.0\n2005\t007\t16.0\t37.0\n2005\t008\t22.0\t36.0\n2005\t009\t11.0\t25.0\n2005\t010\t21.0\t35.0\n2005\t011\t21.0\t34.0\n2005\t012\t7.0\t14.0\n2005\t014\t7.0\t12.0\n2005\t015\t16.0\t19.0\n2005\t017\t3.0\t4.0\n2005\t018\t13.0\t14.0\n2005\t019\t5.0\t7.0\n2005\t020\t6.0\t7.0\n2005\t022\t7.0\t10.0\n2005\t024\t7.0\t10.0\n2005\t025\t26.0\t36.0\n2006\t001\t8.0\t9.0\n2006\t002\t11.0\t16.0\n2006\t003\t19.0\t37.0\n2006\t004\t20.0\t37.0\n2006\t005\t20.0\t42.0\n2006\t006\t16.0\t34.0\n2006\t007\t15.0\t34.0\n2006\t008\t12.0\t25.0\n2006\t009\t20.0\t35.0\n2006\t010\t21.0\t37.0\n2006\t011\t20.0\t38.0\n2006\t012\t10.0\t23.0\n2006\t014\t6.0\t16.0\n2006\t015\t19.0\t25.0\n2006\t016\t4.0\t4.0\n2006\t017\t3.0\t3.0\n2006\t018\t5.0\t5.0\n2006\t019\t5.0\t5.0\n2006\t020\t1.0\t1.0\n2006\t022\t8.0\t18.0\n2006\t024\t1.0\t6.0\n2006\t025\t14.0\t27.0\n2007\t001\t4.0\t4.0\n2007\t002\t14.0\t19.0\n2007\t003\t14.0\t32.0\n2007\t004\t15.0\t29.0\n2007\t005\t16.0\t34.0\n2007\t006\t19.0\t38.0\n2007\t007\t22.0\t40.0\n2007\t008\t19.0\t29.0\n2007\t009\t15.0\t32.0\n2007\t010\t11.0\t27.0\n2007\t011\t22.0\t42.0\n2007\t012\t8.0\t16.0\n2007\t014\t5.0\t6.0\n2007\t015\t12.0\t23.0\n2007\t016\t4.0\t5.0\n2007\t017\t3.0\t5.0\n2007\t018\t2.0\t2.0\n2007\t019\t9.0\t13.0\n2007\t020\t1.0\t1.0\n2007\t022\t6.0\t17.0\n2007\t024\t9.0\t11.0\n2007\t025\t15.0\t22.0\n2008\t001\t3.0\t4.0\n2008\t002\t13.0\t24.0\n2008\t003\t21.0\t41.0\n2008\t004\t24.0\t44.0\n2008\t005\t12.0\t29.0\n2008\t006\t24.0\t40.0\n2008\t007\t28.0\t46.0\n2008\t008\t12.0\t36.0\n2008\t009\t14.0\t27.0\n2008\t010\t16.0\t39.0\n2008\t011\t21.0\t46.0\n2008\t012\t14.0\t19.0\n2008\t014\t5.0\t12.0\n2008\t015\t21.0\t30.0\n2008\t016\t3.0\t3.0\n2008\t017\t2.0\t5.0\n2008\t018\t2.0\t5.0\n2008\t019\t4.0\t6.0\n2008\t020\t1.0\t2.0\n2008\t022\t5.0\t17.0\n2008\t024\t6.0\t8.0\n2008\t025\t18.0\t30.0\n2009\t001\t3.0\t3.0\n2009\t002\t10.0\t22.0\n2009\t003\t12.0\t26.0\n2009\t004\t26.0\t41.0\n2009\t005\t14.0\t21.0\n2009\t006\t15.0\t35.0\n2009\t007\t17.0\t44.0\n2009\t008\t13.0\t32.0\n2009\t009\t9.0\t24.0\n2009\t010\t18.0\t30.0\n2009\t011\t28.0\t55.0\n2009\t012\t8.0\t20.0\n2009\t014\t8.0\t15.0\n2009\t015\t14.0\t29.0\n2009\t016\t2.0\t2.0\n2009\t017\t7.0\t13.0\n2009\t018\t1.0\t2.0\n2009\t019\t1.0\t3.0\n2009\t020\t1.0\t1.0\n2009\t022\t4.0\t19.0\n2009\t024\t1.0\t4.0\n2009\t025\t12.0\t19.0\n2010\t001\t1.0\t1.0\n2010\t002\t7.0\t21.0\n2010\t003\t15.0\t28.0\n2010\t004\t14.0\t32.0\n2010\t005\t14.0\t29.0\n2010\t006\t13.0\t40.0\n2010\t007\t12.0\t40.0\n2010\t008\t18.0\t36.0\n2010\t009\t15.0\t29.0\n2010\t010\t12.0\t30.0\n2010\t011\t20.0\t50.0\n2010\t012\t8.0\t15.0\n2010\t014\t2.0\t3.0\n2010\t015\t9.0\t18.0\n2010\t016\t2.0\t5.0\n2010\t017\t5.0\t6.0\n2010\t019\t1.0\t5.0\n2010\t020\t1.0\t2.0\n2010\t022\t13.0\t23.0\n2010\t024\t4.0\t7.0\n2010\t025\t9.0\t16.0\n2011\t002\t10.0\t20.0\n2011\t003\t11.0\t36.0\n2011\t004\t7.0\t19.0\n2011\t005\t17.0\t27.0\n2011\t006\t16.0\t36.0\n2011\t007\t22.0\t60.0\n2011\t008\t7.0\t28.0\n2011\t009\t7.0\t31.0\n2011\t010\t13.0\t30.0\n2011\t011\t19.0\t44.0\n2011\t012\t9.0\t15.0\n2011\t014\t4.0\t6.0\n2011\t015\t5.0\t19.0\n2011\t016\t3.0\t3.0\n2011\t017\t5.0\t8.0\n2011\t018\t2.0\t3.0\n2011\t019\t4.0\t8.0\n2011\t020\t4.0\t5.0\n2011\t022\t5.0\t16.0\n2011\t024\t2.0\t4.0\n2011\t025\t10.0\t18.0\n2012\t001\t1.0\t1.0\n2012\t002\t11.0\t26.0\n2012\t003\t13.0\t40.0\n2012\t004\t22.0\t40.0\n2012\t005\t9.0\t33.0\n2012\t006\t11.0\t42.0\n2012\t007\t12.0\t40.0\n2012\t008\t10.0\t38.0\n2012\t009\t14.0\t41.0\n2012\t010\t24.0\t35.0\n2012\t011\t16.0\t38.0\n2012\t012\t7.0\t17.0\n2012\t014\t4.0\t9.0\n2012\t015\t13.0\t26.0\n2012\t016\t4.0\t7.0\n2012\t017\t4.0\t8.0\n2012\t018\t3.0\t5.0\n2012\t019\t3.0\t6.0\n2012\t020\t4.0\t5.0\n2012\t022\t5.0\t13.0\n2012\t024\t10.0\t15.0\n2012\t025\t13.0\t20.0\n2013\t001\t1.0\t2.0\n2013\t002\t12.0\t16.0\n2013\t003\t16.0\t34.0\n2013\t004\t14.0\t33.0\n2013\t005\t10.0\t32.0\n2013\t006\t16.0\t36.0\n2013\t007\t18.0\t45.0\n2013\t008\t10.0\t23.0\n2013\t009\t10.0\t24.0\n2013\t010\t13.0\t27.0\n2013\t011\t13.0\t36.0\n2013\t012\t3.0\t12.0\n2013\t014\t4.0\t13.0\n2013\t015\t12.0\t26.0\n2013\t016\t3.0\t4.0\n2013\t017\t3.0\t7.0\n2013\t018\t4.0\t5.0\n2013\t019\t2.0\t2.0\n2013\t020\t3.0\t3.0\n2013\t022\t6.0\t20.0\n2013\t024\t3.0\t6.0\n2013\t025\t5.0\t16.0\n2014\t001\t1.0\t1.0\n2014\t002\t12.0\t17.0\n2014\t003\t12.0\t18.0\n2014\t004\t16.0\t33.0\n2014\t005\t5.0\t20.0\n2014\t006\t11.0\t32.0\n2014\t007\t15.0\t49.0\n2014\t008\t19.0\t32.0\n2014\t009\t11.0\t26.0\n2014\t010\t8.0\t24.0\n2014\t011\t18.0\t53.0\n2014\t012\t4.0\t10.0\n2014\t014\t2.0\t5.0\n2014\t015\t16.0\t32.0\n2014\t016\t7.0\t8.0\n2014\t017\t1.0\t3.0\n2014\t018\t4.0\t5.0\n2014\t019\t1.0\t6.0\n2014\t020\t1.0\t3.0\n2014\t022\t4.0\t16.0\n2014\t024\t3.0\t10.0\n2014\t025\t6.0\t23.0\n2015\t001\t3.0\t5.0\n2015\t002\t7.0\t23.0\n2015\t003\t11.0\t25.0\n2015\t004\t7.0\t30.0\n2015\t005\t14.0\t30.0\n2015\t006\t8.0\t41.0\n2015\t007\t14.0\t40.0\n2015\t008\t12.0\t31.0\n2015\t009\t11.0\t32.0\n2015\t010\t9.0\t30.0\n2015\t011\t15.0\t49.0\n2015\t012\t6.0\t19.0\n2015\t014\t7.0\t12.0\n2015\t015\t8.0\t32.0\n2015\t016\t4.0\t5.0\n2015\t017\t6.0\t13.0\n2015\t018\t1.0\t1.0\n2015\t019\t4.0\t9.0\n2015\t020\t4.0\t7.0\n2015\t022\t10.0\t22.0\n2015\t024\t5.0\t10.0\n2015\t025\t10.0\t33.0\n2016\t001\t8.0\t9.0\n2016\t002\t15.0\t30.0\n2016\t003\t14.0\t40.0\n2016\t004\t12.0\t41.0\n2016\t005\t16.0\t44.0\n2016\t006\t9.0\t58.0\n2016\t007\t22.0\t86.0\n2016\t008\t21.0\t59.0\n2016\t009\t25.0\t66.0\n2016\t010\t9.0\t49.0\n2016\t011\t20.0\t94.0\n2016\t012\t8.0\t28.0\n2016\t014\t3.0\t10.0\n2016\t015\t15.0\t60.0\n2016\t016\t4.0\t4.0\n2016\t017\t6.0\t11.0\n2016\t018\t2.0\t5.0\n2016\t019\t2.0\t8.0\n2016\t022\t5.0\t25.0\n2016\t024\t5.0\t12.0\n2016\t025\t11.0\t38.0\n2017\t001\t3.0\t4.0\n2017\t002\t5.0\t28.0\n2017\t003\t13.0\t52.0\n2017\t004\t10.0\t51.0\n2017\t005\t6.0\t47.0\n2017\t006\t5.0\t49.0\n2017\t007\t11.0\t49.0\n2017\t008\t6.0\t44.0\n2017\t009\t14.0\t53.0\n2017\t010\t13.0\t47.0\n2017\t011\t6.0\t72.0\n2017\t012\t6.0\t26.0\n2017\t014\t4.0\t7.0\n2017\t015\t6.0\t54.0\n2017\t016\t2.0\t4.0\n2017\t018\t3.0\t6.0\n2017\t019\t2.0\t5.0\n2017\t022\t7.0\t26.0\n2017\t024\t2.0\t7.0\n2017\t025\t13.0\t34.0\n2018\t001\t1.0\t1.0\n2018\t002\t1.0\t3.0\n2018\t003\t1.0\t6.0\n2018\t005\t1.0\t11.0\n2018\t006\t1.0\t10.0\n2018\t007\t1.0\t9.0\n2018\t008\t3.0\t6.0\n2018\t010\t2.0\t9.0\n2018\t014\t1.0\t3.0\n2018\t018\t1.0\t1.0\n2018\t019\t2.0\t3.0\n2018\t024\t1.0\t1.0\n2018\t025\t2.0\t6.0\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1524200675183_-547451653",
       "id": "20180419-220435_1796804187",
       "dateCreated": "Apr 19, 2018 10:04:35 PM",
       "dateStarted": "Apr 19, 2018 11:16:43 PM",
-      "dateFinished": "Apr 19, 2018 10:13:09 PM",
-      "status": "RUNNING",
-      "errorMessage": "",
+      "dateFinished": "Apr 19, 2018 11:20:17 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nLooking at the below bar chart, the number of homicide cases show a high trend over the last couple of years. Probably the length of the cases for arrests matter. ",
+      "text": "%md\n\nLooking at the bar chart, the number of homicide cases show a high trend over the last couple of years. Probably the length of the cases for arrests matter.\n\nWe cannot say for sure as we do not have further data to analyze with respect to cycle time for each of these cases.",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 10:19:47 PM",
+      "dateUpdated": "Apr 20, 2018 10:59:21 AM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "markdown",
@@ -616,7 +753,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLooking at the below bar chart, the number of homicide cases show a high trend over the last couple of years. Probably the length of the cases for arrests matter.\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLooking at the bar chart, the number of homicide cases show a high trend over the last couple of years. Probably the length of the cases for arrests matter.\u003c/p\u003e\n\u003cp\u003eWe cannot say for sure as we do not have further data to analyze with respect to cycle time for each of these cases.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -624,84 +761,19 @@
       "jobName": "paragraph_1524201089053_-556471088",
       "id": "20180419-221129_1229281724",
       "dateCreated": "Apr 19, 2018 10:11:29 PM",
-      "dateStarted": "Apr 19, 2018 10:18:43 PM",
-      "dateFinished": "Apr 19, 2018 10:18:43 PM",
+      "dateStarted": "Apr 19, 2018 11:21:52 PM",
+      "dateFinished": "Apr 19, 2018 11:21:52 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md \n\n### Number of thefts by month (all years combined)",
-      "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 10:07:51 PM",
-      "config": {
-        "colWidth": 12.0,
-        "enabled": true,
-        "results": {
-          "0": {
-            "graph": {
-              "mode": "table",
-              "height": 300.0,
-              "optionOpen": true,
-              "setting": {
-                "multiBarChart": {}
-              },
-              "commonSetting": {},
-              "keys": [
-                {
-                  "name": "year",
-                  "index": 0.0,
-                  "aggr": "sum"
-                }
-              ],
-              "groups": [],
-              "values": [
-                {
-                  "name": "percent",
-                  "index": 2.0,
-                  "aggr": "avg"
-                }
-              ]
-            },
-            "helium": {}
-          }
-        },
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eNumber of thefts by month (all years combined)\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1524182001752_-1601395053",
-      "id": "20180419-165321_1702297729",
-      "dateCreated": "Apr 19, 2018 4:53:21 PM",
-      "dateStarted": "Apr 19, 2018 10:06:08 PM",
-      "dateFinished": "Apr 19, 2018 10:06:08 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
+      "title": "Number of thefts by month (all years combined)",
       "text": "%pig.query\n\n--filter out theft records that have led to an arrest\ntheft_data_chicago \u003d FILTER data_chicago BY (INDEXOF(UPPER(primary_type), \u0027THEFT\u0027, 0) \u003e -1) AND (arrest \u003d\u003d \u0027true\u0027);\n\n--select month and primary type\ntheft_data_projection_chicago \u003d FOREACH theft_data_chicago GENERATE GetMonth(ToDate(date, \u0027MM/dd/yyyy hh:mm:ss a\u0027, \u0027America/Los_Angeles\u0027)) AS month, primary_type;\n\n--group by month and primary type\ntheft_grouped_chicago \u003d GROUP theft_data_projection_chicago BY (month, primary_type);\n\n--perform aggregation\nFOREACH theft_grouped_chicago GENERATE group.month, group.primary_type, COUNT(theft_data_projection_chicago) as theft_count;",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 10:04:02 PM",
+      "dateUpdated": "Apr 20, 2018 10:59:25 AM",
       "config": {
-        "colWidth": 6.0,
-        "enabled": true,
+        "colWidth": 12.0,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -744,7 +816,8 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/pig",
-        "editorHide": false
+        "editorHide": true,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -769,39 +842,61 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pig.query\n",
+      "text": "%md\n\n### Thank you for going through this analysis!!\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 10:04:32 PM",
-      "config": {},
+      "dateUpdated": "Apr 20, 2018 10:59:31 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "apps": [],
-      "jobName": "paragraph_1524200672281_-1193060307",
-      "id": "20180419-220432_1342087769",
-      "dateCreated": "Apr 19, 2018 10:04:32 PM",
-      "status": "READY",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%pig.query\n",
-      "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 5:43:16 PM",
-      "config": {},
-      "settings": {
-        "params": {},
-        "forms": {}
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eThank you for going through this analysis!!\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
       },
       "apps": [],
       "jobName": "paragraph_1524184996268_-750300434",
       "id": "20180419-174316_1946352062",
       "dateCreated": "Apr 19, 2018 5:43:16 PM",
+      "dateStarted": "Apr 20, 2018 10:56:40 AM",
+      "dateFinished": "Apr 20, 2018 10:56:40 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 10:56:39 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1524246999894_1803988393",
+      "id": "20180420-105639_1340530419",
+      "dateCreated": "Apr 20, 2018 10:56:39 AM",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Projects/Chicago-Crime-Data-Analysis",
+  "name": "Projects/Apache-Pig/Chicago-Crime-Data-Analysis",
   "id": "2DBC1PVPW",
   "angularObjects": {
     "2DDC41UQ3:shared_process": [],
