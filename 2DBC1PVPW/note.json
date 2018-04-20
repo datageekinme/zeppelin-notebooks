@@ -359,7 +359,7 @@
       "title": "Comparison of Arrest to Non-Arrest Incidents",
       "text": "%pig.query\n\ndata_chicago_group \u003d GROUP data_chicago BY (year, primary_type, arrest);\nFOREACH data_chicago_group GENERATE group.year, group.primary_type, group.arrest, COUNT(data_chicago) AS total_count;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:49 AM",
+      "dateUpdated": "Apr 20, 2018 11:26:45 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -405,7 +405,7 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/pig",
-        "editorHide": true,
+        "editorHide": false,
         "title": true
       },
       "settings": {
@@ -517,7 +517,7 @@
     {
       "text": "%pig.query\n\n--filter out homicide data and calculate the number of homicides by year and district\nhomicide_group_chicago \u003d FILTER data_chicago BY primary_type \u003d\u003d \u0027HOMICIDE\u0027;\nhomicide_grouping_chicago \u003d GROUP homicide_group_chicago BY (year, district);\nhomicide_year_dist_count_chicago \u003d FOREACH homicide_grouping_chicago GENERATE group.year, group.district, CONCAT(group.year, group.district) AS key, COUNT(homicide_group_chicago) as total_count;\n\n--filter out homicide data that led to an arrest and calculate the number of homicides that led to an arrest by year and district\nhomicide_arrest_group_chicago \u003d FILTER homicide_group_chicago BY arrest \u003d\u003d \u0027true\u0027;\nhomicide_arrest_grouping_chicago \u003d GROUP homicide_arrest_group_chicago BY (year, district);\nhomicide_arrest_year_dist_count_chicago \u003d FOREACH homicide_arrest_grouping_chicago GENERATE group.year, group.district, CONCAT(group.year, group.district) AS key, COUNT(homicide_arrest_group_chicago) as total_arrest_count;\n\n--join the 2 datasets\njoin_records_chicago \u003d JOIN homicide_year_dist_count_chicago BY key, homicide_arrest_year_dist_count_chicago BY key;\n\n--calculate the percentage\naggregation_chicago \u003d FOREACH join_records_chicago GENERATE homicide_year_dist_count_chicago::year AS year, homicide_year_dist_count_chicago::district AS district, (int)(((double)homicide_arrest_year_dist_count_chicago::total_arrest_count / (double)homicide_year_dist_count_chicago::total_count) * 100) AS percent;\n\n--sort the aggregated data by district\nsorted_aggregation_chicago \u003d ORDER aggregation_chicago BY district;\n\n--display the results\nFOREACH sorted_aggregation_chicago GENERATE year, district, percent;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:12 AM",
+      "dateUpdated": "Apr 20, 2018 11:26:09 AM",
       "config": {
         "colWidth": 6.0,
         "enabled": false,
@@ -560,7 +560,7 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/pig",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -587,7 +587,7 @@
     {
       "text": "%pig.query\n\nFOREACH join_records_chicago GENERATE homicide_year_dist_count_chicago::year AS year, homicide_year_dist_count_chicago::district AS district, (double)homicide_arrest_year_dist_count_chicago::total_arrest_count AS total_homicide_arrest_count,  (double)homicide_year_dist_count_chicago::total_count AS total_homicide_count;\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 11:24:51 AM",
+      "dateUpdated": "Apr 20, 2018 11:26:39 AM",
       "config": {
         "colWidth": 6.0,
         "enabled": false,
@@ -595,7 +595,7 @@
           "0": {
             "graph": {
               "mode": "multiBarChart",
-              "height": 438.0,
+              "height": 574.0,
               "optionOpen": false,
               "setting": {
                 "multiBarChart": {}
@@ -630,7 +630,7 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/pig",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -657,9 +657,9 @@
     {
       "text": "%md\n\nLooking at the bar chart, the number of homicide cases show a high trend over the last couple of years. Probably the length of the cases for arrests matter.\n\nWe cannot say for sure as we do not have further data to analyze with respect to cycle time for each of these cases.",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:21 AM",
+      "dateUpdated": "Apr 20, 2018 11:26:30 AM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "enabled": false,
         "results": {},
         "editorSetting": {
@@ -734,7 +734,7 @@
       "title": "Number of thefts by month (all years combined)",
       "text": "%pig.query\n\n--filter out theft records that have led to an arrest\ntheft_data_chicago \u003d FILTER data_chicago BY (INDEXOF(UPPER(primary_type), \u0027THEFT\u0027, 0) \u003e -1) AND (arrest \u003d\u003d \u0027true\u0027);\n\n--select month and primary type\ntheft_data_projection_chicago \u003d FOREACH theft_data_chicago GENERATE GetMonth(ToDate(date, \u0027MM/dd/yyyy hh:mm:ss a\u0027, \u0027America/Los_Angeles\u0027)) AS month, primary_type;\n\n--group by month and primary type\ntheft_grouped_chicago \u003d GROUP theft_data_projection_chicago BY (month, primary_type);\n\n--perform aggregation\nFOREACH theft_grouped_chicago GENERATE group.month, group.primary_type, COUNT(theft_data_projection_chicago) as theft_count;",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:25 AM",
+      "dateUpdated": "Apr 20, 2018 11:26:05 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -780,7 +780,7 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/pig",
-        "editorHide": true,
+        "editorHide": false,
         "title": true
       },
       "settings": {
