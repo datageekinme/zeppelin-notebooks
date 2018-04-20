@@ -39,47 +39,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n### Dataset download:\n-----------------------------------\n",
+      "text": "%sh\n\n# steps to download the dataset\n# create the local download directory if does not exist\nmkdir -p ~/data-downloads\nrm ~/data-downloads/*.csv\n\n# create the required HDFS directory\nhdfs dfs -mkdir -p /user/cloudera/data/raw/crime/chicago\n\n# download the data from Chicago city data website\nwget -O ~/data-downloads/crime_chicago.csv https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType\u003dDOWNLOAD \n\n# copy the file to HDFS\nhdfs dfs -put -f ~/data-downloads/crime_chicago.csv /user/cloudera/data/raw/crime/chicago/\n\n# delete local data files\nrm ~/data-downloads/*.csv",
       "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:04:18 PM",
-      "config": {
-        "colWidth": 12.0,
-        "enabled": false,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eDataset download:\u003c/h3\u003e\n\u003chr/\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1524179049342_1205891098",
-      "id": "20180419-160409_704267340",
-      "dateCreated": "Apr 19, 2018 4:04:09 PM",
-      "dateStarted": "Apr 19, 2018 6:09:23 PM",
-      "dateFinished": "Apr 19, 2018 6:09:23 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%sh\n\n# create the local download directory if does not exist\nmkdir -p ~/data-downloads\nrm ~/data-downloads/*.csv\n\n# create the required HDFS directory\nhdfs dfs -mkdir -p /user/cloudera/data/raw/crime/chicago\n\n# download the data from Chicago city data website\nwget -O ~/data-downloads/crime_chicago.csv https://data.cityofchicago.org/api/views/ijzp-q8t2/rows.csv?accessType\u003dDOWNLOAD \n\n# copy the file to HDFS\nhdfs dfs -put -f ~/data-downloads/crime_chicago.csv /user/cloudera/data/raw/crime/chicago/\n\n# delete local data files\nrm ~/data-downloads/*.csv",
-      "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 5:52:27 PM",
+      "dateUpdated": "Apr 20, 2018 11:07:37 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -89,7 +51,8 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/sh",
-        "tableHide": true
+        "tableHide": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -122,47 +85,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n### Preparing the dataset for analysis:\n---------------------------------------\n",
+      "text": "%sh\n\n# steps to prepare the dataset for analysis\n# download the piggybank jar from maven repository\ncd ~/data-downloads/\nwget http://central.maven.org/maven2/org/apache/pig/piggybank/0.17.0/piggybank-0.17.0.jar\n\n# upload the piggybank jar to the HDFS jars directory\nhdfs dfs -put -f ~/data-downloads/piggybank-0.17.0.jar /user/cloudera/jars/\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 11:00:22 AM",
-      "config": {
-        "colWidth": 12.0,
-        "enabled": false,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ePreparing the dataset for analysis:\u003c/h3\u003e\n\u003chr/\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1524204158554_117562415",
-      "id": "20180419-230238_113347075",
-      "dateCreated": "Apr 19, 2018 11:02:38 PM",
-      "dateStarted": "Apr 19, 2018 11:03:19 PM",
-      "dateFinished": "Apr 19, 2018 11:03:19 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%sh\n\n# download the piggybank jar from maven repository\ncd ~/data-downloads/\nwget http://central.maven.org/maven2/org/apache/pig/piggybank/0.17.0/piggybank-0.17.0.jar\n\n# upload the piggybank jar to the HDFS jars directory\nhdfs dfs -put -f ~/data-downloads/piggybank-0.17.0.jar /user/cloudera/jars/\n",
-      "user": "anonymous",
-      "dateUpdated": "Apr 19, 2018 11:20:03 PM",
+      "dateUpdated": "Apr 20, 2018 11:07:56 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -200,7 +125,7 @@
     {
       "text": "%sh\n\n# delete staging area\nhdfs dfs -rm -r -skipTrash /user/cloudera/data/staging/crime/chicago",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 11:00:15 AM",
+      "dateUpdated": "Apr 20, 2018 11:07:01 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -210,7 +135,8 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/sh",
-        "tableHide": true
+        "tableHide": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -268,7 +194,7 @@
     {
       "text": "%md\n\n### Analysis #1: Overview",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 11:00:03 AM",
+      "dateUpdated": "Apr 20, 2018 11:08:14 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -298,8 +224,8 @@
       "jobName": "paragraph_1524187016073_1773931998",
       "id": "20180419-181656_905100727",
       "dateCreated": "Apr 19, 2018 6:16:56 PM",
-      "dateStarted": "Apr 20, 2018 10:55:06 AM",
-      "dateFinished": "Apr 20, 2018 10:55:06 AM",
+      "dateStarted": "Apr 20, 2018 11:08:11 AM",
+      "dateFinished": "Apr 20, 2018 11:08:11 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -378,7 +304,7 @@
       "title": "Top N Primary Cause of Incidents ",
       "text": "%pig.query\n\ndata_chicago_group3 \u003d GROUP data_chicago BY (primary_type);\ngrouped_data_primry_type \u003d FOREACH data_chicago_group3 GENERATE group AS primary_type, COUNT(data_chicago) AS total_count;\nsorted_data_primry_type \u003d ORDER grouped_data_primry_type BY total_count DESC;\nLIMIT sorted_data_primry_type ${top_n\u003d5};\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:54 AM",
+      "dateUpdated": "Apr 20, 2018 11:02:12 AM",
       "config": {
         "colWidth": 6.0,
         "enabled": false,
@@ -401,7 +327,7 @@
       },
       "settings": {
         "params": {
-          "top_n": "5"
+          "top_n": "4"
         },
         "forms": {
           "top_n": {
@@ -507,7 +433,7 @@
     {
       "text": "%md\n\n### Analysis #2: Homicide Arrest Analysis",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:58:58 AM",
+      "dateUpdated": "Apr 20, 2018 11:08:39 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -537,8 +463,8 @@
       "jobName": "paragraph_1524204524340_1810610818",
       "id": "20180419-230844_636514897",
       "dateCreated": "Apr 19, 2018 11:08:44 PM",
-      "dateStarted": "Apr 19, 2018 11:09:00 PM",
-      "dateFinished": "Apr 19, 2018 11:09:00 PM",
+      "dateStarted": "Apr 20, 2018 11:08:36 AM",
+      "dateFinished": "Apr 20, 2018 11:08:36 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -763,6 +689,44 @@
       "dateCreated": "Apr 19, 2018 10:11:29 PM",
       "dateStarted": "Apr 19, 2018 11:21:52 PM",
       "dateFinished": "Apr 19, 2018 11:21:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Analysis #3: Theft Analysis",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 11:09:10 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eAnalysis #3: Theft Analysis\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524247703854_-1658387217",
+      "id": "20180420-110823_841659715",
+      "dateCreated": "Apr 20, 2018 11:08:23 AM",
+      "dateStarted": "Apr 20, 2018 11:09:00 AM",
+      "dateFinished": "Apr 20, 2018 11:09:00 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
