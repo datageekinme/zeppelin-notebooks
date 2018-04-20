@@ -233,7 +233,7 @@
       "title": "Number of Incidents across the years",
       "text": "%pig.query\n\ndata_chicago_group2 \u003d GROUP data_chicago BY (year);\nFOREACH data_chicago_group2 GENERATE group, COUNT(data_chicago) AS total_count;",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:57 AM",
+      "dateUpdated": "Apr 20, 2018 11:24:26 AM",
       "config": {
         "colWidth": 6.0,
         "enabled": false,
@@ -241,7 +241,7 @@
           "0": {
             "graph": {
               "mode": "lineChart",
-              "height": 300.0,
+              "height": 338.0,
               "optionOpen": false,
               "setting": {
                 "lineChart": {
@@ -275,7 +275,7 @@
           "editOnDblClick": false
         },
         "editorMode": "ace/mode/pig",
-        "editorHide": true,
+        "editorHide": false,
         "title": true
       },
       "settings": {
@@ -304,7 +304,7 @@
       "title": "Top N Primary Cause of Incidents ",
       "text": "%pig.query\n\ndata_chicago_group3 \u003d GROUP data_chicago BY (primary_type);\ngrouped_data_primry_type \u003d FOREACH data_chicago_group3 GENERATE group AS primary_type, COUNT(data_chicago) AS total_count;\nsorted_data_primry_type \u003d ORDER grouped_data_primry_type BY total_count DESC;\nLIMIT sorted_data_primry_type ${top_n\u003d5};\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 11:02:12 AM",
+      "dateUpdated": "Apr 20, 2018 11:23:55 AM",
       "config": {
         "colWidth": 6.0,
         "enabled": false,
@@ -323,11 +323,11 @@
         },
         "editorMode": "ace/mode/pig",
         "title": true,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {
-          "top_n": "4"
+          "top_n": "5"
         },
         "forms": {
           "top_n": {
@@ -469,6 +469,52 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n\nIn the first chart, we look at the average percentage of arrests with respect to homicide cases over time and it looks like the percentage of arrests have decreased with respect to homicide cases over the years.\n\nNow let\u0027s look at the number of incidents to understand the trend over years and see if we can derive any insights out of that.",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 11:24:41 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn the first chart, we look at the average percentage of arrests with respect to homicide cases over time and it looks like the percentage of arrests have decreased with respect to homicide cases over the years.\u003c/p\u003e\n\u003cp\u003eNow let\u0026rsquo;s look at the number of incidents to understand the trend over years and see if we can derive any insights out of that.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524201433413_-1795304538",
+      "id": "20180419-221713_716364659",
+      "dateCreated": "Apr 19, 2018 10:17:13 PM",
+      "dateStarted": "Apr 19, 2018 11:16:34 PM",
+      "dateFinished": "Apr 19, 2018 11:16:35 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%pig.query\n\n--filter out homicide data and calculate the number of homicides by year and district\nhomicide_group_chicago \u003d FILTER data_chicago BY primary_type \u003d\u003d \u0027HOMICIDE\u0027;\nhomicide_grouping_chicago \u003d GROUP homicide_group_chicago BY (year, district);\nhomicide_year_dist_count_chicago \u003d FOREACH homicide_grouping_chicago GENERATE group.year, group.district, CONCAT(group.year, group.district) AS key, COUNT(homicide_group_chicago) as total_count;\n\n--filter out homicide data that led to an arrest and calculate the number of homicides that led to an arrest by year and district\nhomicide_arrest_group_chicago \u003d FILTER homicide_group_chicago BY arrest \u003d\u003d \u0027true\u0027;\nhomicide_arrest_grouping_chicago \u003d GROUP homicide_arrest_group_chicago BY (year, district);\nhomicide_arrest_year_dist_count_chicago \u003d FOREACH homicide_arrest_grouping_chicago GENERATE group.year, group.district, CONCAT(group.year, group.district) AS key, COUNT(homicide_arrest_group_chicago) as total_arrest_count;\n\n--join the 2 datasets\njoin_records_chicago \u003d JOIN homicide_year_dist_count_chicago BY key, homicide_arrest_year_dist_count_chicago BY key;\n\n--calculate the percentage\naggregation_chicago \u003d FOREACH join_records_chicago GENERATE homicide_year_dist_count_chicago::year AS year, homicide_year_dist_count_chicago::district AS district, (int)(((double)homicide_arrest_year_dist_count_chicago::total_arrest_count / (double)homicide_year_dist_count_chicago::total_count) * 100) AS percent;\n\n--sort the aggregated data by district\nsorted_aggregation_chicago \u003d ORDER aggregation_chicago BY district;\n\n--display the results\nFOREACH sorted_aggregation_chicago GENERATE year, district, percent;\n",
       "user": "anonymous",
       "dateUpdated": "Apr 20, 2018 10:59:12 AM",
@@ -539,55 +585,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nIn the first chart, we look at the average percentage of arrests with respect to homicide cases over time and it looks like the percentage of arrests have decreased with respect to homicide cases over the years.\n\nNow let\u0027s look at the number of incidents to understand the trend over years and see if we can derive any insights out of that.",
-      "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:03 AM",
-      "config": {
-        "colWidth": 6.0,
-        "enabled": false,
-        "results": {
-          "0": {
-            "graph": {
-              "mode": "table",
-              "height": 84.0,
-              "optionOpen": false
-            }
-          }
-        },
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn the first chart, we look at the average percentage of arrests with respect to homicide cases over time and it looks like the percentage of arrests have decreased with respect to homicide cases over the years.\u003c/p\u003e\n\u003cp\u003eNow let\u0026rsquo;s look at the number of incidents to understand the trend over years and see if we can derive any insights out of that.\u003c/p\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1524201433413_-1795304538",
-      "id": "20180419-221713_716364659",
-      "dateCreated": "Apr 19, 2018 10:17:13 PM",
-      "dateStarted": "Apr 19, 2018 11:16:34 PM",
-      "dateFinished": "Apr 19, 2018 11:16:35 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "text": "%pig.query\n\nFOREACH join_records_chicago GENERATE homicide_year_dist_count_chicago::year AS year, homicide_year_dist_count_chicago::district AS district, (double)homicide_arrest_year_dist_count_chicago::total_arrest_count AS total_homicide_arrest_count,  (double)homicide_year_dist_count_chicago::total_count AS total_homicide_count;\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 10:59:15 AM",
+      "dateUpdated": "Apr 20, 2018 11:24:51 AM",
       "config": {
         "colWidth": 6.0,
         "enabled": false,
@@ -595,7 +595,7 @@
           "0": {
             "graph": {
               "mode": "multiBarChart",
-              "height": 300.0,
+              "height": 438.0,
               "optionOpen": false,
               "setting": {
                 "multiBarChart": {}
