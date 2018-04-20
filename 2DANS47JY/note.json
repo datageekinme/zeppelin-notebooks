@@ -1,0 +1,693 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# Retail Data Analysis",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eRetail Data Analysis\u003c/h1\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524261344314_-1608972812",
+      "id": "20180420-145544_365447422",
+      "dateCreated": "Apr 20, 2018 2:55:44 PM",
+      "dateStarted": "Apr 20, 2018 4:55:49 PM",
+      "dateFinished": "Apr 20, 2018 4:55:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Understanding the Data",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eUnderstanding the Data\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524262802737_-1974817587",
+      "id": "20180420-152002_1196508411",
+      "dateCreated": "Apr 20, 2018 3:20:02 PM",
+      "dateStarted": "Apr 20, 2018 4:55:49 PM",
+      "dateFinished": "Apr 20, 2018 4:55:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Schema",
+      "text": "%mysql\n\ndescribe ${TableName\u003dcategories,departments|categories|products|customers|orders|order_items};",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:56:07 PM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 314.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "runOnSelectionChange": true,
+        "title": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {
+          "TableName": "products"
+        },
+        "forms": {
+          "TableName": {
+            "name": "TableName",
+            "defaultValue": "categories",
+            "options": [
+              {
+                "value": "departments"
+              },
+              {
+                "value": "categories"
+              },
+              {
+                "value": "products"
+              },
+              {
+                "value": "customers"
+              },
+              {
+                "value": "orders"
+              },
+              {
+                "value": "order_items"
+              }
+            ],
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "COLUMN_NAME\tCOLUMN_TYPE\tIS_NULLABLE\tCOLUMN_KEY\tCOLUMN_DEFAULT\tEXTRA\nproduct_id\tint(11)\tNO\tPRI\tnull\tauto_increment\nproduct_category_id\tint(11)\tNO\t\tnull\t\nproduct_name\tvarchar(45)\tNO\t\tnull\t\nproduct_description\tvarchar(255)\tNO\t\tnull\t\nproduct_price\tfloat\tNO\t\tnull\t\nproduct_image\tvarchar(255)\tNO\t\tnull\t\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524261646319_584337292",
+      "id": "20180420-150046_161217483",
+      "dateCreated": "Apr 20, 2018 3:00:46 PM",
+      "dateStarted": "Apr 20, 2018 4:56:08 PM",
+      "dateFinished": "Apr 20, 2018 4:56:08 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Sample Data",
+      "text": "%mysql\n\nselect * from  ${TableName\u003dcategories,departments|categories|products|customers|orders|order_items} limit ${SampleSize\u003d10};\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:56:25 PM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true,
+        "runOnSelectionChange": true
+      },
+      "settings": {
+        "params": {
+          "TableName": "customers",
+          "SampleSize": "100"
+        },
+        "forms": {
+          "TableName": {
+            "name": "TableName",
+            "defaultValue": "categories",
+            "options": [
+              {
+                "value": "departments"
+              },
+              {
+                "value": "categories"
+              },
+              {
+                "value": "products"
+              },
+              {
+                "value": "customers"
+              },
+              {
+                "value": "orders"
+              },
+              {
+                "value": "order_items"
+              }
+            ],
+            "hidden": false
+          },
+          "SampleSize": {
+            "name": "SampleSize",
+            "defaultValue": "10",
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "customer_id\tcustomer_fname\tcustomer_lname\tcustomer_email\tcustomer_password\tcustomer_street\tcustomer_city\tcustomer_state\tcustomer_zipcode\n1\tRichard\tHernandez\tXXXXXXXXX\tXXXXXXXXX\t6303 Heather Plaza\tBrownsville\tTX\t78521\n2\tMary\tBarrett\tXXXXXXXXX\tXXXXXXXXX\t9526 Noble Embers Ridge\tLittleton\tCO\t80126\n3\tAnn\tSmith\tXXXXXXXXX\tXXXXXXXXX\t3422 Blue Pioneer Bend\tCaguas\tPR\t00725\n4\tMary\tJones\tXXXXXXXXX\tXXXXXXXXX\t8324 Little Common\tSan Marcos\tCA\t92069\n5\tRobert\tHudson\tXXXXXXXXX\tXXXXXXXXX\t10 Crystal River Mall \tCaguas\tPR\t00725\n6\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t3151 Sleepy Quail Promenade\tPassaic\tNJ\t07055\n7\tMelissa\tWilcox\tXXXXXXXXX\tXXXXXXXXX\t9453 High Concession\tCaguas\tPR\t00725\n8\tMegan\tSmith\tXXXXXXXXX\tXXXXXXXXX\t3047 Foggy Forest Plaza\tLawrence\tMA\t01841\n9\tMary\tPerez\tXXXXXXXXX\tXXXXXXXXX\t3616 Quaking Street\tCaguas\tPR\t00725\n10\tMelissa\tSmith\tXXXXXXXXX\tXXXXXXXXX\t8598 Harvest Beacon Plaza\tStafford\tVA\t22554\n11\tMary\tHuffman\tXXXXXXXXX\tXXXXXXXXX\t3169 Stony Woods\tCaguas\tPR\t00725\n12\tChristopher\tSmith\tXXXXXXXXX\tXXXXXXXXX\t5594 Jagged Embers By-pass\tSan Antonio\tTX\t78227\n13\tMary\tBaldwin\tXXXXXXXXX\tXXXXXXXXX\t7922 Iron Oak Gardens\tCaguas\tPR\t00725\n14\tKatherine\tSmith\tXXXXXXXXX\tXXXXXXXXX\t5666 Hazy Pony Square\tPico Rivera\tCA\t90660\n15\tJane\tLuna\tXXXXXXXXX\tXXXXXXXXX\t673 Burning Glen\tFontana\tCA\t92336\n16\tTiffany\tSmith\tXXXXXXXXX\tXXXXXXXXX\t6651 Iron Port\tCaguas\tPR\t00725\n17\tMary\tRobinson\tXXXXXXXXX\tXXXXXXXXX\t1325 Noble Pike\tTaylor\tMI\t48180\n18\tRobert\tSmith\tXXXXXXXXX\tXXXXXXXXX\t2734 Hazy Butterfly Circle\tMartinez\tCA\t94553\n19\tStephanie\tMitchell\tXXXXXXXXX\tXXXXXXXXX\t3543 Red Treasure Bay\tCaguas\tPR\t00725\n20\tMary\tEllis\tXXXXXXXXX\tXXXXXXXXX\t4703 Old Route\tWest New York\tNJ\t07093\n21\tWilliam\tZimmerman\tXXXXXXXXX\tXXXXXXXXX\t3323 Old Willow Mall \tCaguas\tPR\t00725\n22\tJoseph\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7740 Broad Fox Villas\tNorth Bergen\tNJ\t07047\n23\tBenjamin\tDuarte\tXXXXXXXXX\tXXXXXXXXX\t8811 High Horse Impasse\tSan Juan\tPR\t00921\n24\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t9417 Emerald Towers\tCaguas\tPR\t00725\n25\tPaul\tRichardson\tXXXXXXXXX\tXXXXXXXXX\t318 Merry Creek Mountain\tPeoria\tAZ\t85345\n26\tJohnny\tHood\tXXXXXXXXX\tXXXXXXXXX\t9576 Middle Hills Round\tGlenview\tIL\t60025\n27\tMary\tVincent\tXXXXXXXXX\tXXXXXXXXX\t1768 Sleepy Zephyr Place\tCaguas\tPR\t00725\n28\tTimothy\tSmith\tXXXXXXXXX\tXXXXXXXXX\t9366 Colonial Horse Close\tLongview\tWA\t98632\n29\tMary\tHumphrey\tXXXXXXXXX\tXXXXXXXXX\t2469 Blue Brook Crossing\tFort Worth\tTX\t76133\n30\tBarbara\tSmith\tXXXXXXXXX\tXXXXXXXXX\t2455 Merry Hollow\tCaguas\tPR\t00725\n31\tMary\tByrd\tXXXXXXXXX\tXXXXXXXXX\t8259 Foggy Edge\tAlbuquerque\tNM\t87111\n32\tAlice\tSmith\tXXXXXXXXX\tXXXXXXXXX\t2082 Hidden Green\tCaguas\tPR\t00725\n33\tAdam\tPetersen\tXXXXXXXXX\tXXXXXXXXX\t9768 Noble Horse Heights\tNorfolk\tVA\t23503\n34\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t3330 Easy Berry Range\tCaguas\tPR\t00725\n35\tMargaret\tWright\tXXXXXXXXX\tXXXXXXXXX\t9456 Sleepy Jetty\tOceanside\tCA\t92056\n36\tMichelle\tCarey\tXXXXXXXXX\tXXXXXXXXX\t6336 Fallen Village\tCaguas\tPR\t00725\n37\tVirginia\tConrad\tXXXXXXXXX\tXXXXXXXXX\t6115 Indian Beacon Close\tNorfolk\tVA\t23503\n38\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t2805 Crystal Moor\tOpelousas\tLA\t70570\n39\tJuan\tMckinney\tXXXXXXXXX\tXXXXXXXXX\t7274 Blue Wagon  Villas\tCaguas\tPR\t00725\n40\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7358 Rocky Villas\tLong Beach\tCA\t90805\n41\tVictoria\tMason\tXXXXXXXXX\tXXXXXXXXX\t7869 Crystal View Villas\tBrooklyn\tNY\t11230\n42\tEthan\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7533 Thunder Wagon  Beach\tDuluth\tGA\t30096\n43\tMary\tHerring\tXXXXXXXXX\tXXXXXXXXX\t4575 Thunder Dale\tCaguas\tPR\t00725\n44\tHoward\tSmith\tXXXXXXXXX\tXXXXXXXXX\t1356 Easy Plaza\tNapa\tCA\t94558\n45\tMary\tNunez\tXXXXXXXXX\tXXXXXXXXX\t1229 Bright Robin Corners\tDenver\tCO\t80231\n46\tJennifer\tSmith\tXXXXXXXXX\tXXXXXXXXX\t5463 Rocky Autoroute\tFreeport\tNY\t11520\n47\tLori\tFuller\tXXXXXXXXX\tXXXXXXXXX\t357 Noble Lane\tCaguas\tPR\t00725\n48\tMary\tCowan\tXXXXXXXXX\tXXXXXXXXX\t1040 Hazy Timber Lookout\tStrongsville\tOH\t44136\n49\tMartha\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7449 Merry Chase\tCaguas\tPR\t00725\n50\tMary\tKim\tXXXXXXXXX\tXXXXXXXXX\t938 Rustic Pine Ridge\tSan Bernardino\tCA\t92410\n51\tJessica\tSmith\tXXXXXXXXX\tXXXXXXXXX\t8344 Dewy Fawn Farms\tCaguas\tPR\t00725\n52\tMary\tLawson\tXXXXXXXXX\tXXXXXXXXX\t65 Silent Inlet\tChicago\tIL\t60622\n53\tKatherine\tSmith\tXXXXXXXXX\tXXXXXXXXX\t975 Honey Loop\tRoswell\tGA\t30075\n54\tMary\tOlson\tXXXXXXXXX\tXXXXXXXXX\t7333 Cinder Way\tCaguas\tPR\t00725\n55\tJanet\tFarley\tXXXXXXXXX\tXXXXXXXXX\t6512 Middle Parade\tPhoenix\tAZ\t85029\n56\tMary\tKaiser\tXXXXXXXXX\tXXXXXXXXX\t7554 Stony Goose Crossing\tCaguas\tPR\t00725\n57\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t57 High Villas\tBaltimore\tMD\t21229\n58\tMichael\tEdwards\tXXXXXXXXX\tXXXXXXXXX\t4770 Blue Pines\tCaguas\tPR\t00725\n59\tDouglas\tJames\tXXXXXXXXX\tXXXXXXXXX\t2306 Green Lane\tSunnyvale\tCA\t94086\n60\tMary\tGutierrez\tXXXXXXXXX\tXXXXXXXXX\t8632 Bright Route\tWebster\tNY\t14580\n61\tMargaret\tSummers\tXXXXXXXXX\tXXXXXXXXX\t8963 Hidden Panda Meadow\tCaguas\tPR\t00725\n62\tMary\tOneal\tXXXXXXXXX\tXXXXXXXXX\t2659 Jagged Rabbit View\tBrooklyn\tNY\t11223\n63\tAaron\tSmith\tXXXXXXXXX\tXXXXXXXXX\t2265 Foggy Lagoon Bend\tCaguas\tPR\t00725\n64\tMary\tReynolds\tXXXXXXXXX\tXXXXXXXXX\t2407 Gentle Woods\tChicago\tIL\t60647\n65\tJennifer\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7126 Shady Bluff Promenade\tPrinceton\tNJ\t08540\n66\tMary\tBooth\tXXXXXXXXX\tXXXXXXXXX\t8824 Noble View Valley\tCaguas\tPR\t00725\n67\tSamantha\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7869 Wishing Anchor Court\tChicago\tIL\t60619\n68\tMary\tOneal\tXXXXXXXXX\tXXXXXXXXX\t376 Silver Terrace\tPeoria\tAZ\t85345\n69\tMegan\tSmith\tXXXXXXXXX\tXXXXXXXXX\t7796 Thunder Forest Villas\tCaguas\tPR\t00725\n70\tMary\tSimmons\tXXXXXXXXX\tXXXXXXXXX\t5553 Cinder Harbour\tLos Angeles\tCA\t90042\n71\tCharles\tSmith\tXXXXXXXXX\tXXXXXXXXX\t6140 Pleasant Dale Farm\tPhiladelphia\tPA\t19145\n72\tFrank\tGillespie\tXXXXXXXXX\tXXXXXXXXX\t5332 Heather Hills Isle\tVista\tCA\t92084\n73\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t8247 Little Cider Close\tCaguas\tPR\t00725\n74\tAlice\tRush\tXXXXXXXXX\tXXXXXXXXX\t409 Iron Park\tJacksonville\tNC\t28540\n75\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t1510 Broad Rise Expressway\tCaguas\tPR\t00725\n76\tJoseph\tYoung\tXXXXXXXXX\tXXXXXXXXX\t7605 Tawny Horse Falls\tLos Angeles\tCA\t90016\n77\tShirley\tDalton\tXXXXXXXXX\tXXXXXXXXX\t1021 Silver Log Cape\tCaguas\tPR\t00725\n78\tJeremy\tSmith\tXXXXXXXXX\tXXXXXXXXX\t2714 Dewy Bay\tParkville\tMD\t21234\n79\tMary\tWatkins\tXXXXXXXXX\tXXXXXXXXX\t1315 Honey Rabbit Link\tKnoxville\tTN\t37922\n80\tJoe\tParsons\tXXXXXXXXX\tXXXXXXXXX\t3891 Broad Line\tCaguas\tPR\t00725\n81\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t8434 Honey Pines\tIthaca\tNY\t14850\n82\tJonathan\tCook\tXXXXXXXXX\tXXXXXXXXX\t7885 Sleepy Cove\tSan Antonio\tTX\t78240\n83\tMary\tWong\tXXXXXXXXX\tXXXXXXXXX\t8584 Lazy Via\tCaguas\tPR\t00725\n84\tDouglas\tSmith\tXXXXXXXXX\tXXXXXXXXX\t6540 Emerald Turnabout\tTampa\tFL\t33624\n85\tMary\tPerez\tXXXXXXXXX\tXXXXXXXXX\t5104 Iron Log Limits\tCaguas\tPR\t00725\n86\tJohn\tSmith\tXXXXXXXXX\tXXXXXXXXX\t8780 Colonial Orchard\tFort Worth\tTX\t76106\n87\tGloria\tBrown\tXXXXXXXXX\tXXXXXXXXX\t3996 Crystal Zephyr Swale\tCaguas\tPR\t00725\n88\tMary\tHenry\tXXXXXXXXX\tXXXXXXXXX\t7262 Cotton Arbor\tAtlanta\tGA\t30318\n89\tSean\tSmith\tXXXXXXXXX\tXXXXXXXXX\t9126 Wishing Expressway\tEscondido\tCA\t92027\n90\tMary\tHurley\tXXXXXXXXX\tXXXXXXXXX\t6640 Sunny Via\tCaguas\tPR\t00725\n91\tAshley\tSmith\tXXXXXXXXX\tXXXXXXXXX\t4515 Golden Manor\tSpring\tTX\t77379\n92\tAlexander\tMedina\tXXXXXXXXX\tXXXXXXXXX\t2805 Dewy Impasse\tCaguas\tPR\t00725\n93\tMary\tRobbins\tXXXXXXXXX\tXXXXXXXXX\t456 Colonial Glen\tAnnapolis\tMD\t21401\n94\tMary\tSmith\tXXXXXXXXX\tXXXXXXXXX\t921 Broad Chase\tCaguas\tPR\t00725\n95\tSusan\tWilliams\tXXXXXXXXX\tXXXXXXXXX\t3587 Thunder Rise\tHyattsville\tMD\t20783\n96\tVirginia\tSmith\tXXXXXXXXX\tXXXXXXXXX\t6080 Blue Close\tCaguas\tPR\t00725\n97\tMary\tRhodes\tXXXXXXXXX\tXXXXXXXXX\t1463 Silver Mountain Gate\tPhoenix\tAZ\t85008\n98\tWilliam\tSmith\tXXXXXXXXX\tXXXXXXXXX\t4592 Grand Timber Ramp\tCaguas\tPR\t00725\n99\tBetty\tMunoz\tXXXXXXXXX\tXXXXXXXXX\t9761 Green Jetty\tLas Vegas\tNV\t89123\n100\tGeorge\tBarrett\tXXXXXXXXX\tXXXXXXXXX\t4110 Silent Pointe\tCaguas\tPR\t00725\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524262826105_1722280567",
+      "id": "20180420-152026_55669762",
+      "dateCreated": "Apr 20, 2018 3:20:26 PM",
+      "dateStarted": "Apr 20, 2018 4:56:25 PM",
+      "dateFinished": "Apr 20, 2018 4:56:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Analyzing the Data\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eAnalyzing the Data\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524262980809_1805449270",
+      "id": "20180420-152300_435728392",
+      "dateCreated": "Apr 20, 2018 3:23:00 PM",
+      "dateStarted": "Apr 20, 2018 4:55:49 PM",
+      "dateFinished": "Apr 20, 2018 4:55:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Sales by Product Departments",
+      "text": "%mysql\n\nselect \n    d.department_name, count(distinct oi.order_item_order_id) no_of_orders, round(sum(oi.order_item_subtotal),2) total_sales, sum(oi.order_item_quantity) total_sold_qty\nfrom \n    departments d\n        join categories c on (d.department_id \u003d c.category_department_id)\n        join products p on (c.category_id \u003d p.product_category_id) \n        join order_items oi on (p.product_id \u003d oi.order_item_product_id)\ngroup by d.department_name \norder by total_sales desc;",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 4.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 396.0,
+              "optionOpen": false
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {
+          "TopN": "50"
+        },
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "department_name\tno_of_orders\ttotal_sales\ttotal_sold_qty\nFan Shop\t40774\t17107766.28\t105636\nApparel\t32989\t7323700.45\t95980\nGolf\t25889\t4609028.24\t99297\nFootwear\t13009\t4006498.77\t43400\nOutdoors\t8582\t995582.72\t25575\nFitness\t2080\t280044.14\t5870\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524263712600_1642153749",
+      "id": "20180420-153512_1365799905",
+      "dateCreated": "Apr 20, 2018 3:35:12 PM",
+      "dateStarted": "Apr 20, 2018 4:55:49 PM",
+      "dateFinished": "Apr 20, 2018 4:55:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Top-N Popular Product Categories",
+      "text": "%mysql\n\nselect \n    c.category_name, count(distinct oi.order_item_order_id) no_of_orders, round(sum(oi.order_item_subtotal),2) total_sales, sum(oi.order_item_quantity) total_sold_qty\nfrom \n    categories c \n        join products p on (c.category_id \u003d p.product_category_id) \n        join order_items oi on (p.product_id \u003d oi.order_item_product_id)\ngroup by c.category_name \norder by total_sales desc\nlimit ${TopN\u003d5,5|10|15|20};\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 8.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 338.0,
+              "optionOpen": false,
+              "setting": {
+                "multiBarChart": {
+                  "stacked": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "category_name",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "total_sales",
+                  "index": 2.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true,
+        "editorHide": false,
+        "runOnSelectionChange": true
+      },
+      "settings": {
+        "params": {
+          "TopN": "10"
+        },
+        "forms": {
+          "TopN": {
+            "name": "TopN",
+            "defaultValue": "5",
+            "options": [
+              {
+                "value": "5"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "15"
+              },
+              {
+                "value": "20"
+              }
+            ],
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "category_name\tno_of_orders\ttotal_sales\ttotal_sold_qty\nFishing\t15164\t6929653.69\t17325\nCleats\t20386\t4431942.78\t73734\nCamping \u0026 Hiking\t12299\t4118425.57\t13729\nCardio Equipment\t11355\t3694843.20\t37587\nWomen\u0027s Apparel\t17869\t3147800.00\t62956\nWater Sports\t13758\t3113844.68\t15540\nMen\u0027s Footwear\t18783\t2891757.66\t22246\nIndoor/Outdoor Games\t16623\t2888993.91\t57803\nShop By Sport\t10136\t1309522.04\t32726\nElectronics\t3061\t371034.64\t9436\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524261456065_-1503987792",
+      "id": "20180420-145736_250883652",
+      "dateCreated": "Apr 20, 2018 2:57:36 PM",
+      "dateStarted": "Apr 20, 2018 4:55:49 PM",
+      "dateFinished": "Apr 20, 2018 4:55:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "How did the Top-N selling Products in 2014 perform the previous year?",
+      "text": "%mysql\n\nselect \n    products.product_name, year(orders.order_date) order_year, round(sum(order_items.order_item_subtotal)) total_sales\nfrom \n    products products\n    join (select \n            p.product_id, round(sum(oi.order_item_subtotal),2) total_sales\n        from \n            products p\n                join order_items oi on (p.product_id \u003d oi.order_item_product_id)\n                join orders o on (oi.order_item_order_id \u003d o.order_id)\n        where \n            year(o.order_date) \u003d 2014\n        group by p.product_id \n        order by total_sales desc\n        limit ${TopN\u003d5,5|10|15|20}) topn_products on (products.product_id \u003d topn_products.product_id)\n    join order_items order_items on (products.product_id \u003d order_items.order_item_product_id)\n    join orders orders on (order_items.order_item_order_id \u003d orders.order_id)\ngroup by products.product_name, year(orders.order_date);",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:50 PM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 348.0,
+              "optionOpen": false,
+              "setting": {
+                "lineChart": {
+                  "lineWithFocus": false,
+                  "forceY": true
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "order_year",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [
+                {
+                  "name": "product_name",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "total_sales",
+                  "index": 2.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "title": true,
+        "runOnSelectionChange": true
+      },
+      "settings": {
+        "params": {
+          "TopN": "15"
+        },
+        "forms": {
+          "TopN": {
+            "name": "TopN",
+            "defaultValue": "5",
+            "options": [
+              {
+                "value": "5"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "15"
+              },
+              {
+                "value": "20"
+              }
+            ],
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "product_name\torder_year\ttotal_sales\nadidas Men\u0027s F10 Messi TRX FG Soccer Cleat\t2013\t24476\nadidas Men\u0027s F10 Messi TRX FG Soccer Cleat\t2014\t31855\nadidas Youth Germany Black/Red Away Match Soc\t2013\t30940\nadidas Youth Germany Black/Red Away Match Soc\t2014\t36890\nDiamondback Women\u0027s Serene Classic Comfort Bi\t2013\t1832278\nDiamondback Women\u0027s Serene Classic Comfort Bi\t2014\t2286148\nField \u0026 Stream Sportsman 16 Gun Fire Safe\t2013\t3076246\nField \u0026 Stream Sportsman 16 Gun Fire Safe\t2014\t3853407\nLIJA Women\u0027s Eyelet Sleeveless Golf Polo\t2013\t29315\nLIJA Women\u0027s Eyelet Sleeveless Golf Polo\t2014\t32175\nNike Men\u0027s CJ Elite 2 TD Football Cleat\t2013\t1280142\nNike Men\u0027s CJ Elite 2 TD Football Cleat\t2014\t1611616\nNike Men\u0027s Comfort 2 Slide\t2013\t19436\nNike Men\u0027s Comfort 2 Slide\t2014\t25149\nNike Men\u0027s Dri-FIT Victory Golf Polo\t2013\t1393000\nNike Men\u0027s Dri-FIT Victory Golf Polo\t2014\t1754800\nNike Men\u0027s Free 5.0+ Running Shoe\t2013\t1641436\nNike Men\u0027s Free 5.0+ Running Shoe\t2014\t2026197\nO\u0027Brien Men\u0027s Neoprene Life Vest\t2013\t1292733\nO\u0027Brien Men\u0027s Neoprene Life Vest\t2014\t1596261\nPelican Sunstream 100 Kayak\t2013\t1384531\nPelican Sunstream 100 Kayak\t2014\t1715314\nPerfect Fitness Perfect Rip Deck\t2013\t1942416\nPerfect Fitness Perfect Rip Deck\t2014\t2478727\nTitleist Pro V1x High Numbers Personalized Go\t2013\t21940\nTitleist Pro V1x High Numbers Personalized Go\t2014\t25267\nUnder Armour Girls\u0027 Toddler Spine Surge Runni\t2013\t576736\nUnder Armour Girls\u0027 Toddler Spine Surge Runni\t2014\t692347\nUnder Armour Women\u0027s Micro G Skulpt Running S\t2013\t18195\nUnder Armour Women\u0027s Micro G Skulpt Running S\t2014\t28365\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524265516623_2090916509",
+      "id": "20180420-160516_482779769",
+      "dateCreated": "Apr 20, 2018 4:05:16 PM",
+      "dateStarted": "Apr 20, 2018 4:55:50 PM",
+      "dateFinished": "Apr 20, 2018 4:55:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Overall Top 15 Revenue Generating Products",
+      "text": "%mysql\nselect \n    p.product_name, round(sum(oi.order_item_subtotal),2) total_sales\nfrom \n    products p\n        join order_items oi on (p.product_id \u003d oi.order_item_product_id)\n        join orders o on (oi.order_item_order_id \u003d o.order_id)\ngroup by p.product_id \norder by total_sales desc\nlimit 15;\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:50 PM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 536.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "product_name\ttotal_sales\nField \u0026 Stream Sportsman 16 Gun Fire Safe\t6929653.69\nPerfect Fitness Perfect Rip Deck\t4421143.14\nDiamondback Women\u0027s Serene Classic Comfort Bi\t4118425.57\nNike Men\u0027s Free 5.0+ Running Shoe\t3667633.20\nNike Men\u0027s Dri-FIT Victory Golf Polo\t3147800.00\nPelican Sunstream 100 Kayak\t3099845.09\nNike Men\u0027s CJ Elite 2 TD Football Cleat\t2891757.66\nO\u0027Brien Men\u0027s Neoprene Life Vest\t2888993.91\nUnder Armour Girls\u0027 Toddler Spine Surge Runni\t1269082.67\nadidas Youth Germany Black/Red Away Match Soc\t67830.00\nLIJA Women\u0027s Eyelet Sleeveless Golf Polo\t61490.00\nadidas Men\u0027s F10 Messi TRX FG Soccer Cleat\t56330.61\nTitleist Pro V1x High Numbers Personalized Go\t47206.92\nUnder Armour Women\u0027s Micro G Skulpt Running S\t46559.59\nNike Men\u0027s Comfort 2 Slide\t44585.09\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524266615828_-2028983459",
+      "id": "20180420-162335_1809878432",
+      "dateCreated": "Apr 20, 2018 4:23:35 PM",
+      "dateStarted": "Apr 20, 2018 4:55:50 PM",
+      "dateFinished": "Apr 20, 2018 4:55:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Top 10 Customers with Most Unique Product Purchases",
+      "text": "%mysql\n\nselect \n    c.customer_fname, count(distinct(oi.order_item_product_id)) unique_products, round(sum(oi.order_item_subtotal),2) total_sales, count(distinct o.order_id) no_of_orders, round(sum(oi.order_item_subtotal)/count(distinct o.order_id),2) avg_order_price\nfrom\n    customers c   \n    inner join orders o on o.order_customer_id \u003d c.customer_id  \n    inner join order_items oi on o.order_id \u003d oi.order_item_order_id  \ngroup by c.customer_id, c.customer_fname  \norder by unique_products desc, total_sales desc   \nlimit 10",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 5.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "customer_fname\tunique_products\ttotal_sales\tno_of_orders\tavg_order_price\nBetty\t17\t9223.71\t11\t838.52\nEvelyn\t17\t9019.11\t12\t751.59\nNicholas\t17\t7032.28\t12\t586.02\nJames\t17\t5542.28\t9\t615.81\nMary\t16\t9296.14\t11\t845.10\nKelly\t16\t8595.13\t12\t716.26\nAshley\t16\t8293.04\t9\t921.45\nJames\t16\t7609.04\t11\t691.73\nChristopher\t16\t4800.35\t10\t480.04\nBarbara\t16\t3863.42\t10\t386.34\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524265230097_870094570",
+      "id": "20180420-160030_1210736688",
+      "dateCreated": "Apr 20, 2018 4:00:30 PM",
+      "dateStarted": "Apr 20, 2018 4:55:51 PM",
+      "dateFinished": "Apr 20, 2018 4:55:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Which State Customers mostly buy the products?",
+      "text": "%mysql\n\nselect\n    c.customer_state, sum(oi.order_item_subtotal) total_sales\nfrom \n    customers c\n    join orders o on (c.customer_id \u003d o.order_customer_id)\n    join order_items oi on (o.order_id \u003d oi.order_item_order_id)\ngroup by c.customer_state\norder by total_sales desc\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:49 PM",
+      "config": {
+        "colWidth": 7.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "runOnSelectionChange": true,
+        "title": true
+      },
+      "settings": {
+        "params": {
+          "Department": "Golf"
+        },
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "customer_state\ttotal_sales\nPR\t13208867.94594\nCA\t5542723.10943031\nNY\t2152706.78121376\nTX\t1731407.52371979\nIL\t1457225.85878754\nFL\t1048609.79063416\nOH\t773804.124765396\nMI\t730078.984476089\nPA\t724375.943847656\nNJ\t606551.001642227\nAZ\t566459.301055908\nGA\t467765.189224243\nMD\t456100.428836823\nNC\t378877.64732933\nCO\t358310.607006073\nVA\t344824.356920242\nOR\t315239.51618576\nMA\t306025.735725403\nTN\t297614.415657043\nNV\t276364.975276947\nMO\t260417.28519249\nHI\t238208.114812851\nCT\t211264.243968964\nUT\t184356.833623886\nLA\t182954.743598938\nNM\t181366.653665543\nWA\t172982.453256607\nWI\t164058.323326111\nMN\t133183.972549438\nSC\t129411.792718887\nIN\t110015.142129898\nDC\t108841.482048035\nKY\t94894.7518806458\nKS\t85865.0716209412\nDE\t48873.2509860992\nRI\t47439.3509674072\nOK\t43493.3208560944\nWV\t43452.670791626\nND\t41221.9706821442\nID\t31791.200712204\nAR\t29241.6105976105\nMT\t16189.9802951813\nIA\t12761.7403259277\nAL\t6401.40014266968\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1524261817952_-213987672",
+      "id": "20180420-150337_226056211",
+      "dateCreated": "Apr 20, 2018 3:03:37 PM",
+      "dateStarted": "Apr 20, 2018 4:55:51 PM",
+      "dateFinished": "Apr 20, 2018 4:55:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Apr 20, 2018 4:55:50 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1524267773143_-1027459646",
+      "id": "20180420-164253_1237051430",
+      "dateCreated": "Apr 20, 2018 4:42:53 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Projects/MySQL/Retail-Database-Analysis",
+  "id": "2DANS47JY",
+  "angularObjects": {
+    "2DBSAQ9FG:shared_process": [],
+    "2DDC41UQ3:shared_process": [],
+    "2DDYF2FPN:shared_process": [],
+    "2DBE6W83X:shared_process": [],
+    "2DC52CVU8:shared_process": [],
+    "2DB29PQQE:shared_process": [],
+    "2DDSF8G68:shared_process": [],
+    "2DDST3AYB:shared_process": [],
+    "2DD8QNCJW:shared_process": [],
+    "2DCRUVZX5:shared_process": [],
+    "2DCEDYS94:shared_process": [],
+    "2DCGXA2RP:shared_process": [],
+    "2DCPW2X8C:shared_process": [],
+    "2DAV56W8A:shared_process": [],
+    "2DCJBCAFH:shared_process": [],
+    "2DBS1BFTG:shared_process": [],
+    "2DDR31AWW:shared_process": [],
+    "2DD2ABVKW:shared_process": [],
+    "2DD9URD4X:shared_process": [],
+    "2DCPQA6H1:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
