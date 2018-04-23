@@ -130,7 +130,7 @@
       "title": "Total Number of Incidents",
       "text": "%hive\n\nselect count(*) as `Total Incidents`\nfrom crime_db.chicago_crime_raw;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:51:57 PM",
+      "dateUpdated": "Apr 22, 2018 7:18:17 PM",
       "config": {
         "colWidth": 4.0,
         "enabled": false,
@@ -138,7 +138,7 @@
           "0": {
             "graph": {
               "mode": "table",
-              "height": 84.0,
+              "height": 86.0,
               "optionOpen": true,
               "setting": {
                 "multiBarChart": {}
@@ -169,7 +169,7 @@
         },
         "editorMode": "ace/mode/sql",
         "title": true,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -197,7 +197,7 @@
       "title": "Total Domestic Incidents",
       "text": "%hive\nselect count(id) `Total Domestic` from crime_db.chicago_crime_raw where domestic\u003d\u0027true\u0027;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:51:54 PM",
+      "dateUpdated": "Apr 22, 2018 7:18:01 PM",
       "config": {
         "colWidth": 4.0,
         "enabled": false,
@@ -205,17 +205,18 @@
           "0": {
             "graph": {
               "mode": "table",
-              "height": 84.0,
+              "height": 88.0,
               "optionOpen": false
             }
           }
         },
         "editorSetting": {
-          "language": "scala"
+          "language": "sql",
+          "editOnDblClick": false
         },
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/sql",
         "title": true,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -243,7 +244,7 @@
       "title": "Total Arrests",
       "text": "%hive\nselect count(id) `Total Arrests`\nfrom crime_db.chicago_crime_raw where arrest\u003d\u0027true\u0027;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:51:52 PM",
+      "dateUpdated": "Apr 22, 2018 7:17:55 PM",
       "config": {
         "colWidth": 4.0,
         "enabled": false,
@@ -251,17 +252,19 @@
           "0": {
             "graph": {
               "mode": "table",
-              "height": 84.0,
+              "height": 106.0,
               "optionOpen": false
             }
           }
         },
         "editorSetting": {
-          "language": "scala"
+          "language": "sql",
+          "editOnDblClick": false
         },
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/sql",
         "title": true,
-        "editorHide": true
+        "editorHide": false,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -289,7 +292,7 @@
       "title": "Incidents by Primary Type of Crime",
       "text": "%hive\n\nselect primarytype, count(*) total_incidents from crime_db.chicago_crime_raw group by primarytype order by total_incidents desc limit ${TopN\u003d10,10|15|20};",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:51:49 PM",
+      "dateUpdated": "Apr 22, 2018 7:17:30 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -307,7 +310,7 @@
           "language": "scala"
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "tableHide": false,
         "runOnSelectionChange": true
