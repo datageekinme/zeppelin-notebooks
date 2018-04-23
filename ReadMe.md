@@ -2,6 +2,9 @@
 
 A copy of my local apache zeppelin instance notebooks
 
+Apache Hive:
+[Chicago City Crime Data Analysis](https://www.zepl.com/viewer/notebooks/bm90ZTovL2RhdGFnZWVraW5tZS80YThmYjhlMTcyZjQ0YmVlYTA4MWFmNGYwMWY1ZGY2Ni9ub3RlLmpzb24)
+
 Apache Pig:
 [Chicago City Crime Data Analysis](https://www.zepl.com/viewer/notebooks/bm90ZTovL2RhdGFnZWVraW5tZS9lOTQxZjc3NDdjZTM0MDE3YTI4MWRmZTIxMjZhYzJiMC9ub3RlLmpzb24)
 
