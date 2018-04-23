@@ -3,7 +3,7 @@
     {
       "text": "%md \n\n# Chicago Crime Data Analysis\n\n[logo]:https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\n\n![logo]\n\n### Analysis of crime incidents in Chicago city area\n\nThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of **Chicago**\n\nThe dataset has been obtained from the following source: [Chicago](https://data.cityofchicago.org)\n\n#### The Objective\n\nThe objective of this dataset to analyze the following:\n   * Overview\n   * Homicide Arrest Analysis\n   * Theft Analysis",
       "user": "anonymous",
-      "dateUpdated": "Apr 20, 2018 11:00:28 AM",
+      "dateUpdated": "Apr 21, 2018 2:10:10 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
