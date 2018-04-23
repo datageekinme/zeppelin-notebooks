@@ -587,10 +587,10 @@
       "title": "Comparing Current YTD to Previous YTD incidents by Primary Type",
       "text": "%hive\n\nselect \n    coalesce(prev_year.primarytype, curr_year.primarytype) primarytype,\n    coalesce(prev_year.total_incidents_prev_ytd, 0) prev_ytd_incidents,\n    coalesce(curr_year.total_incidents_curr_ytd,0) curr_ytd_incidents,\n    round(((coalesce(curr_year.total_incidents_curr_ytd,0) - coalesce(prev_year.total_incidents_prev_ytd, 0))/coalesce(prev_year.total_incidents_prev_ytd, 0))*100,2) percent_increase\nfrom \n    (select primarytype, count(*) total_incidents_prev_ytd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date)-1 and date_format(date, \u0027MM-dd\u0027) \u003c\u003d date_format(current_date, \u0027MM-dd\u0027)\n     group by primarytype\n    ) prev_year \nfull outer join\n    (select primarytype, count(*) total_incidents_curr_ytd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date) and date_format(date, \u0027MM-dd\u0027) \u003c\u003d date_format(current_date, \u0027MM-dd\u0027)\n     group by primarytype\n    ) curr_year on prev_year.primarytype \u003d curr_year.primarytype\norder by percent_increase desc\nlimit ${TopN\u003d5,5|10|15|20|25};\n\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 7:03:22 PM",
+      "dateUpdated": "Apr 22, 2018 7:27:39 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": false,
+        "enabled": true,
         "results": {
           "0": {
             "graph": {
@@ -638,7 +638,7 @@
           "curr_year": "",
           "prev_year": "",
           "curr_date": "(select current_date)",
-          "TopN": "15"
+          "TopN": "5"
         },
         "forms": {
           "TopN": {
@@ -670,7 +670,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "primarytype\tprev_ytd_incidents\tcurr_ytd_incidents\tpercent_increase\nNON-CRIMINAL\t6\t11\t83.33\nOBSCENITY\t18\t29\t61.11\nCONCEALED CARRY LICENSE VIOLATION\t18\t27\t50.0\nINTERFERENCE WITH PUBLIC OFFICER\t315\t338\t7.3\nKIDNAPPING\t52\t55\t5.77\nWEAPONS VIOLATION\t1252\t1274\t1.76\nHUMAN TRAFFICKING\t4\t4\t0.0\nCRIMINAL TRESPASS\t2048\t1990\t-2.83\nASSAULT\t5331\t5075\t-4.8\nLIQUOR LAW VIOLATION\t65\t60\t-7.69\nNARCOTICS\t3814\t3494\t-8.39\nOFFENSE INVOLVING CHILDREN\t704\t637\t-9.52\nBATTERY\t13805\t12465\t-9.71\nTHEFT\t17367\t15306\t-11.87\nCRIMINAL DAMAGE\t8530\t6899\t-19.12\n"
+            "data": "primarytype\tprev_ytd_incidents\tcurr_ytd_incidents\tpercent_increase\nNON-CRIMINAL\t6\t11\t83.33\nOBSCENITY\t18\t29\t61.11\nCONCEALED CARRY LICENSE VIOLATION\t18\t27\t50.0\nINTERFERENCE WITH PUBLIC OFFICER\t315\t338\t7.3\nKIDNAPPING\t52\t55\t5.77\n"
           }
         ]
       },
@@ -678,8 +678,8 @@
       "jobName": "paragraph_1524438438726_-1300667446",
       "id": "20180422-160718_1013675219",
       "dateCreated": "Apr 22, 2018 4:07:18 PM",
-      "dateStarted": "Apr 22, 2018 6:38:10 PM",
-      "dateFinished": "Apr 22, 2018 6:42:33 PM",
+      "dateStarted": "Apr 22, 2018 7:27:39 PM",
+      "dateFinished": "Apr 22, 2018 7:29:30 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
