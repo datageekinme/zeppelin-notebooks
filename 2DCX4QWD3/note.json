@@ -1,12 +1,12 @@
 {
   "paragraphs": [
     {
-      "text": "%md \n\n# Chicago Crime Data Analysis\n\n[logo]:https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\n\n![logo]\n\n### Analysis of crime incidents in Chicago city area\n\nThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of **Chicago**\n\nThe dataset has been obtained from the following source: [Chicago](https://data.cityofchicago.org)\n\n#### The Objective\n\n\"************************************\"\"",
+      "text": "%md \n\n# Chicago Crime Data Analysis\n\n[logo]:https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\n\n![logo]\n\n### Analysis of crime incidents in Chicago city area\n\nThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of **Chicago**\n\nThe dataset has been obtained from the following source: [Chicago](https://data.cityofchicago.org)\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 21, 2018 6:03:16 PM",
+      "dateUpdated": "Apr 22, 2018 6:52:27 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
           "language": "markdown",
@@ -25,7 +25,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eChicago Crime Data Analysis\u003c/h1\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\" alt\u003d\"logo\" /\u003e\u003c/p\u003e\n\u003ch3\u003eAnalysis of crime incidents in Chicago city area\u003c/h3\u003e\n\u003cp\u003eThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of \u003cstrong\u003eChicago\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eThe dataset has been obtained from the following source: \u003ca href\u003d\"https://data.cityofchicago.org\"\u003eChicago\u003c/a\u003e\u003c/p\u003e\n\u003ch4\u003eThe Objective\u003c/h4\u003e\n\u003cp\u003e\u0026ldquo;************************************\u0026rdquo;\u0026quot;\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eChicago Crime Data Analysis\u003c/h1\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\" alt\u003d\"logo\" /\u003e\u003c/p\u003e\n\u003ch3\u003eAnalysis of crime incidents in Chicago city area\u003c/h3\u003e\n\u003cp\u003eThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of \u003cstrong\u003eChicago\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eThe dataset has been obtained from the following source: \u003ca href\u003d\"https://data.cityofchicago.org\"\u003eChicago\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -33,8 +33,8 @@
       "jobName": "paragraph_1524260545485_-2073298505",
       "id": "20180420-144225_500718120",
       "dateCreated": "Apr 20, 2018 2:42:25 PM",
-      "dateStarted": "Apr 21, 2018 6:03:16 PM",
-      "dateFinished": "Apr 21, 2018 6:03:16 PM",
+      "dateStarted": "Apr 22, 2018 6:52:22 PM",
+      "dateFinished": "Apr 22, 2018 6:52:24 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -83,16 +83,16 @@
       "title": "Creating the database and Hive external table",
       "text": "%hive\n\nCREATE DATABASE IF NOT EXISTS crime_db;\n\nDROP TABLE IF EXISTS crime_db.chicago_crime_raw;\nCREATE EXTERNAL TABLE IF NOT EXISTS crime_db.chicago_crime_raw (\n    ID int,\n    CaseNumber string,\n    Date string,\n    Block string,\n    IUCR string,\n    PrimaryType string,\n    Description string,\n    LocationDescription string,\n    Arrest string,\n    Domestic string,\n    Beat string,\n    District string,\n    Ward string,\n    CommunityArea string,\n    FBICode string,\n    XCoordinate int,\n    YCoordinate int,\n    Year int,\n    UpdatedOn string,\n    Latitude float,\n    Longitude float,\n    Location string\n)\nROW FORMAT SERDE \u0027org.apache.hadoop.hive.serde2.OpenCSVSerde\u0027\nWITH SERDEPROPERTIES (\n   \"separatorChar\" \u003d \",\",\n   \"quoteChar\"     \u003d \"\\\"\",\n   \"escapeChar\"    \u003d \"\\\\\"\n)  \nSTORED AS TEXTFILE\nLOCATION \u0027/user/cloudera/data/raw/crime/chicago\u0027\nTBLPROPERTIES (\"skip.header.line.count\"\u003d\"1\")\n\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 21, 2018 6:20:18 PM",
+      "dateUpdated": "Apr 22, 2018 6:52:05 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {},
         "editorSetting": {
-          "language": "text",
+          "language": "sql",
           "editOnDblClick": false
         },
-        "editorMode": "ace/mode/text",
+        "editorMode": "ace/mode/sql",
         "tableHide": true,
         "title": true
       },
@@ -130,10 +130,10 @@
       "title": "Total Number of Incidents",
       "text": "%hive\n\nselect count(*) as `Total Incidents`\nfrom crime_db.chicago_crime_raw;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:06:37 PM",
+      "dateUpdated": "Apr 22, 2018 6:51:57 PM",
       "config": {
         "colWidth": 4.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -197,10 +197,10 @@
       "title": "Total Domestic Incidents",
       "text": "%hive\nselect count(id) `Total Domestic` from crime_db.chicago_crime_raw where domestic\u003d\u0027true\u0027;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:06:40 PM",
+      "dateUpdated": "Apr 22, 2018 6:51:54 PM",
       "config": {
         "colWidth": 4.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -243,10 +243,10 @@
       "title": "Total Arrests",
       "text": "%hive\nselect count(id) `Total Arrests`\nfrom crime_db.chicago_crime_raw where arrest\u003d\u0027true\u0027;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:06:42 PM",
+      "dateUpdated": "Apr 22, 2018 6:51:52 PM",
       "config": {
         "colWidth": 4.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -289,10 +289,10 @@
       "title": "Incidents by Primary Type of Crime",
       "text": "%hive\n\nselect primarytype, count(*) total_incidents from crime_db.chicago_crime_raw group by primarytype order by total_incidents desc limit ${TopN\u003d10,10|15|20};",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:15:35 PM",
+      "dateUpdated": "Apr 22, 2018 6:51:49 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -446,10 +446,10 @@
       "title": "Partitioned table run time",
       "text": "%hive\n\nSELECT count(*) total_incidents from crime_db.chicago_crime_partitioned where year \u003d 2018;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:33:17 PM",
+      "dateUpdated": "Apr 22, 2018 6:51:35 PM",
       "config": {
         "colWidth": 6.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -492,10 +492,10 @@
       "title": "Non-Partitioned table run time",
       "text": "%hive\n\nSELECT count(*) total_incidents from crime_db.chicago_crime_raw where year \u003d 2018;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:33:20 PM",
+      "dateUpdated": "Apr 22, 2018 6:51:39 PM",
       "config": {
         "colWidth": 6.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -534,51 +534,13 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n1. See the trend of crime through the years\n2. See the trend of specific crimes through the years\n3. Get the top 3 day of week most crimes are committed for each year\n4. Average percentage of arrests with respect to homicide cases over time\n\n",
-      "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 4:07:18 PM",
-      "config": {
-        "colWidth": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003col\u003e\n  \u003cli\u003eSee the trend of crime through the years\u003c/li\u003e\n  \u003cli\u003eSee the trend of specific crimes through the years\u003c/li\u003e\n  \u003cli\u003eGet the top 3 day of week most crimes are committed for each year\u003c/li\u003e\n  \u003cli\u003eAverage percentage of arrests with respect to homicide cases over time\u003c/li\u003e\n\u003c/ol\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1524435985035_-128382399",
-      "id": "20180422-152625_74919272",
-      "dateCreated": "Apr 22, 2018 3:26:25 PM",
-      "dateStarted": "Apr 22, 2018 4:07:19 PM",
-      "dateFinished": "Apr 22, 2018 4:07:20 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "title": "Trend of crime over the years",
-      "text": "%hive\n\nselect year, count(*) from crime_db.chicago_crime_partitioned group by year;",
+      "text": "%hive\n\nselect year, count(*) `total incidents` from crime_db.chicago_crime_partitioned group by year;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:33:33 PM",
+      "dateUpdated": "Apr 22, 2018 6:52:58 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -605,7 +567,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "year\t_c1\n2007\t436979\n2016\t268486\n2008\t427013\n2017\t266909\n2009\t392626\n2018\t66286\n2001\t485740\n2010\t370260\n2002\t486748\n2011\t351703\n2003\t475928\n2012\t335850\n2004\t469370\n2013\t306913\n2005\t453693\n2014\t274984\n2006\t448083\n2015\t263683\n"
+            "data": "year\ttotal incidents\n2007\t436979\n2016\t268486\n2008\t427013\n2017\t266909\n2009\t392626\n2018\t66286\n2001\t485740\n2010\t370260\n2002\t486748\n2011\t351703\n2003\t475928\n2012\t335850\n2004\t469370\n2013\t306913\n2005\t453693\n2014\t274984\n2006\t448083\n2015\t263683\n"
           }
         ]
       },
@@ -613,19 +575,19 @@
       "jobName": "paragraph_1524442566952_470848353",
       "id": "20180422-171606_396674970",
       "dateCreated": "Apr 22, 2018 5:16:06 PM",
-      "dateStarted": "Apr 22, 2018 6:33:33 PM",
-      "dateFinished": "Apr 22, 2018 6:37:52 PM",
+      "dateStarted": "Apr 22, 2018 6:52:55 PM",
+      "dateFinished": "Apr 22, 2018 6:57:35 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Comparing Current YTD to Previous YTD incidents by Primary Type ",
+      "title": "Comparing Current YTD to Previous YTD incidents by Primary Type",
       "text": "%hive\n\nselect \n    coalesce(prev_year.primarytype, curr_year.primarytype) primarytype,\n    coalesce(prev_year.total_incidents_prev_ytd, 0) prev_ytd_incidents,\n    coalesce(curr_year.total_incidents_curr_ytd,0) curr_ytd_incidents,\n    round(((coalesce(curr_year.total_incidents_curr_ytd,0) - coalesce(prev_year.total_incidents_prev_ytd, 0))/coalesce(prev_year.total_incidents_prev_ytd, 0))*100,2) percent_increase\nfrom \n    (select primarytype, count(*) total_incidents_prev_ytd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date)-1 and date_format(date, \u0027MM-dd\u0027) \u003c\u003d date_format(current_date, \u0027MM-dd\u0027)\n     group by primarytype\n    ) prev_year \nfull outer join\n    (select primarytype, count(*) total_incidents_curr_ytd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date) and date_format(date, \u0027MM-dd\u0027) \u003c\u003d date_format(current_date, \u0027MM-dd\u0027)\n     group by primarytype\n    ) curr_year on prev_year.primarytype \u003d curr_year.primarytype\norder by percent_increase desc\nlimit ${TopN\u003d5,5|10|15|20|25};\n\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:38:08 PM",
+      "dateUpdated": "Apr 22, 2018 7:03:22 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -719,12 +681,13 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Comparing Current MTD to Previous MTD incidents by Primary Type",
       "text": "%hive\n\nselect \n    coalesce(prev_mtd.primarytype, curr_mtd.primarytype) primarytype,\n    coalesce(prev_mtd.total_incidents_prev_mtd, 0) prev_mtd_incidents,\n    coalesce(curr_mtd.total_incidents_curr_mtd,0) curr_mtd_incidents,\n    round(((coalesce(curr_mtd.total_incidents_curr_mtd,0) - coalesce(prev_mtd.total_incidents_prev_mtd, 0))/coalesce(prev_mtd.total_incidents_prev_mtd, 0))*100,2) percent_increase\nfrom \n    (select primarytype, count(*) total_incidents_prev_mtd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(add_months(current_date(), -1))\n        and date \u003e\u003d date_add(add_months(current_date(),-1),1-day(add_months(current_date(),-1)))\n        and date \u003c\u003d date_add(add_months(current_date(), -1) ,1)\n     group by primarytype\n    ) prev_mtd\nfull outer join\n    (select primarytype, count(*) total_incidents_curr_mtd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date()) \n        and date \u003e\u003d date_add(current_date(),1-day(current_date()))\n        and date \u003c\u003d date_add(current_date(),1)\n     group by primarytype\n    ) curr_mtd on prev_mtd.primarytype \u003d curr_mtd.primarytype\norder by curr_mtd_incidents desc;",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:43:27 PM",
+      "dateUpdated": "Apr 22, 2018 7:04:35 PM",
       "config": {
         "colWidth": 12.0,
-        "enabled": true,
+        "enabled": false,
         "results": {
           "0": {
             "graph": {
@@ -762,7 +725,8 @@
         "editorSetting": {
           "language": "scala"
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -781,24 +745,70 @@
       "jobName": "paragraph_1524438490864_492539908",
       "id": "20180422-160810_1828231455",
       "dateCreated": "Apr 22, 2018 4:08:10 PM",
-      "dateStarted": "Apr 22, 2018 6:38:15 PM",
-      "dateFinished": "Apr 22, 2018 6:42:03 PM",
+      "dateStarted": "Apr 22, 2018 7:04:29 PM",
+      "dateFinished": "Apr 22, 2018 7:06:30 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%hive\n",
+      "text": "%md \n\n## Thank you!!",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 4:11:37 PM",
-      "config": {},
+      "dateUpdated": "Apr 22, 2018 7:05:29 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eThank you!!\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
       },
       "apps": [],
       "jobName": "paragraph_1524438697856_-399414788",
       "id": "20180422-161137_104872837",
       "dateCreated": "Apr 22, 2018 4:11:37 PM",
+      "dateStarted": "Apr 22, 2018 7:05:20 PM",
+      "dateFinished": "Apr 22, 2018 7:05:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "Apr 22, 2018 7:05:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala"
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1524449119607_-431347147",
+      "id": "20180422-190519_838715435",
+      "dateCreated": "Apr 22, 2018 7:05:19 PM",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
