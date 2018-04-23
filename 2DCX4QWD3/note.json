@@ -682,9 +682,9 @@
     },
     {
       "title": "Comparing Current MTD to Previous MTD incidents by Primary Type",
-      "text": "%hive\n\nselect \n    coalesce(prev_mtd.primarytype, curr_mtd.primarytype) primarytype,\n    coalesce(prev_mtd.total_incidents_prev_mtd, 0) prev_mtd_incidents,\n    coalesce(curr_mtd.total_incidents_curr_mtd,0) curr_mtd_incidents,\n    round(((coalesce(curr_mtd.total_incidents_curr_mtd,0) - coalesce(prev_mtd.total_incidents_prev_mtd, 0))/coalesce(prev_mtd.total_incidents_prev_mtd, 0))*100,2) percent_increase\nfrom \n    (select primarytype, count(*) total_incidents_prev_mtd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(add_months(current_date(), -1))\n        and date \u003e\u003d date_add(add_months(current_date(),-1),1-day(add_months(current_date(),-1)))\n        and date \u003c\u003d date_add(add_months(current_date(), -1) ,1)\n     group by primarytype\n    ) prev_mtd\nfull outer join\n    (select primarytype, count(*) total_incidents_curr_mtd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date()) \n        and date \u003e\u003d date_add(current_date(),1-day(current_date()))\n        and date \u003c\u003d date_add(current_date(),1)\n     group by primarytype\n    ) curr_mtd on prev_mtd.primarytype \u003d curr_mtd.primarytype\norder by curr_mtd_incidents desc;",
+      "text": "%hive\n\nselect\n    coalesce(prev_mtd.primarytype, curr_mtd.primarytype) primarytype,\n    coalesce(prev_mtd.total_incidents_prev_mtd, 0) prev_mtd_incidents,\n    coalesce(curr_mtd.total_incidents_curr_mtd,0) curr_mtd_incidents,\n    round(((coalesce(curr_mtd.total_incidents_curr_mtd,0) - coalesce(prev_mtd.total_incidents_prev_mtd, 0))/coalesce(prev_mtd.total_incidents_prev_mtd, 0))*100,2) percent_increase\nfrom \n    (select primarytype, count(*) total_incidents_prev_mtd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(add_months(current_date(), -1))\n        and date \u003e\u003d date_add(add_months(current_date(),-1),1-day(add_months(current_date(),-1)))\n        and date \u003c\u003d date_add(add_months(current_date(), -1) ,1)\n     group by primarytype\n    ) prev_mtd\nfull outer join\n    (select primarytype, count(*) total_incidents_curr_mtd \n     from crime_db.chicago_crime_partitioned \n     where year \u003d year(current_date()) \n        and date \u003e\u003d date_add(current_date(),1-day(current_date()))\n        and date \u003c\u003d date_add(current_date(),1)\n     group by primarytype\n    ) curr_mtd on prev_mtd.primarytype \u003d curr_mtd.primarytype\norder by curr_mtd_incidents desc;\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 7:04:35 PM",
+      "dateUpdated": "Apr 22, 2018 7:12:12 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -723,9 +723,10 @@
           }
         },
         "editorSetting": {
-          "language": "scala"
+          "language": "sql",
+          "editOnDblClick": false
         },
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/sql",
         "title": true
       },
       "settings": {
