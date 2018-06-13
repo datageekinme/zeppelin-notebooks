@@ -11,3 +11,9 @@ A copy of my local apache zeppelin instance notebooks
 
 **MySQL:**
   * [Retail Data Analysis](https://www.zepl.com/viewer/notebooks/bm90ZTovL2RhdGFnZWVraW5tZS8xZWY2MGIxNDU0OGU0MzEwYThmNjY0NTIzM2M1NzU0My9ub3RlLmpzb24)
+
+Work in Progress:
+
+* Retail Data Analysis using Apache Spark
+* Real-time Web-log analysis using Apache Kafka and Apache Spark
+* SQL LeetCode Solutions using MySQL
