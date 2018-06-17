@@ -1,0 +1,356 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 603. Consecutive Available Seats\n\nSeveral friends at a cinema ticket office would like to reserve consecutive available seats.\nCan you help to query all the consecutive available seats order by the seat_id using the following cinema table?\n\n| seat_id | free |\n|---------|------|\n| 1       | 1    |\n| 2       | 0    |\n| 3       | 1    |\n| 4       | 1    |\n| 5       | 1    |\n\n\nYour query should return the following result for the sample case above.\n\n| seat_id |\n|---------|\n| 3       |\n| 4       |\n| 5       |\n\n\n**Note:**\nThe seat_id is an auto increment int, and free is bool (\u00271\u0027 means free, and \u00270\u0027 means occupied.).\nConsecutive available seats are more than 2(inclusive) seats consecutively available.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e603. Consecutive Available Seats\u003c/h1\u003e\n\u003cp\u003eSeveral friends at a cinema ticket office would like to reserve consecutive available seats.\u003cbr/\u003eCan you help to query all the consecutive available seats order by the seat_id using the following cinema table?\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eseat_id \u003c/th\u003e\n      \u003cth\u003efree \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e0 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eYour query should return the following result for the sample case above.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eseat_id \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e\u003cbr/\u003eThe seat_id is an auto increment int, and free is bool (\u0026lsquo;1\u0026rsquo; means free, and \u0026lsquo;0\u0026rsquo; means occupied.).\u003cbr/\u003eConsecutive available seats are more than 2(inclusive) seats consecutively available.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529165560313_-475427519",
+      "id": "20180616-091240_1430345026",
+      "dateCreated": "Jun 16, 2018 9:12:40 AM",
+      "dateStarted": "Jun 16, 2018 9:14:33 AM",
+      "dateFinished": "Jun 16, 2018 9:14:33 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the schema\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:10 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166591748_1003236360",
+      "id": "20180616-092951_855465633",
+      "dateCreated": "Jun 16, 2018 9:29:51 AM",
+      "dateStarted": "Jun 16, 2018 9:30:04 AM",
+      "dateFinished": "Jun 16, 2018 9:30:04 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists cinema;\nCreate table If Not Exists cinema (seat_id int primary key auto_increment, free bool);\nTruncate table cinema;\ninsert into cinema (seat_id, free) values (\u00271\u0027, \u00271\u0027);\ninsert into cinema (seat_id, free) values (\u00272\u0027, \u00270\u0027);\ninsert into cinema (seat_id, free) values (\u00273\u0027, \u00271\u0027);\ninsert into cinema (seat_id, free) values (\u00274\u0027, \u00271\u0027);\ninsert into cinema (seat_id, free) values (\u00275\u0027, \u00271\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:12 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529165661796_1189704948",
+      "id": "20180616-091421_723282993",
+      "dateCreated": "Jun 16, 2018 9:14:21 AM",
+      "dateStarted": "Jun 16, 2018 4:24:38 PM",
+      "dateFinished": "Jun 16, 2018 4:24:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution #1:\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:15 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution #1:\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529165730819_-1848379637",
+      "id": "20180616-091530_951655508",
+      "dateCreated": "Jun 16, 2018 9:15:30 AM",
+      "dateStarted": "Jun 16, 2018 9:26:32 AM",
+      "dateFinished": "Jun 16, 2018 9:26:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nselect seat_id \nfrom (\n    select \n    current.seat_id, \n    case when exists (select 1  from cinema previous where previous.seat_id \u003d current.seat_id - 1 and previous.free \u003d 1) and current.free \u003d 1 then current.seat_id - 1 else null end previous,\n    case when exists (select 1  from cinema next where next.seat_id \u003d current.seat_id + 1 and next.free \u003d 1) and current.free \u003d 1 then current.seat_id + 1 else null end next\n    from cinema current) seats\nwhere seats.previous is not null or seats.next is not null\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:17 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "seat_id\n3\n4\n5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529165781600_553115728",
+      "id": "20180616-091621_1200438657",
+      "dateCreated": "Jun 16, 2018 9:16:21 AM",
+      "dateStarted": "Jun 16, 2018 4:24:42 PM",
+      "dateFinished": "Jun 16, 2018 4:24:42 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Solution #2:",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:21 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution #2:\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166404264_490691173",
+      "id": "20180616-092644_651029879",
+      "dateCreated": "Jun 16, 2018 9:26:44 AM",
+      "dateStarted": "Jun 16, 2018 9:27:02 AM",
+      "dateFinished": "Jun 16, 2018 9:27:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nSELECT DISTINCT(a.seat_id) FROM cinema a INNER JOIN cinema b ON abs(a.seat_id - b.seat_id) \u003d 1 WHERE a.free \u003d 1 and b.free \u003d 1 ORDER BY a.seat_id",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:15:23 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "seat_id\n3\n4\n5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166040626_834350206",
+      "id": "20180616-092040_1251242749",
+      "dateCreated": "Jun 16, 2018 9:20:40 AM",
+      "dateStarted": "Jun 16, 2018 4:25:06 PM",
+      "dateFinished": "Jun 16, 2018 4:25:06 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 9:25:00 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166300745_-2051683587",
+      "id": "20180616-092500_1870701601",
+      "dateCreated": "Jun 16, 2018 9:25:00 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Projects/LeetCode/SQL/603-Consecutive-Available-Seats",
+  "id": "2DHJ6N8PJ",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
