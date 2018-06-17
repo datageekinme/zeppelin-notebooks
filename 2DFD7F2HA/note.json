@@ -1,0 +1,280 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 627. Swap Salary\n\nGiven a table salary, such as the one below, that has m\u003dmale and f\u003dfemale values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.\n\nFor example:\n\n| id | name | sex | salary |\n|----|------|-----|--------|\n| 1  | A    | m   | 2500   |\n| 2  | B    | f   | 1500   |\n| 3  | C    | m   | 5500   |\n| 4  | D    | f   | 500    |\n\nAfter running your query, the above salary table should have the following rows:\n\n| id | name | sex | salary |\n|----|------|-----|--------|\n| 1  | A    | f   | 2500   |\n| 2  | B    | m   | 1500   |\n| 3  | C    | f   | 5500   |\n| 4  | D    | m   | 500    |\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:21 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e627. Swap Salary\u003c/h1\u003e\n\u003cp\u003eGiven a table salary, such as the one below, that has m\u003dmale and f\u003dfemale values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.\u003c/p\u003e\n\u003cp\u003eFor example:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003ename \u003c/th\u003e\n      \u003cth\u003esex \u003c/th\u003e\n      \u003cth\u003esalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003em \u003c/td\u003e\n      \u003ctd\u003e2500 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003ef \u003c/td\u003e\n      \u003ctd\u003e1500 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003em \u003c/td\u003e\n      \u003ctd\u003e5500 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003eD \u003c/td\u003e\n      \u003ctd\u003ef \u003c/td\u003e\n      \u003ctd\u003e500 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eAfter running your query, the above salary table should have the following rows:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003ename \u003c/th\u003e\n      \u003cth\u003esex \u003c/th\u003e\n      \u003cth\u003esalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003ef \u003c/td\u003e\n      \u003ctd\u003e2500 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003em \u003c/td\u003e\n      \u003ctd\u003e1500 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003ef \u003c/td\u003e\n      \u003ctd\u003e5500 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003eD \u003c/td\u003e\n      \u003ctd\u003em \u003c/td\u003e\n      \u003ctd\u003e500 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529191867649_-934217886",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:31:07 PM",
+      "dateStarted": "Jun 16, 2018 4:31:38 PM",
+      "dateFinished": "Jun 16, 2018 4:31:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:24 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529191867650_-933063640",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:31:07 PM",
+      "dateStarted": "Jun 16, 2018 4:31:52 PM",
+      "dateFinished": "Jun 16, 2018 4:31:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists salary;\ncreate table if not exists salary(id int, name varchar(100), sex char(1), salary int);\nTruncate table salary;\ninsert into salary (id, name, sex, salary) values (\u00271\u0027, \u0027A\u0027, \u0027m\u0027, \u00272500\u0027);\ninsert into salary (id, name, sex, salary) values (\u00272\u0027, \u0027B\u0027, \u0027f\u0027, \u00271500\u0027);\ninsert into salary (id, name, sex, salary) values (\u00273\u0027, \u0027C\u0027, \u0027m\u0027, \u00275500\u0027);\ninsert into salary (id, name, sex, salary) values (\u00274\u0027, \u0027D\u0027, \u0027f\u0027, \u0027500\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:26 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529191867650_-933063640",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:31:07 PM",
+      "dateStarted": "Jun 16, 2018 4:32:34 PM",
+      "dateFinished": "Jun 16, 2018 4:32:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:29 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529191867650_-933063640",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:31:07 PM",
+      "dateStarted": "Jun 16, 2018 4:32:34 PM",
+      "dateFinished": "Jun 16, 2018 4:32:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nupdate salary set sex \u003d (case when sex \u003d \u0027f\u0027 then \u0027m\u0027 else \u0027f\u0027 end);\nselect * from salary;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:35 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "2": {
+            "graph": {
+              "mode": "table",
+              "height": 204.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 4"
+          },
+          {
+            "type": "TABLE",
+            "data": "id\tname\tsex\tsalary\n1\tA\tf\t2500\n2\tB\tm\t1500\n3\tC\tf\t5500\n4\tD\tm\t500\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529191867650_-933063640",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:31:07 PM",
+      "dateStarted": "Jun 16, 2018 4:33:49 PM",
+      "dateFinished": "Jun 16, 2018 4:33:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 4:32:58 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529191978862_1269977914",
+      "id": "20180616-163258_1217850966",
+      "dateCreated": "Jun 16, 2018 4:32:58 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/627-Swap-Salary",
+  "id": "2DFD7F2HA",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
