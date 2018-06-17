@@ -1,0 +1,280 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 620. Not Boring Movies\n\nX city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies’ ratings and descriptions.\nPlease write a SQL query to output movies with an odd numbered ID and a description that is not \u0027boring\u0027. Order the result by rating.\n\nFor example, table cinema:\n\n\n|   id    | movie     |  description |  rating   |\n|---------|-----------|--------------|-----------|\n|   1     | War       |   great 3D   |   8.9     |\n|   2     | Science   |   fiction    |   8.5     |\n|   3     | irish     |   boring     |   6.2     |\n|   4     | Ice song  |   Fantacy    |   8.6     |\n|   5     | House card|   Interesting|   9.1     |\n\n\nFor the example above, the output should be:\n\n|   id    | movie     |  description |  rating   |\n|---------|-----------|--------------|-----------|\n|   5     | House card|   Interesting|   9.1     |\n|   1     | War       |   great 3D   |   8.9     |\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:43 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e620. Not Boring Movies\u003c/h1\u003e\n\u003cp\u003eX city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies’ ratings and descriptions.\u003cbr/\u003ePlease write a SQL query to output movies with an odd numbered ID and a description that is not \u0026lsquo;boring\u0026rsquo;. Order the result by rating.\u003c/p\u003e\n\u003cp\u003eFor example, table cinema:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003emovie \u003c/th\u003e\n      \u003cth\u003edescription \u003c/th\u003e\n      \u003cth\u003erating \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eWar \u003c/td\u003e\n      \u003ctd\u003egreat 3D \u003c/td\u003e\n      \u003ctd\u003e8.9 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eScience \u003c/td\u003e\n      \u003ctd\u003efiction \u003c/td\u003e\n      \u003ctd\u003e8.5 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eirish \u003c/td\u003e\n      \u003ctd\u003eboring \u003c/td\u003e\n      \u003ctd\u003e6.2 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003eIce song \u003c/td\u003e\n      \u003ctd\u003eFantacy \u003c/td\u003e\n      \u003ctd\u003e8.6 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eHouse card\u003c/td\u003e\n      \u003ctd\u003eInteresting\u003c/td\u003e\n      \u003ctd\u003e9.1 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eFor the example above, the output should be:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003emovie \u003c/th\u003e\n      \u003cth\u003edescription \u003c/th\u003e\n      \u003cth\u003erating \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eHouse card\u003c/td\u003e\n      \u003ctd\u003eInteresting\u003c/td\u003e\n      \u003ctd\u003e9.1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eWar \u003c/td\u003e\n      \u003ctd\u003egreat 3D \u003c/td\u003e\n      \u003ctd\u003e8.9 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192065215_-1476220173",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:34:25 PM",
+      "dateStarted": "Jun 16, 2018 4:35:30 PM",
+      "dateFinished": "Jun 16, 2018 4:35:30 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:45 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192065215_-1476220173",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:34:25 PM",
+      "dateStarted": "Jun 16, 2018 4:35:35 PM",
+      "dateFinished": "Jun 16, 2018 4:35:35 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists cinema;\nCreate table If Not Exists cinema (id int, movie varchar(255), description varchar(255), rating float(2, 1));\nTruncate table cinema;\ninsert into cinema (id, movie, description, rating) values (\u00271\u0027, \u0027War\u0027, \u0027great 3D\u0027, \u00278.9\u0027);\ninsert into cinema (id, movie, description, rating) values (\u00272\u0027, \u0027Science\u0027, \u0027fiction\u0027, \u00278.5\u0027);\ninsert into cinema (id, movie, description, rating) values (\u00273\u0027, \u0027irish\u0027, \u0027boring\u0027, \u00276.2\u0027);\ninsert into cinema (id, movie, description, rating) values (\u00274\u0027, \u0027Ice song\u0027, \u0027Fantacy\u0027, \u00278.6\u0027);\ninsert into cinema (id, movie, description, rating) values (\u00275\u0027, \u0027House card\u0027, \u0027Interesting\u0027, \u00279.1\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:47 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192065215_-1476220173",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:34:25 PM",
+      "dateStarted": "Jun 16, 2018 4:36:12 PM",
+      "dateFinished": "Jun 16, 2018 4:36:13 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:50 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192065215_-1476220173",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:34:25 PM",
+      "dateStarted": "Jun 16, 2018 4:36:12 PM",
+      "dateFinished": "Jun 16, 2018 4:36:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect id, movie, description, rating\nfrom cinema\nwhere id % 2 \u003d 1\nand description not in (\u0027boring\u0027)\norder by rating desc\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:14:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 94.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "id\tmovie\tdescription\trating\n5\tHouse card\tInteresting\t9.1\n1\tWar\tgreat 3D\t8.9\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192065215_-1476220173",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:34:25 PM",
+      "dateStarted": "Jun 16, 2018 4:36:36 PM",
+      "dateFinished": "Jun 16, 2018 4:36:36 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 4:36:36 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192196545_1937054241",
+      "id": "20180616-163636_1669924613",
+      "dateCreated": "Jun 16, 2018 4:36:36 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/620-Not-Boring-Movies",
+  "id": "2DGZGX2MT",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

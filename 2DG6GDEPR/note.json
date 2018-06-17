@@ -1,0 +1,280 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 626. Exchange Seats\n\nMary is a teacher in a middle school and she has a table seat storing students\u0027 names and their corresponding seat ids.\n\nThe column id is continuous increment.\nMary wants to change seats for the adjacent students.\nCan you write a SQL query to output the result for Mary?\n```\n+---------+---------+\n|    id   | student |\n+---------+---------+\n|    1    | Abbot   |\n|    2    | Doris   |\n|    3    | Emerson |\n|    4    | Green   |\n|    5    | Jeames  |\n+---------+---------+\n```\nFor the sample input, the output is:\n```\n+---------+---------+\n|    id   | student |\n+---------+---------+\n|    1    | Doris   |\n|    2    | Abbot   |\n|    3    | Green   |\n|    4    | Emerson |\n|    5    | Jeames  |\n+---------+---------+\n```\nNote:\nIf the number of students is odd, there is no need to change the last one\u0027s seat.\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:02:33 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e626. Exchange Seats\u003c/h1\u003e\n\u003cp\u003eMary is a teacher in a middle school and she has a table seat storing students\u0026rsquo; names and their corresponding seat ids.\u003c/p\u003e\n\u003cp\u003eThe column id is continuous increment.\u003cbr/\u003eMary wants to change seats for the adjacent students.\u003cbr/\u003eCan you write a SQL query to output the result for Mary?\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+---------+---------+\n|    id   | student |\n+---------+---------+\n|    1    | Abbot   |\n|    2    | Doris   |\n|    3    | Emerson |\n|    4    | Green   |\n|    5    | Jeames  |\n+---------+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFor the sample input, the output is:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+---------+---------+\n|    id   | student |\n+---------+---------+\n|    1    | Doris   |\n|    2    | Abbot   |\n|    3    | Green   |\n|    4    | Emerson |\n|    5    | Jeames  |\n+---------+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNote:\u003cbr/\u003eIf the number of students is odd, there is no need to change the last one\u0026rsquo;s seat.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197308901_-224831518",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 6:01:48 PM",
+      "dateStarted": "Jun 16, 2018 6:02:29 PM",
+      "dateFinished": "Jun 16, 2018 6:02:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:02:45 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197308901_-224831518",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 6:01:48 PM",
+      "dateStarted": "Jun 16, 2018 6:02:36 PM",
+      "dateFinished": "Jun 16, 2018 6:02:36 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists seat;\nCreate table If Not Exists seat(id int, student varchar(255));\nTruncate table seat;\ninsert into seat (id, student) values (\u00271\u0027, \u0027Abbot\u0027);\ninsert into seat (id, student) values (\u00272\u0027, \u0027Doris\u0027);\ninsert into seat (id, student) values (\u00273\u0027, \u0027Emerson\u0027);\ninsert into seat (id, student) values (\u00274\u0027, \u0027Green\u0027);\ninsert into seat (id, student) values (\u00275\u0027, \u0027Jeames\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:04:11 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197308901_-224831518",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 6:01:48 PM",
+      "dateStarted": "Jun 16, 2018 6:04:02 PM",
+      "dateFinished": "Jun 16, 2018 6:04:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:02:42 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197308902_-223677271",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 6:01:48 PM",
+      "dateStarted": "Jun 16, 2018 6:02:38 PM",
+      "dateFinished": "Jun 16, 2018 6:02:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql \nuse leetcode;\nselect  \ncase \nwhen s1.id  \u003d (select max(s3.id) from seat s3) and s1.id % 2 \u003e 0 \nthen s1.id\nwhen s1.id % 2 \u003d 0 \nthen s1.id - (select s2.id from seat s2 where s2.id \u003c s1.id limit 1) \nwhen s1.id % 2 \u003e 0 \nthen s1.id + 1\nend  id, student \nfrom seat s1\norder by id;\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:04:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 248.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "id\tstudent\n1\tDoris\n2\tAbbot\n3\tGreen\n4\tEmerson\n5\tJeames\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197308902_-223677271",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 6:01:48 PM",
+      "dateStarted": "Jun 16, 2018 6:04:31 PM",
+      "dateFinished": "Jun 16, 2018 6:04:31 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 6:01:48 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197308902_-223677271",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 6:01:48 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/626-Exchange-Seats",
+  "id": "2DG6GDEPR",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

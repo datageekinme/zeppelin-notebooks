@@ -1,0 +1,262 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 610. Triangle Judgement\n\nA pupil Tim gets homework to identify whether three line segments could possibly form a triangle.\nHowever, this assignment is very heavy because there are hundreds of records to calculate.\nCould you help Tim by writing a query to judge whether these three sides can form a triangle, assuming table triangle holds the length of the three sides x, y and z.\n\n| x  | y  | z  |\n|----|----|----|\n| 13 | 15 | 30 |\n| 10 | 20 | 15 |\n\n\nFor the sample data above, your query should return the follow result:\n\n\n| x  | y  | z  | triangle |\n|----|----|----|----------|\n| 13 | 15 | 30 | No       |\n| 10 | 20 | 15 | Yes      |",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:34 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e610. Triangle Judgement\u003c/h1\u003e\n\u003cp\u003eA pupil Tim gets homework to identify whether three line segments could possibly form a triangle.\u003cbr/\u003eHowever, this assignment is very heavy because there are hundreds of records to calculate.\u003cbr/\u003eCould you help Tim by writing a query to judge whether these three sides can form a triangle, assuming table triangle holds the length of the three sides x, y and z.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ex \u003c/th\u003e\n      \u003cth\u003ey \u003c/th\u003e\n      \u003cth\u003ez \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e13 \u003c/td\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n      \u003ctd\u003e30 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eFor the sample data above, your query should return the follow result:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ex \u003c/th\u003e\n      \u003cth\u003ey \u003c/th\u003e\n      \u003cth\u003ez \u003c/th\u003e\n      \u003cth\u003etriangle \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e13 \u003c/td\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n      \u003ctd\u003e30 \u003c/td\u003e\n      \u003ctd\u003eNo \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n      \u003ctd\u003eYes \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166662120_1405222339",
+      "id": "20180616-093102_671444465",
+      "dateCreated": "Jun 16, 2018 9:31:02 AM",
+      "dateStarted": "Jun 16, 2018 9:31:44 AM",
+      "dateFinished": "Jun 16, 2018 9:31:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:37 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166704022_934699626",
+      "id": "20180616-093144_850779269",
+      "dateCreated": "Jun 16, 2018 9:31:44 AM",
+      "dateStarted": "Jun 16, 2018 9:33:31 AM",
+      "dateFinished": "Jun 16, 2018 9:33:31 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists triangle;\nCreate table If Not Exists triangle (x int, y int, z int);\nTruncate table triangle;\ninsert into triangle (x, y, z) values (\u002713\u0027, \u002715\u0027, \u002730\u0027);\ninsert into triangle (x, y, z) values (\u002710\u0027, \u002720\u0027, \u002715\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:39 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166787421_-722105759",
+      "id": "20180616-093307_1797455213",
+      "dateCreated": "Jun 16, 2018 9:33:07 AM",
+      "dateStarted": "Jun 16, 2018 4:25:24 PM",
+      "dateFinished": "Jun 16, 2018 4:25:24 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution #1:",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:42 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution #1:\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166826582_-1490571906",
+      "id": "20180616-093346_737594101",
+      "dateCreated": "Jun 16, 2018 9:33:46 AM",
+      "dateStarted": "Jun 16, 2018 9:34:01 AM",
+      "dateFinished": "Jun 16, 2018 9:34:01 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nSELECT x, y, z, IF(x + y \u003e z AND y + z \u003e x AND z + x \u003e y, \u0027Yes\u0027, \u0027No\u0027) triangle from triangle;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:45 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 104.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "x\ty\tz\ttriangle\n13\t15\t30\tNo\n10\t20\t15\tYes\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529166816379_1968889345",
+      "id": "20180616-093336_1612839397",
+      "dateCreated": "Jun 16, 2018 9:33:36 AM",
+      "dateStarted": "Jun 16, 2018 4:25:28 PM",
+      "dateFinished": "Jun 16, 2018 4:25:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 9:41:21 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529167281061_1100923186",
+      "id": "20180616-094121_630800418",
+      "dateCreated": "Jun 16, 2018 9:41:21 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/610-Triangle-Judgment",
+  "id": "2DJE4ZUWR",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

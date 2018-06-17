@@ -1,0 +1,296 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 579. Find Cumulative Salary of an Employee\n\nThe Employee table holds the salary information in a year.\n\nWrite a SQL to get the cumulative sum of an employee\u0027s salary over a period of 3 months but exclude the most recent month.\n\nThe result should be displayed by \u0027Id\u0027 ascending, and then by \u0027Month\u0027 descending.\n\nExample\nInput\n\n| Id | Month | Salary |\n|----|-------|--------|\n| 1  | 1     | 20     |\n| 2  | 1     | 20     |\n| 1  | 2     | 30     |\n| 2  | 2     | 30     |\n| 3  | 2     | 40     |\n| 1  | 3     | 40     |\n| 3  | 3     | 60     |\n| 1  | 4     | 60     |\n| 3  | 4     | 70     |\nOutput\n\n| Id | Month | Salary |\n|----|-------|--------|\n| 1  | 3     | 90     |\n| 1  | 2     | 50     |\n| 1  | 1     | 20     |\n| 2  | 1     | 20     |\n| 3  | 3     | 100    |\n| 3  | 2     | 40     |\n\nExplanation\nEmployee \u00271\u0027 has 3 salary records for the following 3 months except the most recent month \u00274\u0027: salary 40 for month \u00273\u0027, 30 for month \u00272\u0027 and 20 for month \u00271\u0027\nSo the cumulative sum of salary of this employee over 3 months is 90(40+30+20), 50(30+20) and 20 respectively.\n\n| Id | Month | Salary |\n|----|-------|--------|\n| 1  | 3     | 90     |\n| 1  | 2     | 50     |\n| 1  | 1     | 20     |\nEmployee \u00272\u0027 only has one salary record (month \u00271\u0027) except its most recent month \u00272\u0027.\n\n| Id | Month | Salary |\n|----|-------|--------|\n| 2  | 1     | 20     |\nEmploy \u00273\u0027 has two salary records except its most recent pay month \u00274\u0027: month \u00273\u0027 with 60 and month \u00272\u0027 with 40. So the cumulative salary is as following.\n\n| Id | Month | Salary |\n|----|-------|--------|\n| 3  | 3     | 100    |\n| 3  | 2     | 40     |\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:18 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e579. Find Cumulative Salary of an Employee\u003c/h1\u003e\n\u003cp\u003eThe Employee table holds the salary information in a year.\u003c/p\u003e\n\u003cp\u003eWrite a SQL to get the cumulative sum of an employee\u0026rsquo;s salary over a period of 3 months but exclude the most recent month.\u003c/p\u003e\n\u003cp\u003eThe result should be displayed by \u0026lsquo;Id\u0026rsquo; ascending, and then by \u0026lsquo;Month\u0026rsquo; descending.\u003c/p\u003e\n\u003cp\u003eExample\u003cbr/\u003eInput\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eMonth \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e30 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e30 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e60 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e60 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e70 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eOutput\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eMonth \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e90 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e50 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e100 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eExplanation\u003cbr/\u003eEmployee \u0026lsquo;1\u0026rsquo; has 3 salary records for the following 3 months except the most recent month \u0026lsquo;4\u0026rsquo;: salary 40 for month \u0026lsquo;3\u0026rsquo;, 30 for month \u0026lsquo;2\u0026rsquo; and 20 for month \u0026lsquo;1\u0026rsquo;\u003cbr/\u003eSo the cumulative sum of salary of this employee over 3 months is 90(40+30+20), 50(30+20) and 20 respectively.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eMonth \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e90 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e50 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eEmployee \u0026lsquo;2\u0026rsquo; only has one salary record (month \u0026lsquo;1\u0026rsquo;) except its most recent month \u0026lsquo;2\u0026rsquo;.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eMonth \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eEmploy \u0026lsquo;3\u0026rsquo; has two salary records except its most recent pay month \u0026lsquo;4\u0026rsquo;: month \u0026lsquo;3\u0026rsquo; with 60 and month \u0026lsquo;2\u0026rsquo; with 40. So the cumulative salary is as following.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eMonth \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e100 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529174849569_1395060619",
+      "id": "20180616-114729_640212387",
+      "dateCreated": "Jun 16, 2018 11:47:29 AM",
+      "dateStarted": "Jun 16, 2018 11:48:34 AM",
+      "dateFinished": "Jun 16, 2018 11:48:34 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:26 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529174896470_773968625",
+      "id": "20180616-114816_1871334724",
+      "dateCreated": "Jun 16, 2018 11:48:16 AM",
+      "dateStarted": "Jun 16, 2018 11:50:25 AM",
+      "dateFinished": "Jun 16, 2018 11:50:25 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists employee;\nCreate table If Not Exists Employee (Id int, Month int, Salary int);\nTruncate table Employee;\ninsert into Employee (Id, Month, Salary) values (\u00271\u0027, \u00271\u0027, \u002720\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00272\u0027, \u00271\u0027, \u002720\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00271\u0027, \u00272\u0027, \u002730\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00272\u0027, \u00272\u0027, \u002730\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00273\u0027, \u00272\u0027, \u002740\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00271\u0027, \u00273\u0027, \u002740\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00273\u0027, \u00273\u0027, \u002760\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00271\u0027, \u00274\u0027, \u002760\u0027);\ninsert into Employee (Id, Month, Salary) values (\u00273\u0027, \u00274\u0027, \u002770\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529175025618_-1073009985",
+      "id": "20180616-115025_1542420173",
+      "dateCreated": "Jun 16, 2018 11:50:25 AM",
+      "dateStarted": "Jun 16, 2018 4:20:14 PM",
+      "dateFinished": "Jun 16, 2018 4:20:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529175046185_-272716949",
+      "id": "20180616-115046_153878514",
+      "dateCreated": "Jun 16, 2018 11:50:46 AM",
+      "dateStarted": "Jun 16, 2018 11:51:29 AM",
+      "dateFinished": "Jun 16, 2018 11:51:29 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\n\nSELECT e1.id, e1.month,  (select sum(e2.salary) from employee e2 where e2.id \u003d e1.id and e2.month \u003e\u003d e1.month-2 and e2.month \u003c\u003d e1.month group by e2.id) \"Salary\" \nfrom \nemployee e1 \nwhere e1.month not in (select max(e3.month) from employee e3 where e3.id \u003d e1.id)\ngroup by e1.id, e1.month\norder by e1.id asc, e1.month desc",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:34 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 218.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Id\tMonth\tSalary\n1\t3\t90\n1\t2\t50\n1\t1\t20\n2\t1\t20\n3\t3\t100\n3\t2\t40\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529175089694_-1794358334",
+      "id": "20180616-115129_1421858108",
+      "dateCreated": "Jun 16, 2018 11:51:29 AM",
+      "dateStarted": "Jun 16, 2018 4:20:23 PM",
+      "dateFinished": "Jun 16, 2018 4:20:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 11:53:47 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529175227980_-965793093",
+      "id": "20180616-115347_2097255518",
+      "dateCreated": "Jun 16, 2018 11:53:47 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/579-Find-Cumulative-Salary-of-an-Employee",
+  "id": "2DJEDX4ZF",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

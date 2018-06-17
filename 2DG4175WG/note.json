@@ -1,0 +1,269 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 177. Nth Highest Salary\n\nWrite a SQL query to get the nth highest salary from the Employee table.\n```\n+----+--------+\n| Id | Salary |\n+----+--------+\n| 1  | 100    |\n| 2  | 200    |\n| 3  | 300    |\n+----+--------+\n```\nFor example, given the above Employee table, the nth highest salary where n \u003d 2 is 200. If there is no nth highest salary, then the query should return null.\n```\n+------------------------+\n| getNthHighestSalary(2) |\n+------------------------+\n| 200                    |\n+------------------------+\n```",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:02:56 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e177. Nth Highest Salary\u003c/h1\u003e\n\u003cp\u003eWrite a SQL query to get the nth highest salary from the Employee table.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+--------+\n| Id | Salary |\n+----+--------+\n| 1  | 100    |\n| 2  | 200    |\n| 3  | 300    |\n+----+--------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFor example, given the above Employee table, the nth highest salary where n \u003d 2 is 200. If there is no nth highest salary, then the query should return null.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------------------------+\n| getNthHighestSalary(2) |\n+------------------------+\n| 200                    |\n+------------------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193572661_-501029201",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:59:32 PM",
+      "dateStarted": "Jun 16, 2018 5:00:03 PM",
+      "dateFinished": "Jun 16, 2018 5:00:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:03:01 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193572661_-501029201",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:59:32 PM",
+      "dateStarted": "Jun 16, 2018 5:00:03 PM",
+      "dateFinished": "Jun 16, 2018 5:00:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists employee;\nCreate table If Not Exists Employee (Id int, Salary int);\nTruncate table Employee;\ninsert into Employee (Id, Salary) values (\u00271\u0027, \u0027100\u0027);\ninsert into Employee (Id, Salary) values (\u00272\u0027, \u0027200\u0027);\ninsert into Employee (Id, Salary) values (\u00273\u0027, \u0027300\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:03:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193572662_-499874954",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:59:32 PM",
+      "dateStarted": "Jun 16, 2018 5:01:00 PM",
+      "dateFinished": "Jun 16, 2018 5:01:00 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:03:13 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193572662_-499874954",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:59:32 PM",
+      "dateStarted": "Jun 16, 2018 5:00:03 PM",
+      "dateFinished": "Jun 16, 2018 5:00:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nCREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT\nBEGIN\n  SET N \u003d N - 1;\n  RETURN (\n      # Write your MySQL query statement below.\n      select distinct salary from employee order by salary desc limit 1 offset N\n  );\nEND",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:04:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003euse leetcode;\u003cbr/\u003eCREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT\u003cbr/\u003eBEGIN\u003cbr/\u003e SET N \u003d N - 1;\u003cbr/\u003e RETURN (\u003cbr/\u003e # Write your MySQL query statement below.\u003cbr/\u003e select distinct salary from employee order by salary desc limit 1 offset N\u003cbr/\u003e );\u003cbr/\u003eEND\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193572662_-499874954",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:59:32 PM",
+      "dateStarted": "Jun 16, 2018 5:04:14 PM",
+      "dateFinished": "Jun 16, 2018 5:04:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:01:39 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193603714_-1248935090",
+      "id": "20180616-170003_2073383601",
+      "dateCreated": "Jun 16, 2018 5:00:03 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/177-Nth-Highest-Salary",
+  "id": "2DG4175WG",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

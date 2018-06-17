@@ -1,0 +1,284 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 570. Managers with at least 5 direct reports\n\nThe Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.\n```\n+------+----------+-----------+----------+\n|Id    |Name \t  |Department |ManagerId |\n+------+----------+-----------+----------+\n|101   |John \t  |A \t      |null      |\n|102   |Dan \t  |A \t      |101       |\n|103   |James \t  |A \t      |101       |\n|104   |Amy \t  |A \t      |101       |\n|105   |Anne \t  |A \t      |101       |\n|106   |Ron \t  |B \t      |101       |\n+------+----------+-----------+----------+\n```\nGiven the Employee table, write a SQL query that finds out managers with at least 5 direct report. For the above table, your SQL query should return:\n```\n+-------+\n| Name  |\n+-------+\n| John  |\n+-------+\n```\nNote:\nNo one would report to himself.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:50:12 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e570. Managers with at least 5 direct reports\u003c/h1\u003e\n\u003cp\u003eThe Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------+----------+-----------+----------+\n|Id    |Name \t  |Department |ManagerId |\n+------+----------+-----------+----------+\n|101   |John \t  |A \t      |null      |\n|102   |Dan \t  |A \t      |101       |\n|103   |James \t  |A \t      |101       |\n|104   |Amy \t  |A \t      |101       |\n|105   |Anne \t  |A \t      |101       |\n|106   |Ron \t  |B \t      |101       |\n+------+----------+-----------+----------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eGiven the Employee table, write a SQL query that finds out managers with at least 5 direct report. For the above table, your SQL query should return:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-------+\n| Name  |\n+-------+\n| John  |\n+-------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNote:\u003cbr/\u003eNo one would report to himself.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196563577_-2085152626",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:49:23 PM",
+      "dateStarted": "Jun 16, 2018 5:50:08 PM",
+      "dateFinished": "Jun 16, 2018 5:50:08 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:50:19 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196563578_-2083998379",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:49:23 PM",
+      "dateStarted": "Jun 16, 2018 5:50:14 PM",
+      "dateFinished": "Jun 16, 2018 5:50:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists employee;\nCreate table If Not Exists Employee (Id int, Name varchar(255), Department varchar(255), ManagerId int);\nTruncate table Employee;\ninsert into Employee (Id, Name, Department, ManagerId) values (\u0027101\u0027, \u0027John\u0027, \u0027A\u0027, null);\ninsert into Employee (Id, Name, Department, ManagerId) values (\u0027102\u0027, \u0027Dan\u0027, \u0027A\u0027, \u0027101\u0027);\ninsert into Employee (Id, Name, Department, ManagerId) values (\u0027103\u0027, \u0027James\u0027, \u0027A\u0027, \u0027101\u0027);\ninsert into Employee (Id, Name, Department, ManagerId) values (\u0027104\u0027, \u0027Amy\u0027, \u0027A\u0027, \u0027101\u0027);\ninsert into Employee (Id, Name, Department, ManagerId) values (\u0027105\u0027, \u0027Anne\u0027, \u0027A\u0027, \u0027101\u0027);\ninsert into Employee (Id, Name, Department, ManagerId) values (\u0027106\u0027, \u0027Ron\u0027, \u0027B\u0027, \u0027101\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:51:02 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196563578_-2083998379",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:49:23 PM",
+      "dateStarted": "Jun 16, 2018 5:50:56 PM",
+      "dateFinished": "Jun 16, 2018 5:50:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:50:17 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196563578_-2083998379",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:49:23 PM",
+      "dateStarted": "Jun 16, 2018 5:50:15 PM",
+      "dateFinished": "Jun 16, 2018 5:50:15 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\n\nselect a.name from employee a inner join employee b on (a.id \u003d b.managerid) group by a.name having count(distinct b.id) \u003e\u003d 5",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:52:10 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Name\nJohn\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196563578_-2083998379",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:49:23 PM",
+      "dateStarted": "Jun 16, 2018 5:51:53 PM",
+      "dateFinished": "Jun 16, 2018 5:51:53 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:49:23 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196563579_-2084383128",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:49:23 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/570-Managers-with-at-least-5-Direct-Reports",
+  "id": "2DJYRZF76",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

@@ -1,0 +1,430 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 585. Investments in 2016\n\nWrite a query to print the sum of all total investment values in 2016 (TIV_2016), to a scale of 2 decimal places, for all policy holders who meet the following criteria:\n \n 1. Have the same TIV_2015 value as one or more other policyholders.\n 2. Are not located in the same city as any other policyholder (i.e.: the (latitude, longitude) attribute pairs must be unique).\n\nInput Format:\nThe insurance table is described as follows:\n\n| Column Name | Type          |\n|-------------|---------------|\n| PID         | INTEGER(11)   |\n| TIV_2015    | NUMERIC(15,2) |\n| TIV_2016    | NUMERIC(15,2) |\n| LAT         | NUMERIC(5,2)  |\n| LON         | NUMERIC(5,2)  |\n\nwhere PID is the policyholder\u0027s policy ID, TIV_2015 is the total investment value in 2015, TIV_2016 is the total investment value in 2016, LAT is the latitude of the policy holder\u0027s city, and LON is the longitude of the policy holder\u0027s city.\n\nSample Input\n\n| PID | TIV_2015 | TIV_2016 | LAT | LON |\n|-----|----------|----------|-----|-----|\n| 1   | 10       | 5        | 10  | 10  |\n| 2   | 20       | 20       | 20  | 20  |\n| 3   | 10       | 30       | 20  | 20  |\n| 4   | 10       | 40       | 40  | 40  |\n\nSample Output\n\n| TIV_2016 |\n|----------|\n| 45.00    |\n\nExplanation\n```\nThe first record in the table, like the last record, meets both of the two criteria.\nThe TIV_2015 value \u002710\u0027 is as the same as the third and forth record, and its location unique.\n\nThe second record does not meet any of the two criteria. Its TIV_2015 is not like any other policyholders.\n\nAnd its location is the same with the third record, which makes the third record fail, too.\n\nSo, the result is the sum of TIV_2016 of the first and last record, which is 45.\n```",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e585. Investments in 2016\u003c/h1\u003e\n\u003cp\u003eWrite a query to print the sum of all total investment values in 2016 (TIV_2016), to a scale of 2 decimal places, for all policy holders who meet the following criteria:\u003c/p\u003e\n\u003col\u003e\n  \u003cli\u003eHave the same TIV_2015 value as one or more other policyholders.\u003c/li\u003e\n  \u003cli\u003eAre not located in the same city as any other policyholder (i.e.: the (latitude, longitude) attribute pairs must be unique).\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eInput Format:\u003cbr/\u003eThe insurance table is described as follows:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eColumn Name \u003c/th\u003e\n      \u003cth\u003eType \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003ePID \u003c/td\u003e\n      \u003ctd\u003eINTEGER(11) \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eTIV_2015 \u003c/td\u003e\n      \u003ctd\u003eNUMERIC(15,2) \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eTIV_2016 \u003c/td\u003e\n      \u003ctd\u003eNUMERIC(15,2) \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eLAT \u003c/td\u003e\n      \u003ctd\u003eNUMERIC(5,2) \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eLON \u003c/td\u003e\n      \u003ctd\u003eNUMERIC(5,2) \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003ewhere PID is the policyholder\u0026rsquo;s policy ID, TIV_2015 is the total investment value in 2015, TIV_2016 is the total investment value in 2016, LAT is the latitude of the policy holder\u0026rsquo;s city, and LON is the longitude of the policy holder\u0026rsquo;s city.\u003c/p\u003e\n\u003cp\u003eSample Input\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ePID \u003c/th\u003e\n      \u003cth\u003eTIV_2015 \u003c/th\u003e\n      \u003cth\u003eTIV_2016 \u003c/th\u003e\n      \u003cth\u003eLAT \u003c/th\u003e\n      \u003cth\u003eLON \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e30 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n      \u003ctd\u003e20 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n      \u003ctd\u003e40 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eSample Output\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eTIV_2016 \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e45.00 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eExplanation\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eThe first record in the table, like the last record, meets both of the two criteria.\nThe TIV_2015 value \u0026#39;10\u0026#39; is as the same as the third and forth record, and its location unique.\n\nThe second record does not meet any of the two criteria. Its TIV_2015 is not like any other policyholders.\n\nAnd its location is the same with the third record, which makes the third record fail, too.\n\nSo, the result is the sum of TIV_2016 of the first and last record, which is 45.\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529176493525_1226980298",
+      "id": "20180616-121453_148785112",
+      "dateCreated": "Jun 16, 2018 12:14:53 PM",
+      "dateStarted": "Jun 16, 2018 12:17:50 PM",
+      "dateFinished": "Jun 16, 2018 12:17:50 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Creating the Schema\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529176559295_386596755",
+      "id": "20180616-121559_1861078814",
+      "dateCreated": "Jun 16, 2018 12:15:59 PM",
+      "dateStarted": "Jun 16, 2018 12:19:53 PM",
+      "dateFinished": "Jun 16, 2018 12:19:53 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists insurance;\nCREATE TABLE IF NOT EXISTS insurance (PID INTEGER(11), TIV_2015 NUMERIC(15,2), TIV_2016 NUMERIC(15,2), LAT NUMERIC(5,2), LON NUMERIC(5,2) );\nTruncate table insurance;\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00271\u0027, \u002710\u0027, \u00275\u0027, \u002710\u0027, \u002710\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00272\u0027, \u002720\u0027, \u002720\u0027, \u002720\u0027, \u002720\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00273\u0027, \u002710\u0027, \u002730\u0027, \u002720\u0027, \u002720\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00274\u0027, \u002710\u0027, \u002740\u0027, \u002740\u0027, \u002740\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529176793096_-1062045795",
+      "id": "20180616-121953_1276788294",
+      "dateCreated": "Jun 16, 2018 12:19:53 PM",
+      "dateStarted": "Jun 16, 2018 4:20:59 PM",
+      "dateFinished": "Jun 16, 2018 4:20:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\n### Solution\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:16 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529176833904_1059120863",
+      "id": "20180616-122033_1302388060",
+      "dateCreated": "Jun 16, 2018 12:20:33 PM",
+      "dateStarted": "Jun 16, 2018 12:20:45 PM",
+      "dateFinished": "Jun 16, 2018 12:20:45 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\nselect sum(tiv_2016)\nfrom insurance a left outer join  \n(select b.lat, b.lon from insurance b group by b.lat, b.lon having count(*) \u003e 1) c on (a.lat \u003d c.lat and a.lon \u003d c.lon) left outer join\n(select d.tiv_2015 from insurance d group by d.tiv_2015 having count(*) \u003e 1) e on (a.tiv_2015 \u003d e.tiv_2015)\nwhere c.lat is null and c.lon is null and e.tiv_2015 is not null",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:18 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "sum(tiv_2016)\n45.00\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529176824198_586249141",
+      "id": "20180616-122024_717189324",
+      "dateCreated": "Jun 16, 2018 12:20:24 PM",
+      "dateStarted": "Jun 16, 2018 4:21:07 PM",
+      "dateFinished": "Jun 16, 2018 4:21:07 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\nCREATE TABLE IF NOT EXISTS insurance (PID INTEGER(11), TIV_2015 NUMERIC(15,2), TIV_2016 NUMERIC(15,2), LAT NUMERIC(5,2), LON NUMERIC(5,2) );\nTruncate table insurance;\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00271\u0027, \u0027224.17\u0027, \u0027952.73\u0027, \u002732.4\u0027, \u002720.2\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00272\u0027, \u0027224.17\u0027, \u0027900.66\u0027, \u002752.4\u0027, \u002732.7\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00273\u0027, \u0027824.61\u0027, \u0027645.13\u0027, \u002772.4\u0027, \u002745.2\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00274\u0027, \u0027424.32\u0027, \u0027323.66\u0027, \u002712.4\u0027, \u00277.7\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00275\u0027, \u0027424.32\u0027, \u0027282.9\u0027, \u002712.4\u0027, \u00277.7\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00276\u0027, \u0027625.05\u0027, \u0027243.53\u0027, \u002752.5\u0027, \u002732.8\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00277\u0027, \u0027424.32\u0027, \u0027968.94\u0027, \u002772.5\u0027, \u002745.3\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00278\u0027, \u0027624.46\u0027, \u0027714.13\u0027, \u002712.5\u0027, \u00277.8\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u00279\u0027, \u0027425.49\u0027, \u0027463.85\u0027, \u002732.5\u0027, \u002720.3\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u002710\u0027, \u0027624.46\u0027, \u0027776.85\u0027, \u002712.4\u0027, \u00277.7\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u002711\u0027, \u0027624.46\u0027, \u0027692.71\u0027, \u002772.5\u0027, \u002745.3\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u002712\u0027, \u0027225.93\u0027, \u0027933\u0027, \u002712.5\u0027, \u00277.8\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u002713\u0027, \u0027824.61\u0027, \u0027786.86\u0027, \u002732.6\u0027, \u002720.3\u0027);\ninsert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values (\u002714\u0027, \u0027824.61\u0027, \u0027935.34\u0027, \u002752.6\u0027, \u002732.8\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:21 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529176933202_-997625808",
+      "id": "20180616-122213_1788312369",
+      "dateCreated": "Jun 16, 2018 12:22:13 PM",
+      "dateStarted": "Jun 16, 2018 4:21:14 PM",
+      "dateFinished": "Jun 16, 2018 4:21:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect sum(tiv_2016)\nfrom insurance a left outer join  \n(select b.lat, b.lon from insurance b group by b.lat, b.lon having count(*) \u003e 1) c on (a.lat \u003d c.lat and a.lon \u003d c.lon) left outer join\n(select d.tiv_2015 from insurance d group by d.tiv_2015 having count(*) \u003e 1) e on (a.tiv_2015 \u003d e.tiv_2015)\nwhere c.lat is null and c.lon is null and e.tiv_2015 is not null",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:24 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 548.0,
+              "optionOpen": false
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 92.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "sum(tiv_2016)\n4220.72\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529178228036_-981227745",
+      "id": "20180616-124348_154988801",
+      "dateCreated": "Jun 16, 2018 12:43:48 PM",
+      "dateStarted": "Jun 16, 2018 4:21:19 PM",
+      "dateFinished": "Jun 16, 2018 4:21:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 12:43:57 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529178237581_1118747076",
+      "id": "20180616-124357_476276325",
+      "dateCreated": "Jun 16, 2018 12:43:57 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/585-Investments-in-2016",
+  "id": "2DFHPBTFE",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

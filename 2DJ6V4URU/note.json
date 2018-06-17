@@ -1,0 +1,266 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 612. Shortest Distance in a Plane\n\nTable point_2d holds the coordinates (x,y) of some unique points (more than two) in a plane.\nWrite a query to find the shortest distance between these points rounded to 2 decimals.\n\n| x  | y  |\n|----|----|\n| -1 | -1 |\n| 0  | 0  |\n| -1 | -2 |\n\nThe shortest distance is 1.00 from point (-1,-1) to (-1,2). So the output should be:\n\n| shortest |\n|----------|\n| 1.00     |\n\nNote: The longest distance among all the points are less than 10000.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:12:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e612. Shortest Distance in a Plane\u003c/h1\u003e\n\u003cp\u003eTable point_2d holds the coordinates (x,y) of some unique points (more than two) in a plane.\u003cbr/\u003eWrite a query to find the shortest distance between these points rounded to 2 decimals.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ex \u003c/th\u003e\n      \u003cth\u003ey \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e-1 \u003c/td\u003e\n      \u003ctd\u003e-1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e0 \u003c/td\u003e\n      \u003ctd\u003e0 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e-1 \u003c/td\u003e\n      \u003ctd\u003e-2 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe shortest distance is 1.00 from point (-1,-1) to (-1,2). So the output should be:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eshortest \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1.00 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eNote: The longest distance among all the points are less than 10000.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529168494962_-1064660928",
+      "id": "20180616-100134_1262641083",
+      "dateCreated": "Jun 16, 2018 10:01:34 AM",
+      "dateStarted": "Jun 16, 2018 10:02:46 AM",
+      "dateFinished": "Jun 16, 2018 10:02:46 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Creating the schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:12:30 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529168506592_219261476",
+      "id": "20180616-100146_1121121907",
+      "dateCreated": "Jun 16, 2018 10:01:46 AM",
+      "dateStarted": "Jun 16, 2018 10:02:03 AM",
+      "dateFinished": "Jun 16, 2018 10:02:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists point_2d;\nCREATE TABLE If Not Exists point_2d (x INT NOT NULL, y INT NOT NULL);\nTruncate table point_2d;\ninsert into point_2d (x, y) values (\u0027-1\u0027, \u0027-1\u0027);\ninsert into point_2d (x, y) values (\u00270\u0027, \u00270\u0027);\ninsert into point_2d (x, y) values (\u0027-1\u0027, \u0027-2\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:12:35 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529168489002_-1699896686",
+      "id": "20180616-100129_1400861461",
+      "dateCreated": "Jun 16, 2018 10:01:29 AM",
+      "dateStarted": "Jun 16, 2018 4:26:27 PM",
+      "dateFinished": "Jun 16, 2018 4:26:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Solution: \n\nUsing Euclidean Distance\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:12:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution:\u003c/h3\u003e\n\u003cp\u003eUsing Euclidean Distance\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529169340236_-1421733622",
+      "id": "20180616-101540_132704596",
+      "dateCreated": "Jun 16, 2018 10:15:40 AM",
+      "dateStarted": "Jun 16, 2018 10:18:10 AM",
+      "dateFinished": "Jun 16, 2018 10:18:10 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nSELECT\n    round(min(sqrt(pow(P1.y-P2.y,2)+pow(P1.x-P2.x,2))),2) as shortest\nFROM\n    point_2d P1,\n    point_2d P2\nWHERE\n    P1.x \u003c\u003e P2.x OR\n    P1.y \u003c\u003e P2.y",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:12:40 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "shortest\n1.00\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529168592671_-536126497",
+      "id": "20180616-100312_39688495",
+      "dateCreated": "Jun 16, 2018 10:03:12 AM",
+      "dateStarted": "Jun 16, 2018 4:26:30 PM",
+      "dateFinished": "Jun 16, 2018 4:26:30 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 10:20:20 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529169620852_-426005113",
+      "id": "20180616-102020_430865871",
+      "dateCreated": "Jun 16, 2018 10:20:20 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/612-Shortest-Distance-In-a-Plane",
+  "id": "2DJ6V4URU",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

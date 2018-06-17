@@ -1,0 +1,292 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 601. Human Traffic Of Stadium\n\nX city built a new stadium, each day many people visit it and the stats are saved as these columns: id, date, people\n\nPlease write a query to display the records which have 3 or more consecutive rows and the amount of people more than 100(inclusive).\n\nFor example, the table stadium:\n\n| id   | date       | people    |\n|------|------------|-----------|\n| 1    | 2017-01-01 | 10        |\n| 2    | 2017-01-02 | 109       |\n| 3    | 2017-01-03 | 150       |\n| 4    | 2017-01-04 | 99        |\n| 5    | 2017-01-05 | 145       |\n| 6    | 2017-01-06 | 1455      |\n| 7    | 2017-01-07 | 199       |\n| 8    | 2017-01-08 | 188       |\n\nFor the sample data above, the output is:\n\n\n| id   | date       | people    |\n|------|------------|-----------|\n| 5    | 2017-01-05 | 145       |\n| 6    | 2017-01-06 | 1455      |\n| 7    | 2017-01-07 | 199       |\n| 8    | 2017-01-08 | 188       |\n\nNote:\nEach day only have one row record, and the dates are increasing with id increasing.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:17 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e601. Human Traffic Of Stadium\u003c/h1\u003e\n\u003cp\u003eX city built a new stadium, each day many people visit it and the stats are saved as these columns: id, date, people\u003c/p\u003e\n\u003cp\u003ePlease write a query to display the records which have 3 or more consecutive rows and the amount of people more than 100(inclusive).\u003c/p\u003e\n\u003cp\u003eFor example, the table stadium:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003edate \u003c/th\u003e\n      \u003cth\u003epeople \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2017-01-01 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2017-01-02 \u003c/td\u003e\n      \u003ctd\u003e109 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2017-01-03 \u003c/td\u003e\n      \u003ctd\u003e150 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e2017-01-04 \u003c/td\u003e\n      \u003ctd\u003e99 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e2017-01-05 \u003c/td\u003e\n      \u003ctd\u003e145 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e6 \u003c/td\u003e\n      \u003ctd\u003e2017-01-06 \u003c/td\u003e\n      \u003ctd\u003e1455 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e7 \u003c/td\u003e\n      \u003ctd\u003e2017-01-07 \u003c/td\u003e\n      \u003ctd\u003e199 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e8 \u003c/td\u003e\n      \u003ctd\u003e2017-01-08 \u003c/td\u003e\n      \u003ctd\u003e188 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eFor the sample data above, the output is:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003edate \u003c/th\u003e\n      \u003cth\u003epeople \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e2017-01-05 \u003c/td\u003e\n      \u003ctd\u003e145 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e6 \u003c/td\u003e\n      \u003ctd\u003e2017-01-06 \u003c/td\u003e\n      \u003ctd\u003e1455 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e7 \u003c/td\u003e\n      \u003ctd\u003e2017-01-07 \u003c/td\u003e\n      \u003ctd\u003e199 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e8 \u003c/td\u003e\n      \u003ctd\u003e2017-01-08 \u003c/td\u003e\n      \u003ctd\u003e188 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eNote:\u003cbr/\u003eEach day only have one row record, and the dates are increasing with id increasing.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192909123_-694724819",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:48:29 PM",
+      "dateStarted": "Jun 16, 2018 4:49:45 PM",
+      "dateFinished": "Jun 16, 2018 4:49:45 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:21 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192909124_-696648564",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:48:29 PM",
+      "dateStarted": "Jun 16, 2018 4:49:51 PM",
+      "dateFinished": "Jun 16, 2018 4:49:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists stadium;\nCreate table If Not Exists stadium (id int, date DATE NULL, people int);\nTruncate table stadium;\ninsert into stadium (id, date, people) values (\u00271\u0027, \u00272017-01-01\u0027, \u002710\u0027);\ninsert into stadium (id, date, people) values (\u00272\u0027, \u00272017-01-02\u0027, \u0027109\u0027);\ninsert into stadium (id, date, people) values (\u00273\u0027, \u00272017-01-03\u0027, \u0027150\u0027);\ninsert into stadium (id, date, people) values (\u00274\u0027, \u00272017-01-04\u0027, \u002799\u0027);\ninsert into stadium (id, date, people) values (\u00275\u0027, \u00272017-01-05\u0027, \u0027145\u0027);\ninsert into stadium (id, date, people) values (\u00276\u0027, \u00272017-01-06\u0027, \u00271455\u0027);\ninsert into stadium (id, date, people) values (\u00277\u0027, \u00272017-01-07\u0027, \u0027199\u0027);\ninsert into stadium (id, date, people) values (\u00278\u0027, \u00272017-01-08\u0027, \u0027188\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:23 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192909124_-696648564",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:48:29 PM",
+      "dateStarted": "Jun 16, 2018 4:50:25 PM",
+      "dateFinished": "Jun 16, 2018 4:50:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:26 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192909124_-696648564",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:48:29 PM",
+      "dateStarted": "Jun 16, 2018 4:50:51 PM",
+      "dateFinished": "Jun 16, 2018 4:50:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect distinct day1.* \nfrom \nstadium day1, stadium day2, stadium day3\nwhere \nday1.people \u003e\u003d 100 and day2.people \u003e\u003d 100 and day3.people \u003e\u003d 100 and\n((day1.id + 1 \u003d  day2.id and day1.id + 2 \u003d day3.id) or \n(day1.id - 1 \u003d day2.id and day1.id + 1 \u003d day3.id) or \n(day1.id - 2 \u003d day2.id and day1.id - 1 \u003d day3.id)) \norder by day1.id; ",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 194.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "id\tdate\tpeople\n5\t2017-01-05\t145\n6\t2017-01-06\t1455\n7\t2017-01-07\t199\n8\t2017-01-08\t188\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192909124_-696648564",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:48:29 PM",
+      "dateStarted": "Jun 16, 2018 4:50:48 PM",
+      "dateFinished": "Jun 16, 2018 4:50:48 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 4:50:48 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193048767_-893808567",
+      "id": "20180616-165048_774922905",
+      "dateCreated": "Jun 16, 2018 4:50:48 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/601-Human-Traffic-of-Stadium",
+  "id": "2DG8G3R3K",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

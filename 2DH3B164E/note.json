@@ -1,0 +1,289 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 569. Median Empployee Salary\n\nThe Employee table holds all employees. The employee table has three columns: Employee Id, Company Name, and Salary.\n\n\n|Id   | Company    | Salary |\n|-----|------------|--------|\n|1    | A          | 2341   |\n|2    | A          | 341    |\n|3    | A          | 15     |\n|4    | A          | 15314  |\n|5    | A          | 451    |\n|6    | A          | 513    |\n|7    | B          | 15     |\n|8    | B          | 13     |\n|9    | B          | 1154   |\n|10   | B          | 1345   |\n|11   | B          | 1221   |\n|12   | B          | 234    |\n|13   | C          | 2345   |\n|14   | C          | 2645   |\n|15   | C          | 2645   |\n|16   | C          | 2652   |\n|17   | C          | 65     |\n\n\nWrite a SQL query to find the median salary of each company. Bonus points if you can solve it without using any built-in SQL functions.\n\n\n|Id   | Company    | Salary |\n|-----|------------|--------|\n|5    | A          | 451    |\n|6    | A          | 513    |\n|12   | B          | 234    |\n|9    | B          | 1154   |\n|14   | C          | 2645   |\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:02 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e569. Median Empployee Salary\u003c/h1\u003e\n\u003cp\u003eThe Employee table holds all employees. The employee table has three columns: Employee Id, Company Name, and Salary.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eCompany \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e2341 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e341 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e15314 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e451 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e6 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e513 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e7 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e8 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e13 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e9 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e1154 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e1345 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e11 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e1221 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e12 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e234 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e13 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003e2345 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e14 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003e2645 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e15 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003e2645 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e16 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003e2652 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e17 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003e65 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eWrite a SQL query to find the median salary of each company. Bonus points if you can solve it without using any built-in SQL functions.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eId \u003c/th\u003e\n      \u003cth\u003eCompany \u003c/th\u003e\n      \u003cth\u003eSalary \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e451 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e6 \u003c/td\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003e513 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e12 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e234 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e9 \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e1154 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e14 \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n      \u003ctd\u003e2645 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529182851133_-848668928",
+      "id": "20180616-140051_649050258",
+      "dateCreated": "Jun 16, 2018 2:00:51 PM",
+      "dateStarted": "Jun 16, 2018 2:01:58 PM",
+      "dateFinished": "Jun 16, 2018 2:01:58 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:16 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529182918977_-530958282",
+      "id": "20180616-140158_886352384",
+      "dateCreated": "Jun 16, 2018 2:01:58 PM",
+      "dateStarted": "Jun 16, 2018 2:03:20 PM",
+      "dateFinished": "Jun 16, 2018 2:03:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists employee;\nCreate table If Not Exists Employee (Id int, Company varchar(255), Salary int);\nTruncate table Employee;\ninsert into Employee (Id, Company, Salary) values (\u00271\u0027, \u0027A\u0027, \u00272341\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00272\u0027, \u0027A\u0027, \u0027341\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00273\u0027, \u0027A\u0027, \u002715\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00274\u0027, \u0027A\u0027, \u002715314\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00275\u0027, \u0027A\u0027, \u0027451\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00276\u0027, \u0027A\u0027, \u0027513\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00277\u0027, \u0027B\u0027, \u002715\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00278\u0027, \u0027B\u0027, \u002713\u0027);\ninsert into Employee (Id, Company, Salary) values (\u00279\u0027, \u0027B\u0027, \u00271154\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002710\u0027, \u0027B\u0027, \u00271345\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002711\u0027, \u0027B\u0027, \u00271221\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002712\u0027, \u0027B\u0027, \u0027234\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002713\u0027, \u0027C\u0027, \u00272345\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002714\u0027, \u0027C\u0027, \u00272645\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002715\u0027, \u0027C\u0027, \u00272645\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002716\u0027, \u0027C\u0027, \u00272652\u0027);\ninsert into Employee (Id, Company, Salary) values (\u002717\u0027, \u0027C\u0027, \u002765\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:11 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529182994447_-1097034472",
+      "id": "20180616-140314_1812976210",
+      "dateCreated": "Jun 16, 2018 2:03:14 PM",
+      "dateStarted": "Jun 16, 2018 2:04:12 PM",
+      "dateFinished": "Jun 16, 2018 2:04:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\nselect id, company, salary from  (select id, company, salary, @rownum :\u003d @rownum + 1 row_number from employee, (select @rownum :\u003d0) init order by company, salary) c\nwhere c.row_number in (select max(row_number) - floor(count(row_number)/2) row_number from (select id, company, salary, @rownum1 :\u003d @rownum1 + 1 row_number from employee, (select @rownum1 :\u003d0) init order by company, salary) employees_ordered group by company union\nselect min(row_number) + floor(count(row_number)/2) row_number from (select id, company, salary, @rownum2 :\u003d @rownum2 + 1 row_number from employee, (select @rownum2 :\u003d0) init order by company, salary) employees_ordered group by company)\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "id\tcompany\tsalary\n5\tA\t451\n6\tA\t513\n12\tB\t234\n9\tB\t1154\n14\tC\t2645\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529183052486_1331023891",
+      "id": "20180616-140412_1501251207",
+      "dateCreated": "Jun 16, 2018 2:04:12 PM",
+      "dateStarted": "Jun 16, 2018 2:28:34 PM",
+      "dateFinished": "Jun 16, 2018 2:28:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": ";",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 2:20:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184032914_-1247403417",
+      "id": "20180616-142032_20499166",
+      "dateCreated": "Jun 16, 2018 2:20:32 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/569-Median-Employee-Salary",
+  "id": "2DH3B164E",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

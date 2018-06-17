@@ -1,0 +1,336 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 607. Salesperson\n\nDescription\n\nGiven three tables: salesperson, company, orders.\nOutput all the names in the table salesperson, who didn’t have sales to company \u0027RED\u0027.\n\nExample\nInput\n\nTable: salesperson\n\n\n| sales_id | name | salary | commission_rate | hire_date |\n|----------|------|--------|-----------------|-----------|\n|   1      | John | 100000 |     6           | 4/1/2006  |\n|   2      | Amy  | 120000 |     5           | 5/1/2010  |\n|   3      | Mark | 65000  |     12          | 12/25/2008|\n|   4      | Pam  | 25000  |     25          | 1/1/2005  |\n|   5      | Alex | 50000  |     10          | 2/3/2007  |\n\nThe table salesperson holds the salesperson information. Every salesperson has a sales_id and a name.\n\nTable: company\n\n\n| com_id  |  name  |    city    |\n|---------|--------|------------|\n|   1     |  RED   |   Boston   |\n|   2     | ORANGE |   New York |\n|   3     | YELLOW |   Boston   |\n|   4     | GREEN  |   Austin   |\n\nThe table company holds the company information. Every company has a com_id and a name.\n\nTable: orders\n\n\n| order_id |  date    | com_id  | sales_id | amount |\n|----------|----------|---------|----------|--------|\n| 1        | 1/1/2014 |    3    |    4     | 100000 |\n| 2        | 2/1/2014 |    4    |    5     | 5000   |\n| 3        | 3/1/2014 |    1    |    1     | 50000  |\n| 4        | 4/1/2014 |    1    |    4     | 25000  |\n\nThe table orders holds the sales record information, salesperson and customer company are represented by sales_id and com_id.\noutput\n\n\n| name | \n|------|\n| Amy  | \n| Mark | \n| Alex |\n\nExplanation\n\nAccording to order \u00273\u0027 and \u00274\u0027 in table orders, it is easy to tell only salesperson \u0027John\u0027 and \u0027Alex\u0027 have sales to company \u0027RED\u0027,\nso we need to output all the other names in table salesperson.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:51 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e607. Salesperson\u003c/h1\u003e\n\u003cp\u003eDescription\u003c/p\u003e\n\u003cp\u003eGiven three tables: salesperson, company, orders.\u003cbr/\u003eOutput all the names in the table salesperson, who didn’t have sales to company \u0026lsquo;RED\u0026rsquo;.\u003c/p\u003e\n\u003cp\u003eExample\u003cbr/\u003eInput\u003c/p\u003e\n\u003cp\u003eTable: salesperson\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003esales_id \u003c/th\u003e\n      \u003cth\u003ename \u003c/th\u003e\n      \u003cth\u003esalary \u003c/th\u003e\n      \u003cth\u003ecommission_rate \u003c/th\u003e\n      \u003cth\u003ehire_date \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eJohn \u003c/td\u003e\n      \u003ctd\u003e100000 \u003c/td\u003e\n      \u003ctd\u003e6 \u003c/td\u003e\n      \u003ctd\u003e4/1/2006 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eAmy \u003c/td\u003e\n      \u003ctd\u003e120000 \u003c/td\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e5/1/2010 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eMark \u003c/td\u003e\n      \u003ctd\u003e65000 \u003c/td\u003e\n      \u003ctd\u003e12 \u003c/td\u003e\n      \u003ctd\u003e12/25/2008\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003ePam \u003c/td\u003e\n      \u003ctd\u003e25000 \u003c/td\u003e\n      \u003ctd\u003e25 \u003c/td\u003e\n      \u003ctd\u003e1/1/2005 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eAlex \u003c/td\u003e\n      \u003ctd\u003e50000 \u003c/td\u003e\n      \u003ctd\u003e10 \u003c/td\u003e\n      \u003ctd\u003e2/3/2007 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe table salesperson holds the salesperson information. Every salesperson has a sales_id and a name.\u003c/p\u003e\n\u003cp\u003eTable: company\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ecom_id \u003c/th\u003e\n      \u003cth\u003ename \u003c/th\u003e\n      \u003cth\u003ecity \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eRED \u003c/td\u003e\n      \u003ctd\u003eBoston \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eORANGE \u003c/td\u003e\n      \u003ctd\u003eNew York \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eYELLOW \u003c/td\u003e\n      \u003ctd\u003eBoston \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003eGREEN \u003c/td\u003e\n      \u003ctd\u003eAustin \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe table company holds the company information. Every company has a com_id and a name.\u003c/p\u003e\n\u003cp\u003eTable: orders\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eorder_id \u003c/th\u003e\n      \u003cth\u003edate \u003c/th\u003e\n      \u003cth\u003ecom_id \u003c/th\u003e\n      \u003cth\u003esales_id \u003c/th\u003e\n      \u003cth\u003eamount \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1/1/2014 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e100000 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2/1/2014 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e5000 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e3/1/2014 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e50000 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e4/1/2014 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e25000 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe table orders holds the sales record information, salesperson and customer company are represented by sales_id and com_id.\u003cbr/\u003eoutput\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ename \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eAmy \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eMark \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eAlex \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eExplanation\u003c/p\u003e\n\u003cp\u003eAccording to order \u0026lsquo;3\u0026rsquo; and \u0026lsquo;4\u0026rsquo; in table orders, it is easy to tell only salesperson \u0026lsquo;John\u0026rsquo; and \u0026lsquo;Alex\u0026rsquo; have sales to company \u0026lsquo;RED\u0026rsquo;,\u003cbr/\u003eso we need to output all the other names in table salesperson.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192641265_1801867815",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:44:01 PM",
+      "dateStarted": "Jun 16, 2018 4:45:59 PM",
+      "dateFinished": "Jun 16, 2018 4:45:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:55 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192641265_1801867815",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:44:01 PM",
+      "dateStarted": "Jun 16, 2018 4:46:09 PM",
+      "dateFinished": "Jun 16, 2018 4:46:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists salesperson;\ndrop table if exists orders;\ndrop table if exists company;\nCreate table If Not Exists salesperson (sales_id int, name varchar(255), salary int,commission_rate int, hire_date varchar(255));\nCreate table If Not Exists company (com_id int, name varchar(255), city varchar(255));\nCreate table If Not Exists orders (order_id int, date varchar(255), com_id int, sales_id int, amount int);\nTruncate table salesperson;\ninsert into salesperson (sales_id, name, salary, commission_rate, hire_date) values (\u00271\u0027, \u0027John\u0027, \u0027100000\u0027, \u00276\u0027, \u00274/1/2006\u0027);\ninsert into salesperson (sales_id, name, salary, commission_rate, hire_date) values (\u00272\u0027, \u0027Amy\u0027, \u002712000\u0027, \u00275\u0027, \u00275/1/2010\u0027);\ninsert into salesperson (sales_id, name, salary, commission_rate, hire_date) values (\u00273\u0027, \u0027Mark\u0027, \u002765000\u0027, \u002712\u0027, \u002712/25/2008\u0027);\ninsert into salesperson (sales_id, name, salary, commission_rate, hire_date) values (\u00274\u0027, \u0027Pam\u0027, \u002725000\u0027, \u002725\u0027, \u00271/1/2005\u0027);\ninsert into salesperson (sales_id, name, salary, commission_rate, hire_date) values (\u00275\u0027, \u0027Alex\u0027, \u00275000\u0027, \u002710\u0027, \u00272/3/2007\u0027);\nTruncate table company;\ninsert into company (com_id, name, city) values (\u00271\u0027, \u0027RED\u0027, \u0027Boston\u0027);\ninsert into company (com_id, name, city) values (\u00272\u0027, \u0027ORANGE\u0027, \u0027New York\u0027);\ninsert into company (com_id, name, city) values (\u00273\u0027, \u0027YELLOW\u0027, \u0027Boston\u0027);\ninsert into company (com_id, name, city) values (\u00274\u0027, \u0027GREEN\u0027, \u0027Austin\u0027);\nTruncate table orders;\ninsert into orders (order_id, date, com_id, sales_id, amount) values (\u00271\u0027, \u00271/1/2014\u0027, \u00273\u0027, \u00274\u0027, \u002710000\u0027);\ninsert into orders (order_id, date, com_id, sales_id, amount) values (\u00272\u0027, \u00272/1/2014\u0027, \u00274\u0027, \u00275\u0027, \u00275000\u0027);\ninsert into orders (order_id, date, com_id, sales_id, amount) values (\u00273\u0027, \u00273/1/2014\u0027, \u00271\u0027, \u00271\u0027, \u002750000\u0027);\ninsert into orders (order_id, date, com_id, sales_id, amount) values (\u00274\u0027, \u00274/1/2014\u0027, \u00271\u0027, \u00274\u0027, \u002725000\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192641265_1801867815",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:44:01 PM",
+      "dateStarted": "Jun 16, 2018 4:47:20 PM",
+      "dateFinished": "Jun 16, 2018 4:47:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:02 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192641265_1801867815",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:44:01 PM",
+      "dateStarted": "Jun 16, 2018 4:47:29 PM",
+      "dateFinished": "Jun 16, 2018 4:47:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect s.name \nfrom salesperson s \nwhere s.sales_id not in (select o.sales_id from orders o, company c where o.com_id \u003d c.com_id and c.name \u003d \u0027RED\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:11:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 154.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "name\nAmy\nMark\nAlex\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192641265_1801867815",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:44:01 PM",
+      "dateStarted": "Jun 16, 2018 4:47:44 PM",
+      "dateFinished": "Jun 16, 2018 4:47:44 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 4:47:44 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529192864366_-964955115",
+      "id": "20180616-164744_1072601336",
+      "dateCreated": "Jun 16, 2018 4:47:44 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/607-Salesperson",
+  "id": "2DHSDE2DN",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

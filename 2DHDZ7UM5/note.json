@@ -1,0 +1,297 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 577. Employee Bonus\n\nSelect all employee\u0027s name and bonus whose bonus is \u003c 1000.\n\nTable:Employee\n```\n+-------+--------+-----------+--------+\n| empId |  name  | supervisor| salary |\n+-------+--------+-----------+--------+\n|   1   | John   |  3        | 1000   |\n|   2   | Dan    |  3        | 2000   |\n|   3   | Brad   |  null     | 4000   |\n|   4   | Thomas |  3        | 4000   |\n+-------+--------+-----------+--------+\nempId is the primary key column for this table.\n```\nTable: Bonus\n```\n+-------+-------+\n| empId | bonus |\n+-------+-------+\n| 2     | 500   |\n| 4     | 2000  |\n+-------+-------+\nempId is the primary key column for this table.\n```\nExample ouput:\n```\n+-------+-------+\n| name  | bonus |\n+-------+-------+\n| John  | null  |\n| Dan   | 500   |\n| Brad  | null  |\n+-------+-------+\n```\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:58:47 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e577. Employee Bonus\u003c/h1\u003e\n\u003cp\u003eSelect all employee\u0026rsquo;s name and bonus whose bonus is \u0026lt; 1000.\u003c/p\u003e\n\u003cp\u003eTable:Employee\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-------+--------+-----------+--------+\n| empId |  name  | supervisor| salary |\n+-------+--------+-----------+--------+\n|   1   | John   |  3        | 1000   |\n|   2   | Dan    |  3        | 2000   |\n|   3   | Brad   |  null     | 4000   |\n|   4   | Thomas |  3        | 4000   |\n+-------+--------+-----------+--------+\nempId is the primary key column for this table.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTable: Bonus\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-------+-------+\n| empId | bonus |\n+-------+-------+\n| 2     | 500   |\n| 4     | 2000  |\n+-------+-------+\nempId is the primary key column for this table.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eExample ouput:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-------+-------+\n| name  | bonus |\n+-------+-------+\n| John  | null  |\n| Dan   | 500   |\n| Brad  | null  |\n+-------+-------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197088124_-1843579578",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:58:08 PM",
+      "dateStarted": "Jun 16, 2018 5:58:44 PM",
+      "dateFinished": "Jun 16, 2018 5:58:44 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:58:57 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197088124_-1843579578",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:58:08 PM",
+      "dateStarted": "Jun 16, 2018 5:58:50 PM",
+      "dateFinished": "Jun 16, 2018 5:58:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists employee;\ndrop table if exists bonus;\nCreate table If Not Exists Employee (EmpId int, Name varchar(255), Supervisor int, Salary int);\nCreate table If Not Exists Bonus (EmpId int, Bonus int);\nTruncate table Employee;\ninsert into Employee (EmpId, Name, Supervisor, Salary) values (\u00273\u0027, \u0027Brad\u0027, null, \u00274000\u0027);\ninsert into Employee (EmpId, Name, Supervisor, Salary) values (\u00271\u0027, \u0027John\u0027, \u00273\u0027, \u00271000\u0027);\ninsert into Employee (EmpId, Name, Supervisor, Salary) values (\u00272\u0027, \u0027Dan\u0027, \u00273\u0027, \u00272000\u0027);\ninsert into Employee (EmpId, Name, Supervisor, Salary) values (\u00274\u0027, \u0027Thomas\u0027, \u00273\u0027, \u00274000\u0027);\nTruncate table Bonus;\ninsert into Bonus (EmpId, Bonus) values (\u00272\u0027, \u0027500\u0027);\ninsert into Bonus (EmpId, Bonus) values (\u00274\u0027, \u00272000\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:00:12 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true,
+        "title": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197088124_-1843579578",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:58:08 PM",
+      "dateStarted": "Jun 16, 2018 5:59:55 PM",
+      "dateFinished": "Jun 16, 2018 5:59:55 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:58:54 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197088124_-1843579578",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:58:08 PM",
+      "dateStarted": "Jun 16, 2018 5:58:53 PM",
+      "dateFinished": "Jun 16, 2018 5:58:53 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect a.name, b.bonus \nfrom employee a \nleft outer join bonus b on (a.empid \u003d b.empid)\nwhere ifnull(bonus,-1) \u003c 1000",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:00:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 164.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Name\tBonus\nDan\t500\nBrad\tnull\nJohn\tnull\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197088125_-1843964327",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:58:08 PM",
+      "dateStarted": "Jun 16, 2018 6:00:43 PM",
+      "dateFinished": "Jun 16, 2018 6:00:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:58:08 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197088125_-1843964327",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:58:08 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/577-Employee-Bonus",
+  "id": "2DHDZ7UM5",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

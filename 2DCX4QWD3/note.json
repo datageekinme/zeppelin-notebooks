@@ -3,7 +3,7 @@
     {
       "text": "%md \n\n# Chicago Crime Data Analysis\n\n[logo]:https://data.cityofchicago.org/api/assets/73F1665C-0FE6-4183-8AD1-E91DB8EFAFA4?7CB02402-8E06-48B0-8C9A-3890182D58C7.png\n\n![logo]\n\n### Analysis of crime incidents in Chicago city area\n\nThe purpose of this notebook is to analyze the crime incidents that have occurred in the city of **Chicago**\n\nThe dataset has been obtained from the following source: [Chicago](https://data.cityofchicago.org)\n",
       "user": "anonymous",
-      "dateUpdated": "Apr 22, 2018 6:52:27 PM",
+      "dateUpdated": "Jun 14, 2018 10:12:55 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": false,
@@ -13,7 +13,7 @@
           "editOnDblClick": true
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": false
       },
       "settings": {
@@ -819,12 +819,7 @@
   ],
   "name": "Projects/Apache-Hive/Chicago-Crime-Data-Analysis",
   "id": "2DCX4QWD3",
-  "angularObjects": {
-    "2DB46PDF7:shared_process": [],
-    "2DCPW2X8C:shared_process": [],
-    "2DCEDYS94:shared_process": [],
-    "2DD2ABVKW:shared_process": []
-  },
+  "angularObjects": {},
   "config": {},
   "info": {}
 }

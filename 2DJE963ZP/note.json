@@ -1,0 +1,296 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 184. Department Highest Salary\n\nThe Employee table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.\n```\n+----+-------+--------+--------------+\n| Id | Name  | Salary | DepartmentId |\n+----+-------+--------+--------------+\n| 1  | Joe   | 70000  | 1            |\n| 2  | Henry | 80000  | 2            |\n| 3  | Sam   | 60000  | 2            |\n| 4  | Max   | 90000  | 1            |\n+----+-------+--------+--------------+\n```\nThe Department table holds all departments of the company.\n```\n+----+----------+\n| Id | Name     |\n+----+----------+\n| 1  | IT       |\n| 2  | Sales    |\n+----+----------+\n```\nWrite a SQL query to find employees who have the highest salary in each of the departments. For the above tables, Max has the highest salary in the IT department and Henry has the highest salary in the Sales department.\n```\n+------------+----------+--------+\n| Department | Employee | Salary |\n+------------+----------+--------+\n| IT         | Max      | 90000  |\n| Sales      | Henry    | 80000  |\n+------------+----------+--------+\n```\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:32:31 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e184. Department Highest Salary\u003c/h1\u003e\n\u003cp\u003eThe Employee table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-------+--------+--------------+\n| Id | Name  | Salary | DepartmentId |\n+----+-------+--------+--------------+\n| 1  | Joe   | 70000  | 1            |\n| 2  | Henry | 80000  | 2            |\n| 3  | Sam   | 60000  | 2            |\n| 4  | Max   | 90000  | 1            |\n+----+-------+--------+--------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe Department table holds all departments of the company.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+----------+\n| Id | Name     |\n+----+----------+\n| 1  | IT       |\n| 2  | Sales    |\n+----+----------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWrite a SQL query to find employees who have the highest salary in each of the departments. For the above tables, Max has the highest salary in the IT department and Henry has the highest salary in the Sales department.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------------+----------+--------+\n| Department | Employee | Salary |\n+------------+----------+--------+\n| IT         | Max      | 90000  |\n| Sales      | Henry    | 80000  |\n+------------+----------+--------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195516638_-750557214",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:31:56 PM",
+      "dateStarted": "Jun 16, 2018 5:32:28 PM",
+      "dateFinished": "Jun 16, 2018 5:32:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:32:37 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195516639_-750941963",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:31:56 PM",
+      "dateStarted": "Jun 16, 2018 5:32:34 PM",
+      "dateFinished": "Jun 16, 2018 5:32:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists employee;\ndrop table if exists department;\nCreate table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int);\nCreate table If Not Exists Department (Id int, Name varchar(255));\nTruncate table Employee;\ninsert into Employee (Id, Name, Salary, DepartmentId) values (\u00271\u0027, \u0027Joe\u0027, \u002770000\u0027, \u00271\u0027);\ninsert into Employee (Id, Name, Salary, DepartmentId) values (\u00272\u0027, \u0027Henry\u0027, \u002780000\u0027, \u00272\u0027);\ninsert into Employee (Id, Name, Salary, DepartmentId) values (\u00273\u0027, \u0027Sam\u0027, \u002760000\u0027, \u00272\u0027);\ninsert into Employee (Id, Name, Salary, DepartmentId) values (\u00274\u0027, \u0027Max\u0027, \u002790000\u0027, \u00271\u0027);\nTruncate table Department;\ninsert into Department (Id, Name) values (\u00271\u0027, \u0027IT\u0027);\ninsert into Department (Id, Name) values (\u00272\u0027, \u0027Sales\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:33:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195516639_-750941963",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:31:56 PM",
+      "dateStarted": "Jun 16, 2018 5:33:15 PM",
+      "dateFinished": "Jun 16, 2018 5:33:15 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:32:39 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195516639_-750941963",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:31:56 PM",
+      "dateStarted": "Jun 16, 2018 5:32:35 PM",
+      "dateFinished": "Jun 16, 2018 5:32:35 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect c.name as Department, b.name as Employee, b.salary as Salary  from employee b, (select departmentid, max(salary) as max_salary from employee group by departmentid) a, department c  where a.departmentid \u003d b.departmentid and a.max_salary \u003d b.salary and b.departmentid \u003d c.id;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:33:53 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 114.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Name\tName\tSalary\nSales\tHenry\t80000\nIT\tMax\t90000\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195516640_-765177672",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:31:56 PM",
+      "dateStarted": "Jun 16, 2018 5:33:43 PM",
+      "dateFinished": "Jun 16, 2018 5:33:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:31:56 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195516640_-765177672",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:31:56 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/184-Department-Highest-Salary",
+  "id": "2DJE963ZP",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

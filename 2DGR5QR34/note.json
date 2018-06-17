@@ -1,0 +1,276 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 196. Delete duplicate emails\n\nWrite a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.\n```\n+----+------------------+\n| Id | Email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n| 3  | john@example.com |\n+----+------------------+\n```\nId is the primary key column for this table.\nFor example, after running your query, the above Person table should have the following rows:\n```\n+----+------------------+\n| Id | Email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n+----+------------------+\n```",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:38:23 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e196. Delete duplicate emails\u003c/h1\u003e\n\u003cp\u003eWrite a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+------------------+\n| Id | Email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n| 3  | john@example.com |\n+----+------------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eId is the primary key column for this table.\u003cbr/\u003eFor example, after running your query, the above Person table should have the following rows:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+------------------+\n| Id | Email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n+----+------------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195872797_-1375685521",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:37:52 PM",
+      "dateStarted": "Jun 16, 2018 5:38:20 PM",
+      "dateFinished": "Jun 16, 2018 5:38:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:38:31 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195872797_-1375685521",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:37:52 PM",
+      "dateStarted": "Jun 16, 2018 5:38:26 PM",
+      "dateFinished": "Jun 16, 2018 5:38:26 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists person;\ncreate table person (id int, email text);\ntruncate table person;\ninsert into person values(1, \u0027john@example.com\u0027);\ninsert into person values(2, \u0027bob@example.com\u0027);\ninsert into person values(3, \u0027john@example.com\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:40:26 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195872797_-1375685521",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:37:52 PM",
+      "dateStarted": "Jun 16, 2018 5:40:19 PM",
+      "dateFinished": "Jun 16, 2018 5:40:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:38:29 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195872798_-1374531274",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:37:52 PM",
+      "dateStarted": "Jun 16, 2018 5:38:27 PM",
+      "dateFinished": "Jun 16, 2018 5:38:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndelete from person using person, person b where person.email \u003d b.email and person.id \u003e b.id;\nselect * from person;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:41:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "2": {
+            "graph": {
+              "mode": "table",
+              "height": 114.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TABLE",
+            "data": "id\temail\n1\tjohn@example.com\n2\tbob@example.com\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195872798_-1374531274",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:37:52 PM",
+      "dateStarted": "Jun 16, 2018 5:40:58 PM",
+      "dateFinished": "Jun 16, 2018 5:40:58 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:37:52 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195872798_-1374531274",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:37:52 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/196-Delete-Duplicate-Emails",
+  "id": "2DGR5QR34",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

@@ -1,0 +1,361 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 578. Get Highest Answer Rate Question\n\nGet the highest answer rate question from a table survey_log with these columns: uid, action, question_id, answer_id, q_num, timestamp.\n\nuid means user id; action has these kind of values: \"show\", \"answer\", \"skip\"; answer_id is not null when action column is \"answer\", while is null for \"show\" and \"skip\"; q_num is the numeral order of the question in current session.\n\nWrite a sql query to identify the question which has the highest answer rate.\n\n**Example:**\n\n**Input:**\n\n| uid  | action    | question_id  | answer_id  | q_num     | timestamp  |\n|------|-----------|--------------|------------|-----------|------------|\n| 5    | show      | 285          | null       | 1         | 123        |\n| 5    | answer    | 285          | 124124     | 1         | 124        |\n| 5    | show      | 369          | null       | 2         | 125        |\n| 5    | skip      | 369          | null       | 2         | 126        |\n\n**Output:**\n\n| survey_log  |\n|-------------|\n|    285      |\n\n**Explanation:**\nquestion 285 has answer rate 1/1, while question 369 has 0/1 answer rate, so output 285.\n\n\n**Note:** The highest answer rate meaning is: answer number\u0027s ratio in show number in the same question.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e578. Get Highest Answer Rate Question\u003c/h1\u003e\n\u003cp\u003eGet the highest answer rate question from a table survey_log with these columns: uid, action, question_id, answer_id, q_num, timestamp.\u003c/p\u003e\n\u003cp\u003euid means user id; action has these kind of values: \u0026ldquo;show\u0026rdquo;, \u0026ldquo;answer\u0026rdquo;, \u0026ldquo;skip\u0026rdquo;; answer_id is not null when action column is \u0026ldquo;answer\u0026rdquo;, while is null for \u0026ldquo;show\u0026rdquo; and \u0026ldquo;skip\u0026rdquo;; q_num is the numeral order of the question in current session.\u003c/p\u003e\n\u003cp\u003eWrite a sql query to identify the question which has the highest answer rate.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eExample:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eInput:\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003euid \u003c/th\u003e\n      \u003cth\u003eaction \u003c/th\u003e\n      \u003cth\u003equestion_id \u003c/th\u003e\n      \u003cth\u003eanswer_id \u003c/th\u003e\n      \u003cth\u003eq_num \u003c/th\u003e\n      \u003cth\u003etimestamp \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eshow \u003c/td\u003e\n      \u003ctd\u003e285 \u003c/td\u003e\n      \u003ctd\u003enull \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e123 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eanswer \u003c/td\u003e\n      \u003ctd\u003e285 \u003c/td\u003e\n      \u003ctd\u003e124124 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e124 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eshow \u003c/td\u003e\n      \u003ctd\u003e369 \u003c/td\u003e\n      \u003ctd\u003enull \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e125 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003eskip \u003c/td\u003e\n      \u003ctd\u003e369 \u003c/td\u003e\n      \u003ctd\u003enull \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e126 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eOutput:\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003esurvey_log \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e285 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eExplanation:\u003c/strong\u003e\u003cbr/\u003equestion 285 has answer rate 1/1, while question 369 has 0/1 answer rate, so output 285.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e The highest answer rate meaning is: answer number\u0026rsquo;s ratio in show number in the same question.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529172901220_1673277878",
+      "id": "20180616-111501_1458961199",
+      "dateCreated": "Jun 16, 2018 11:15:01 AM",
+      "dateStarted": "Jun 16, 2018 11:18:15 AM",
+      "dateFinished": "Jun 16, 2018 11:18:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:54 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529172945788_1751274636",
+      "id": "20180616-111545_664185338",
+      "dateCreated": "Jun 16, 2018 11:15:45 AM",
+      "dateStarted": "Jun 16, 2018 11:26:48 AM",
+      "dateFinished": "Jun 16, 2018 11:26:48 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nUSE leetcode;\ndrop table if exists survey_log;\nCreate table If Not Exists survey_log (uid int, action varchar(255), question_id int, answer_id int, q_num int, timestamp int);\nTruncate table survey_log;\ninsert into survey_log (uid, action, question_id, answer_id, q_num, timestamp) values (\u00275\u0027, \u0027show\u0027, \u0027285\u0027, null, \u00271\u0027, \u0027123\u0027);\ninsert into survey_log (uid, action, question_id, answer_id, q_num, timestamp) values (\u00275\u0027, \u0027answer\u0027, \u0027285\u0027, \u0027124124\u0027, \u00271\u0027, \u0027124\u0027);\ninsert into survey_log (uid, action, question_id, answer_id, q_num, timestamp) values (\u00275\u0027, \u0027show\u0027, \u0027369\u0027, null, \u00272\u0027, \u0027125\u0027);\ninsert into survey_log (uid, action, question_id, answer_id, q_num, timestamp) values (\u00275\u0027, \u0027skip\u0027, \u0027369\u0027, null, \u00272\u0027, \u0027126\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:06:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529173583609_1131728215",
+      "id": "20180616-112623_1046566454",
+      "dateCreated": "Jun 16, 2018 11:26:23 AM",
+      "dateStarted": "Jun 16, 2018 4:19:40 PM",
+      "dateFinished": "Jun 16, 2018 4:19:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Solution\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529173625496_-523415580",
+      "id": "20180616-112705_329138728",
+      "dateCreated": "Jun 16, 2018 11:27:05 AM",
+      "dateStarted": "Jun 16, 2018 11:27:49 AM",
+      "dateFinished": "Jun 16, 2018 11:27:49 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nUSE leetcode;\nselect c.question_id survey_log from \n(select a.question_id, count(distinct a.question_id) count from survey_log a group by a.question_id) c\nleft outer join \n(select b.question_id, count(*) count from survey_log b where b.action \u003d \u0027answer\u0027 group by b.question_id) d\non (c.question_id \u003d d.question_id)\norder by (coalesce(d.count,0) / c.count) desc\nlimit 1",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "question_id\n285\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529173669591_158621626",
+      "id": "20180616-112749_1610190878",
+      "dateCreated": "Jun 16, 2018 11:27:49 AM",
+      "dateStarted": "Jun 16, 2018 4:19:46 PM",
+      "dateFinished": "Jun 16, 2018 4:19:46 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Simpler Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSimpler Solution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529174783628_484116430",
+      "id": "20180616-114623_1808918031",
+      "dateCreated": "Jun 16, 2018 11:46:23 AM",
+      "dateStarted": "Jun 16, 2018 11:46:35 AM",
+      "dateFinished": "Jun 16, 2018 11:46:35 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect question_id from \n(select a.question_id, sum(if(a.answer_id is null, 0, 1)) / count(a.question_id) ans_rate from survey_log a group by a.question_id)  c order by ans_rate desc limit 1",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:11 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "question_id\n285\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529173837434_-2134837563",
+      "id": "20180616-113037_1419362690",
+      "dateCreated": "Jun 16, 2018 11:30:37 AM",
+      "dateStarted": "Jun 16, 2018 4:19:49 PM",
+      "dateFinished": "Jun 16, 2018 4:19:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 11:33:47 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529174027972_1306264654",
+      "id": "20180616-113347_367251812",
+      "dateCreated": "Jun 16, 2018 11:33:47 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/578-Get-Highest-Answer-Rate-Question",
+  "id": "2DJU9NS9N",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

@@ -1,0 +1,310 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 597. Friend Requests I: Overall Acceptance Rate\n\nIn social network like Facebook or Twitter, people send friend requests and accept others’ requests as well. Now given two tables as below:\n\nTable: friend_request\n\n| sender_id | send_to_id |request_date|\n|-----------|------------|------------|\n| 1         | 2          | 2016_06-01 |\n| 1         | 3          | 2016_06-01 |\n| 1         | 4          | 2016_06-01 |\n| 2         | 3          | 2016_06-02 |\n| 3         | 4          | 2016-06-09 |\n\nTable: request_accepted\n\n\n| requester_id | accepter_id |accept_date |\n|--------------|-------------|------------|\n| 1            | 2           | 2016_06-03 |\n| 1            | 3           | 2016-06-08 |\n| 2            | 3           | 2016-06-08 |\n| 3            | 4           | 2016-06-09 |\n| 3            | 4           | 2016-06-10 |\n\nWrite a query to find the overall acceptance rate of requests rounded to 2 decimals, which is the number of acceptance divide the number of requests.\nFor the sample data above, your query should return the following result.\n\n\n|accept_rate|\n|-----------|\n|       0.80|\n\n**Note:**\n* The accepted requests are not necessarily from the table friend_request. In this case, you just need to simply count the total accepted requests (no matter whether they are in the original requests), and divide it by the number of requests to get the acceptance rate.\n* It is possible that a sender sends multiple requests to the same receiver, and a request could be accepted more than once. In this case, the ‘duplicated’ requests or acceptances are only counted once.\n* If there is no requests at all, you should return 0.00 as the accept_rate.\n\n**Explanation:** There are 4 unique accepted requests, and there are 5 requests in total. So the rate is 0.80.\n\n**Follow-up:**\n* Can you write a query to return the accept rate but for every month?\n* How about the cumulative accept rate for every day?",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e597. Friend Requests I: Overall Acceptance Rate\u003c/h1\u003e\n\u003cp\u003eIn social network like Facebook or Twitter, people send friend requests and accept others’ requests as well. Now given two tables as below:\u003c/p\u003e\n\u003cp\u003eTable: friend_request\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003esender_id \u003c/th\u003e\n      \u003cth\u003esend_to_id \u003c/th\u003e\n      \u003cth\u003erequest_date\u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2016_06-01 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2016_06-01 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e2016_06-01 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2016_06-02 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e2016-06-09 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eTable: request_accepted\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003erequester_id \u003c/th\u003e\n      \u003cth\u003eaccepter_id \u003c/th\u003e\n      \u003cth\u003eaccept_date \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2016_06-03 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2016-06-08 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2016-06-08 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e2016-06-09 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e2016-06-10 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eWrite a query to find the overall acceptance rate of requests rounded to 2 decimals, which is the number of acceptance divide the number of requests.\u003cbr/\u003eFor the sample data above, your query should return the following result.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eaccept_rate\u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e0.80\u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e\u003cbr/\u003e* The accepted requests are not necessarily from the table friend_request. In this case, you just need to simply count the total accepted requests (no matter whether they are in the original requests), and divide it by the number of requests to get the acceptance rate.\u003cbr/\u003e* It is possible that a sender sends multiple requests to the same receiver, and a request could be accepted more than once. In this case, the ‘duplicated’ requests or acceptances are only counted once.\u003cbr/\u003e* If there is no requests at all, you should return 0.00 as the accept_rate.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eExplanation:\u003c/strong\u003e There are 4 unique accepted requests, and there are 5 requests in total. So the rate is 0.80.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eFollow-up:\u003c/strong\u003e\u003cbr/\u003e* Can you write a query to return the accept rate but for every month?\u003cbr/\u003e* How about the cumulative accept rate for every day?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529169779240_-1622911324",
+      "id": "20180616-102259_1674229812",
+      "dateCreated": "Jun 16, 2018 10:22:59 AM",
+      "dateStarted": "Jun 16, 2018 10:25:03 AM",
+      "dateFinished": "Jun 16, 2018 10:25:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n\n### Creating the schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529169887245_-1049512346",
+      "id": "20180616-102447_893535726",
+      "dateCreated": "Jun 16, 2018 10:24:47 AM",
+      "dateStarted": "Jun 16, 2018 10:26:42 AM",
+      "dateFinished": "Jun 16, 2018 10:26:42 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists friend_request;\ndrop table if exists request_accepted;\nCreate table If Not Exists friend_request ( sender_id INT NOT NULL, send_to_id INT NULL, request_date DATE NULL);\nCreate table If Not Exists request_accepted ( requester_id INT NOT NULL, accepter_id INT NULL, accept_date DATE NULL);\nTruncate table friend_request;\ninsert into friend_request (sender_id, send_to_id, request_date) values (\u00271\u0027, \u00272\u0027, \u00272016/06/01\u0027);\ninsert into friend_request (sender_id, send_to_id, request_date) values (\u00271\u0027, \u00273\u0027, \u00272016/06/01\u0027);\ninsert into friend_request (sender_id, send_to_id, request_date) values (\u00271\u0027, \u00274\u0027, \u00272016/06/01\u0027);\ninsert into friend_request (sender_id, send_to_id, request_date) values (\u00272\u0027, \u00273\u0027, \u00272016/06/02\u0027);\ninsert into friend_request (sender_id, send_to_id, request_date) values (\u00273\u0027, \u00274\u0027, \u00272016/06/09\u0027);\nTruncate table request_accepted;\ninsert into request_accepted (requester_id, accepter_id, accept_date) values (\u00271\u0027, \u00272\u0027, \u00272016/06/03\u0027);\ninsert into request_accepted (requester_id, accepter_id, accept_date) values (\u00271\u0027, \u00273\u0027, \u00272016/06/08\u0027);\ninsert into request_accepted (requester_id, accepter_id, accept_date) values (\u00272\u0027, \u00273\u0027, \u00272016/06/08\u0027);\ninsert into request_accepted (requester_id, accepter_id, accept_date) values (\u00273\u0027, \u00274\u0027, \u00272016/06/09\u0027);\ninsert into request_accepted (requester_id, accepter_id, accept_date) values (\u00273\u0027, \u00274\u0027, \u00272016/06/10\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529170002320_8347915",
+      "id": "20180616-102642_134598111",
+      "dateCreated": "Jun 16, 2018 10:26:42 AM",
+      "dateStarted": "Jun 16, 2018 4:23:38 PM",
+      "dateFinished": "Jun 16, 2018 4:23:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:07 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529170043303_299480239",
+      "id": "20180616-102723_787838775",
+      "dateCreated": "Jun 16, 2018 10:27:23 AM",
+      "dateStarted": "Jun 16, 2018 10:27:52 AM",
+      "dateFinished": "Jun 16, 2018 10:27:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\nselect  case when round(accepted.count / requested.count, 2) is null then 0.0 else round(accepted.count / requested.count, 2) end  accept_rate from\n(select count(1) count from (select distinct requester_id, accepter_id from request_accepted) a) accepted,\n(select count(1) count from (select distinct sender_id, send_to_id from friend_request) b) requested\nwhere 1 \u003d 1\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:10:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "accept_rate\n0.80\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529170072094_680797047",
+      "id": "20180616-102752_906385872",
+      "dateCreated": "Jun 16, 2018 10:27:52 AM",
+      "dateStarted": "Jun 16, 2018 4:23:44 PM",
+      "dateFinished": "Jun 16, 2018 4:23:44 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 10:36:43 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529170603503_1087442697",
+      "id": "20180616-103643_677720462",
+      "dateCreated": "Jun 16, 2018 10:36:43 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/597-Friend-Requests-I",
+  "id": "2DH5RWYXQ",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

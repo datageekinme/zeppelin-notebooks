@@ -1,0 +1,236 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 618. Students Report by Geography\n\nA U.S graduate school has students from Asia, Europe and America. The students\u0027 location information are stored in table student as below.\n\n| name   | continent |\n|--------|-----------|\n| Jack   | America   |\n| Pascal | Europe    |\n| Xi     | Asia      |\n| Jane   | America   |\n\nPivot the continent column in this table so that each name is sorted alphabetically and displayed underneath its corresponding continent. The output headers should be America, Asia and Europe respectively. It is guaranteed that the student number from America is no less than either Asia or Europe.\n\nFor the sample input, the output is:\n\n| America | Asia | Europe |\n|---------|------|--------|\n| Jack    | Xi   | Pascal |\n| Jane    |      |        |\n\nFollow-up: If it is unknown which continent has the most students, can you write a query to generate the student report?",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:47 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e618. Students Report by Geography\u003c/h1\u003e\n\u003cp\u003eA U.S graduate school has students from Asia, Europe and America. The students\u0026rsquo; location information are stored in table student as below.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ename \u003c/th\u003e\n      \u003cth\u003econtinent \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eJack \u003c/td\u003e\n      \u003ctd\u003eAmerica \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003ePascal \u003c/td\u003e\n      \u003ctd\u003eEurope \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eXi \u003c/td\u003e\n      \u003ctd\u003eAsia \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eJane \u003c/td\u003e\n      \u003ctd\u003eAmerica \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003ePivot the continent column in this table so that each name is sorted alphabetically and displayed underneath its corresponding continent. The output headers should be America, Asia and Europe respectively. It is guaranteed that the student number from America is no less than either Asia or Europe.\u003c/p\u003e\n\u003cp\u003eFor the sample input, the output is:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eAmerica \u003c/th\u003e\n      \u003cth\u003eAsia \u003c/th\u003e\n      \u003cth\u003eEurope \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eJack \u003c/td\u003e\n      \u003ctd\u003eXi \u003c/td\u003e\n      \u003ctd\u003ePascal \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eJane \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eFollow-up: If it is unknown which continent has the most students, can you write a query to generate the student report?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181664526_-2035539899",
+      "id": "20180616-134104_370223964",
+      "dateCreated": "Jun 16, 2018 1:41:04 PM",
+      "dateStarted": "Jun 16, 2018 1:41:34 PM",
+      "dateFinished": "Jun 16, 2018 1:41:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:50 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181694461_-2134759142",
+      "id": "20180616-134134_893018368",
+      "dateCreated": "Jun 16, 2018 1:41:34 PM",
+      "dateStarted": "Jun 16, 2018 1:44:33 PM",
+      "dateFinished": "Jun 16, 2018 1:44:33 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists student;\nCreate table If Not Exists student (name varchar(50), continent varchar(7));\nTruncate table student;\ninsert into student (name, continent) values (\u0027Jane\u0027, \u0027America\u0027);\ninsert into student (name, continent) values (\u0027Pascal\u0027, \u0027Europe\u0027);\ninsert into student (name, continent) values (\u0027Xi\u0027, \u0027Asia\u0027);\ninsert into student (name, continent) values (\u0027Jack\u0027, \u0027America\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181873119_1532391538",
+      "id": "20180616-134433_1323947050",
+      "dateCreated": "Jun 16, 2018 1:44:33 PM",
+      "dateStarted": "Jun 16, 2018 1:46:04 PM",
+      "dateFinished": "Jun 16, 2018 1:46:04 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect America.name as America, Asia.name as Asia, Europe.name as Europe from \n(select name, @a :\u003d@a +  1 as id from student, (select @a :\u003d 0) i where continent \u003d \u0027America\u0027 order by name) as America LEFT JOIN\n(select name, @b :\u003d@b +  1 as id from student, (select @b :\u003d 0) i where continent \u003d \u0027Asia\u0027 order by name) as Asia on (America.id \u003d Asia.ID) LEFT JOIN\n(select name, @c :\u003d@c +  1 as id from student, (select @c :\u003d 0) i where continent \u003d \u0027Europe\u0027 order by name) as Europe on (America.id \u003d Europe.id)",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:55 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 114.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "name\tname\tname\nJack\tXi\tPascal\nJane\tnull\tnull\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181891798_19574187",
+      "id": "20180616-134451_294259226",
+      "dateCreated": "Jun 16, 2018 1:44:51 PM",
+      "dateStarted": "Jun 16, 2018 1:59:15 PM",
+      "dateFinished": "Jun 16, 2018 1:59:15 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 1:46:08 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181968748_1639057284",
+      "id": "20180616-134608_158879036",
+      "dateCreated": "Jun 16, 2018 1:46:08 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/618-Students-Report-By-Geography",
+  "id": "2DHYQ36EX",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

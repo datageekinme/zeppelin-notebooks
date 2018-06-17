@@ -870,27 +870,7 @@
   ],
   "name": "Projects/Apache-Pig/Chicago-Crime-Data-Analysis",
   "id": "2DBC1PVPW",
-  "angularObjects": {
-    "2DDC41UQ3:shared_process": [],
-    "2DDYF2FPN:shared_process": [],
-    "2DBE6W83X:shared_process": [],
-    "2DC52CVU8:shared_process": [],
-    "2DB29PQQE:shared_process": [],
-    "2DDSF8G68:shared_process": [],
-    "2DDST3AYB:shared_process": [],
-    "2DD8QNCJW:shared_process": [],
-    "2DCRUVZX5:shared_process": [],
-    "2DCEDYS94:shared_process": [],
-    "2DCGXA2RP:shared_process": [],
-    "2DCPW2X8C:shared_process": [],
-    "2DAV56W8A:shared_process": [],
-    "2DCJBCAFH:shared_process": [],
-    "2DBS1BFTG:shared_process": [],
-    "2DDR31AWW:shared_process": [],
-    "2DD2ABVKW:shared_process": [],
-    "2DD9URD4X:shared_process": [],
-    "2DCPQA6H1:shared_process": []
-  },
+  "angularObjects": {},
   "config": {
     "looknfeel": "default",
     "personalizedMode": "false"

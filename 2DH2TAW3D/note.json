@@ -1,0 +1,305 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 580. Count Student Number in Departments\n\nA university uses 2 data tables, student and department, to store data about its students and the departments associated with each major.\n\nWrite a query to print the respective department name and number of students majoring in each department for all departments in the department table (even ones with no current students).\n\nSort your results by descending number of students; if two or more departments have the same number of students, then sort those departments alphabetically by department name.\n\nThe student is described as follow:\n\n| Column Name  | Type      |\n|--------------|-----------|\n| student_id   | Integer   |\n| student_name | String    |\n| gender       | Character |\n| dept_id      | Integer   |\n\nwhere student_id is the student\u0027s ID number, student_name is the student\u0027s name, gender is their gender, and dept_id is the department ID associated with their declared major.\n\nAnd the department table is described as below:\n\n| Column Name | Type    |\n|-------------|---------|\n| dept_id     | Integer |\n| dept_name   | String  |\n\nwhere dept_id is the department\u0027s ID number and dept_name is the department name.\n\nHere is an example input:\nstudent table:\n\n| student_id | student_name | gender | dept_id |\n|------------|--------------|--------|---------|\n| 1          | Jack         | M      | 1       |\n| 2          | Jane         | F      | 1       |\n| 3          | Mark         | M      | 2       |\n\ndepartment table:\n\n| dept_id | dept_name   |\n|---------|-------------|\n| 1       | Engineering |\n| 2       | Science     |\n| 3       | Law         |\n\nThe Output should be:\n\n| dept_name   | student_number |\n|-------------|----------------|\n| Engineering | 2              |\n| Science     | 1              |\n| Law         | 0              |",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:40 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e580. Count Student Number in Departments\u003c/h1\u003e\n\u003cp\u003eA university uses 2 data tables, student and department, to store data about its students and the departments associated with each major.\u003c/p\u003e\n\u003cp\u003eWrite a query to print the respective department name and number of students majoring in each department for all departments in the department table (even ones with no current students).\u003c/p\u003e\n\u003cp\u003eSort your results by descending number of students; if two or more departments have the same number of students, then sort those departments alphabetically by department name.\u003c/p\u003e\n\u003cp\u003eThe student is described as follow:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eColumn Name \u003c/th\u003e\n      \u003cth\u003eType \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003estudent_id \u003c/td\u003e\n      \u003ctd\u003eInteger \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003estudent_name \u003c/td\u003e\n      \u003ctd\u003eString \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003egender \u003c/td\u003e\n      \u003ctd\u003eCharacter \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003edept_id \u003c/td\u003e\n      \u003ctd\u003eInteger \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003ewhere student_id is the student\u0026rsquo;s ID number, student_name is the student\u0026rsquo;s name, gender is their gender, and dept_id is the department ID associated with their declared major.\u003c/p\u003e\n\u003cp\u003eAnd the department table is described as below:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eColumn Name \u003c/th\u003e\n      \u003cth\u003eType \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003edept_id \u003c/td\u003e\n      \u003ctd\u003eInteger \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003edept_name \u003c/td\u003e\n      \u003ctd\u003eString \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003ewhere dept_id is the department\u0026rsquo;s ID number and dept_name is the department name.\u003c/p\u003e\n\u003cp\u003eHere is an example input:\u003cbr/\u003estudent table:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003estudent_id \u003c/th\u003e\n      \u003cth\u003estudent_name \u003c/th\u003e\n      \u003cth\u003egender \u003c/th\u003e\n      \u003cth\u003edept_id \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eJack \u003c/td\u003e\n      \u003ctd\u003eM \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eJane \u003c/td\u003e\n      \u003ctd\u003eF \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eMark \u003c/td\u003e\n      \u003ctd\u003eM \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003edepartment table:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003edept_id \u003c/th\u003e\n      \u003cth\u003edept_name \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eEngineering \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003eScience \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003eLaw \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe Output should be:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003edept_name \u003c/th\u003e\n      \u003cth\u003estudent_number \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eEngineering \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eScience \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eLaw \u003c/td\u003e\n      \u003ctd\u003e0 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184621145_-2144206607",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 2:30:21 PM",
+      "dateStarted": "Jun 16, 2018 2:37:41 PM",
+      "dateFinished": "Jun 16, 2018 2:37:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184663625_-854650888",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 2:31:03 PM",
+      "dateStarted": "Jun 16, 2018 2:37:41 PM",
+      "dateFinished": "Jun 16, 2018 2:37:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists student;\ndrop table if exists department;\nCREATE TABLE IF NOT EXISTS student (student_id INT,student_name VARCHAR(45), gender VARCHAR(6), dept_id INT);\nCREATE TABLE IF NOT EXISTS department (dept_id INT, dept_name VARCHAR(255));\nTruncate table student;\ninsert into student (student_id, student_name, gender, dept_id) values (\u00271\u0027, \u0027Jack\u0027, \u0027M\u0027, \u00271\u0027);\ninsert into student (student_id, student_name, gender, dept_id) values (\u00272\u0027, \u0027Jane\u0027, \u0027F\u0027, \u00271\u0027);\ninsert into student (student_id, student_name, gender, dept_id) values (\u00273\u0027, \u0027Mark\u0027, \u0027M\u0027, \u00272\u0027);\nTruncate table department;\ninsert into department (dept_id, dept_name) values (\u00271\u0027, \u0027Engineering\u0027);\ninsert into department (dept_id, dept_name) values (\u00272\u0027, \u0027Science\u0027);\ninsert into department (dept_id, dept_name) values (\u00273\u0027, \u0027Law\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:46 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184687616_1223808643",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 2:31:27 PM",
+      "dateStarted": "Jun 16, 2018 2:37:41 PM",
+      "dateFinished": "Jun 16, 2018 2:37:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:49 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184675728_-1341327598",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 2:31:15 PM",
+      "dateStarted": "Jun 16, 2018 2:37:41 PM",
+      "dateFinished": "Jun 16, 2018 2:37:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect a.dept_name, coalesce(count(student_id), 0) student_number\nfrom department a left join\nstudent b on (a.dept_id \u003d b.dept_id)\ngroup by a.dept_name\norder by student_number desc, a.dept_name asc;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:07:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 134.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "dept_name\tstudent_number\nEngineering\t2\nScience\t1\nLaw\t0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184682497_41475273",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 2:31:22 PM",
+      "dateStarted": "Jun 16, 2018 2:37:41 PM",
+      "dateFinished": "Jun 16, 2018 2:37:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 2:37:41 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184950528_625876560",
+      "id": "20180616-143550_1744205341",
+      "dateCreated": "Jun 16, 2018 2:35:50 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/580-Count-Student-Number-In-Departments",
+  "id": "2DH2TAW3D",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

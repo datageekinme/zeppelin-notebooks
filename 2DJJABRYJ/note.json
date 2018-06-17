@@ -1,0 +1,550 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# Data Engineering with Yelp data\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 10:49:22 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eData Engineering with Yelp data\u003c/h1\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528996212562_2104916835",
+      "id": "20180614-101012_2081990811",
+      "dateCreated": "Jun 14, 2018 10:10:12 AM",
+      "dateStarted": "Jun 14, 2018 10:49:22 AM",
+      "dateFinished": "Jun 14, 2018 10:49:22 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## The Dataset:\n\nLink to the dataset: [Yelp Dataset](https://www.yelp.com/dataset)\n\nThe yelp dataset is a subset of the Yelp business, reviews and user data for personal, educational and academic purposes.\n\nThe dataset contains more than 5 Million reviews with 1.3 Millions users and 174,000 businesses coming from 11 metropolitan areas. \n\nFollowing are the available datasets:\n    * User\n    * Business\n    * Review\n    * Tip\n    * Check-In\n    * Photos\n\nThe data is available in JSON format and is stored on HDFS in the following location: **\"/data/raw/yelp/\"**\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 1:13:13 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eThe Dataset:\u003c/h2\u003e\n\u003cp\u003eLink to the dataset: \u003ca href\u003d\"https://www.yelp.com/dataset\"\u003eYelp Dataset\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eThe yelp dataset is a subset of the Yelp business, reviews and user data for personal, educational and academic purposes.\u003c/p\u003e\n\u003cp\u003eThe dataset contains more than 5 Million reviews with 1.3 Millions users and 174,000 businesses coming from 11 metropolitan areas. \u003c/p\u003e\n\u003cp\u003eFollowing are the available datasets:\u003cbr/\u003e * User\u003cbr/\u003e * Business\u003cbr/\u003e * Review\u003cbr/\u003e * Tip\u003cbr/\u003e * Check-In\u003cbr/\u003e * Photos\u003c/p\u003e\n\u003cp\u003eThe data is available in JSON format and is stored on HDFS in the following location: \u003cstrong\u003e\u0026ldquo;/data/raw/yelp/\u0026rdquo;\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528996240173_2100916105",
+      "id": "20180614-101040_142656429",
+      "dateCreated": "Jun 14, 2018 10:10:40 AM",
+      "dateStarted": "Jun 14, 2018 1:13:13 PM",
+      "dateFinished": "Jun 14, 2018 1:13:13 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\nhdfs dfs -ls -R /data/raw/yelp\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 1:13:07 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sh",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "SLF4J: Class path contains multiple SLF4J bindings.\nSLF4J: Found binding in [jar:file:/usr/local/hadoop-2.9.0/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/usr/local/tez/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.\nSLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]\n18/06/14 13:12:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable\ndrwxr-xr-x   - keith supergroup          0 2018-06-13 17:20 /data/raw/yelp/business\n-rw-r--r--   1 keith supergroup  145175074 2018-06-13 17:20 /data/raw/yelp/business/business.json\ndrwxr-xr-x   - keith supergroup          0 2018-06-13 17:20 /data/raw/yelp/checkin\n-rw-r--r--   1 keith supergroup   63274733 2018-06-13 17:20 /data/raw/yelp/checkin/checkin.json\ndrwxr-xr-x   - keith supergroup          0 2018-06-13 17:20 /data/raw/yelp/photos\n-rw-r--r--   1 keith supergroup   26888701 2018-06-13 17:20 /data/raw/yelp/photos/photos.json\ndrwxr-xr-x   - keith supergroup          0 2018-06-13 17:21 /data/raw/yelp/review\n-rw-r--r--   1 keith supergroup 4198268919 2018-06-13 17:21 /data/raw/yelp/review/review.json\ndrwxr-xr-x   - keith supergroup          0 2018-06-13 17:21 /data/raw/yelp/tip\n-rw-r--r--   1 keith supergroup  197557967 2018-06-13 17:21 /data/raw/yelp/tip/tip.json\ndrwxr-xr-x   - keith supergroup          0 2018-06-13 17:21 /data/raw/yelp/user\n-rw-r--r--   1 keith supergroup 1891399764 2018-06-13 17:21 /data/raw/yelp/user/user.json\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528996686829_1214281139",
+      "id": "20180614-101806_1926010789",
+      "dateCreated": "Jun 14, 2018 10:18:06 AM",
+      "dateStarted": "Jun 14, 2018 1:12:54 PM",
+      "dateFinished": "Jun 14, 2018 1:12:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Making the data accessible:\n\n### Option 1: Leverage the JSON SerDe that\u0027s available in HCatalog\n\nFollowing is a sample record from the User dataset:\n\n    {  \n       \"user_id\":\"oMy_rEb0UBEmMlu-zcxnoQ\",\n       \"name\":\"Johnny\",\n       \"review_count\":8,\n       \"yelping_since\":\"2014-11-03\",\n       \"friends\":[\"cvVMmlU1ouS3I5fhutaryQ\",...\"],\n       \"useful\":0,\n       \"funny\":0,\n       \"cool\":0,\n       \"fans\":0,\n       \"elite\":[2016],\n       \"average_stars\":4.67,\n       \"compliment_hot\":0,\n       \"compliment_more\":0,\n       \"compliment_profile\":0,\n       \"compliment_cute\":0,\n       \"compliment_list\":0,\n       \"compliment_note\":0,\n       \"compliment_plain\":1,\n       \"compliment_cool\":0,\n       \"compliment_funny\":0,\n       \"compliment_writer\":0,\n       \"compliment_photos\":0\n    }\n\nHive includes a JSON SerDe within HCatalog that\u0027s packaged within Hive (I believe since v0.12). The following class is required: `org.apache.hive.hcatalog.data.JsonSerDe` which can be found in the `$HIVE_HOME/hcatalog/share/hcatalog/hcatalog-core-\u003cversion\u003e.jar`\n\n#### REMINDER: \n\nTo use the JSON SerDe, `hcatalog-core-*.jar` is required. You would get the following error when HCatalog core JAR is not added to the Hive classpath: \n\n    FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. Cannot validate serde: org.apache.hive.hcatalog.data.JsonSerDe\n\nThere are 2 options to resolve the same:\n1. Add the JAR to the session of when the commands execute\n2. Add the JAR to the hive.aux.jars.path\n\nI found the second option easier, as I don\u0027t need to add the jar for every hive session, that I need to establish, to query the tables that required the JSON SerDe.\n\nIn order to add the jar `hcatalog-core-*.jar` to the Hive auxiliary path, added the following to my `.bash_profile` (and restarted the hiveserver2 service):\n\n    export HCATALOG_HOME\u003d$HIVE_HOME/hcatalog\n    export HCATALOG_JARS\u003d$(echo $HCATALOG_HOME/share/hcatalog/*.jar | tr \u0027 \u0027 \u0027:\u0027)\n    \n    if [ -z \"$HIVE_AUX_JARS_PATH\" ]; then\n    export HIVE_AUX_JARS_PATH\u003d$HCATALOG_JARS:$TEZ_JARS\n    else\n    export HIVE_AUX_JARS_PATH\u003d$HIVE_AUX_JARS_PATH:$HCATALOG_JARS:$TEZ_JARS\n    fi\n\n**NOTE:** TEZ_JARS are also added to the hive auxiliary path as I have configured Hive to run on Tez than MR on my Mac.\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 1:19:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eMaking the data accessible:\u003c/h2\u003e\n\u003ch3\u003eOption 1: Leverage the JSON SerDe that\u0026rsquo;s available in HCatalog\u003c/h3\u003e\n\u003cp\u003eFollowing is a sample record from the User dataset:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e{  \n   \u0026quot;user_id\u0026quot;:\u0026quot;oMy_rEb0UBEmMlu-zcxnoQ\u0026quot;,\n   \u0026quot;name\u0026quot;:\u0026quot;Johnny\u0026quot;,\n   \u0026quot;review_count\u0026quot;:8,\n   \u0026quot;yelping_since\u0026quot;:\u0026quot;2014-11-03\u0026quot;,\n   \u0026quot;friends\u0026quot;:[\u0026quot;cvVMmlU1ouS3I5fhutaryQ\u0026quot;,...\u0026quot;],\n   \u0026quot;useful\u0026quot;:0,\n   \u0026quot;funny\u0026quot;:0,\n   \u0026quot;cool\u0026quot;:0,\n   \u0026quot;fans\u0026quot;:0,\n   \u0026quot;elite\u0026quot;:[2016],\n   \u0026quot;average_stars\u0026quot;:4.67,\n   \u0026quot;compliment_hot\u0026quot;:0,\n   \u0026quot;compliment_more\u0026quot;:0,\n   \u0026quot;compliment_profile\u0026quot;:0,\n   \u0026quot;compliment_cute\u0026quot;:0,\n   \u0026quot;compliment_list\u0026quot;:0,\n   \u0026quot;compliment_note\u0026quot;:0,\n   \u0026quot;compliment_plain\u0026quot;:1,\n   \u0026quot;compliment_cool\u0026quot;:0,\n   \u0026quot;compliment_funny\u0026quot;:0,\n   \u0026quot;compliment_writer\u0026quot;:0,\n   \u0026quot;compliment_photos\u0026quot;:0\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eHive includes a JSON SerDe within HCatalog that\u0026rsquo;s packaged within Hive (I believe since v0.12). The following class is required: \u003ccode\u003eorg.apache.hive.hcatalog.data.JsonSerDe\u003c/code\u003e which can be found in the \u003ccode\u003e$HIVE_HOME/hcatalog/share/hcatalog/hcatalog-core-\u0026lt;version\u0026gt;.jar\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eREMINDER:\u003c/h4\u003e\n\u003cp\u003eTo use the JSON SerDe, \u003ccode\u003ehcatalog-core-*.jar\u003c/code\u003e is required. You would get the following error when HCatalog core JAR is not added to the Hive classpath: \u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. Cannot validate serde: org.apache.hive.hcatalog.data.JsonSerDe\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThere are 2 options to resolve the same:\u003cbr/\u003e1. Add the JAR to the session of when the commands execute\u003cbr/\u003e2. Add the JAR to the hive.aux.jars.path\u003c/p\u003e\n\u003cp\u003eI found the second option easier, as I don\u0026rsquo;t need to add the jar for every hive session, that I need to establish, to query the tables that required the JSON SerDe.\u003c/p\u003e\n\u003cp\u003eIn order to add the jar \u003ccode\u003ehcatalog-core-*.jar\u003c/code\u003e to the Hive auxiliary path, added the following to my \u003ccode\u003e.bash_profile\u003c/code\u003e (and restarted the hiveserver2 service):\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eexport HCATALOG_HOME\u003d$HIVE_HOME/hcatalog\nexport HCATALOG_JARS\u003d$(echo $HCATALOG_HOME/share/hcatalog/*.jar | tr \u0026#39; \u0026#39; \u0026#39;:\u0026#39;)\n\nif [ -z \u0026quot;$HIVE_AUX_JARS_PATH\u0026quot; ]; then\nexport HIVE_AUX_JARS_PATH\u003d$HCATALOG_JARS:$TEZ_JARS\nelse\nexport HIVE_AUX_JARS_PATH\u003d$HIVE_AUX_JARS_PATH:$HCATALOG_JARS:$TEZ_JARS\nfi\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eNOTE:\u003c/strong\u003e TEZ_JARS are also added to the hive auxiliary path as I have configured Hive to run on Tez than MR on my Mac.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528997778843_1872947186",
+      "id": "20180614-103618_1949946283",
+      "dateCreated": "Jun 14, 2018 10:36:18 AM",
+      "dateStarted": "Jun 14, 2018 1:19:19 PM",
+      "dateFinished": "Jun 14, 2018 1:19:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\nDROP TABLE IF EXISTS yelp.users;\nCREATE EXTERNAL TABLE yelp.users (\n    user_id string,\n    name string,\n    review_count bigint,\n    yelping_since string,\n    friends array\u003cstring\u003e,\n    useful bigint,\n    funny bigint,\n    cool bigint,\n    fans bigint,\n    elite array\u003cbigint\u003e,\n    average_stars double,\n    compliment_hot bigint,\n    compliment_more bigint,\n    compliment_profile bigint,\n    compliment_cute bigint,\n    compliment_list bigint,\n    compliment_note bigint,\n    compliment_plain bigint,\n    compliment_cool bigint,\n    compliment_funny bigint,\n    compliment_writer bigint,\n    compliment_photos bigint\n)\nROW FORMAT SERDE \u0027org.apache.hive.hcatalog.data.JsonSerDe\u0027\nLOCATION \u0027/data/raw/yelp/user/\u0027",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 1:06:47 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528998791353_1955326658",
+      "id": "20180614-105311_315019598",
+      "dateCreated": "Jun 14, 2018 10:53:11 AM",
+      "dateStarted": "Jun 14, 2018 1:06:47 PM",
+      "dateFinished": "Jun 14, 2018 1:06:48 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\n\nselect count(*) from yelp.users;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 9:09:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "_c0\n1326101\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528999121712_-608182455",
+      "id": "20180614-105841_569632715",
+      "dateCreated": "Jun 14, 2018 10:58:41 AM",
+      "dateStarted": "Jun 14, 2018 1:17:58 PM",
+      "dateFinished": "Jun 14, 2018 1:18:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Option 2: Using Spark",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 1:55:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eOption 2: Using Spark\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1528999721070_1120319209",
+      "id": "20180614-110841_1538795352",
+      "dateCreated": "Jun 14, 2018 11:08:41 AM",
+      "dateStarted": "Jun 14, 2018 1:55:28 PM",
+      "dateFinished": "Jun 14, 2018 1:55:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\nval userDF \u003d spark.read.json(\"/data/raw/yelp/user/\")\nuserDF.printSchema()\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 9:18:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 462.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "userDF: org.apache.spark.sql.DataFrame \u003d [average_stars: double, compliment_cool: bigint ... 20 more fields]\nroot\n |-- average_stars: double (nullable \u003d true)\n |-- compliment_cool: long (nullable \u003d true)\n |-- compliment_cute: long (nullable \u003d true)\n |-- compliment_funny: long (nullable \u003d true)\n |-- compliment_hot: long (nullable \u003d true)\n |-- compliment_list: long (nullable \u003d true)\n |-- compliment_more: long (nullable \u003d true)\n |-- compliment_note: long (nullable \u003d true)\n |-- compliment_photos: long (nullable \u003d true)\n |-- compliment_plain: long (nullable \u003d true)\n |-- compliment_profile: long (nullable \u003d true)\n |-- compliment_writer: long (nullable \u003d true)\n |-- cool: long (nullable \u003d true)\n |-- elite: array (nullable \u003d true)\n |    |-- element: long (containsNull \u003d true)\n |-- fans: long (nullable \u003d true)\n |-- friends: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- funny: long (nullable \u003d true)\n |-- name: string (nullable \u003d true)\n |-- review_count: long (nullable \u003d true)\n |-- useful: long (nullable \u003d true)\n |-- user_id: string (nullable \u003d true)\n |-- yelping_since: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529009728288_1874121868",
+      "id": "20180614-135528_884296968",
+      "dateCreated": "Jun 14, 2018 1:55:28 PM",
+      "dateStarted": "Jun 14, 2018 9:18:59 PM",
+      "dateFinished": "Jun 14, 2018 9:19:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\n// Selecting the required fields for user and user_friends\n\nval userFinalDF \u003d userDF.select(\"user_id\",\"name\",\"yelping_since\",\"review_count\",\"average_stars\",\"cool\",\"funny\",\"useful\",\"fans\",\"compliment_cool\",\"compliment_cute\",\"compliment_funny\",\"compliment_hot\",\"compliment_list\",\"compliment_more\",\"compliment_note\",\"compliment_photos\",\"compliment_plain\",\"compliment_profile\",\"compliment_writer\",\"elite\")\n\nval userFriendsDF \u003d userDF.select(\"user_id\", \"friends\").withColumn(\"friend_id\", explode($\"friends\"))\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 9:19:37 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala"
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "userFinalDF: org.apache.spark.sql.DataFrame \u003d [user_id: string, name: string ... 19 more fields]\nuserFriendsDF: org.apache.spark.sql.DataFrame \u003d [user_id: string, friends: array\u003cstring\u003e ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529009804446_1908873507",
+      "id": "20180614-135644_1004139059",
+      "dateCreated": "Jun 14, 2018 1:56:44 PM",
+      "dateStarted": "Jun 14, 2018 9:19:37 PM",
+      "dateFinished": "Jun 14, 2018 9:19:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\n//write output to parquet on HDFS\nuserFinalDF.write.mode(\"Overwrite\").format(\"parquet\").saveAsTable(\"yelp.user_zep\")\nuserFriendsDF.write.mode(\"Overwrite\").format(\"parquet\").saveAsTable(\"yelp.user_friends_zep\")",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 10:42:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted.\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1.apply$mcV$sp(FileFormatWriter.scala:215)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1.apply(FileFormatWriter.scala:173)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1.apply(FileFormatWriter.scala:173)\n  at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:173)\n  at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:145)\n  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:58)\n  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:56)\n  at org.apache.spark.sql.execution.command.ExecutedCommandExec.doExecute(commands.scala:74)\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:117)\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:117)\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:138)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:135)\n  at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:116)\n  at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:92)\n  at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:92)\n  at org.apache.spark.sql.execution.datasources.DataSource.writeInFileFormat(DataSource.scala:438)\n  at org.apache.spark.sql.execution.datasources.DataSource.writeAndRead(DataSource.scala:454)\n  at org.apache.spark.sql.execution.command.CreateDataSourceTableAsSelectCommand.saveDataIntoTable(createDataSourceTables.scala:198)\n  at org.apache.spark.sql.execution.command.CreateDataSourceTableAsSelectCommand.run(createDataSourceTables.scala:158)\n  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:58)\n  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:56)\n  at org.apache.spark.sql.execution.command.ExecutedCommandExec.doExecute(commands.scala:74)\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:117)\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:117)\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:138)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:135)\n  at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:116)\n  at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:92)\n  at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:92)\n  at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:610)\n  at org.apache.spark.sql.DataFrameWriter.createTable(DataFrameWriter.scala:420)\n  at org.apache.spark.sql.DataFrameWriter.saveAsTable(DataFrameWriter.scala:399)\n  at org.apache.spark.sql.DataFrameWriter.saveAsTable(DataFrameWriter.scala:354)\n  ... 46 elided\nCaused by: org.apache.spark.SparkException: Job aborted due to stage failure: Task 4 in stage 5.0 failed 1 times, most recent failure: Lost task 4.0 in stage 5.0 (TID 58, localhost, executor driver): org.apache.spark.SparkException: Task failed while writing rows\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$.org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask(FileFormatWriter.scala:272)\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1$$anonfun$apply$mcV$sp$1.apply(FileFormatWriter.scala:191)\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1$$anonfun$apply$mcV$sp$1.apply(FileFormatWriter.scala:190)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:108)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:335)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\nCaused by: java.lang.OutOfMemoryError: GC overhead limit exceeded\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1$$anonfun$apply$2$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ParquetWriteSupport.scala:299)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$consumeField(ParquetWriteSupport.scala:437)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1$$anonfun$apply$2.apply$mcV$sp(ParquetWriteSupport.scala:294)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$consumeGroup(ParquetWriteSupport.scala:431)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1.apply(ParquetWriteSupport.scala:291)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1.apply(ParquetWriteSupport.scala:289)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$writeFields$1.apply$mcV$sp(ParquetWriteSupport.scala:124)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$consumeField(ParquetWriteSupport.scala:437)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$writeFields(ParquetWriteSupport.scala:123)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$write$1.apply$mcV$sp(ParquetWriteSupport.scala:114)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:425)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:113)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:51)\n\tat org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:123)\n\tat org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:180)\n\tat org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:46)\n\tat org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:40)\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$SingleDirectoryWriteTask.execute(FileFormatWriter.scala:327)\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask$3.apply(FileFormatWriter.scala:258)\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask$3.apply(FileFormatWriter.scala:256)\n\tat org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1375)\n\tat org.apache.spark.sql.execution.datasources.FileFormatWriter$.org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask(FileFormatWriter.scala:261)\n\t... 8 more\n\nDriver stacktrace:\n  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1499)\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1487)\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1486)\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1486)\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\n  at scala.Option.foreach(Option.scala:257)\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:814)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1714)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1669)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1658)\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:630)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2022)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1.apply$mcV$sp(FileFormatWriter.scala:188)\n  ... 81 more\nCaused by: org.apache.spark.SparkException: Task failed while writing rows\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$.org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask(FileFormatWriter.scala:272)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1$$anonfun$apply$mcV$sp$1.apply(FileFormatWriter.scala:191)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$write$1$$anonfun$apply$mcV$sp$1.apply(FileFormatWriter.scala:190)\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\n  at org.apache.spark.scheduler.Task.run(Task.scala:108)\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:335)\n  ... 3 more\nCaused by: java.lang.OutOfMemoryError: GC overhead limit exceeded\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1$$anonfun$apply$2$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ParquetWriteSupport.scala:299)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$consumeField(ParquetWriteSupport.scala:437)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1$$anonfun$apply$2.apply$mcV$sp(ParquetWriteSupport.scala:294)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$consumeGroup(ParquetWriteSupport.scala:431)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1.apply(ParquetWriteSupport.scala:291)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$threeLevelArrayWriter$1$1.apply(ParquetWriteSupport.scala:289)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$writeFields$1.apply$mcV$sp(ParquetWriteSupport.scala:124)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$consumeField(ParquetWriteSupport.scala:437)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.org$apache$spark$sql$execution$datasources$parquet$ParquetWriteSupport$$writeFields(ParquetWriteSupport.scala:123)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$anonfun$write$1.apply$mcV$sp(ParquetWriteSupport.scala:114)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:425)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:113)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:51)\n  at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:123)\n  at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:180)\n  at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:46)\n  at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:40)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$SingleDirectoryWriteTask.execute(FileFormatWriter.scala:327)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask$3.apply(FileFormatWriter.scala:258)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$$anonfun$org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask$3.apply(FileFormatWriter.scala:256)\n  at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1375)\n  at org.apache.spark.sql.execution.datasources.FileFormatWriter$.org$apache$spark$sql$execution$datasources$FileFormatWriter$$executeTask(FileFormatWriter.scala:261)\n  ... 8 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529010961470_71355968",
+      "id": "20180614-141601_2140061956",
+      "dateCreated": "Jun 14, 2018 2:16:01 PM",
+      "dateStarted": "Jun 14, 2018 10:42:04 PM",
+      "dateFinished": "Jun 14, 2018 10:56:06 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect count(*) from yelp.user_zep",
+      "user": "anonymous",
+      "dateUpdated": "Jun 15, 2018 9:55:29 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 308.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "count(1)\n1326101\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529011023788_-1971417150",
+      "id": "20180614-141703_1211525985",
+      "dateCreated": "Jun 14, 2018 2:17:03 PM",
+      "dateStarted": "Jun 15, 2018 9:55:29 PM",
+      "dateFinished": "Jun 15, 2018 9:55:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\nshow databases\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 15, 2018 9:55:00 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "database_name\nairline_db\nde_audit\nde_backoffice\nde_master\ndefault\nsample\nyelp\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529012288314_290759719",
+      "id": "20180614-143808_1524182674",
+      "dateCreated": "Jun 14, 2018 2:38:08 PM",
+      "dateStarted": "Jun 15, 2018 9:55:00 PM",
+      "dateFinished": "Jun 15, 2018 9:55:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\nshow tables from yelp",
+      "user": "anonymous",
+      "dateUpdated": "Jun 15, 2018 9:55:06 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "tab_name\nuser_parquet\nuser_spark_shell\nuser_zep\nusers\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529013333229_-699494770",
+      "id": "20180614-145533_739423642",
+      "dateCreated": "Jun 14, 2018 2:55:33 PM",
+      "dateStarted": "Jun 15, 2018 9:55:06 PM",
+      "dateFinished": "Jun 15, 2018 9:55:06 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%hive\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2018 6:33:06 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529026386434_-251898594",
+      "id": "20180614-183306_1352368492",
+      "dateCreated": "Jun 14, 2018 6:33:06 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Projects/Yelp-Data/Data-Engineering",
+  "id": "2DJJABRYJ",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

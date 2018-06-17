@@ -1,0 +1,276 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 181. Employees earning more than their managers\n\nThe Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.\n```\n+----+-------+--------+-----------+\n| Id | Name  | Salary | ManagerId |\n+----+-------+--------+-----------+\n| 1  | Joe   | 70000  | 3         |\n| 2  | Henry | 80000  | 4         |\n| 3  | Sam   | 60000  | NULL      |\n| 4  | Max   | 90000  | NULL      |\n+----+-------+--------+-----------+\n```\nGiven the Employee table, write a SQL query that finds out employees who earn more than their managers. For the above table, Joe is the only employee who earns more than his manager.\n```\n+----------+\n| Employee |\n+----------+\n| Joe      |\n+----------+\n```",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:24:05 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e181. Employees earning more than their managers\u003c/h1\u003e\n\u003cp\u003eThe Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-------+--------+-----------+\n| Id | Name  | Salary | ManagerId |\n+----+-------+--------+-----------+\n| 1  | Joe   | 70000  | 3         |\n| 2  | Henry | 80000  | 4         |\n| 3  | Sam   | 60000  | NULL      |\n| 4  | Max   | 90000  | NULL      |\n+----+-------+--------+-----------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eGiven the Employee table, write a SQL query that finds out employees who earn more than their managers. For the above table, Joe is the only employee who earns more than his manager.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----------+\n| Employee |\n+----------+\n| Joe      |\n+----------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194997229_-2022660195",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:23:17 PM",
+      "dateStarted": "Jun 16, 2018 5:23:56 PM",
+      "dateFinished": "Jun 16, 2018 5:23:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:24:11 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194997229_-2022660195",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:23:17 PM",
+      "dateStarted": "Jun 16, 2018 5:24:09 PM",
+      "dateFinished": "Jun 16, 2018 5:24:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists employee;\nCreate table If Not Exists Employee (Id int, Name varchar(255), Salary int, ManagerId int);\nTruncate table Employee;\ninsert into Employee (Id, Name, Salary, ManagerId) values (\u00271\u0027, \u0027Joe\u0027, \u002770000\u0027, \u00273\u0027);\ninsert into Employee (Id, Name, Salary, ManagerId) values (\u00272\u0027, \u0027Henry\u0027, \u002780000\u0027, \u00274\u0027);\ninsert into Employee (Id, Name, Salary, ManagerId) values (\u00273\u0027, \u0027Sam\u0027, \u002760000\u0027, null);\ninsert into Employee (Id, Name, Salary, ManagerId) values (\u00274\u0027, \u0027Max\u0027, \u002790000\u0027, null);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:25:02 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194997229_-2022660195",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:23:17 PM",
+      "dateStarted": "Jun 16, 2018 5:24:56 PM",
+      "dateFinished": "Jun 16, 2018 5:24:57 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:24:18 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194997229_-2022660195",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:23:17 PM",
+      "dateStarted": "Jun 16, 2018 5:24:16 PM",
+      "dateFinished": "Jun 16, 2018 5:24:16 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect employee.Name as Employee\nfrom Employee employee \nleft outer join Employee manager on (employee.ManagerId \u003d manager.Id)\nwhere employee.Salary \u003e manager.Salary",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:25:36 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Name\nJoe\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194997230_-2021505948",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:23:17 PM",
+      "dateStarted": "Jun 16, 2018 5:25:28 PM",
+      "dateFinished": "Jun 16, 2018 5:25:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:23:17 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194997230_-2021505948",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:23:17 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/181-Employees-Earning-More-Than-Their-Managers",
+  "id": "2DGSV2EZT",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

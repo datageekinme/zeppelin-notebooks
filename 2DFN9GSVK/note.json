@@ -1,0 +1,337 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 614. Second Degree Follower\n\nIn facebook, there is a follow table with two columns: followee, follower.\n\nPlease write a sql query to get the amount of each follower’s follower if he/she has one.\n\nFor example:\n\n| followee    | follower   |\n|-------------|------------|\n|     A       |     B      |\n|     B       |     C      |\n|     B       |     D      |\n|     D       |     E      |\n\n\nshould output:\n\n| follower    | num        |\n|-------------|------------|\n|     B       |  2         |\n|     D       |  1         |\n\nExplaination:\nBoth B and D exist in the follower list, when as a followee, B\u0027s follower is C and D, and D\u0027s follower is E. A does not exist in follower list.\n\nNote:\nFollowee would not follow himself/herself in all cases.\nPlease display the result in follower\u0027s alphabet order.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e614. Second Degree Follower\u003c/h1\u003e\n\u003cp\u003eIn facebook, there is a follow table with two columns: followee, follower.\u003c/p\u003e\n\u003cp\u003ePlease write a sql query to get the amount of each follower’s follower if he/she has one.\u003c/p\u003e\n\u003cp\u003eFor example:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003efollowee \u003c/th\u003e\n      \u003cth\u003efollower \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eA \u003c/td\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003eC \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003eD \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eD \u003c/td\u003e\n      \u003ctd\u003eE \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eshould output:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003efollower \u003c/th\u003e\n      \u003cth\u003enum \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eB \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eD \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eExplaination:\u003cbr/\u003eBoth B and D exist in the follower list, when as a followee, B\u0026rsquo;s follower is C and D, and D\u0026rsquo;s follower is E. A does not exist in follower list.\u003c/p\u003e\n\u003cp\u003eNote:\u003cbr/\u003eFollowee would not follow himself/herself in all cases.\u003cbr/\u003ePlease display the result in follower\u0026rsquo;s alphabet order.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529178858476_259507548",
+      "id": "20180616-125418_298069266",
+      "dateCreated": "Jun 16, 2018 12:54:18 PM",
+      "dateStarted": "Jun 16, 2018 12:55:27 PM",
+      "dateFinished": "Jun 16, 2018 12:55:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:06 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529178920723_-257702243",
+      "id": "20180616-125520_945594845",
+      "dateCreated": "Jun 16, 2018 12:55:20 PM",
+      "dateStarted": "Jun 16, 2018 12:55:46 PM",
+      "dateFinished": "Jun 16, 2018 12:55:46 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists follow;\nCreate table If Not Exists follow (followee varchar(255), follower varchar(255));\nTruncate table follow;\ninsert into follow (followee, follower) values (\u0027A\u0027, \u0027B\u0027);\ninsert into follow (followee, follower) values (\u0027B\u0027, \u0027C\u0027);\ninsert into follow (followee, follower) values (\u0027B\u0027, \u0027D\u0027);\ninsert into follow (followee, follower) values (\u0027D\u0027, \u0027E\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529178946170_-79532854",
+      "id": "20180616-125546_1869020847",
+      "dateCreated": "Jun 16, 2018 12:55:46 PM",
+      "dateStarted": "Jun 16, 2018 4:27:23 PM",
+      "dateFinished": "Jun 16, 2018 4:27:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nselect distinct b.follower, c.count num from follow b join \n(select a.followee, count(distinct follower) count from follow a group by a.followee) c\non (b.follower \u003d c.followee)\norder by b.follower ",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:11 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 114.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "follower\tcount\nB\t2\nD\t1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529178955816_-1052331315",
+      "id": "20180616-125555_595885990",
+      "dateCreated": "Jun 16, 2018 12:55:55 PM",
+      "dateStarted": "Jun 16, 2018 4:27:27 PM",
+      "dateFinished": "Jun 16, 2018 4:27:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nCreate table If Not Exists follow (followee varchar(255), follower varchar(255));\nTruncate table follow;\ninsert into follow (followee, follower) values (\u0027A\u0027, \u0027B\u0027);\ninsert into follow (followee, follower) values (\u0027B\u0027, \u0027C\u0027);\ninsert into follow (followee, follower) values (\u0027B\u0027, \u0027C\u0027);\ninsert into follow (followee, follower) values (\u0027C\u0027, \u0027D\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:14 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179049351_-1772691814",
+      "id": "20180616-125729_1423960053",
+      "dateCreated": "Jun 16, 2018 12:57:29 PM",
+      "dateStarted": "Jun 16, 2018 4:27:33 PM",
+      "dateFinished": "Jun 16, 2018 4:27:33 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nselect distinct  b.follower, c.count num from follow b join \n(select a.followee, count(distinct follower) count from follow a group by a.followee) c\non (b.follower \u003d c.followee)\norder by b.follower \n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:17 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "follower\tcount\nB\t1\nC\t1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179304471_-429753400",
+      "id": "20180616-130144_189583967",
+      "dateCreated": "Jun 16, 2018 1:01:44 PM",
+      "dateStarted": "Jun 16, 2018 4:27:37 PM",
+      "dateFinished": "Jun 16, 2018 4:27:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 1:01:56 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179316855_243587824",
+      "id": "20180616-130156_1632775236",
+      "dateCreated": "Jun 16, 2018 1:01:56 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/614-Second-Degree-Follower",
+  "id": "2DFN9GSVK",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

@@ -1,0 +1,360 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 586. Customer Placing the Largest Number of Orders\n\nQuery the customer_number from the orders table for the customer who has placed the largest number of orders.\n\nIt is guaranteed that exactly one customer will have placed more orders than any other customer.\n\nThe orders table is defined as follows:\n\n| Column            | Type      |\n|-------------------|-----------|\n| order_number (PK) | int       |\n| customer_number   | int       |\n| order_date        | date      |\n| required_date     | date      |\n| shipped_date      | date      |\n| status            | char(15)  |\n| comment           | char(200) |\n\n**Sample Input**\n\n| order_number | customer_number | order_date | required_date | shipped_date | status | comment |\n|--------------|-----------------|------------|---------------|--------------|--------|---------|\n| 1            | 1               | 2017-04-09 | 2017-04-13    | 2017-04-12   | Closed |         |\n| 2            | 2               | 2017-04-15 | 2017-04-20    | 2017-04-18   | Closed |         |\n| 3            | 3               | 2017-04-16 | 2017-04-25    | 2017-04-20   | Closed |         |\n| 4            | 3               | 2017-04-18 | 2017-04-28    | 2017-04-25   | Closed |         |\n\n**Sample Output**\n\n| customer_number |\n|-----------------|\n| 3               |\n\n**Explanation**\n\nThe customer with number \u00273\u0027 has two orders, which is greater than either customer \u00271\u0027 or \u00272\u0027 because each of them  only has one order. \nSo the result is customer_number \u00273\u0027.\n\n**Follow up:** What if more than one customer have the largest number of orders, can you find all the customer_number in this case?",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:30 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e586. Customer Placing the Largest Number of Orders\u003c/h1\u003e\n\u003cp\u003eQuery the customer_number from the orders table for the customer who has placed the largest number of orders.\u003c/p\u003e\n\u003cp\u003eIt is guaranteed that exactly one customer will have placed more orders than any other customer.\u003c/p\u003e\n\u003cp\u003eThe orders table is defined as follows:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eColumn \u003c/th\u003e\n      \u003cth\u003eType \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eorder_number (PK) \u003c/td\u003e\n      \u003ctd\u003eint \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003ecustomer_number \u003c/td\u003e\n      \u003ctd\u003eint \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eorder_date \u003c/td\u003e\n      \u003ctd\u003edate \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003erequired_date \u003c/td\u003e\n      \u003ctd\u003edate \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003eshipped_date \u003c/td\u003e\n      \u003ctd\u003edate \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003estatus \u003c/td\u003e\n      \u003ctd\u003echar(15) \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003ecomment \u003c/td\u003e\n      \u003ctd\u003echar(200) \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eSample Input\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eorder_number \u003c/th\u003e\n      \u003cth\u003ecustomer_number \u003c/th\u003e\n      \u003cth\u003eorder_date \u003c/th\u003e\n      \u003cth\u003erequired_date \u003c/th\u003e\n      \u003cth\u003eshipped_date \u003c/th\u003e\n      \u003cth\u003estatus \u003c/th\u003e\n      \u003cth\u003ecomment \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e2017-04-09 \u003c/td\u003e\n      \u003ctd\u003e2017-04-13 \u003c/td\u003e\n      \u003ctd\u003e2017-04-12 \u003c/td\u003e\n      \u003ctd\u003eClosed \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2017-04-15 \u003c/td\u003e\n      \u003ctd\u003e2017-04-20 \u003c/td\u003e\n      \u003ctd\u003e2017-04-18 \u003c/td\u003e\n      \u003ctd\u003eClosed \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2017-04-16 \u003c/td\u003e\n      \u003ctd\u003e2017-04-25 \u003c/td\u003e\n      \u003ctd\u003e2017-04-20 \u003c/td\u003e\n      \u003ctd\u003eClosed \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2017-04-18 \u003c/td\u003e\n      \u003ctd\u003e2017-04-28 \u003c/td\u003e\n      \u003ctd\u003e2017-04-25 \u003c/td\u003e\n      \u003ctd\u003eClosed \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eSample Output\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003ecustomer_number \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eExplanation\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eThe customer with number \u0026lsquo;3\u0026rsquo; has two orders, which is greater than either customer \u0026lsquo;1\u0026rsquo; or \u0026lsquo;2\u0026rsquo; because each of them only has one order.\u003cbr/\u003eSo the result is customer_number \u0026lsquo;3\u0026rsquo;.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eFollow up:\u003c/strong\u003e What if more than one customer have the largest number of orders, can you find all the customer_number in this case?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529171776762_-612143147",
+      "id": "20180616-105616_697344346",
+      "dateCreated": "Jun 16, 2018 10:56:16 AM",
+      "dateStarted": "Jun 16, 2018 10:57:33 AM",
+      "dateFinished": "Jun 16, 2018 10:57:33 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:35 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529171814908_-599184278",
+      "id": "20180616-105654_1635224608",
+      "dateCreated": "Jun 16, 2018 10:56:54 AM",
+      "dateStarted": "Jun 16, 2018 10:58:16 AM",
+      "dateFinished": "Jun 16, 2018 10:58:16 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\ndrop table if exists orders;\nCreate table If Not Exists orders (order_number int, customer_number int, order_date date, required_date date, shipped_date date, status char(15), comment char(200), key(order_number));\nTruncate table orders;\ninsert into orders (order_number, customer_number) values (\u00271\u0027, \u00271\u0027);\ninsert into orders (order_number, customer_number) values (\u00272\u0027, \u00272\u0027);\ninsert into orders (order_number, customer_number) values (\u00273\u0027, \u00273\u0027);\ninsert into orders (order_number, customer_number) values (\u00274\u0027, \u00273\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529171896873_807011655",
+      "id": "20180616-105816_1358993343",
+      "dateCreated": "Jun 16, 2018 10:58:16 AM",
+      "dateStarted": "Jun 16, 2018 4:22:29 PM",
+      "dateFinished": "Jun 16, 2018 4:22:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:40 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529171939744_-1319879741",
+      "id": "20180616-105859_1984564056",
+      "dateCreated": "Jun 16, 2018 10:58:59 AM",
+      "dateStarted": "Jun 16, 2018 11:00:55 AM",
+      "dateFinished": "Jun 16, 2018 11:00:55 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\nselect customer_number from (select customer_number, count(order_number) order_count from orders group by customer_number) a order by order_count desc limit 1",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:45 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "customer_number\n3\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529171995239_1228404170",
+      "id": "20180616-105955_1470769081",
+      "dateCreated": "Jun 16, 2018 10:59:55 AM",
+      "dateStarted": "Jun 16, 2018 4:22:33 PM",
+      "dateFinished": "Jun 16, 2018 4:22:33 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Solution for Follow-up\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:48 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution for Follow-up\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529172367299_-535531620",
+      "id": "20180616-110607_513986679",
+      "dateCreated": "Jun 16, 2018 11:06:07 AM",
+      "dateStarted": "Jun 16, 2018 11:06:27 AM",
+      "dateFinished": "Jun 16, 2018 11:06:27 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n\nuse leetcode;\nselect customer_number from orders1 group by customer_number having count(order_number) \u003d (select max(order_count) from (select count(order_number) order_count from orders1 group by customer_number) a)",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:08:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "customer_number\n3\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529172137955_695174487",
+      "id": "20180616-110217_17206106",
+      "dateCreated": "Jun 16, 2018 11:02:17 AM",
+      "dateStarted": "Jun 16, 2018 11:05:57 AM",
+      "dateFinished": "Jun 16, 2018 11:05:57 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 11:04:54 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529172294318_-32203438",
+      "id": "20180616-110454_491404327",
+      "dateCreated": "Jun 16, 2018 11:04:54 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/586-Customer-Placing-the-Largest-Number-of-Orders",
+  "id": "2DGPE2BD4",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

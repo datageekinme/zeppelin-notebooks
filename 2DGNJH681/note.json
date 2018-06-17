@@ -1,0 +1,344 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 262. Trips and Users\n\nThe Trips table holds all taxi trips. Each trip has a unique Id, while Client_Id and Driver_Id are both foreign keys to the Users_Id at the Users table. Status is an ENUM type of (‘completed’, ‘cancelled_by_driver’, ‘cancelled_by_client’).\n```\n+----+-----------+-----------+---------+--------------------+----------+\n| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|\n+----+-----------+-----------+---------+--------------------+----------+\n| 1  |     1     |    10     |    1    |     completed      |2013-10-01|\n| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|\n| 3  |     3     |    12     |    6    |     completed      |2013-10-01|\n| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|\n| 5  |     1     |    10     |    1    |     completed      |2013-10-02|\n| 6  |     2     |    11     |    6    |     completed      |2013-10-02|\n| 7  |     3     |    12     |    6    |     completed      |2013-10-02|\n| 8  |     2     |    12     |    12   |     completed      |2013-10-03|\n| 9  |     3     |    10     |    12   |     completed      |2013-10-03| \n| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|\n+----+-----------+-----------+---------+--------------------+----------+\n```\nThe Users table holds all users. Each user has an unique Users_Id, and Role is an ENUM type of (‘client’, ‘driver’, ‘partner’).\n```\n+----------+--------+--------+\n| Users_Id | Banned |  Role  |\n+----------+--------+--------+\n|    1     |   No   | client |\n|    2     |   Yes  | client |\n|    3     |   No   | client |\n|    4     |   No   | client |\n|    10    |   No   | driver |\n|    11    |   No   | driver |\n|    12    |   No   | driver |\n|    13    |   No   | driver |\n+----------+--------+--------+\n```\nWrite a SQL query to find the cancellation rate of requests made by unbanned users between Oct 1, 2013 and Oct 3, 2013. For the above tables, your SQL query should return the following rows with the cancellation rate being rounded to two decimal places.\n```\n+------------+-------------------+\n|     Day    | Cancellation Rate |\n+------------+-------------------+\n| 2013-10-01 |       0.33        |\n| 2013-10-02 |       0.00        |\n| 2013-10-03 |       0.50        |\n+------------+-------------------+\n```",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:46:16 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e262. Trips and Users\u003c/h1\u003e\n\u003cp\u003eThe Trips table holds all taxi trips. Each trip has a unique Id, while Client_Id and Driver_Id are both foreign keys to the Users_Id at the Users table. Status is an ENUM type of (‘completed’, ‘cancelled_by_driver’, ‘cancelled_by_client’).\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-----------+-----------+---------+--------------------+----------+\n| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|\n+----+-----------+-----------+---------+--------------------+----------+\n| 1  |     1     |    10     |    1    |     completed      |2013-10-01|\n| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|\n| 3  |     3     |    12     |    6    |     completed      |2013-10-01|\n| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|\n| 5  |     1     |    10     |    1    |     completed      |2013-10-02|\n| 6  |     2     |    11     |    6    |     completed      |2013-10-02|\n| 7  |     3     |    12     |    6    |     completed      |2013-10-02|\n| 8  |     2     |    12     |    12   |     completed      |2013-10-03|\n| 9  |     3     |    10     |    12   |     completed      |2013-10-03| \n| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|\n+----+-----------+-----------+---------+--------------------+----------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe Users table holds all users. Each user has an unique Users_Id, and Role is an ENUM type of (‘client’, ‘driver’, ‘partner’).\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----------+--------+--------+\n| Users_Id | Banned |  Role  |\n+----------+--------+--------+\n|    1     |   No   | client |\n|    2     |   Yes  | client |\n|    3     |   No   | client |\n|    4     |   No   | client |\n|    10    |   No   | driver |\n|    11    |   No   | driver |\n|    12    |   No   | driver |\n|    13    |   No   | driver |\n+----------+--------+--------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWrite a SQL query to find the cancellation rate of requests made by unbanned users between Oct 1, 2013 and Oct 3, 2013. For the above tables, your SQL query should return the following rows with the cancellation rate being rounded to two decimal places.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------------+-------------------+\n|     Day    | Cancellation Rate |\n+------------+-------------------+\n| 2013-10-01 |       0.33        |\n| 2013-10-02 |       0.00        |\n| 2013-10-03 |       0.50        |\n+------------+-------------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196324824_1629443119",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:45:24 PM",
+      "dateStarted": "Jun 16, 2018 5:46:12 PM",
+      "dateFinished": "Jun 16, 2018 5:46:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:46:25 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196324824_1629443119",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:45:24 PM",
+      "dateStarted": "Jun 16, 2018 5:46:19 PM",
+      "dateFinished": "Jun 16, 2018 5:46:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\n\ndrop table if exists trips;\ndrop table if exists users;\n\nCreate table If Not Exists Trips (Id int, Client_Id int, Driver_Id int, City_Id int, Status ENUM(\u0027completed\u0027, \u0027cancelled_by_driver\u0027, \u0027cancelled_by_client\u0027), Request_at varchar(50));\nCreate table If Not Exists Users (Users_Id int, Banned varchar(50), Role ENUM(\u0027client\u0027, \u0027driver\u0027, \u0027partner\u0027));\nTruncate table Trips;\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00271\u0027, \u00271\u0027, \u002710\u0027, \u00271\u0027, \u0027completed\u0027, \u00272013-10-01\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00272\u0027, \u00272\u0027, \u002711\u0027, \u00271\u0027, \u0027cancelled_by_driver\u0027, \u00272013-10-01\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00273\u0027, \u00273\u0027, \u002712\u0027, \u00276\u0027, \u0027completed\u0027, \u00272013-10-01\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00274\u0027, \u00274\u0027, \u002713\u0027, \u00276\u0027, \u0027cancelled_by_client\u0027, \u00272013-10-01\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00275\u0027, \u00271\u0027, \u002710\u0027, \u00271\u0027, \u0027completed\u0027, \u00272013-10-02\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00276\u0027, \u00272\u0027, \u002711\u0027, \u00276\u0027, \u0027completed\u0027, \u00272013-10-02\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00277\u0027, \u00273\u0027, \u002712\u0027, \u00276\u0027, \u0027completed\u0027, \u00272013-10-02\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00278\u0027, \u00272\u0027, \u002712\u0027, \u002712\u0027, \u0027completed\u0027, \u00272013-10-03\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u00279\u0027, \u00273\u0027, \u002710\u0027, \u002712\u0027, \u0027completed\u0027, \u00272013-10-03\u0027);\ninsert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (\u002710\u0027, \u00274\u0027, \u002713\u0027, \u002712\u0027, \u0027cancelled_by_driver\u0027, \u00272013-10-03\u0027);\nTruncate table Users;\ninsert into Users (Users_Id, Banned, Role) values (\u00271\u0027, \u0027No\u0027, \u0027client\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u00272\u0027, \u0027Yes\u0027, \u0027client\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u00273\u0027, \u0027No\u0027, \u0027client\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u00274\u0027, \u0027No\u0027, \u0027client\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u002710\u0027, \u0027No\u0027, \u0027driver\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u002711\u0027, \u0027No\u0027, \u0027driver\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u002712\u0027, \u0027No\u0027, \u0027driver\u0027);\ninsert into Users (Users_Id, Banned, Role) values (\u002713\u0027, \u0027No\u0027, \u0027driver\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:47:39 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196324824_1629443119",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:45:24 PM",
+      "dateStarted": "Jun 16, 2018 5:47:31 PM",
+      "dateFinished": "Jun 16, 2018 5:47:31 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:46:23 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196324825_1629058370",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:45:24 PM",
+      "dateStarted": "Jun 16, 2018 5:46:21 PM",
+      "dateFinished": "Jun 16, 2018 5:46:21 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect b.request_at Day, round(sum(case when status like \u0027cancelled%\u0027 then 1 else 0 end)/count(*), 2) \u0027Cancellation Rate\u0027 \nfrom users a , trips b\nwhere a.banned \u003d \u0027No\u0027\nand a.users_id \u003d b.client_id \nand b.request_at \u003e\u003d \u00272013-10-01\u0027 and b.request_at \u003c\u003d \u00272013-10-03\u0027\ngroup by b.request_at;",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:48:41 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 140.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Request_at\tCancellation Rate\n2013-10-01\t0.33\n2013-10-02\t0.00\n2013-10-03\t0.50\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196324825_1629058370",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:45:24 PM",
+      "dateStarted": "Jun 16, 2018 5:47:59 PM",
+      "dateFinished": "Jun 16, 2018 5:47:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:45:24 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196324825_1629058370",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:45:24 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/262-Trips-and-Users",
+  "id": "2DGNJH681",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

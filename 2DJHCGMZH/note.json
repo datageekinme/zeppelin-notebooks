@@ -1,0 +1,307 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 596. Classes more than 5 Students\n\nThere is a table courses with columns: student and class\n\nPlease list out all classes which have more than or equal to 5 students.\n\nFor example, the table:\n```\n+---------+------------+\n| student | class      |\n+---------+------------+\n| A       | Math       |\n| B       | English    |\n| C       | Math       |\n| D       | Biology    |\n| E       | Math       |\n| F       | Computer   |\n| G       | Math       |\n| H       | Math       |\n| I       | Math       |\n+---------+------------+\n```\nShould output:\n```\n+---------+\n| class   |\n+---------+\n| Math    |\n+---------+\n```\nNote:\nThe students should not be counted duplicate in each course.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:34 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e596. Classes more than 5 Students\u003c/h1\u003e\n\u003cp\u003eThere is a table courses with columns: student and class\u003c/p\u003e\n\u003cp\u003ePlease list out all classes which have more than or equal to 5 students.\u003c/p\u003e\n\u003cp\u003eFor example, the table:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+---------+------------+\n| student | class      |\n+---------+------------+\n| A       | Math       |\n| B       | English    |\n| C       | Math       |\n| D       | Biology    |\n| E       | Math       |\n| F       | Computer   |\n| G       | Math       |\n| H       | Math       |\n| I       | Math       |\n+---------+------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eShould output:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+---------+\n| class   |\n+---------+\n| Math    |\n+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNote:\u003cbr/\u003eThe students should not be counted duplicate in each course.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193101891_-1112284645",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:51:41 PM",
+      "dateStarted": "Jun 16, 2018 4:52:22 PM",
+      "dateFinished": "Jun 16, 2018 4:52:22 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:34 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193101892_-1114208390",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:51:41 PM",
+      "dateStarted": "Jun 16, 2018 4:52:28 PM",
+      "dateFinished": "Jun 16, 2018 4:52:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists courses;\nCreate table If Not Exists courses (student varchar(255), class varchar(255));\nTruncate table courses;\ninsert into courses (student, class) values (\u0027A\u0027, \u0027Math\u0027);\ninsert into courses (student, class) values (\u0027B\u0027, \u0027English\u0027);\ninsert into courses (student, class) values (\u0027C\u0027, \u0027Math\u0027);\ninsert into courses (student, class) values (\u0027D\u0027, \u0027Biology\u0027);\ninsert into courses (student, class) values (\u0027E\u0027, \u0027Math\u0027);\ninsert into courses (student, class) values (\u0027F\u0027, \u0027Computer\u0027);\ninsert into courses (student, class) values (\u0027G\u0027, \u0027Math\u0027);\ninsert into courses (student, class) values (\u0027H\u0027, \u0027Math\u0027);\ninsert into courses (student, class) values (\u0027I\u0027, \u0027Math\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:39 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193101892_-1114208390",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:51:41 PM",
+      "dateStarted": "Jun 16, 2018 4:53:03 PM",
+      "dateFinished": "Jun 16, 2018 4:53:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:34 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193101892_-1114208390",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:51:41 PM",
+      "dateStarted": "Jun 16, 2018 4:52:30 PM",
+      "dateFinished": "Jun 16, 2018 4:52:30 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect class from courses group by class having count(distinct student) \u003e\u003d 5",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:41 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "class\nMath\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193101892_-1114208390",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:51:41 PM",
+      "dateStarted": "Jun 16, 2018 4:53:25 PM",
+      "dateFinished": "Jun 16, 2018 4:53:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:09:34 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193205195_1454511540",
+      "id": "20180616-165325_426454802",
+      "dateCreated": "Jun 16, 2018 4:53:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/596-Classes-More-Than-5-Students",
+  "id": "2DJHCGMZH",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

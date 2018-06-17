@@ -1,0 +1,280 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 595. Big Countries\n\nThere is a table World\n```\n+-----------------+------------+------------+--------------+---------------+\n| name            | continent  | area       | population   | gdp           |\n+-----------------+------------+------------+--------------+---------------+\n| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |\n| Albania         | Europe     | 28748      | 2831741      | 12960000      |\n| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |\n| Andorra         | Europe     | 468        | 78115        | 3712000       |\n| Angola          | Africa     | 1246700    | 20609294     | 100990000     |\n+-----------------+------------+------------+--------------+---------------+\n```\nA country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.\n\nWrite a SQL solution to output big countries\u0027 name, population and area.\n\nFor example, according to the above table, we should output:\n```\n+--------------+-------------+--------------+\n| name         | population  | area         |\n+--------------+-------------+--------------+\n| Afghanistan  | 25500100    | 652230       |\n| Algeria      | 37100000    | 2381741      |\n+--------------+-------------+--------------+\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:09:20 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e595. Big Countries\u003c/h1\u003e\n\u003cp\u003eThere is a table World\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-----------------+------------+------------+--------------+---------------+\n| name            | continent  | area       | population   | gdp           |\n+-----------------+------------+------------+--------------+---------------+\n| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |\n| Albania         | Europe     | 28748      | 2831741      | 12960000      |\n| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |\n| Andorra         | Europe     | 468        | 78115        | 3712000       |\n| Angola          | Africa     | 1246700    | 20609294     | 100990000     |\n+-----------------+------------+------------+--------------+---------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eA country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.\u003c/p\u003e\n\u003cp\u003eWrite a SQL solution to output big countries\u0026rsquo; name, population and area.\u003c/p\u003e\n\u003cp\u003eFor example, according to the above table, we should output:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+--------------+-------------+--------------+\n| name         | population  | area         |\n+--------------+-------------+--------------+\n| Afghanistan  | 25500100    | 652230       |\n| Algeria      | 37100000    | 2381741      |\n+--------------+-------------+--------------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184723441_666184894",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 2:32:03 PM",
+      "dateStarted": "Jun 16, 2018 6:09:14 PM",
+      "dateFinished": "Jun 16, 2018 6:09:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:09:26 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184723442_667339140",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 2:32:03 PM",
+      "dateStarted": "Jun 16, 2018 6:09:23 PM",
+      "dateFinished": "Jun 16, 2018 6:09:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists world;\nCreate table If Not Exists World (name varchar(255), continent varchar(255), area int, population int, gdp bigint);\nTruncate table World;\ninsert into World (name, continent, area, population, gdp) values (\u0027Afghanistan\u0027, \u0027Asia\u0027, \u0027652230\u0027, \u002725500100\u0027, \u002720343000000\u0027);\ninsert into World (name, continent, area, population, gdp) values (\u0027Albania\u0027, \u0027Europe\u0027, \u002728748\u0027, \u00272831741\u0027, \u002712960000000\u0027);\ninsert into World (name, continent, area, population, gdp) values (\u0027Algeria\u0027, \u0027Africa\u0027, \u00272381741\u0027, \u002737100000\u0027, \u0027188681000000\u0027);\ninsert into World (name, continent, area, population, gdp) values (\u0027Andorra\u0027, \u0027Europe\u0027, \u0027468\u0027, \u002778115\u0027, \u00273712000000\u0027);\ninsert into World (name, continent, area, population, gdp) values (\u0027Angola\u0027, \u0027Africa\u0027, \u00271246700\u0027, \u002720609294\u0027, \u0027100990000000\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:10:34 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184723442_667339140",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 2:32:03 PM",
+      "dateStarted": "Jun 16, 2018 6:10:26 PM",
+      "dateFinished": "Jun 16, 2018 6:10:26 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:09:32 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184723442_667339140",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 2:32:03 PM",
+      "dateStarted": "Jun 16, 2018 6:09:28 PM",
+      "dateFinished": "Jun 16, 2018 6:09:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect  name, population, area \nfrom World\nwhere area \u003e 3000000 or population \u003e 25000000",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:11:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 104.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "name\tpopulation\tarea\nAfghanistan\t25500100\t652230\nAlgeria\t37100000\t2381741\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529184723443_666954391",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 2:32:03 PM",
+      "dateStarted": "Jun 16, 2018 6:11:08 PM",
+      "dateFinished": "Jun 16, 2018 6:11:08 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:16:48 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529194608521_-1715044965",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:16:48 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/595-Big-Countries",
+  "id": "2DHXK1CZH",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

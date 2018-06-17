@@ -1,0 +1,284 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 584. Find Customer Referee\n\nGiven a table customer holding customers information and the referee.\n```\n+------+------+-----------+\n| id   | name | referee_id|\n+------+------+-----------+\n|    1 | Will |      NULL |\n|    2 | Jane |      NULL |\n|    3 | Alex |         2 |\n|    4 | Bill |      NULL |\n|    5 | Zack |         1 |\n|    6 | Mark |         2 |\n+------+------+-----------+\n```\nWrite a query to return the list of customers NOT referred by the person with id \u00272\u0027.\n\nFor the sample data above, the result is:\n```\n+------+\n| name |\n+------+\n| Will |\n| Jane |\n| Bill |\n| Zack |\n+------+\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:06:17 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e584. Find Customer Referee\u003c/h1\u003e\n\u003cp\u003eGiven a table customer holding customers information and the referee.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------+------+-----------+\n| id   | name | referee_id|\n+------+------+-----------+\n|    1 | Will |      NULL |\n|    2 | Jane |      NULL |\n|    3 | Alex |         2 |\n|    4 | Bill |      NULL |\n|    5 | Zack |         1 |\n|    6 | Mark |         2 |\n+------+------+-----------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWrite a query to return the list of customers NOT referred by the person with id \u0026lsquo;2\u0026rsquo;.\u003c/p\u003e\n\u003cp\u003eFor the sample data above, the result is:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------+\n| name |\n+------+\n| Will |\n| Jane |\n| Bill |\n| Zack |\n+------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197528767_432040479",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 6:05:28 PM",
+      "dateStarted": "Jun 16, 2018 6:06:12 PM",
+      "dateFinished": "Jun 16, 2018 6:06:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:06:24 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197528767_432040479",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 6:05:28 PM",
+      "dateStarted": "Jun 16, 2018 6:06:18 PM",
+      "dateFinished": "Jun 16, 2018 6:06:18 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists customer;\nCREATE TABLE IF NOT EXISTS customer (id INT,name VARCHAR(25),referee_id INT);\nTruncate table customer;\ninsert into customer (id, name, referee_id) values (\u00271\u0027, \u0027Will\u0027, null);\ninsert into customer (id, name, referee_id) values (\u00272\u0027, \u0027Jane\u0027, null);\ninsert into customer (id, name, referee_id) values (\u00273\u0027, \u0027Alex\u0027, \u00272\u0027);\ninsert into customer (id, name, referee_id) values (\u00274\u0027, \u0027Bill\u0027, null);\ninsert into customer (id, name, referee_id) values (\u00275\u0027, \u0027Zack\u0027, \u00271\u0027);\ninsert into customer (id, name, referee_id) values (\u00276\u0027, \u0027Mark\u0027, \u00272\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:07:33 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197528768_417804770",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 6:05:28 PM",
+      "dateStarted": "Jun 16, 2018 6:07:28 PM",
+      "dateFinished": "Jun 16, 2018 6:07:28 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:06:26 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197528768_417804770",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 6:05:28 PM",
+      "dateStarted": "Jun 16, 2018 6:06:20 PM",
+      "dateFinished": "Jun 16, 2018 6:06:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect a.name from customer a\nleft outer join customer b on (a.referee_id \u003d b.id)\nwhere ifnull(a.referee_id, -1) !\u003d 2\norder by a.id",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 6:08:08 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 164.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "name\nWill\nJane\nBill\nZack\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197528768_417804770",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 6:05:28 PM",
+      "dateStarted": "Jun 16, 2018 6:07:55 PM",
+      "dateFinished": "Jun 16, 2018 6:07:55 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 6:05:28 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529197528768_417804770",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 6:05:28 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/584-Find-Customer-Referee",
+  "id": "2DH5HSW1M",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

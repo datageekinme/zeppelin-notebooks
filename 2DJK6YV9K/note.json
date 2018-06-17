@@ -1,0 +1,312 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 574. Winning Candidate\n\nTable: Candidate\n```\n+-----+---------+\n| id  | Name    |\n+-----+---------+\n| 1   | A       |\n| 2   | B       |\n| 3   | C       |\n| 4   | D       |\n| 5   | E       |\n+-----+---------+  \n```\nTable: Vote\n```\n+-----+--------------+\n| id  | CandidateId  |\n+-----+--------------+\n| 1   |     2        |\n| 2   |     4        |\n| 3   |     3        |\n| 4   |     2        |\n| 5   |     5        |\n+-----+--------------+\nid is the auto-increment primary key,\nCandidateId is the id appeared in Candidate table.\n```\nWrite a sql to find the name of the winning candidate, the above example will return the winner B.\n```\n+------+\n| Name |\n+------+\n| B    |\n+------+\n```\nNotes:\nYou may assume there is no tie, in other words there will be at most one winning candidate.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:55:31 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e574. Winning Candidate\u003c/h1\u003e\n\u003cp\u003eTable: Candidate\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-----+---------+\n| id  | Name    |\n+-----+---------+\n| 1   | A       |\n| 2   | B       |\n| 3   | C       |\n| 4   | D       |\n| 5   | E       |\n+-----+---------+  \n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTable: Vote\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-----+--------------+\n| id  | CandidateId  |\n+-----+--------------+\n| 1   |     2        |\n| 2   |     4        |\n| 3   |     3        |\n| 4   |     2        |\n| 5   |     5        |\n+-----+--------------+\nid is the auto-increment primary key,\nCandidateId is the id appeared in Candidate table.\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWrite a sql to find the name of the winning candidate, the above example will return the winner B.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+------+\n| Name |\n+------+\n| B    |\n+------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNotes:\u003cbr/\u003eYou may assume there is no tie, in other words there will be at most one winning candidate.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196880672_-1889873684",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:54:40 PM",
+      "dateStarted": "Jun 16, 2018 5:55:26 PM",
+      "dateFinished": "Jun 16, 2018 5:55:26 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:56:01 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196880672_-1889873684",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:54:40 PM",
+      "dateStarted": "Jun 16, 2018 5:55:59 PM",
+      "dateFinished": "Jun 16, 2018 5:55:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists candidate;\ndrop table if exists vote;\nCreate table If Not Exists Candidate (id int, Name varchar(255));\nCreate table If Not Exists Vote (id int, CandidateId int);\nTruncate table Candidate;\ninsert into Candidate (id, Name) values (\u00271\u0027, \u0027A\u0027);\ninsert into Candidate (id, Name) values (\u00272\u0027, \u0027B\u0027);\ninsert into Candidate (id, Name) values (\u00273\u0027, \u0027C\u0027);\ninsert into Candidate (id, Name) values (\u00274\u0027, \u0027D\u0027);\ninsert into Candidate (id, Name) values (\u00275\u0027, \u0027E\u0027);\nTruncate table Vote;\ninsert into Vote (id, CandidateId) values (\u00271\u0027, \u00272\u0027);\ninsert into Vote (id, CandidateId) values (\u00272\u0027, \u00274\u0027);\ninsert into Vote (id, CandidateId) values (\u00273\u0027, \u00273\u0027);\ninsert into Vote (id, CandidateId) values (\u00274\u0027, \u00272\u0027);\ninsert into Vote (id, CandidateId) values (\u00275\u0027, \u00275\u0027);\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:57:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196880673_-1890258433",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:54:40 PM",
+      "dateStarted": "Jun 16, 2018 5:56:58 PM",
+      "dateFinished": "Jun 16, 2018 5:56:58 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:56:09 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196880673_-1890258433",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:54:40 PM",
+      "dateStarted": "Jun 16, 2018 5:55:56 PM",
+      "dateFinished": "Jun 16, 2018 5:55:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect a.name from candidate a inner join (\nselect candidateid, count(*) no_of_votes \nfrom vote \ngroup by candidateid \norder by no_of_votes desc\nlimit 1) b on a.id \u003d b.candidateid",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:57:46 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Name\nB\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196880673_-1890258433",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:54:40 PM",
+      "dateStarted": "Jun 16, 2018 5:57:32 PM",
+      "dateFinished": "Jun 16, 2018 5:57:32 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:54:40 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529196880673_-1890258433",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:54:40 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/574-Winning-Candidate",
+  "id": "2DJK6YV9K",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

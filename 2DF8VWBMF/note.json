@@ -1,0 +1,280 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 175. Combine two tables\n\nTable: Person\n```\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| PersonId    | int     |\n| FirstName   | varchar |\n| LastName    | varchar |\n+-------------+---------+\n```\n\nPersonId is the primary key column for this table.\nTable: Address\n```\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| AddressId   | int     |\n| PersonId    | int     |\n| City        | varchar |\n| State       | varchar |\n+-------------+---------+\n```\nAddressId is the primary key column for this table.\n \n\nWrite a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:\n```\nFirstName, LastName, City, State\n```\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:04:40 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e175. Combine two tables\u003c/h1\u003e\n\u003cp\u003eTable: Person\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| PersonId    | int     |\n| FirstName   | varchar |\n| LastName    | varchar |\n+-------------+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003ePersonId is the primary key column for this table.\u003cbr/\u003eTable: Address\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| AddressId   | int     |\n| PersonId    | int     |\n| City        | varchar |\n| State       | varchar |\n+-------------+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eAddressId is the primary key column for this table.\u003c/p\u003e\n\u003cp\u003eWrite a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFirstName, LastName, City, State\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193280589_-1614337632",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 4:54:40 PM",
+      "dateStarted": "Jun 16, 2018 4:55:45 PM",
+      "dateFinished": "Jun 16, 2018 4:55:45 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:04:44 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193280589_-1614337632",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 4:54:40 PM",
+      "dateStarted": "Jun 16, 2018 4:55:10 PM",
+      "dateFinished": "Jun 16, 2018 4:55:10 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists person;\ndrop table if exists address;\nCreate table Person (PersonId int, FirstName varchar(255), LastName varchar(255));\nCreate table Address (AddressId int, PersonId int, City varchar(255), State varchar(255));\nTruncate table Person;\ninsert into Person (PersonId, LastName, FirstName) values (\u00271\u0027, \u0027Wang\u0027, \u0027Allen\u0027);\nTruncate table Address;\ninsert into Address (AddressId, PersonId, City, State) values (\u00271\u0027, \u00272\u0027, \u0027New York City\u0027, \u0027New York\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:04:46 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193280589_-1614337632",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 4:54:40 PM",
+      "dateStarted": "Jun 16, 2018 4:56:24 PM",
+      "dateFinished": "Jun 16, 2018 4:56:24 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:04:54 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193280589_-1614337632",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 4:54:40 PM",
+      "dateStarted": "Jun 16, 2018 4:55:03 PM",
+      "dateFinished": "Jun 16, 2018 4:55:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect p.FirstName, p.LastName, a.City, a.State\nfrom Person p left outer join Address a on (p.PersonId \u003d a.PersonId)",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:04:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "FirstName\tLastName\tCity\tState\nAllen\tWang\tnull\tnull\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193280590_-1613183385",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 4:54:40 PM",
+      "dateStarted": "Jun 16, 2018 4:56:43 PM",
+      "dateFinished": "Jun 16, 2018 4:56:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 4:54:59 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529193299496_1277081001",
+      "id": "20180616-165459_439946159",
+      "dateCreated": "Jun 16, 2018 4:54:59 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/175-Combine-Two-Tables",
+  "id": "2DF8VWBMF",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

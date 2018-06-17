@@ -1,0 +1,272 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n\n# 182. Duplicate Emails\n\nWrite a SQL query to find all duplicate emails in a table named Person.\n```\n+----+---------+\n| Id | Email   |\n+----+---------+\n| 1  | a@b.com |\n| 2  | c@d.com |\n| 3  | a@b.com |\n+----+---------+\n```\nFor example, your query should return the following for the above table:\n```\n+---------+\n| Email   |\n+---------+\n| a@b.com |\n+---------+\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:26:45 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e182. Duplicate Emails\u003c/h1\u003e\n\u003cp\u003eWrite a SQL query to find all duplicate emails in a table named Person.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+---------+\n| Id | Email   |\n+----+---------+\n| 1  | a@b.com |\n| 2  | c@d.com |\n| 3  | a@b.com |\n+----+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFor example, your query should return the following for the above table:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+---------+\n| Email   |\n+---------+\n| a@b.com |\n+---------+\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195165928_-582343680",
+      "id": "20180616-143021_904068083",
+      "dateCreated": "Jun 16, 2018 5:26:05 PM",
+      "dateStarted": "Jun 16, 2018 5:26:41 PM",
+      "dateFinished": "Jun 16, 2018 5:26:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:26:51 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195165929_-582728428",
+      "id": "20180616-143103_1778010982",
+      "dateCreated": "Jun 16, 2018 5:26:05 PM",
+      "dateStarted": "Jun 16, 2018 5:26:49 PM",
+      "dateFinished": "Jun 16, 2018 5:26:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists person;\nCreate table If Not Exists Person (Id int, Email varchar(255));\nTruncate table Person;\ninsert into Person (Id, Email) values (\u00271\u0027, \u0027a@b.com\u0027);\ninsert into Person (Id, Email) values (\u00272\u0027, \u0027c@d.com\u0027);\ninsert into Person (Id, Email) values (\u00273\u0027, \u0027a@b.com\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:27:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {},
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195165929_-582728428",
+      "id": "20180616-143127_1058298571",
+      "dateCreated": "Jun 16, 2018 5:26:05 PM",
+      "dateStarted": "Jun 16, 2018 5:27:14 PM",
+      "dateFinished": "Jun 16, 2018 5:27:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Solution",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:27:24 PM",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195165929_-582728428",
+      "id": "20180616-143115_908040008",
+      "dateCreated": "Jun 16, 2018 5:26:05 PM",
+      "dateStarted": "Jun 16, 2018 5:27:23 PM",
+      "dateFinished": "Jun 16, 2018 5:27:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect Email from Person group by Email having count(*) \u003e 1",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:27:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": false,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "Email\na@b.com\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195165929_-582728428",
+      "id": "20180616-143122_1895226424",
+      "dateCreated": "Jun 16, 2018 5:26:05 PM",
+      "dateStarted": "Jun 16, 2018 5:27:43 PM",
+      "dateFinished": "Jun 16, 2018 5:27:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "dateUpdated": "Jun 16, 2018 5:26:05 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529195165930_-581574182",
+      "id": "20180616-171648_736517265",
+      "dateCreated": "Jun 16, 2018 5:26:05 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/182-Duplicate-Emails",
+  "id": "2DJ8DDDV1",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

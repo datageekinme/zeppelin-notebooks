@@ -1,0 +1,431 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# 615. Average Salary: Departments vs. Company\n\nGiven two tables as below, write a query to display the comparison result (higher/lower/same) of the average salary of employees in a department to the company\u0027s average salary.\nTable: salary\n\n| id | employee_id | amount | pay_date   |\n|----|-------------|--------|------------|\n| 1  | 1           | 9000   | 2017-03-31 |\n| 2  | 2           | 6000   | 2017-03-31 |\n| 3  | 3           | 10000  | 2017-03-31 |\n| 4  | 1           | 7000   | 2017-02-28 |\n| 5  | 2           | 6000   | 2017-02-28 |\n| 6  | 3           | 8000   | 2017-02-28 |\n\nThe employee_id column refers to the employee_id in the following table employee.\n\n| employee_id | department_id |\n|-------------|---------------|\n| 1           | 1             |\n| 2           | 2             |\n| 3           | 2             |\n\nSo for the sample data above, the result is:\n\n| pay_month | department_id | comparison  |\n|-----------|---------------|-------------|\n| 2017-03   | 1             | higher      |\n| 2017-03   | 2             | lower       |\n| 2017-02   | 1             | same        |\n| 2017-02   | 2             | same        |\n\nExplanation\n\nIn March, the company\u0027s average salary is (9000+6000+10000)/3 \u003d 8333.33...\n\nThe average salary for department \u00271\u0027 is 9000, which is the salary of employee_id \u00271\u0027 since there is only one employee in this department. So the comparison result is \u0027higher\u0027 since 9000 \u003e 8333.33 obviously.\n\nThe average salary of department \u00272\u0027 is (6000 + 10000)/2 \u003d 8000, which is the average of employee_id \u00272\u0027 and \u00273\u0027. So the comparison result is \u0027lower\u0027 since 8000 \u003c 8333.33.\n\nWith he same formula for the average salary comparison in February, the result is \u0027same\u0027 since both the department \u00271\u0027 and \u00272\u0027 have the same average salary with the company, which is 7000.",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e615. Average Salary: Departments vs. Company\u003c/h1\u003e\n\u003cp\u003eGiven two tables as below, write a query to display the comparison result (higher/lower/same) of the average salary of employees in a department to the company\u0026rsquo;s average salary.\u003cbr/\u003eTable: salary\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eid \u003c/th\u003e\n      \u003cth\u003eemployee_id \u003c/th\u003e\n      \u003cth\u003eamount \u003c/th\u003e\n      \u003cth\u003epay_date \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e9000 \u003c/td\u003e\n      \u003ctd\u003e2017-03-31 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e6000 \u003c/td\u003e\n      \u003ctd\u003e2017-03-31 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e10000 \u003c/td\u003e\n      \u003ctd\u003e2017-03-31 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e4 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e7000 \u003c/td\u003e\n      \u003ctd\u003e2017-02-28 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e5 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e6000 \u003c/td\u003e\n      \u003ctd\u003e2017-02-28 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e6 \u003c/td\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e8000 \u003c/td\u003e\n      \u003ctd\u003e2017-02-28 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe employee_id column refers to the employee_id in the following table employee.\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eemployee_id \u003c/th\u003e\n      \u003cth\u003edepartment_id \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e3 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eSo for the sample data above, the result is:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003epay_month \u003c/th\u003e\n      \u003cth\u003edepartment_id \u003c/th\u003e\n      \u003cth\u003ecomparison \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2017-03 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003ehigher \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2017-03 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003elower \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2017-02 \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003esame \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003e2017-02 \u003c/td\u003e\n      \u003ctd\u003e2 \u003c/td\u003e\n      \u003ctd\u003esame \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eExplanation\u003c/p\u003e\n\u003cp\u003eIn March, the company\u0026rsquo;s average salary is (9000+6000+10000)/3 \u003d 8333.33\u0026hellip;\u003c/p\u003e\n\u003cp\u003eThe average salary for department \u0026lsquo;1\u0026rsquo; is 9000, which is the salary of employee_id \u0026lsquo;1\u0026rsquo; since there is only one employee in this department. So the comparison result is \u0026lsquo;higher\u0026rsquo; since 9000 \u0026gt; 8333.33 obviously.\u003c/p\u003e\n\u003cp\u003eThe average salary of department \u0026lsquo;2\u0026rsquo; is (6000 + 10000)/2 \u003d 8000, which is the average of employee_id \u0026lsquo;2\u0026rsquo; and \u0026lsquo;3\u0026rsquo;. So the comparison result is \u0026lsquo;lower\u0026rsquo; since 8000 \u0026lt; 8333.33.\u003c/p\u003e\n\u003cp\u003eWith he same formula for the average salary comparison in February, the result is \u0026lsquo;same\u0026rsquo; since both the department \u0026lsquo;1\u0026rsquo; and \u0026lsquo;2\u0026rsquo; have the same average salary with the company, which is 7000.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179493527_909666435",
+      "id": "20180616-130453_1257933674",
+      "dateCreated": "Jun 16, 2018 1:04:53 PM",
+      "dateStarted": "Jun 16, 2018 1:05:54 PM",
+      "dateFinished": "Jun 16, 2018 1:05:54 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creating the Schema",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreating the Schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179537033_-1382236790",
+      "id": "20180616-130537_619117915",
+      "dateCreated": "Jun 16, 2018 1:05:37 PM",
+      "dateStarted": "Jun 16, 2018 1:07:05 PM",
+      "dateFinished": "Jun 16, 2018 1:07:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\ndrop table if exists salary;\ndrop table if exists employee;\nCreate table If Not Exists salary (id int, employee_id int, amount int, pay_date date);\nCreate table If Not Exists employee (employee_id int, department_id int);\nTruncate table salary;\ninsert into salary (id, employee_id, amount, pay_date) values (\u00271\u0027, \u00271\u0027, \u00279000\u0027, \u00272017/03/31\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00272\u0027, \u00272\u0027, \u00276000\u0027, \u00272017/03/31\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00273\u0027, \u00273\u0027, \u002710000\u0027, \u00272017/03/31\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00274\u0027, \u00271\u0027, \u00277000\u0027, \u00272017/02/28\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00275\u0027, \u00272\u0027, \u00276000\u0027, \u00272017/02/28\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00276\u0027, \u00273\u0027, \u00278000\u0027, \u00272017/02/28\u0027);\nTruncate table employee;\ninsert into employee (employee_id, department_id) values (\u00271\u0027, \u00271\u0027);\ninsert into employee (employee_id, department_id) values (\u00272\u0027, \u00272\u0027);\ninsert into employee (employee_id, department_id) values (\u00273\u0027, \u00272\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:29 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179572280_-1967226973",
+      "id": "20180616-130612_498728418",
+      "dateCreated": "Jun 16, 2018 1:06:12 PM",
+      "dateStarted": "Jun 16, 2018 1:39:27 PM",
+      "dateFinished": "Jun 16, 2018 1:39:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Solution\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:32 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSolution\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179599558_2086148662",
+      "id": "20180616-130639_2131553392",
+      "dateCreated": "Jun 16, 2018 1:06:39 PM",
+      "dateStarted": "Jun 16, 2018 1:08:56 PM",
+      "dateFinished": "Jun 16, 2018 1:08:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect pay_month, department_id, case when dept_avg \u003e comp_avg then \u0027higher\u0027 when dept_avg \u003c comp_avg then \u0027lower\u0027 else \u0027same\u0027 end comparison from (\nselect  date_format(b.pay_date, \u0027%Y-%m\u0027) pay_month, a.department_id, avg(b.amount) dept_avg,  d.comp_avg\nfrom employee a inner join \nsalary b on (a.employee_id \u003d b.employee_id) inner join\n(select date_format(c.pay_date, \u0027%Y-%m\u0027) pay_month, avg(c.amount) comp_avg from salary c group by date_format(c.pay_date, \u0027%Y-%m\u0027)) d on ( date_format(b.pay_date, \u0027%Y-%m\u0027) \u003d d.pay_month)\ngroup by date_format(b.pay_date, \u0027%Y-%m\u0027), department_id, d.comp_avg) final\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:35 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 182.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "pay_month\tdepartment_id\tcomparison\n2017-02\t1\tsame\n2017-02\t2\tsame\n2017-03\t1\thigher\n2017-03\t2\tlower\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179736618_183212895",
+      "id": "20180616-130856_1313441528",
+      "dateCreated": "Jun 16, 2018 1:08:56 PM",
+      "dateStarted": "Jun 16, 2018 1:39:29 PM",
+      "dateFinished": "Jun 16, 2018 1:39:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nTruncate table salary;\ninsert into salary (id, employee_id, amount, pay_date) values (\u00271\u0027, \u00271\u0027, \u00279000\u0027, \u00272017/03/31\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00272\u0027, \u00272\u0027, \u00276000\u0027, \u00272017/03/31\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00273\u0027, \u00273\u0027, \u002710000\u0027, \u00272017/03/31\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00274\u0027, \u00271\u0027, \u00277000\u0027, \u00272017/02/26\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00275\u0027, \u00272\u0027, \u00276000\u0027, \u00272017/02/27\u0027);\ninsert into salary (id, employee_id, amount, pay_date) values (\u00276\u0027, \u00273\u0027, \u00278000\u0027, \u00272017/02/22\u0027);\nTruncate table employee;\ninsert into employee (employee_id, department_id) values (\u00271\u0027, \u00271\u0027);\ninsert into employee (employee_id, department_id) values (\u00272\u0027, \u00271\u0027);\ninsert into employee (employee_id, department_id) values (\u00273\u0027, \u00271\u0027);",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529179909358_464292486",
+      "id": "20180616-131149_752521873",
+      "dateCreated": "Jun 16, 2018 1:11:49 PM",
+      "dateStarted": "Jun 16, 2018 1:39:34 PM",
+      "dateFinished": "Jun 16, 2018 1:39:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\nuse leetcode;\nselect pay_month, department_id, case when dept_avg \u003e comp_avg then \u0027higher\u0027 when dept_avg \u003c comp_avg then \u0027lower\u0027 else \u0027same\u0027 end comparison from (\nselect  date_format(b.pay_date, \u0027%Y-%m\u0027) pay_month, a.department_id, avg(b.amount) dept_avg,  d.comp_avg\nfrom employee a inner join \nsalary b on (a.employee_id \u003d b.employee_id) inner join\n(select date_format(c.pay_date, \u0027%Y-%m\u0027) pay_month, avg(c.amount) comp_avg from salary c group by date_format(c.pay_date, \u0027%Y-%m\u0027)) d on ( date_format(b.pay_date, \u0027%Y-%m\u0027) \u003d d.pay_month)\ngroup by date_format(b.pay_date, \u0027%Y-%m\u0027), department_id, d.comp_avg) final",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 5:13:41 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": false,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 114.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : 0"
+          },
+          {
+            "type": "TABLE",
+            "data": "pay_month\tdepartment_id\tcomparison\n2017-02\t1\tsame\n2017-03\t1\tsame\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181312767_1615672968",
+      "id": "20180616-133512_1890151898",
+      "dateCreated": "Jun 16, 2018 1:35:12 PM",
+      "dateStarted": "Jun 16, 2018 1:39:37 PM",
+      "dateFinished": "Jun 16, 2018 1:39:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 16, 2018 1:35:26 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1529181326694_-937505409",
+      "id": "20180616-133526_7207782",
+      "dateCreated": "Jun 16, 2018 1:35:26 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/Projects/LeetCode/SQL/615-Average-Salary",
+  "id": "2DJJ52TDQ",
+  "angularObjects": {
+    "2DAYU89SS:shared_process": [],
+    "2DDQSJVFJ:shared_process": [],
+    "2DDRQ3EGF:shared_process": [],
+    "2DAC6PCDF:shared_process": [],
+    "2DCGKHP4X:shared_process": [],
+    "2DCKV7Z65:shared_process": [],
+    "2DCHXF5E2:shared_process": [],
+    "2DAPCYJSD:shared_process": [],
+    "2DAGQ147Z:shared_process": [],
+    "2DCHTWN3K:shared_process": [],
+    "2D9WBXRZW:shared_process": [],
+    "2DD85KCR5:shared_process": [],
+    "2DAVS8PUV:shared_process": [],
+    "2D9TER1EK:shared_process": [],
+    "2DDRY789B:shared_process": [],
+    "2DCYG9151:shared_process": [],
+    "2DAVDNEQR:shared_process": [],
+    "2DA5S2HBS:shared_process": [],
+    "2DAZ1FM86:shared_process": [],
+    "2D9X4Y6M2:shared_process": [],
+    "2DB1FD14B:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
